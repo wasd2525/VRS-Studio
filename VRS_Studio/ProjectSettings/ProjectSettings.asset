@@ -17,7 +17,7 @@ PlayerSettings:
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
-  m_ShowUnitySplashScreen: 0
+  m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 1
   m_SplashScreenOverlayOpacity: 1
   m_SplashScreenAnimation: 1
@@ -135,7 +135,9 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleVersion: 0.0.2
-  preloadedAssets: []
+  preloadedAssets:
+  - {fileID: 11400000, guid: 4f78a4af1e79c4e4382c867e5ab6d636, type: 2}
+  - {fileID: 3988371492542073302, guid: 482a0137d1750574a9332c0a827e4757, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -155,7 +157,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.htc.vrs.vrsstudio
+    Android: com.htc.vrs.vrsstudio.dev
   buildNumber:
     Standalone: 0
     iPhone: 0
@@ -238,11 +240,11 @@ PlayerSettings:
   clonedFromGUID: 00000000000000000000000000000000
   templatePackageId: 
   templateDefaultScene: 
-  useCustomMainManifest: 0
+  useCustomMainManifest: 1
   useCustomLauncherManifest: 0
   useCustomMainGradleTemplate: 0
   useCustomLauncherGradleManifest: 0
-  useCustomBaseGradleTemplate: 0
+  useCustomBaseGradleTemplate: 1
   useCustomGradlePropertiesTemplate: 0
   useCustomProguardFile: 0
   AndroidTargetArchitectures: 2
@@ -647,7 +649,7 @@ PlayerSettings:
   webGLPowerPreference: 2
   scriptingDefineSymbols:
     : BAKERY_INCLUDED;USE_VIVE_WAVE_XR_5_2_0;VIU_XR_GENERAL_SETTINGS;VIU_XR_PACKAGE_METADATA_STORE;VIU_WAVEVR_SUPPORT;VIU_WAVEXR_ESSENCE_CONTROLLER_MODEL;VIU_WAVE_XRSDK_3_99_31_OR_NEWER;VIU_WAVE_XRSDK_4_2_90_OR_NEWER;VIU_WAVEVR_HAND_TRACKING;VIU_WAVEVR_CONTROLLER_RENDERMODEL;VIU_WAVEVR_HAND_TRACKING_CHECK;VIU_WAVEVR_TRACKER;VIU_WAVEVR_TRACKER_CHECK;VIU_PLUGIN;VIU_PACKAGE
-    Android: VIU_XR_GENERAL_SETTINGS;VIU_XR_PACKAGE_METADATA_STORE;VIU_WAVEVR_SUPPORT;VIU_WAVEXR_ESSENCE_CONTROLLER_MODEL;VIU_WAVE_XRSDK_3_99_31_OR_NEWER;VIU_WAVE_XRSDK_4_2_90_OR_NEWER;VIU_WAVEVR_HAND_TRACKING;VIU_WAVEVR_CONTROLLER_RENDERMODEL;VIU_WAVEVR_HAND_TRACKING_CHECK;VIU_WAVEVR_TRACKER;VIU_WAVEVR_TRACKER_CHECK;VIU_PLUGIN;VIU_PACKAGE;WAVE_BODY_TRACKING;WAVE_BODY_CALIBRATION_INCONTENT;WAVE_FACIAL_TRACKING;USE_VRM_0_x
+    Android: WAVE_BODY_TRACKING;WAVE_BODY_CALIBRATION_INCONTENT;WAVE_FACIAL_TRACKING;USE_VRM_0_x;VIU_XR_GENERAL_SETTINGS;VIU_XR_PACKAGE_METADATA_STORE;VIU_WAVEVR_SUPPORT;VIU_WAVEXR_ESSENCE_CONTROLLER_MODEL;VIU_WAVE_XRSDK_3_99_31_OR_NEWER;VIU_WAVE_XRSDK_4_2_90_OR_NEWER;VIU_WAVEVR_HAND_TRACKING;VIU_WAVEVR_CONTROLLER_RENDERMODEL;VIU_WAVEVR_HAND_TRACKING_CHECK;VIU_WAVEVR_TRACKER;VIU_WAVEVR_TRACKER_CHECK;VIU_PLUGIN;VIU_PACKAGE
     Standalone: VIU_XR_GENERAL_SETTINGS;VIU_XR_PACKAGE_METADATA_STORE;VIU_WAVEXR_ESSENCE_CONTROLLER_MODEL;VIU_WAVE_XRSDK_3_99_31_OR_NEWER;VIU_WAVE_XRSDK_4_2_90_OR_NEWER;VIU_WAVEVR_HAND_TRACKING;VIU_WAVEVR_CONTROLLER_RENDERMODEL;VIU_WAVEVR_HAND_TRACKING_CHECK;VIU_WAVEVR_TRACKER;VIU_WAVEVR_TRACKER_CHECK;VIU_PLUGIN;VIU_PACKAGE
   additionalCompilerArguments: {}
   platformArchitecture: {}

@@ -50,7 +50,7 @@ namespace HTC.Triton.LensUI
             set
             {
                 keepStateOnDisable = value;
-                if (animator != null) { animator.keepAnimatorControllerStateOnDisable = value; }
+                if (animator != null) { animator.keepAnimatorStateOnDisable = value; }
             }
         }
 
@@ -90,7 +90,7 @@ namespace HTC.Triton.LensUI
         {
             if ((isAnimatorDirty || force) && animator != null)
             {
-                animator.keepAnimatorControllerStateOnDisable = keepStateOnDisable;
+                animator.keepAnimatorStateOnDisable = keepStateOnDisable;
                 normalTriggerID = GetValidTriggerID(normalTrigger);
                 highlightedTriggerID = GetValidTriggerID(highlightedTrigger);
                 pressedTriggerID = GetValidTriggerID(pressedTrigger);

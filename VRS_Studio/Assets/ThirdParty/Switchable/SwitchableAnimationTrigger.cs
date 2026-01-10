@@ -52,7 +52,7 @@ namespace HTC.UnityPlugin.Utility.Switchable
             set
             {
                 keepStateOnDisable = value;
-                if (animator != null) { animator.keepAnimatorControllerStateOnDisable = value; }
+                if (animator != null) { animator.keepAnimatorStateOnDisable = value; }
             }
         }
 
@@ -86,7 +86,7 @@ namespace HTC.UnityPlugin.Utility.Switchable
         {
             if ((isAnimatorDirty || force) && animator != null)
             {
-                animator.keepAnimatorControllerStateOnDisable = keepStateOnDisable;
+                animator.keepAnimatorStateOnDisable = keepStateOnDisable;
                 openStartTriggerID = GetValidTriggerID(openStartTrigger);
                 openSnapTriggerID = GetValidTriggerID(openSnapTrigger);
                 closeStartTriggerID = GetValidTriggerID(closeStartTrigger);

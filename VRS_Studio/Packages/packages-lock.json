@@ -17,7 +17,7 @@
         "com.htc.upm.wave.xrsdk": "6.2.0-r.9",
         "com.htc.upm.wave.native": "6.2.0-r.9"
       },
-      "hash": "db1b6eb7b513e7324b93ea841e8ea5059d2225a0"
+      "hash": "59208443d6ca54b140b28d3ca7308eda0f6c31b9"
     },
     "com.htc.upm.wave.native": {
       "version": "https://github.com/ViveSoftware/VIVE-Wave.git?path=com.htc.upm.wave.native",
@@ -26,7 +26,7 @@
       "dependencies": {
         "com.htc.upm.wave.xrsdk": "6.2.0-r.9"
       },
-      "hash": "db1b6eb7b513e7324b93ea841e8ea5059d2225a0"
+      "hash": "59208443d6ca54b140b28d3ca7308eda0f6c31b9"
     },
     "com.htc.upm.wave.xrsdk": {
       "version": "https://github.com/ViveSoftware/VIVE-Wave.git?path=com.htc.upm.wave.xrsdk",
@@ -35,7 +35,7 @@
       "dependencies": {
         "com.unity.xr.management": "3.2.4"
       },
-      "hash": "db1b6eb7b513e7324b93ea841e8ea5059d2225a0"
+      "hash": "59208443d6ca54b140b28d3ca7308eda0f6c31b9"
     },
     "com.unity.ext.nunit": {
       "version": "1.0.6",

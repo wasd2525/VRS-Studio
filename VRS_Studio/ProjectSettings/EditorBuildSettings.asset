@@ -5,33 +5,39 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Main.unity
     guid: d2680fbdb4e70934e9de43992b8f4529
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/VRSS_Environment.unity
     guid: 04e4d2a28c87e0742990a6fd768b482a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Spectator.unity
     guid: 7803efd7f8840c54fbc5cbaf6797ff6c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/JelbeeAvatar.unity
     guid: 051ca1403b64215418a23b5cac8b5a4b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ThrowBottles.unity
     guid: 806757c806be1f5418f928472f348184
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Keyboard.unity
     guid: 749907f8c7d83f84a91a64e20e83e823
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/3DObjectManipulation.unity
     guid: c78f813b7dfc2a440932c36de5308e12
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/FaceTracking_Bubble.unity
     guid: f7e8cd274790a08489a7425004f730ac
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Tracker.unity
     guid: de88e12e09b99954a93b93746c0f407c
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/PupilRecording.unity
+    guid: 3ec1728e3ebd6d14581c1324f44e3e6f
   m_configObjects:
     com.htc.upm.wave.xrsdk.xrsettings: {fileID: 11400000, guid: 4f78a4af1e79c4e4382c867e5ab6d636,
       type: 2}
