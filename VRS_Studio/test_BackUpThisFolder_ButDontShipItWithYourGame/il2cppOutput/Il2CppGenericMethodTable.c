@@ -60898,7 +60898,6 @@ const Il2CppGenericMethodFunctionsDefinitions g_Il2CppGenericMethodFunctions[608
 { 65138, 60726, 11085, -1},
 { 65139, 60727, 11085, -1},
 { 65140, 60728, 11085, -1},
-{ 70350, 0, 0, -1},
 { 70351, 0, 0, -1},
 { 70352, 0, 0, -1},
 { 70353, 0, 0, -1},
@@ -60907,4 +60906,5 @@ const Il2CppGenericMethodFunctionsDefinitions g_Il2CppGenericMethodFunctions[608
 { 70356, 0, 0, -1},
 { 70357, 0, 0, -1},
 { 70358, 0, 0, -1},
+{ 70359, 0, 0, -1},
 };

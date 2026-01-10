@@ -16,6 +16,7 @@ namespace VRS.PupilRecording
         public bool createEyeManagerIfMissing = true;
         public bool createRecorderIfMissing = true;
         public bool createEyeVisualsIfMissing = true;
+        public bool createLightControllerIfMissing = true;
 
         [Header("Eye Visual Settings")]
         public Material eyeballMaterial;
@@ -23,11 +24,16 @@ namespace VRS.PupilRecording
         public float eyeDistance = 1.5f; // Distance in front of user
         public float eyeSeparation = 0.065f; // ~65mm interpupillary distance
 
+        [Header("Experiment Settings")]
+        [Tooltip("Start in dark mode for dilation experiments")]
+        public bool startInDarkMode = true;
+
         private void Awake()
         {
             SetupEyeManager();
             SetupRecorder();
             SetupEyeVisuals();
+            SetupLightController();
         }
 
         private void SetupEyeManager()
@@ -151,6 +157,24 @@ namespace VRS.PupilRecording
             Destroy(pupil.GetComponent<Collider>());
 
             return pupil;
+        }
+
+        private void SetupLightController()
+        {
+            if (!createLightControllerIfMissing) return;
+
+            if (FindObjectOfType<LightConditionController>() == null)
+            {
+                GameObject controllerObj = new GameObject("LightConditionController");
+                LightConditionController controller = controllerObj.AddComponent<LightConditionController>();
+                
+                // Set initial condition
+                controller.currentCondition = startInDarkMode 
+                    ? LightConditionController.LightCondition.Dark 
+                    : LightConditionController.LightCondition.Bright;
+                    
+                Debug.Log($"[PupilRecordingSetup] Created LightConditionController in {controller.currentCondition} mode");
+            }
         }
     }
 }

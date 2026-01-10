@@ -63,8 +63,12 @@ namespace VRS.PupilRecording
             if (rightEye != null)
                 rightEyeDefaultRotation = rightEye.localRotation;
             
-            // Create a spotlight to illuminate the eyes in the dark
-            CreateSpotlight();
+            // Only create spotlight if no light controller exists (we're not doing experiments)
+            // Light controller handles all lighting for experiments
+            if (FindObjectOfType<LightConditionController>() == null)
+            {
+                CreateSpotlight();
+            }
         }
         
         private void CreateSpotlight()
