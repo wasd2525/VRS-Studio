@@ -4,6 +4,7 @@
 
 using System.Collections;
 using UnityEngine;
+using Wave.Essence;
 
 namespace VRS.PupilRecording
 {
@@ -14,19 +15,19 @@ namespace VRS.PupilRecording
     public class StimulusPresenter : MonoBehaviour
     {
         [Header("Stimulus Settings")]
-        [Tooltip("Size of red stimulus sphere")]
-        public float redSphereSize = 0.1f;
+        [Tooltip("Size of red stimulus sphere (meters)")]
+        public float redSphereSize = 0.15f;
         
-        [Tooltip("Size of blue stimulus sphere")]
-        public float blueSphereSize = 0.1f;
+        [Tooltip("Size of blue stimulus sphere (meters)")]
+        public float blueSphereSize = 0.15f;
         
         [Tooltip("Luminance/intensity of red sphere (0-1)")]
         [Range(0f, 1f)]
-        public float redLuminance = 0.3f;
+        public float redLuminance = 0.5f;
         
         [Tooltip("Luminance/intensity of blue sphere (0-1)")]
         [Range(0f, 1f)]
-        public float blueLuminance = 0.3f;
+        public float blueLuminance = 0.5f;
         
         [Tooltip("High luminance for long blue stimulation phase")]
         public float longBlueLuminance = 1.0f;
@@ -53,14 +54,14 @@ namespace VRS.PupilRecording
         public float intervalDurationLongBlue = 8f;
         
         [Tooltip("Wait time before starting experiment (seconds)")]
-        public float waitBeforeStart = 30f;
+        public float waitBeforeStart = 20f;
 
         [Header("Position Settings")]
-        [Tooltip("Distance from camera for stimuli")]
-        public float stimulusDistance = 2.0f;
+        [Tooltip("Distance from camera for stimuli (meters)")]
+        public float stimulusDistance = 1.5f;
         
-        [Tooltip("Offset for peripheral positions (degrees visual angle approximation)")]
-        public float peripheralOffset = 0.73f;
+        [Tooltip("Offset for peripheral positions (meters)")]
+        public float peripheralOffset = 0.4f;
 
         [Header("Auto Start")]
         [Tooltip("Automatically start the experiment sequence on Start()")]
@@ -71,8 +72,8 @@ namespace VRS.PupilRecording
         private GameObject blueSphere;
         private GameObject fixationLight;
         
-        // Reference to main camera (HMD)
-        private Camera mainCamera;
+        // Reference to HMD camera
+        private Transform hmdTransform;
         
         // Position definitions
         private Vector3[] stimulusPositions;
@@ -84,11 +85,27 @@ namespace VRS.PupilRecording
 
         private void Start()
         {
-            // Get main camera reference
-            mainCamera = Camera.main;
-            if (mainCamera == null)
+            // Get HMD camera reference - prefer WaveRig, fallback to Camera.main
+            if (WaveRig.Instance != null)
             {
-                Debug.LogError("[StimulusPresenter] Main camera not found!");
+                Camera rigCamera = WaveRig.Instance.GetComponentInChildren<Camera>();
+                if (rigCamera != null)
+                {
+                    hmdTransform = rigCamera.transform;
+                    Debug.Log("[StimulusPresenter] Using WaveRig camera.");
+                }
+            }
+            
+            // Fallback to Camera.main
+            if (hmdTransform == null && Camera.main != null)
+            {
+                hmdTransform = Camera.main.transform;
+                Debug.Log("[StimulusPresenter] Using Camera.main as fallback.");
+            }
+            
+            if (hmdTransform == null)
+            {
+                Debug.LogError("[StimulusPresenter] No camera found!");
                 return;
             }
 
@@ -112,7 +129,7 @@ namespace VRS.PupilRecording
                 StartExperiment();
             }
 
-            Debug.Log("[StimulusPresenter] Initialized. Call StartExperiment() to begin.");
+            Debug.Log($"[StimulusPresenter] Initialized. Distance: {stimulusDistance}m, Size: {redSphereSize}m");
         }
 
         private void CreateRedSphere()
@@ -174,10 +191,10 @@ namespace VRS.PupilRecording
         private void Update()
         {
             // Keep fixation light in front of camera
-            if (fixationLight != null && fixationLight.activeSelf && mainCamera != null)
+            if (fixationLight != null && fixationLight.activeSelf && hmdTransform != null)
             {
-                fixationLight.transform.position = mainCamera.transform.position + 
-                    mainCamera.transform.forward * stimulusDistance;
+                fixationLight.transform.position = hmdTransform.position + 
+                    hmdTransform.forward * stimulusDistance;
             }
         }
 
@@ -290,10 +307,10 @@ namespace VRS.PupilRecording
 
         private IEnumerator UpdateStimulusPosition(GameObject stimulus, Vector3 offsetPosition)
         {
-            while (stimulus.activeSelf && mainCamera != null)
+            while (stimulus.activeSelf && hmdTransform != null)
             {
-                Vector3 targetPosition = mainCamera.transform.position + 
-                    mainCamera.transform.rotation * offsetPosition;
+                Vector3 targetPosition = hmdTransform.position + 
+                    hmdTransform.rotation * offsetPosition;
                 stimulus.transform.position = targetPosition;
                 yield return null;
             }
