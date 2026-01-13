@@ -58,8 +58,8 @@ namespace VRS.PupilRecording
                 fileWriter = new StreamWriter(sessionFilePath, false);
                 fileWriter.AutoFlush = true; // Ensures data is written immediately
                 
-                // Write header (now includes blink data)
-                fileWriter.WriteLine("timestamp_sec,left_pupil_mm,right_pupil_mm,left_blink,right_blink,left_gaze_x,left_gaze_y,left_gaze_z,right_gaze_x,right_gaze_y,right_gaze_z,combined_gaze_x,combined_gaze_y,combined_gaze_z,origin_x,origin_y,origin_z,light_condition");
+                // Write header (includes blink data and stimulus events)
+                fileWriter.WriteLine("timestamp_sec,left_pupil_mm,right_pupil_mm,left_blink,right_blink,left_gaze_x,left_gaze_y,left_gaze_z,right_gaze_x,right_gaze_y,right_gaze_z,combined_gaze_x,combined_gaze_y,combined_gaze_z,origin_x,origin_y,origin_z,light_condition,stimulus_event");
                 
                 Debug.Log($"[PupilDataRecorder] Session started. Streaming data to: {sessionFilePath}");
             }
@@ -133,7 +133,23 @@ namespace VRS.PupilRecording
                 lightCondition = lightController.GetConditionString();
             }
 
-            // Write directly to file (includes blink data)
+            // Get stimulus event if available
+            string stimulusEvent = "";
+            if (StimulusEventLogger.Instance != null)
+            {
+                stimulusEvent = StimulusEventLogger.Instance.GetCurrentEvent();
+                // Escape quotes and commas in event string for CSV compatibility
+                if (!string.IsNullOrEmpty(stimulusEvent))
+                {
+                    stimulusEvent = stimulusEvent.Replace("\"", "\"\"");
+                    if (stimulusEvent.Contains(","))
+                    {
+                        stimulusEvent = $"\"{stimulusEvent}\"";
+                    }
+                }
+            }
+
+            // Write directly to file (includes blink data and stimulus events)
             try
             {
                 fileWriter.WriteLine($"{timestamp:F4},{leftDiameter:F4},{rightDiameter:F4}," +
@@ -142,7 +158,7 @@ namespace VRS.PupilRecording
                                     $"{rightGaze.x:F4},{rightGaze.y:F4},{rightGaze.z:F4}," +
                                     $"{combinedGaze.x:F4},{combinedGaze.y:F4},{combinedGaze.z:F4}," +
                                     $"{origin.x:F4},{origin.y:F4},{origin.z:F4}," +
-                                    $"{lightCondition}");
+                                    $"{lightCondition},{stimulusEvent}");
                 dataPointCount++;
             }
             catch (Exception e)
