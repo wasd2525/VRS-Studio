@@ -33,7 +33,28 @@ namespace VRS.PupilRecording
             SetupEyeManager();
             SetupRecorder();
             SetupEyeVisuals();
+            SetupStimulus();
             SetupLightController();
+        }
+
+        private void SetupStimulus()
+        {
+            // 1. Ensure Event Logger exists
+            if (FindObjectOfType<StimulusEventLogger>() == null)
+            {
+                GameObject loggerObj = new GameObject("StimulusEventLogger");
+                loggerObj.AddComponent<StimulusEventLogger>();
+            }
+
+            // 2. Setup Visual Controller
+            // Ideally attached to the camera or a standalone object. 
+            // We'll attach it to a new GameObject "VisualStimulus"
+            if (FindObjectOfType<VisualStimulusController>() == null)
+            {
+                GameObject stimObj = new GameObject("VisualStimulusController");
+                stimObj.AddComponent<VisualStimulusController>();
+                Debug.Log("[PupilRecordingSetup] Created VisualStimulusController");
+            }
         }
 
         private void SetupEyeManager()
@@ -158,6 +179,7 @@ namespace VRS.PupilRecording
 
             return pupil;
         }
+
 
         private void SetupLightController()
         {

@@ -65,10 +65,7 @@ namespace VRS.PupilRecording
             
             // Only create spotlight if no light controller exists (we're not doing experiments)
             // Light controller handles all lighting for experiments
-            if (FindObjectOfType<LightConditionController>() == null)
-            {
-                CreateSpotlight();
-            }
+            CreateSpotlight();
         }
         
         private void CreateSpotlight()
