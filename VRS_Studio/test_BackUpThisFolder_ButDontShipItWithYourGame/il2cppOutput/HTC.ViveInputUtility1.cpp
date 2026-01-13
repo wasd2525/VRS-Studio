@@ -23805,7 +23805,7 @@ IL_00a2:
 		Type_t* L_42 = V_12;
 		NullCheck(L_42);
 		Type_t* L_43;
-		L_43 = VirtualFuncInvoker0< Type_t* >::Invoke(108 /* System.Type System.Type::get_BaseType() */, L_42);
+		L_43 = VirtualFuncInvoker0< Type_t* >::Invoke(107 /* System.Type System.Type::get_BaseType() */, L_42);
 		NullCheck(L_43);
 		bool L_44;
 		L_44 = VirtualFuncInvoker0< bool >::Invoke(39 /* System.Boolean System.Type::get_IsGenericType() */, L_43);
@@ -23819,7 +23819,7 @@ IL_00a2:
 		Type_t* L_45 = V_12;
 		NullCheck(L_45);
 		Type_t* L_46;
-		L_46 = VirtualFuncInvoker0< Type_t* >::Invoke(108 /* System.Type System.Type::get_BaseType() */, L_45);
+		L_46 = VirtualFuncInvoker0< Type_t* >::Invoke(107 /* System.Type System.Type::get_BaseType() */, L_45);
 		NullCheck(L_46);
 		Type_t* L_47;
 		L_47 = VirtualFuncInvoker0< Type_t* >::Invoke(47 /* System.Type System.Type::GetGenericTypeDefinition() */, L_46);
@@ -23837,7 +23837,7 @@ IL_00a2:
 		Type_t* L_50 = V_12;
 		NullCheck(L_50);
 		Type_t* L_51;
-		L_51 = VirtualFuncInvoker0< Type_t* >::Invoke(108 /* System.Type System.Type::get_BaseType() */, L_50);
+		L_51 = VirtualFuncInvoker0< Type_t* >::Invoke(107 /* System.Type System.Type::get_BaseType() */, L_50);
 		NullCheck(L_51);
 		TypeU5BU5D_t97234E1129B564EB38B8D85CAC2AD8B5B9522FFB* L_52;
 		L_52 = VirtualFuncInvoker0< TypeU5BU5D_t97234E1129B564EB38B8D85CAC2AD8B5B9522FFB* >::Invoke(49 /* System.Type[] System.Type::GetGenericArguments() */, L_51);
@@ -23860,7 +23860,7 @@ IL_00f1:
 		Type_t* L_58 = V_15;
 		NullCheck(L_57);
 		bool L_59;
-		L_59 = InterfaceFuncInvoker1< bool, Type_t* >::Invoke(4 /* System.Boolean System.Collections.Generic.IDictionary`2<System.Type,System.Type>::ContainsKey(TKey) */, IDictionary_2_t249FB352C9CF5CA9C1FA263C78805A1F51F43943_il2cpp_TypeInfo_var, L_57, L_58);
+		L_59 = InterfaceFuncInvoker1< bool, Type_t* >::Invoke(1 /* System.Boolean System.Collections.Generic.IDictionary`2<System.Type,System.Type>::ContainsKey(TKey) */, IDictionary_2_t249FB352C9CF5CA9C1FA263C78805A1F51F43943_il2cpp_TypeInfo_var, L_57, L_58);
 		if (L_59)
 		{
 			goto IL_011a;
@@ -23872,7 +23872,7 @@ IL_00f1:
 		Type_t* L_61 = V_15;
 		Type_t* L_62 = V_12;
 		NullCheck(L_60);
-		InterfaceActionInvoker2< Type_t*, Type_t* >::Invoke(1 /* System.Void System.Collections.Generic.IDictionary`2<System.Type,System.Type>::set_Item(TKey,TValue) */, IDictionary_2_t249FB352C9CF5CA9C1FA263C78805A1F51F43943_il2cpp_TypeInfo_var, L_60, L_61, L_62);
+		InterfaceActionInvoker2< Type_t*, Type_t* >::Invoke(0 /* System.Void System.Collections.Generic.IDictionary`2<System.Type,System.Type>::set_Item(TKey,TValue) */, IDictionary_2_t249FB352C9CF5CA9C1FA263C78805A1F51F43943_il2cpp_TypeInfo_var, L_60, L_61, L_62);
 		// ++count;
 		int32_t L_63 = V_0;
 		V_0 = ((int32_t)il2cpp_codegen_add(L_63, 1));

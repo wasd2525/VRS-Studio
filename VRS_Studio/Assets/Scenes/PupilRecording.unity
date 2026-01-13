@@ -351,10 +351,12 @@ MonoBehaviour:
   createEyeManagerIfMissing: 1
   createRecorderIfMissing: 1
   createEyeVisualsIfMissing: 1
+  createLightControllerIfMissing: 1
   eyeballMaterial: {fileID: 0}
   pupilMaterial: {fileID: 0}
   eyeDistance: 1.5
   eyeSeparation: 0.065
+  startInDarkMode: 1
 --- !u!1 &400000001
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,3 +534,54 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &1477300579
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1477300581}
+  - component: {fileID: 1477300580}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1477300580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477300579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cce4b2575f464bb46aa351f21ee7af86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoSetup: 1
+  autoStartExperiment: 1
+  startInDarkMode: 1
+  dataRecorder: {fileID: 0}
+  stimulusPresenter: {fileID: 0}
+  lightController: {fileID: 0}
+  eyeVisualization: {fileID: 0}
+--- !u!4 &1477300581
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477300579}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 16.504885, y: -2.4841201, z: 5.8928595}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -331,15 +331,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRSettings_set_enabled_m15084475004A151A
 	_il2cpp_icall_func = (XRSettings_set_enabled_m15084475004A151A847825D5B73881FCEB19FD45_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.XR.XRSettings::set_enabled(System.Boolean)");
 	_il2cpp_icall_func(___0_value);
 }
-// System.Void UnityEngine.XR.XRSettings::set_gameViewRenderMode(UnityEngine.XR.GameViewRenderMode)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRSettings_set_gameViewRenderMode_mD4A5BDEBD225B0FA8B0E86CAB7B92B9FC543628F (int32_t ___0_value, const RuntimeMethod* method) 
-{
-	typedef void (*XRSettings_set_gameViewRenderMode_mD4A5BDEBD225B0FA8B0E86CAB7B92B9FC543628F_ftn) (int32_t);
-	static XRSettings_set_gameViewRenderMode_mD4A5BDEBD225B0FA8B0E86CAB7B92B9FC543628F_ftn _il2cpp_icall_func;
-	if (!_il2cpp_icall_func)
-	_il2cpp_icall_func = (XRSettings_set_gameViewRenderMode_mD4A5BDEBD225B0FA8B0E86CAB7B92B9FC543628F_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.XR.XRSettings::set_gameViewRenderMode(UnityEngine.XR.GameViewRenderMode)");
-	_il2cpp_icall_func(___0_value);
-}
 // System.Single UnityEngine.XR.XRSettings::get_eyeTextureResolutionScale()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float XRSettings_get_eyeTextureResolutionScale_m335B9DB51528FCA7534FCD6828796395D63ADA90 (const RuntimeMethod* method) 
 {

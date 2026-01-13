@@ -63,8 +63,6 @@ struct Dictionary_2_t22CBF56B2559632FCC876DE7BA5D1DCB7DB4F78E;
 struct Dictionary_2_tE7EF520458769CD7EE94299E9C156CF21A2DDFF1;
 // System.Collections.Generic.Dictionary`2<System.Int32,System.Int32>
 struct Dictionary_2_tABE19B9C5C52F1DE14F0D3287B2696E7D7419180;
-// System.Collections.Generic.Dictionary`2<Wave.Essence.BodyTracking.RolePoseType,Wave.Essence.BodyTracking.RolePose>
-struct Dictionary_2_t4D42736F171A409CC8E74C010E98CD26C81E4BD4;
 // System.Collections.Generic.Dictionary`2<Wave.Essence.Tracker.TrackerId,Wave.Essence.Tracker.AxisType[]>
 struct Dictionary_2_t6EEC078198E4057E47E6884797C6A44A95D34338;
 // System.Collections.Generic.Dictionary`2<Wave.Essence.Tracker.TrackerId,System.Boolean[]>
@@ -95,12 +93,8 @@ struct Dictionary_2_tE16E3D7F052319FEE5BEBD869B503332D5DC5F84;
 struct Func_3_tC721DF8CDD07ED66A4833A19A2ED2302608C906C;
 // System.Func`3<System.Int32,System.String,TMPro.TMP_SpriteAsset>
 struct Func_3_t6F6D9932638EA1A5A45303C6626C818C25D164E5;
-// System.Collections.Generic.IEqualityComparer`1<Wave.Essence.BodyTracking.RolePoseType>
-struct IEqualityComparer_1_tFBFCBBB5208C9BD8437E9E97E82F7A18C4281008;
 // System.Collections.Generic.IEqualityComparer`1<Wave.Essence.BodyTracking.RuntimeDependency.TrackerType>
 struct IEqualityComparer_1_tB81A55D73C3B8A4E27C01C5FCA17E492C2DCBDE7;
-// System.Collections.Generic.Dictionary`2/KeyCollection<Wave.Essence.BodyTracking.RolePoseType,Wave.Essence.BodyTracking.RolePose>
-struct KeyCollection_t8BC7C5AD2620745909278686D1D9E224E14A8326;
 // System.Collections.Generic.Dictionary`2/KeyCollection<Wave.Essence.BodyTracking.RuntimeDependency.TrackerType,System.Collections.Generic.List`1<System.String>>
 struct KeyCollection_t8E1B7623E79D579EC96A7102914DB1C58F431437;
 // System.Collections.Generic.List`1<UnityEngine.CanvasGroup>
@@ -117,12 +111,8 @@ struct List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D;
 struct List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD;
 // UnityEngine.UI.CoroutineTween.TweenRunner`1<UnityEngine.UI.CoroutineTween.ColorTween>
 struct TweenRunner_1_t5BB0582F926E75E2FE795492679A6CF55A4B4BC4;
-// System.Collections.Generic.Dictionary`2/ValueCollection<Wave.Essence.BodyTracking.RolePoseType,Wave.Essence.BodyTracking.RolePose>
-struct ValueCollection_t05481E744AB3BD9300252FA459796F3622425D30;
 // System.Collections.Generic.Dictionary`2/ValueCollection<Wave.Essence.BodyTracking.RuntimeDependency.TrackerType,System.Collections.Generic.List`1<System.String>>
 struct ValueCollection_tF699A9845A0E3321F6B0C6D49513718ACCCD834C;
-// System.Collections.Generic.Dictionary`2/Entry<Wave.Essence.BodyTracking.RolePoseType,Wave.Essence.BodyTracking.RolePose>[]
-struct EntryU5BU5D_t81BFF3D05D2B03DC8B155D1C3B6E84536E7F6D0A;
 // System.Collections.Generic.Dictionary`2/Entry<Wave.Essence.BodyTracking.RuntimeDependency.TrackerType,System.Collections.Generic.List`1<System.String>>[]
 struct EntryU5BU5D_t1A717721B625BFE93FC821DD81C1F5644A482959;
 // TMPro.TMP_TextProcessingStack`1<System.Int32>[]
@@ -263,6 +253,10 @@ struct GameObject_t76FEDD663AB33C991A9C9A23129337651094216F;
 struct Graphic_tCBFCA4585A19E2B75465AECFEAC43F4016BF7931;
 // Wave.Essence.Hand.HandManager
 struct HandManager_t24AAE56AC9A9230BA044455D4C85782886D69F18;
+// Wave.Essence.BodyTracking.Demo.HumanoidIKMenu
+struct HumanoidIKMenu_t5063882FCD2429C610477C3D77DD988372D3975C;
+// Wave.Essence.BodyTracking.Demo.HumanoidIKSample
+struct HumanoidIKSample_t299AC6AE30503274166DF4AD9CDA94C4DEA6A670;
 // System.IAsyncResult
 struct IAsyncResult_t7B9B5A0ECB35DCEC31B8A8122C37D687369253B5;
 // System.Collections.IDictionary
@@ -295,12 +289,6 @@ struct RectMask2D_tACF92BE999C791A665BD1ADEABF5BCEB82846670;
 struct RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5;
 // Wave.Essence.BodyTracking.RolePose
 struct RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717;
-// Wave.Essence.BodyTracking.RolePoseController
-struct RolePoseController_t706AE56FE73EFD4EA44F938D506D6CFE2A934DB9;
-// Wave.Essence.BodyTracking.RolePoseHand
-struct RolePoseHand_t1077BA77E30CBE89252EAB5A70028A3F86442B5E;
-// Wave.Essence.BodyTracking.RolePoseHead
-struct RolePoseHead_tA28A41EADF5B284248557F43EC13EAAF7513F8EB;
 // Wave.Essence.BodyTracking.RolePoseTracker
 struct RolePoseTracker_tEE1C9DDB109A1546DFAC2B3B9AA359CB269D97FA;
 // System.Runtime.Serialization.SafeSerializationManager
@@ -367,10 +355,6 @@ struct U3CStartFixUpdateBodyTrackingU3Ed__31_tF28DE1582FD756D7BB417F3669073B4B65
 struct U3CStartRenderUpdateBodyTrackingU3Ed__30_t1957B69064FE29CB0937EA04552DFEF7392DB7E8;
 // Wave.Essence.BodyTracking.Demo.BodyIKSample/<StartBodyTracking>d__32
 struct U3CStartBodyTrackingU3Ed__32_tD75BC8B5F3ACCD4FA201283FF7949FEFD5393B33;
-// Wave.Essence.BodyTracking.BodyRoleData/TrackerIndexBase
-struct TrackerIndexBase_t768ED669DED93CE00FF25C67C43315B1730AAAB3;
-// Wave.Essence.BodyTracking.BodyRoleData/TrackerTypeBase
-struct TrackerTypeBase_t686FCEF20967E3CDF632B5174088352DC0D72E46;
 // Wave.Essence.BodyTracking.Demo.BodyTrackingSample/<StartBodyTracking>d__41
 struct U3CStartBodyTrackingU3Ed__41_t4040ACE24B90527EA05CCF98736A60F606F97025;
 // UnityEngine.UI.Button/ButtonClickedEvent
@@ -389,12 +373,6 @@ struct TrackerOption_t44B1949A603387516CF25F0AF464CAF72C6BBFE5;
 struct CullStateChangedEvent_t6073CD0D951EC1256BF74B8F9107D68FC89B99B8;
 // Wave.Essence.Predictor/UpdateLog
 struct UpdateLog_t21F9395B397561592A515DC8123411890F02522C;
-// Wave.Essence.BodyTracking.RolePoseController/<UpdatePose>d__5
-struct U3CUpdatePoseU3Ed__5_tF3C5AB469CDEA8FE5F79DB484AE2B14C3701C10F;
-// Wave.Essence.BodyTracking.RolePoseHand/<UpdatePose>d__5
-struct U3CUpdatePoseU3Ed__5_t1DEA6962212108D9FF7E4207A17B66687915677F;
-// Wave.Essence.BodyTracking.RolePoseHead/<UpdatePose>d__4
-struct U3CUpdatePoseU3Ed__4_t809F8C7D7C2795583AE5A68953F4326F21D94291;
 // Wave.Essence.BodyTracking.RolePoseTracker/<UpdatePose>d__5
 struct U3CUpdatePoseU3Ed__5_t4737C4BDECCCC1366F6C55381A938330CA3725D5;
 // Wave.Essence.BodyTracking.RuntimeDependency.Srdp/TrackerRoleDelegate
@@ -417,7 +395,6 @@ IL2CPP_EXTERN_C RuntimeClass* Boolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_
 IL2CPP_EXTERN_C RuntimeClass* CalibrationStatusDelegate_t601170B744CA987C050CD4509ACAAA073B90485F_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* ClientInterface_t846C06C48DE674E8DBE1834FA00FB17E8EC86377_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* CoordinateDefine_tEB1FD35E0FAE9326DE3B8B570D5D9F1883BEDB06_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeClass* Dictionary_2_t4D42736F171A409CC8E74C010E98CD26C81E4BD4_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Dictionary_2_t74870F77CFCCD6C60FF43F1C6AB7FC8212E869FA_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Exception_t_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* HandManager_t24AAE56AC9A9230BA044455D4C85782886D69F18_il2cpp_TypeInfo_var;
@@ -432,7 +409,6 @@ IL2CPP_EXTERN_C RuntimeClass* Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_i
 IL2CPP_EXTERN_C RuntimeClass* Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Rdp_t4E601F118A55EF303082C42F62229A8DC6D948BE_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* ReaderWriterLockSlim_t3BF29C18C9FC0EE07209EDD54D938EA473FB3906_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeClass* RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Srdp_tCC1F26DA7D58351ADB2CEC6EFA5BA2F49676E44B_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* StringBuilder_t_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248_il2cpp_TypeInfo_var;
@@ -451,10 +427,7 @@ IL2CPP_EXTERN_C RuntimeClass* U3CStartBodyTrackingU3Ed__32_tD75BC8B5F3ACCD4FA201
 IL2CPP_EXTERN_C RuntimeClass* U3CStartBodyTrackingU3Ed__41_t4040ACE24B90527EA05CCF98736A60F606F97025_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* U3CStartFixUpdateBodyTrackingU3Ed__31_tF28DE1582FD756D7BB417F3669073B4B65F78276_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* U3CStartRenderUpdateBodyTrackingU3Ed__30_t1957B69064FE29CB0937EA04552DFEF7392DB7E8_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeClass* U3CUpdatePoseU3Ed__4_t809F8C7D7C2795583AE5A68953F4326F21D94291_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeClass* U3CUpdatePoseU3Ed__5_t1DEA6962212108D9FF7E4207A17B66687915677F_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* U3CUpdatePoseU3Ed__5_t4737C4BDECCCC1366F6C55381A938330CA3725D5_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeClass* U3CUpdatePoseU3Ed__5_tF3C5AB469CDEA8FE5F79DB484AE2B14C3701C10F_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* WXRDevice_t771D8AE648B6DB95A8C9A67C7198DBD6074DB8B1_il2cpp_TypeInfo_var;
@@ -463,13 +436,13 @@ IL2CPP_EXTERN_C RuntimeClass* wvr_tA5CEC116602B8FB20704C1BA4FB8A128AB020F8D_il2c
 IL2CPP_EXTERN_C RuntimeField* U3CPrivateImplementationDetailsU3E_tA47DFB5F37EEDF54A5632727E01AD47E87FA0126____5D85718EC594B982C252D0279E5966FFCA33A5EAF2A455038D3AB331FDE70CEA_0_FieldInfo_var;
 IL2CPP_EXTERN_C String_t* _stringLiteral006EFB4F0D99E52C049C0DAE29C31368A44EF6AA;
 IL2CPP_EXTERN_C String_t* _stringLiteral00B28FF06B788B9B67C6B259800F404F9F3761FD;
-IL2CPP_EXTERN_C String_t* _stringLiteral02EDE63E3888B6FFBB20639A14174478CEB4B364;
 IL2CPP_EXTERN_C String_t* _stringLiteral030446356E50587B3FCFDEF44C9E4CA0B7E5BD8F;
 IL2CPP_EXTERN_C String_t* _stringLiteral0369B88427AF8D6BA858170C598B27DCCED7DBE2;
 IL2CPP_EXTERN_C String_t* _stringLiteral0718F1352532AAE8AF17217B908695C640E6E8A1;
 IL2CPP_EXTERN_C String_t* _stringLiteral0732F133C0F0E5E1F94E9A4A69A261EB11619C4A;
 IL2CPP_EXTERN_C String_t* _stringLiteral07D3E8CF985D8B6746FDABABE3055932B03B2077;
 IL2CPP_EXTERN_C String_t* _stringLiteral092342EA4A1ACAF46E37A27233F75FFB31884052;
+IL2CPP_EXTERN_C String_t* _stringLiteral098F8A4779DBC39DF7367A03881E99F26B45FFC9;
 IL2CPP_EXTERN_C String_t* _stringLiteral099E8F6C9BED4EFA790D5858510EE006879B49FE;
 IL2CPP_EXTERN_C String_t* _stringLiteral09C7F4F9D456A44D2A8B20A818F795B573360C46;
 IL2CPP_EXTERN_C String_t* _stringLiteral0C36817481A8A8F7170B13DF8A9B8C5D0C3B70BA;
@@ -481,67 +454,61 @@ IL2CPP_EXTERN_C String_t* _stringLiteral157A71014B374913FB1A7E367187C0C8CA55C44A
 IL2CPP_EXTERN_C String_t* _stringLiteral166B47F1C7666B6C7852DD333AA69D5C72E62B5D;
 IL2CPP_EXTERN_C String_t* _stringLiteral171C968203444A5EABECCC8C2AF61A9385E49743;
 IL2CPP_EXTERN_C String_t* _stringLiteral1C16D58EA264CBCD7FE75A3966341C5D911FC919;
-IL2CPP_EXTERN_C String_t* _stringLiteral1E306F2FF88B3EF30CA36910355714B9FDAF39E5;
+IL2CPP_EXTERN_C String_t* _stringLiteral1D8D175CFF10865393C8B56F7ADE518D69A05F04;
 IL2CPP_EXTERN_C String_t* _stringLiteral1E3AB111E5D6F14B0C1D53B657F49E4F6AE469F0;
-IL2CPP_EXTERN_C String_t* _stringLiteral1F417135E74860F18CC7FEEE1CEDB5486AEA8443;
 IL2CPP_EXTERN_C String_t* _stringLiteral1F55274EC8AB664993C7E308EED424DCEE5F791C;
 IL2CPP_EXTERN_C String_t* _stringLiteral1F879FF56E7176F2212004F8C83D5A8997ACC052;
 IL2CPP_EXTERN_C String_t* _stringLiteral2386E77CF610F786B06A91AF2C1B3FD2282D2745;
 IL2CPP_EXTERN_C String_t* _stringLiteral2864D56010900F3C58341AE6B937188E7F50D7BB;
 IL2CPP_EXTERN_C String_t* _stringLiteral2B059F8C4F2F836A772067F3B982E239783E0386;
-IL2CPP_EXTERN_C String_t* _stringLiteral2B2F84FCC4B8E2546C6D3F555EF41D06FB0A820A;
 IL2CPP_EXTERN_C String_t* _stringLiteral2BA0A5FC5480FE9917E00A23283E02B76EBCB997;
 IL2CPP_EXTERN_C String_t* _stringLiteral2F25C0E879963DB30EA0AF92409A9008AC2B49A1;
 IL2CPP_EXTERN_C String_t* _stringLiteral2FB7AA8BBF5BD690367F5418DE81DF2D900EA3E9;
 IL2CPP_EXTERN_C String_t* _stringLiteral301B20EF1D5DD6FDEEB6BEACABEEFD3B706ABAB8;
 IL2CPP_EXTERN_C String_t* _stringLiteral30B68DFF1499E7F39F97C03C28B996E406BCC729;
-IL2CPP_EXTERN_C String_t* _stringLiteral31CDE7EA5DADA0B66B5197862E8CB0B4B419D4A9;
 IL2CPP_EXTERN_C String_t* _stringLiteral326060DF21CE68AD1E662ED45E22EA49EB6BD4AB;
 IL2CPP_EXTERN_C String_t* _stringLiteral32C3C4AE250B0499299A9ECB7523690CEBFE8C80;
 IL2CPP_EXTERN_C String_t* _stringLiteral33A37EAB154E6F66768A75F47F94A690B0BEBBFA;
 IL2CPP_EXTERN_C String_t* _stringLiteral3666C3FAE101F3019D8FE851DC597D18711FC60F;
-IL2CPP_EXTERN_C String_t* _stringLiteral39E8508782A92F848E97D10E6D820A71061DC562;
 IL2CPP_EXTERN_C String_t* _stringLiteral3E5DE95E380B0BCF11C8DF23780BB8AD465C0FA5;
 IL2CPP_EXTERN_C String_t* _stringLiteral3EEEC4255485C3AB0DAC127E77E18CC6DBAC28B9;
+IL2CPP_EXTERN_C String_t* _stringLiteral3F45847426A5CCEBD2A2226DC7D1EA311A3121E7;
 IL2CPP_EXTERN_C String_t* _stringLiteral3FC7A0E9250495782F6A96F2CCB34E05DCE015A4;
 IL2CPP_EXTERN_C String_t* _stringLiteral4322BECA8C39D2A3FBF16D72C2EC4A6F3460DD80;
+IL2CPP_EXTERN_C String_t* _stringLiteral43D1AE57667F16420A902D179524489E608F1BBB;
 IL2CPP_EXTERN_C String_t* _stringLiteral46F5AE2B0C48CA135A458314ECA6CF45E6C85BCD;
 IL2CPP_EXTERN_C String_t* _stringLiteral479812E99B34F71B53D739654E8E2BE1B8048F78;
-IL2CPP_EXTERN_C String_t* _stringLiteral4A17D806C8BB572731BFDD50B0456BCA3D4A3451;
 IL2CPP_EXTERN_C String_t* _stringLiteral4A1D1916AF55E717E2002028F055BE17BDB5F8E0;
 IL2CPP_EXTERN_C String_t* _stringLiteral4A9E7F59B5AE6FA43F2E121C2F450EB76E44AF76;
 IL2CPP_EXTERN_C String_t* _stringLiteral4AB488C06097C085038030708AF7DF60AB1E37E8;
 IL2CPP_EXTERN_C String_t* _stringLiteral5002E2C0EA6AF4EE77E9599A702BF5FB415D9C9F;
-IL2CPP_EXTERN_C String_t* _stringLiteral528DE0EF5DE2BE746BBDF28AEDBBCBB6F23F2255;
+IL2CPP_EXTERN_C String_t* _stringLiteral51A8FF8E280CC099C1F7178FAB191DDA1CF694BA;
 IL2CPP_EXTERN_C String_t* _stringLiteral532E2DD96209592BE51199D6BC7674294DBB4C09;
 IL2CPP_EXTERN_C String_t* _stringLiteral5357C49E147B2CE2A9FC1C0728EC73D8E57FE935;
 IL2CPP_EXTERN_C String_t* _stringLiteral536EE7EC962721792F5B244FDC6F1CC925161129;
 IL2CPP_EXTERN_C String_t* _stringLiteral549B9D496B9C9EDE7280BA216D09059C895E4ECB;
-IL2CPP_EXTERN_C String_t* _stringLiteral55C8C3FC613FBD3D2E508468EF8ECD60110896C2;
 IL2CPP_EXTERN_C String_t* _stringLiteral565EE14AE369656E1E6FDD85026E3A31D653F6DC;
+IL2CPP_EXTERN_C String_t* _stringLiteral56E72C17B6BC27637F9BFE2D9CA774AD88A7F454;
 IL2CPP_EXTERN_C String_t* _stringLiteral581A9DA366A9EAE486807B21C88C306F2764D8A5;
 IL2CPP_EXTERN_C String_t* _stringLiteral58E2F0F6A765EA2782DADD10478DC159143EFCFE;
 IL2CPP_EXTERN_C String_t* _stringLiteral59BB1C1C75B3FA12DD74948F767AC43110152AFB;
 IL2CPP_EXTERN_C String_t* _stringLiteral5A553A030FC372670394A5F6013D91A8BA9BAE9F;
-IL2CPP_EXTERN_C String_t* _stringLiteral5E2DD2B20C2D8172B51DCAD723DD424929A7F36A;
+IL2CPP_EXTERN_C String_t* _stringLiteral5DACB1929F40B4B9D63CA5DD140F5A0B3B71DDFC;
 IL2CPP_EXTERN_C String_t* _stringLiteral5EFE4646979B4FE226DD9281CBB33148DDB09D66;
 IL2CPP_EXTERN_C String_t* _stringLiteral631DCCC7D86B3019E03AB183FDDAF679518F901D;
 IL2CPP_EXTERN_C String_t* _stringLiteral64A3316AD12AC63CF6B5B8FE3FD6A11F188620FD;
 IL2CPP_EXTERN_C String_t* _stringLiteral64ECF1C31ABEF4041D1968D233F21D5525375FED;
 IL2CPP_EXTERN_C String_t* _stringLiteral651EE9C428F9195F9A57AFAEC10CE570D4A99967;
-IL2CPP_EXTERN_C String_t* _stringLiteral68326D5FE1F4795FEE9432362D41C9814B3D76EF;
 IL2CPP_EXTERN_C String_t* _stringLiteral69C6E51BA1D51D81632FC5079769C1B37B6F5198;
-IL2CPP_EXTERN_C String_t* _stringLiteral6A15148CBF6756D102DA3F3E13E03435FBC4B08A;
 IL2CPP_EXTERN_C String_t* _stringLiteral6DCDF7E8C4C2D53DAD1B21D77E6E0CA655812676;
 IL2CPP_EXTERN_C String_t* _stringLiteral70C733E1CA6A696A3F523A9664C2A1CC7117EAE5;
 IL2CPP_EXTERN_C String_t* _stringLiteral73378736353DB8AE60A28FED3E631D2906A17821;
-IL2CPP_EXTERN_C String_t* _stringLiteral74B72255061385EDF22E501D953B0A772D33371B;
 IL2CPP_EXTERN_C String_t* _stringLiteral74CE220694F84EB5326FFFEA3D4BCCFE8834E434;
 IL2CPP_EXTERN_C String_t* _stringLiteral758733BDBED83CBFF4F635AC26CA92AAE477F75D;
 IL2CPP_EXTERN_C String_t* _stringLiteral76D6BE1C6DCE46870C1F6DAAB0C1B31559BC90A6;
 IL2CPP_EXTERN_C String_t* _stringLiteral786005DE4637299FBBE8E1A0BBE4766F6CE2D72F;
 IL2CPP_EXTERN_C String_t* _stringLiteral7A271AF6AD7BD221B6C276A207CBBFFE639CF1EB;
-IL2CPP_EXTERN_C String_t* _stringLiteral7AD3E5763C9BF9CF942E9089D4EEDA77A35AAB7E;
+IL2CPP_EXTERN_C String_t* _stringLiteral7B278367F7D00A96FF817A43542FCB64B3C80FAD;
 IL2CPP_EXTERN_C String_t* _stringLiteral7DA722CA735FA0233FE20FFF767742DC2125B27A;
 IL2CPP_EXTERN_C String_t* _stringLiteral7DBBD6DA91C2A6AD4D81FAAFE1E95F2CF265AB2E;
 IL2CPP_EXTERN_C String_t* _stringLiteral83F9E3B56B93C254B53731370DA78F943EAB456C;
@@ -553,25 +520,22 @@ IL2CPP_EXTERN_C String_t* _stringLiteral8C6C012E1A3968C87629F335AF36F777F8D54AEB
 IL2CPP_EXTERN_C String_t* _stringLiteral8CE31708BD438A7502CF439FB598B800E06694C0;
 IL2CPP_EXTERN_C String_t* _stringLiteral8D29AF9F961C79829DF4FC63A6B7F84E12C0CD9F;
 IL2CPP_EXTERN_C String_t* _stringLiteral8D77B9A561F9690847E4130DA1987B140C06E404;
+IL2CPP_EXTERN_C String_t* _stringLiteral8F87F3C659C6553C3FB3C314F018CCE4BA277C9D;
 IL2CPP_EXTERN_C String_t* _stringLiteral8FD7E8782FA3255ED7A7B6D40B06EA05F7B7CA87;
 IL2CPP_EXTERN_C String_t* _stringLiteral9134D22093ACFA191D776D053F709D4F466E2459;
 IL2CPP_EXTERN_C String_t* _stringLiteral96A661D0ADF2803385AB2A6A300C532DD19CD60A;
 IL2CPP_EXTERN_C String_t* _stringLiteral986DB1C107584803CF898B4AF1677C90E8620BE7;
 IL2CPP_EXTERN_C String_t* _stringLiteral98A3E9ED9EADD45B05D4568515FCA0A69EC2545F;
 IL2CPP_EXTERN_C String_t* _stringLiteral98CB9D596CB18F3B1ED72CDC3CEF3BD76F6ACD37;
-IL2CPP_EXTERN_C String_t* _stringLiteral99A89C7B49A207FE7B37E4443489D2D2AC8713BB;
-IL2CPP_EXTERN_C String_t* _stringLiteral9B19516519BDF95A5666A9CB8FF76FCB1E05B532;
-IL2CPP_EXTERN_C String_t* _stringLiteral9BED417E1566466FEE6C35E61D3A2030A3D973E5;
 IL2CPP_EXTERN_C String_t* _stringLiteral9F53C07F42A6321A5DA6D91CDFD347F509A8F28F;
 IL2CPP_EXTERN_C String_t* _stringLiteralA16A89FC80531A43F93AFAB26F29F8B10FDBC4F3;
 IL2CPP_EXTERN_C String_t* _stringLiteralA27D8AF87458CAE121BE785206BAAB3914084821;
 IL2CPP_EXTERN_C String_t* _stringLiteralA4B29F3ADC4FF5F06E6A846CB73B68ACB17AE000;
-IL2CPP_EXTERN_C String_t* _stringLiteralA6A2564619B6F2FC35B19B51B972B6109F2EFAC4;
 IL2CPP_EXTERN_C String_t* _stringLiteralA8B301B932D4FD174E40266D19F328E8542DFCF6;
-IL2CPP_EXTERN_C String_t* _stringLiteralAA505DB69D890A8314E9268D4E59D1C44293AB9D;
 IL2CPP_EXTERN_C String_t* _stringLiteralAAAAC2AC92EFC87CB8C9A5B3EE84953C7AE822C4;
 IL2CPP_EXTERN_C String_t* _stringLiteralAD1D3BEB6CEE32007452632E87EBF477C479F01A;
 IL2CPP_EXTERN_C String_t* _stringLiteralAF121B2958A9006EB46FB7DED642ECC778371EDD;
+IL2CPP_EXTERN_C String_t* _stringLiteralAF19D49FBC442F77B011D87292BB970BD8415665;
 IL2CPP_EXTERN_C String_t* _stringLiteralAF23F172CC3EA036D5377F6F0D31D6A55D336068;
 IL2CPP_EXTERN_C String_t* _stringLiteralAFEC189223B7923254661BE260BA0B2EC8D965A9;
 IL2CPP_EXTERN_C String_t* _stringLiteralB0355BE2B001C5B8C1E34968A1A6BCF15542C580;
@@ -581,7 +545,6 @@ IL2CPP_EXTERN_C String_t* _stringLiteralB3F14BF976EFD974E34846B742502C802FABAE9D
 IL2CPP_EXTERN_C String_t* _stringLiteralB5DDE94BDDD6DA3125D838A0A5C4C8D7E5AAFBF6;
 IL2CPP_EXTERN_C String_t* _stringLiteralB7C8D35DBE745919EC7FA75CD9AFB1AE9C774DC4;
 IL2CPP_EXTERN_C String_t* _stringLiteralB8DAE6DEF3CE6685AD2FE8C570D7271B5A88E0FA;
-IL2CPP_EXTERN_C String_t* _stringLiteralB9E5971E63411DA52451A9B653672581A1F7F8A3;
 IL2CPP_EXTERN_C String_t* _stringLiteralBB9E2BA96D3F7F910549AC5DB6967191AC919101;
 IL2CPP_EXTERN_C String_t* _stringLiteralBBF2DC3D0991BFEE6D54156A0FC5E0E9445ADB4A;
 IL2CPP_EXTERN_C String_t* _stringLiteralBC87A8CABB18BBA2DA5E7B48B4DF40BF53ECDB5D;
@@ -589,7 +552,6 @@ IL2CPP_EXTERN_C String_t* _stringLiteralBD900C326F64E47A9102E06E1363CDF90F93BD77
 IL2CPP_EXTERN_C String_t* _stringLiteralBDA3A334D6EBC2825481FA02D53644826995E544;
 IL2CPP_EXTERN_C String_t* _stringLiteralC048BBCEBFF1E9895CFFF62411491F30B811E922;
 IL2CPP_EXTERN_C String_t* _stringLiteralC5865BB18466FD966BCDFDBC38004F0F89C1AEE2;
-IL2CPP_EXTERN_C String_t* _stringLiteralC7DEEF181F54598572511BB41BC5214B97BB3715;
 IL2CPP_EXTERN_C String_t* _stringLiteralC9318ABABC85A86659FA070EB1198FF04FEC1462;
 IL2CPP_EXTERN_C String_t* _stringLiteralCFFC73E3686DFF002682F9D22A2BC88C5D1F2B3C;
 IL2CPP_EXTERN_C String_t* _stringLiteralD0F6DCE82CE9F2270E8607B6B688075D78BB0D16;
@@ -598,30 +560,32 @@ IL2CPP_EXTERN_C String_t* _stringLiteralD354950AB5553F2942663413D6FC0DCEE7FD3BD4
 IL2CPP_EXTERN_C String_t* _stringLiteralD7B2B47EE2BD67F0A122044554B86A71A7C991AD;
 IL2CPP_EXTERN_C String_t* _stringLiteralD7DA6B1258DAA1C4BCBE5B9CE4EC5C165DC0CD7F;
 IL2CPP_EXTERN_C String_t* _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709;
-IL2CPP_EXTERN_C String_t* _stringLiteralDA6E6A2BC0B9BBA60907FA993DD41EEDC3168036;
 IL2CPP_EXTERN_C String_t* _stringLiteralDB2112BEB6D1E0CEA164C874E719BD609DA61CDB;
 IL2CPP_EXTERN_C String_t* _stringLiteralDBBCAE808E76B86E1E20D5CF6A51B344A96E5326;
 IL2CPP_EXTERN_C String_t* _stringLiteralDC2CDAF31397B7B189BE1FFB326FE90BB2050EB9;
 IL2CPP_EXTERN_C String_t* _stringLiteralDDBE2B776A84D75985D5AA31C38746B033B8AE20;
+IL2CPP_EXTERN_C String_t* _stringLiteralE166C9564FBDE461738077E3B1B506525EB6ACCC;
 IL2CPP_EXTERN_C String_t* _stringLiteralE1B47DC41C1F6F09F285C46F06EE2A2ABE8B0DFA;
 IL2CPP_EXTERN_C String_t* _stringLiteralE228B5FE036EFC5EE5AB3AAF7963AE422F514394;
 IL2CPP_EXTERN_C String_t* _stringLiteralE75E612CD08A672C45D3C7EF4D3C003721A7F199;
 IL2CPP_EXTERN_C String_t* _stringLiteralE8477F991B91E12B387117B63318857E07F96366;
 IL2CPP_EXTERN_C String_t* _stringLiteralE8D31ED1931BFABC366350E1EE40562631A3B5CE;
+IL2CPP_EXTERN_C String_t* _stringLiteralE9147E9E17E7A19569168962EEDD0C19E02A2725;
 IL2CPP_EXTERN_C String_t* _stringLiteralE9F8DE4BECF3649D4C19444B0361907ACA4F3B3C;
 IL2CPP_EXTERN_C String_t* _stringLiteralEA06B3FAEB1638A5812A56A07DEFB21D6AB902DB;
-IL2CPP_EXTERN_C String_t* _stringLiteralED565A972452E9F9D4B155561336FB97EE79DAB8;
+IL2CPP_EXTERN_C String_t* _stringLiteralEA3EE92B86AF5F061AEB38B1382362D92683F962;
+IL2CPP_EXTERN_C String_t* _stringLiteralEBD579DCEEC564BEA150613A9E3AE6C7DC2E6516;
+IL2CPP_EXTERN_C String_t* _stringLiteralEDC508C9C0B8CCA8F5B410A10C3EB05B7817C5BF;
 IL2CPP_EXTERN_C String_t* _stringLiteralF04B14692D34C5AE03B28783F6E6C15A36C21F0F;
+IL2CPP_EXTERN_C String_t* _stringLiteralF289538A91A7D933B13FCDB598703D47187D3D4F;
 IL2CPP_EXTERN_C String_t* _stringLiteralF46C2482196AAE6B293651D339A6863126E37796;
 IL2CPP_EXTERN_C String_t* _stringLiteralF4877C5E2DD71DCABFC9A7F71CCD5FE87C2BEEE6;
 IL2CPP_EXTERN_C String_t* _stringLiteralF624264394DC303105B7DAE6B7F18F76D0BFD7ED;
-IL2CPP_EXTERN_C String_t* _stringLiteralF652530F436891F11688FEBD3FF6C4B433BAAC82;
 IL2CPP_EXTERN_C String_t* _stringLiteralF8D3434EBE3CED93E00BE983680003548BC0523A;
 IL2CPP_EXTERN_C String_t* _stringLiteralF97FD8B80103BECE1EF6F3E2F1630FCE6617406A;
 IL2CPP_EXTERN_C String_t* _stringLiteralF9AD4FD4AEB30A7880F6ABD1C85EFFFBF090656D;
 IL2CPP_EXTERN_C String_t* _stringLiteralFCEFCBA3E8520D69AFB81EAF4DA52367176EBD5A;
 IL2CPP_EXTERN_C String_t* _stringLiteralFD4EB47BC4A714E37F6E8B56C01AA419761ED18A;
-IL2CPP_EXTERN_C String_t* _stringLiteralFFCE80EB50C7320E3DEBC7CF92674A39FD2D28B2;
 IL2CPP_EXTERN_C const RuntimeMethod* AnimatorTrackingMenu_CalibrationStatusCallback_m7B129D9FF7EBC5CB0B94B83F190AC37EBEEF328D_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* AvatarTrackingMenu_CalibrationStatusCallback_mAFF5A1A9FAC57C4C8B3AB2F5D7B2067A559E81FF_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* BodyTrackerPose_OnTrackerConnectionChange_mD97A996C708985024232D22680784B7DE1519BFB_RuntimeMethod_var;
@@ -629,14 +593,8 @@ IL2CPP_EXTERN_C const RuntimeMethod* BodyTrackingMenu_CalibrationStatusCallback_
 IL2CPP_EXTERN_C const RuntimeMethod* Component_GetComponentInChildren_TisText_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62_m1D5533D50D961602AC2CD364E03388FFE2985259_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Component_GetComponent_TisText_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62_mB85C5C0EEF6535E3FC0DBFC14E39FA5A51B6F888_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Dictionary_2_Add_mB4188693CC0380B4379AD11973388D24513EBA65_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* Dictionary_2_Add_mF4F1D1AED134AAF2507EFCD3F376C7554AF611A4_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* Dictionary_2_ContainsKey_mB1DD086C3362A9E8CA6398A7697768728598193F_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* Dictionary_2_Remove_m0EBAD94576B92633974EBF7ADB2987F8E533014E_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* Dictionary_2__ctor_m73855285B997792A7ED75A3332DD9AE97C5C5D19_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Dictionary_2__ctor_mED541DD7021715374D8C8CB77DDAD6670AABF024_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Dictionary_2_get_Item_m6ACAD001029E053754B20A2759DFF95D705E3CE5_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* Dictionary_2_get_Item_m6C7BE1B1AA3F7676AC6FFA6170ADE1D476FF745C_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* Dictionary_2_set_Item_m99739B1F83C571AFAE15AE51A91177FB2EAA1937_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* List_1_Add_mF10DB1D3CBB0B14215F0E4F8AB4934A1955E5351_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* List_1__ctor_mCA8DD57EAC70C2B5923DBB9D5A77CEAC22E7068E_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* List_1_get_Count_mB63183A9151F4345A9DD444A7CBE0D6E03F77C7C_RuntimeMethod_var;
@@ -644,12 +602,10 @@ IL2CPP_EXTERN_C const RuntimeMethod* List_1_get_Item_m21AEC50E791371101DC22ABCF9
 IL2CPP_EXTERN_C const RuntimeMethod* Srdp_OnTrackerConnected_m3B964693B8D90CE0EBF8D3CF718950FC2F07C175_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Srdp_OnTrackerDisconnected_m7DA1F0760BB2E301C6EC9977FEDFB1DEC67AF2F1_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* U3CStartBodyTrackingU3Ed__32_System_Collections_IEnumerator_Reset_m4BC8A22685724D4C34233900C03290C5D57BDAAD_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* U3CStartBodyTrackingU3Ed__41_System_Collections_IEnumerator_Reset_m984D1038D5170A3931EF00A1AA520CC9A4E531B9_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* U3CStartFixUpdateBodyTrackingU3Ed__31_System_Collections_IEnumerator_Reset_m6065E3935E0E706569EDA1AC54ABCF9AD1594634_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* U3CStartRenderUpdateBodyTrackingU3Ed__30_System_Collections_IEnumerator_Reset_m4555A04902627625D845C69B5819CED1BCC8D9BC_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* U3CUpdatePoseU3Ed__4_System_Collections_IEnumerator_Reset_m5D4C0A403FEC181A5DD8ED24497D8292AF81052A_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* U3CUpdatePoseU3Ed__5_System_Collections_IEnumerator_Reset_m83ABA3182CD6D3D3BF3AD5D1293167C6ED91B60C_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* U3CUpdatePoseU3Ed__5_System_Collections_IEnumerator_Reset_mBC5F08D6168F5AC88A45923BC069EA72CECBF2EB_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* U3CUpdatePoseU3Ed__5_System_Collections_IEnumerator_Reset_mEBCE082C9F98E9417B78D2E56183BA4B51643B2C_RuntimeMethod_var;
 struct Delegate_t_marshaled_com;
 struct Delegate_t_marshaled_pinvoke;
 struct Exception_t_marshaled_com;
@@ -669,31 +625,6 @@ IL2CPP_EXTERN_C_END
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-
-// System.Collections.Generic.Dictionary`2<Wave.Essence.BodyTracking.RolePoseType,Wave.Essence.BodyTracking.RolePose>
-struct Dictionary_2_t4D42736F171A409CC8E74C010E98CD26C81E4BD4  : public RuntimeObject
-{
-	// System.Int32[] System.Collections.Generic.Dictionary`2::_buckets
-	Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* ____buckets_0;
-	// System.Collections.Generic.Dictionary`2/Entry<TKey,TValue>[] System.Collections.Generic.Dictionary`2::_entries
-	EntryU5BU5D_t81BFF3D05D2B03DC8B155D1C3B6E84536E7F6D0A* ____entries_1;
-	// System.Int32 System.Collections.Generic.Dictionary`2::_count
-	int32_t ____count_2;
-	// System.Int32 System.Collections.Generic.Dictionary`2::_freeList
-	int32_t ____freeList_3;
-	// System.Int32 System.Collections.Generic.Dictionary`2::_freeCount
-	int32_t ____freeCount_4;
-	// System.Int32 System.Collections.Generic.Dictionary`2::_version
-	int32_t ____version_5;
-	// System.Collections.Generic.IEqualityComparer`1<TKey> System.Collections.Generic.Dictionary`2::_comparer
-	RuntimeObject* ____comparer_6;
-	// System.Collections.Generic.Dictionary`2/KeyCollection<TKey,TValue> System.Collections.Generic.Dictionary`2::_keys
-	KeyCollection_t8BC7C5AD2620745909278686D1D9E224E14A8326* ____keys_7;
-	// System.Collections.Generic.Dictionary`2/ValueCollection<TKey,TValue> System.Collections.Generic.Dictionary`2::_values
-	ValueCollection_t05481E744AB3BD9300252FA459796F3622425D30* ____values_8;
-	// System.Object System.Collections.Generic.Dictionary`2::_syncRoot
-	RuntimeObject* ____syncRoot_9;
-};
 
 // System.Collections.Generic.Dictionary`2<Wave.Essence.BodyTracking.RuntimeDependency.TrackerType,System.Collections.Generic.List`1<System.String>>
 struct Dictionary_2_t74870F77CFCCD6C60FF43F1C6AB7FC8212E869FA  : public RuntimeObject
@@ -746,6 +677,11 @@ struct List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD  : public RuntimeObject
 	RuntimeObject* ____syncRoot_4;
 };
 
+// Wave.Essence.BodyTracking.Demo.BTDemoHelper
+struct BTDemoHelper_t8BFD6CA0328EFDA405C2D79785ACEAAB7E6CAE55  : public RuntimeObject
+{
+};
+
 // Wave.Essence.BodyTracking.RuntimeDependency.Rdp
 struct Rdp_t4E601F118A55EF303082C42F62229A8DC6D948BE  : public RuntimeObject
 {
@@ -788,11 +724,6 @@ struct ReaderWriterLockSlim_t3BF29C18C9FC0EE07209EDD54D938EA473FB3906  : public 
 	uint32_t ___owners_21;
 	// System.Boolean System.Threading.ReaderWriterLockSlim::fDisposed
 	bool ___fDisposed_27;
-};
-
-// Wave.Essence.BodyTracking.RolePoseProvider
-struct RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C  : public RuntimeObject
-{
 };
 
 // System.String
@@ -880,24 +811,6 @@ struct U3CStartBodyTrackingU3Ed__32_tD75BC8B5F3ACCD4FA201283FF7949FEFD5393B33  :
 	uint8_t ___U3CresultU3E5__2_3;
 };
 
-// Wave.Essence.BodyTracking.BodyRoleData/TrackerIndexBase
-struct TrackerIndexBase_t768ED669DED93CE00FF25C67C43315B1730AAAB3  : public RuntimeObject
-{
-	// Wave.Essence.BodyTracking.RuntimeDependency.TrackerLocation Wave.Essence.BodyTracking.BodyRoleData/TrackerIndexBase::location
-	int32_t ___location_0;
-	// System.UInt32 Wave.Essence.BodyTracking.BodyRoleData/TrackerIndexBase::trackerId
-	uint32_t ___trackerId_1;
-};
-
-// Wave.Essence.BodyTracking.BodyRoleData/TrackerTypeBase
-struct TrackerTypeBase_t686FCEF20967E3CDF632B5174088352DC0D72E46  : public RuntimeObject
-{
-	// Wave.Essence.BodyTracking.RuntimeDependency.TrackerLocation Wave.Essence.BodyTracking.BodyRoleData/TrackerTypeBase::location
-	int32_t ___location_0;
-	// Wave.Essence.BodyTracking.RuntimeDependency.TrackerType Wave.Essence.BodyTracking.BodyRoleData/TrackerTypeBase::type
-	uint32_t ___type_1;
-};
-
 // Wave.Essence.BodyTracking.Demo.BodyTrackingSample/<StartBodyTracking>d__41
 struct U3CStartBodyTrackingU3Ed__41_t4040ACE24B90527EA05CCF98736A60F606F97025  : public RuntimeObject
 {
@@ -931,39 +844,6 @@ struct Head_t836EDBBC90253B38411B9013F206C88D02BFBC64  : public RuntimeObject
 // Wave.Essence.BodyTracking.RuntimeDependency.Rdp/Tracker
 struct Tracker_tBDBCFCFE476A17CE16E98D933055E5EC9E1B8D12  : public RuntimeObject
 {
-};
-
-// Wave.Essence.BodyTracking.RolePoseController/<UpdatePose>d__5
-struct U3CUpdatePoseU3Ed__5_tF3C5AB469CDEA8FE5F79DB484AE2B14C3701C10F  : public RuntimeObject
-{
-	// System.Int32 Wave.Essence.BodyTracking.RolePoseController/<UpdatePose>d__5::<>1__state
-	int32_t ___U3CU3E1__state_0;
-	// System.Object Wave.Essence.BodyTracking.RolePoseController/<UpdatePose>d__5::<>2__current
-	RuntimeObject* ___U3CU3E2__current_1;
-	// Wave.Essence.BodyTracking.RolePoseController Wave.Essence.BodyTracking.RolePoseController/<UpdatePose>d__5::<>4__this
-	RolePoseController_t706AE56FE73EFD4EA44F938D506D6CFE2A934DB9* ___U3CU3E4__this_2;
-};
-
-// Wave.Essence.BodyTracking.RolePoseHand/<UpdatePose>d__5
-struct U3CUpdatePoseU3Ed__5_t1DEA6962212108D9FF7E4207A17B66687915677F  : public RuntimeObject
-{
-	// System.Int32 Wave.Essence.BodyTracking.RolePoseHand/<UpdatePose>d__5::<>1__state
-	int32_t ___U3CU3E1__state_0;
-	// System.Object Wave.Essence.BodyTracking.RolePoseHand/<UpdatePose>d__5::<>2__current
-	RuntimeObject* ___U3CU3E2__current_1;
-	// Wave.Essence.BodyTracking.RolePoseHand Wave.Essence.BodyTracking.RolePoseHand/<UpdatePose>d__5::<>4__this
-	RolePoseHand_t1077BA77E30CBE89252EAB5A70028A3F86442B5E* ___U3CU3E4__this_2;
-};
-
-// Wave.Essence.BodyTracking.RolePoseHead/<UpdatePose>d__4
-struct U3CUpdatePoseU3Ed__4_t809F8C7D7C2795583AE5A68953F4326F21D94291  : public RuntimeObject
-{
-	// System.Int32 Wave.Essence.BodyTracking.RolePoseHead/<UpdatePose>d__4::<>1__state
-	int32_t ___U3CU3E1__state_0;
-	// System.Object Wave.Essence.BodyTracking.RolePoseHead/<UpdatePose>d__4::<>2__current
-	RuntimeObject* ___U3CU3E2__current_1;
-	// Wave.Essence.BodyTracking.RolePoseHead Wave.Essence.BodyTracking.RolePoseHead/<UpdatePose>d__4::<>4__this
-	RolePoseHead_tA28A41EADF5B284248557F43EC13EAAF7513F8EB* ___U3CU3E4__this_2;
 };
 
 // Wave.Essence.BodyTracking.RolePoseTracker/<UpdatePose>d__5
@@ -2009,103 +1889,6 @@ struct RuntimeFieldHandle_t6E4C45B6D2EA12FC99185805A7E77527899B25C5
 	intptr_t ___value_0;
 };
 
-// Wave.Essence.BodyTracking.TrackedDevicePose
-struct TrackedDevicePose_t6C997B56E38666F733216FCED72A96A703FFCA7B 
-{
-	union
-	{
-		#pragma pack(push, tp, 1)
-		struct
-		{
-			// Wave.Essence.BodyTracking.TrackedDeviceRole Wave.Essence.BodyTracking.TrackedDevicePose::trackedDeviceRole
-			int32_t ___trackedDeviceRole_0;
-		};
-		#pragma pack(pop, tp)
-		struct
-		{
-			int32_t ___trackedDeviceRole_0_forAlignmentOnly;
-		};
-		#pragma pack(push, tp, 1)
-		struct
-		{
-			char ___poseState_1_OffsetPadding[4];
-			// Wave.Essence.BodyTracking.PoseState Wave.Essence.BodyTracking.TrackedDevicePose::poseState
-			uint32_t ___poseState_1;
-		};
-		#pragma pack(pop, tp)
-		struct
-		{
-			char ___poseState_1_OffsetPadding_forAlignmentOnly[4];
-			uint32_t ___poseState_1_forAlignmentOnly;
-		};
-		#pragma pack(push, tp, 1)
-		struct
-		{
-			char ___translation_2_OffsetPadding[8];
-			// UnityEngine.Vector3 Wave.Essence.BodyTracking.TrackedDevicePose::translation
-			Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___translation_2;
-		};
-		#pragma pack(pop, tp)
-		struct
-		{
-			char ___translation_2_OffsetPadding_forAlignmentOnly[8];
-			Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___translation_2_forAlignmentOnly;
-		};
-		#pragma pack(push, tp, 1)
-		struct
-		{
-			char ___velocity_3_OffsetPadding[20];
-			// UnityEngine.Vector3 Wave.Essence.BodyTracking.TrackedDevicePose::velocity
-			Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___velocity_3;
-		};
-		#pragma pack(pop, tp)
-		struct
-		{
-			char ___velocity_3_OffsetPadding_forAlignmentOnly[20];
-			Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___velocity_3_forAlignmentOnly;
-		};
-		#pragma pack(push, tp, 1)
-		struct
-		{
-			char ___angularVelocity_4_OffsetPadding[32];
-			// UnityEngine.Vector3 Wave.Essence.BodyTracking.TrackedDevicePose::angularVelocity
-			Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___angularVelocity_4;
-		};
-		#pragma pack(pop, tp)
-		struct
-		{
-			char ___angularVelocity_4_OffsetPadding_forAlignmentOnly[32];
-			Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___angularVelocity_4_forAlignmentOnly;
-		};
-		#pragma pack(push, tp, 1)
-		struct
-		{
-			char ___acceleration_5_OffsetPadding[44];
-			// UnityEngine.Vector3 Wave.Essence.BodyTracking.TrackedDevicePose::acceleration
-			Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___acceleration_5;
-		};
-		#pragma pack(pop, tp)
-		struct
-		{
-			char ___acceleration_5_OffsetPadding_forAlignmentOnly[44];
-			Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___acceleration_5_forAlignmentOnly;
-		};
-		#pragma pack(push, tp, 1)
-		struct
-		{
-			char ___rotation_6_OffsetPadding[56];
-			// UnityEngine.Quaternion Wave.Essence.BodyTracking.TrackedDevicePose::rotation
-			Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 ___rotation_6;
-		};
-		#pragma pack(pop, tp)
-		struct
-		{
-			char ___rotation_6_OffsetPadding_forAlignmentOnly[56];
-			Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 ___rotation_6_forAlignmentOnly;
-		};
-	};
-};
-
 // Wave.Essence.BodyTracking.TransformData
 struct TransformData_t724B15ECF31475454D59E4425AAE2ED57CA32171 
 {
@@ -2898,15 +2681,6 @@ struct WVR_TrackerInputEvent_t1A2221440205F517B7904F6B3D57D60D771E7E9F
 	WVR_TrackerEvent_t_tD72106167A763CE6A14794966CC7FF5341A498A0 ___tracker_0;
 	// Wave.Native.WVR_InputId Wave.Native.WVR_TrackerInputEvent::inputId
 	int32_t ___inputId_1;
-};
-
-// Wave.Essence.BodyTracking.BodyRoleData/RoleData
-struct RoleData_t5926C18DC0FE85E5FFB7DE194388A965764F9E80 
-{
-	// Wave.Essence.BodyTracking.BodyRoleData/VelocityFlag Wave.Essence.BodyTracking.BodyRoleData/RoleData::velocityState
-	int32_t ___velocityState_0;
-	// Wave.Essence.BodyTracking.TrackedDevicePose Wave.Essence.BodyTracking.BodyRoleData/RoleData::devicePose
-	TrackedDevicePose_t6C997B56E38666F733216FCED72A96A703FFCA7B ___devicePose_1;
 };
 
 // System.AsyncCallback
@@ -3899,6 +3673,52 @@ struct HandManager_t24AAE56AC9A9230BA044455D4C85782886D69F18  : public MonoBehav
 	bool ___hasElectronicHandTrackerData_81;
 };
 
+// Wave.Essence.BodyTracking.Demo.HumanoidIKMenu
+struct HumanoidIKMenu_t5063882FCD2429C610477C3D77DD988372D3975C  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
+{
+	// System.Text.StringBuilder Wave.Essence.BodyTracking.Demo.HumanoidIKMenu::m_sb
+	StringBuilder_t* ___m_sb_5;
+	// Wave.Essence.BodyTracking.Demo.HumanoidIKSample Wave.Essence.BodyTracking.Demo.HumanoidIKMenu::humanoidIK
+	HumanoidIKSample_t299AC6AE30503274166DF4AD9CDA94C4DEA6A670* ___humanoidIK_6;
+	// UnityEngine.UI.Button Wave.Essence.BodyTracking.Demo.HumanoidIKMenu::beginTrackingButton
+	Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* ___beginTrackingButton_7;
+	// UnityEngine.UI.Button Wave.Essence.BodyTracking.Demo.HumanoidIKMenu::endTrackingButton
+	Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* ___endTrackingButton_8;
+};
+
+// Wave.Essence.BodyTracking.Demo.HumanoidIKSample
+struct HumanoidIKSample_t299AC6AE30503274166DF4AD9CDA94C4DEA6A670  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
+{
+	// System.Text.StringBuilder Wave.Essence.BodyTracking.Demo.HumanoidIKSample::m_sb
+	StringBuilder_t* ___m_sb_5;
+	// System.Int32 Wave.Essence.BodyTracking.Demo.HumanoidIKSample::logFrame
+	int32_t ___logFrame_6;
+	// System.Boolean Wave.Essence.BodyTracking.Demo.HumanoidIKSample::printIntervalLog
+	bool ___printIntervalLog_7;
+	// Wave.Essence.BodyTracking.Demo.HumanoidIKSample/TrackingStatus Wave.Essence.BodyTracking.Demo.HumanoidIKSample::m_TrackingStatus
+	int32_t ___m_TrackingStatus_8;
+	// UnityEngine.Transform Wave.Essence.BodyTracking.Demo.HumanoidIKSample::m_AvatarOffset
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___m_AvatarOffset_10;
+	// System.Single Wave.Essence.BodyTracking.Demo.HumanoidIKSample::m_AvatarScale
+	float ___m_AvatarScale_11;
+	// System.Boolean Wave.Essence.BodyTracking.Demo.HumanoidIKSample::m_CustomSettings
+	bool ___m_CustomSettings_12;
+	// System.Single Wave.Essence.BodyTracking.Demo.HumanoidIKSample::m_AvatarHeight
+	float ___m_AvatarHeight_13;
+	// Wave.Essence.BodyTracking.Body Wave.Essence.BodyTracking.Demo.HumanoidIKSample::m_Body
+	Body_t0ABDF8C6FAFD5D8E4F7EE522F825A6ACFC51B074* ___m_Body_14;
+	// Wave.Essence.BodyTracking.Body Wave.Essence.BodyTracking.Demo.HumanoidIKSample::m_InitialBody
+	Body_t0ABDF8C6FAFD5D8E4F7EE522F825A6ACFC51B074* ___m_InitialBody_15;
+	// Wave.Essence.BodyTracking.TransformData Wave.Essence.BodyTracking.Demo.HumanoidIKSample::m_InitialTransform
+	TransformData_t724B15ECF31475454D59E4425AAE2ED57CA32171 ___m_InitialTransform_16;
+	// System.Boolean Wave.Essence.BodyTracking.Demo.HumanoidIKSample::updateTrackingData
+	bool ___updateTrackingData_17;
+	// System.Single Wave.Essence.BodyTracking.Demo.HumanoidIKSample::avatarScale
+	float ___avatarScale_18;
+	// Wave.Essence.BodyTracking.BodyAvatar Wave.Essence.BodyTracking.Demo.HumanoidIKSample::avatarBody
+	BodyAvatar_t2C8E331178D60F0E95118D7D9D0F887523923AD2* ___avatarBody_19;
+};
+
 // Wave.Essence.BodyTracking.RolePose
 struct RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
@@ -4044,31 +3864,6 @@ struct Graphic_tCBFCA4585A19E2B75465AECFEAC43F4016BF7931  : public UIBehaviour_t
 	TweenRunner_1_t5BB0582F926E75E2FE795492679A6CF55A4B4BC4* ___m_ColorTweenRunner_25;
 	// System.Boolean UnityEngine.UI.Graphic::<useLegacyMeshGeneration>k__BackingField
 	bool ___U3CuseLegacyMeshGenerationU3Ek__BackingField_26;
-};
-
-// Wave.Essence.BodyTracking.RolePoseController
-struct RolePoseController_t706AE56FE73EFD4EA44F938D506D6CFE2A934DB9  : public RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717
-{
-	// System.Boolean Wave.Essence.BodyTracking.RolePoseController::isLeft
-	bool ___isLeft_12;
-	// System.Boolean Wave.Essence.BodyTracking.RolePoseController::toUpdate
-	bool ___toUpdate_13;
-};
-
-// Wave.Essence.BodyTracking.RolePoseHand
-struct RolePoseHand_t1077BA77E30CBE89252EAB5A70028A3F86442B5E  : public RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717
-{
-	// System.Boolean Wave.Essence.BodyTracking.RolePoseHand::isLeft
-	bool ___isLeft_12;
-	// System.Boolean Wave.Essence.BodyTracking.RolePoseHand::toUpdate
-	bool ___toUpdate_13;
-};
-
-// Wave.Essence.BodyTracking.RolePoseHead
-struct RolePoseHead_tA28A41EADF5B284248557F43EC13EAAF7513F8EB  : public RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717
-{
-	// System.Boolean Wave.Essence.BodyTracking.RolePoseHead::toUpdate
-	bool ___toUpdate_12;
 };
 
 // Wave.Essence.BodyTracking.RolePoseTracker
@@ -4624,10 +4419,6 @@ struct TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957  : public TMP_T
 	bool ___m_isRegisteredForEvents_285;
 };
 
-// System.Collections.Generic.Dictionary`2<Wave.Essence.BodyTracking.RolePoseType,Wave.Essence.BodyTracking.RolePose>
-
-// System.Collections.Generic.Dictionary`2<Wave.Essence.BodyTracking.RolePoseType,Wave.Essence.BodyTracking.RolePose>
-
 // System.Collections.Generic.Dictionary`2<Wave.Essence.BodyTracking.RuntimeDependency.TrackerType,System.Collections.Generic.List`1<System.String>>
 
 // System.Collections.Generic.Dictionary`2<Wave.Essence.BodyTracking.RuntimeDependency.TrackerType,System.Collections.Generic.List`1<System.String>>
@@ -4649,6 +4440,10 @@ struct List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD_StaticFields
 };
 
 // System.Collections.Generic.List`1<System.String>
+
+// Wave.Essence.BodyTracking.Demo.BTDemoHelper
+
+// Wave.Essence.BodyTracking.Demo.BTDemoHelper
 
 // Wave.Essence.BodyTracking.RuntimeDependency.Rdp
 struct Rdp_t4E601F118A55EF303082C42F62229A8DC6D948BE_StaticFields
@@ -4672,17 +4467,6 @@ struct ReaderWriterLockSlim_t3BF29C18C9FC0EE07209EDD54D938EA473FB3906_ThreadStat
 	// System.Threading.ReaderWriterCount System.Threading.ReaderWriterLockSlim::t_rwc
 	ReaderWriterCount_tD7361BF31DEB70DC7319519D215F400357543333* ___t_rwc_18;
 };
-
-// Wave.Essence.BodyTracking.RolePoseProvider
-struct RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_StaticFields
-{
-	// System.Text.StringBuilder Wave.Essence.BodyTracking.RolePoseProvider::m_sb
-	StringBuilder_t* ___m_sb_1;
-	// System.Collections.Generic.Dictionary`2<Wave.Essence.BodyTracking.RolePoseType,Wave.Essence.BodyTracking.RolePose> Wave.Essence.BodyTracking.RolePoseProvider::m_RolePoseMap
-	Dictionary_2_t4D42736F171A409CC8E74C010E98CD26C81E4BD4* ___m_RolePoseMap_2;
-};
-
-// Wave.Essence.BodyTracking.RolePoseProvider
 
 // System.String
 struct String_t_StaticFields
@@ -4717,14 +4501,6 @@ struct String_t_StaticFields
 
 // Wave.Essence.BodyTracking.Demo.BodyIKSample/<StartBodyTracking>d__32
 
-// Wave.Essence.BodyTracking.BodyRoleData/TrackerIndexBase
-
-// Wave.Essence.BodyTracking.BodyRoleData/TrackerIndexBase
-
-// Wave.Essence.BodyTracking.BodyRoleData/TrackerTypeBase
-
-// Wave.Essence.BodyTracking.BodyRoleData/TrackerTypeBase
-
 // Wave.Essence.BodyTracking.Demo.BodyTrackingSample/<StartBodyTracking>d__41
 
 // Wave.Essence.BodyTracking.Demo.BodyTrackingSample/<StartBodyTracking>d__41
@@ -4751,18 +4527,6 @@ struct Tracker_tBDBCFCFE476A17CE16E98D933055E5EC9E1B8D12_StaticFields
 };
 
 // Wave.Essence.BodyTracking.RuntimeDependency.Rdp/Tracker
-
-// Wave.Essence.BodyTracking.RolePoseController/<UpdatePose>d__5
-
-// Wave.Essence.BodyTracking.RolePoseController/<UpdatePose>d__5
-
-// Wave.Essence.BodyTracking.RolePoseHand/<UpdatePose>d__5
-
-// Wave.Essence.BodyTracking.RolePoseHand/<UpdatePose>d__5
-
-// Wave.Essence.BodyTracking.RolePoseHead/<UpdatePose>d__4
-
-// Wave.Essence.BodyTracking.RolePoseHead/<UpdatePose>d__4
 
 // Wave.Essence.BodyTracking.RolePoseTracker/<UpdatePose>d__5
 
@@ -5077,10 +4841,6 @@ struct Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_StaticFields
 
 // System.RuntimeFieldHandle
 
-// Wave.Essence.BodyTracking.TrackedDevicePose
-
-// Wave.Essence.BodyTracking.TrackedDevicePose
-
 // Wave.Essence.BodyTracking.TransformData
 
 // Wave.Essence.BodyTracking.TransformData
@@ -5180,10 +4940,6 @@ struct Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_StaticFields
 // Wave.Native.WVR_TrackerInputEvent
 
 // Wave.Native.WVR_TrackerInputEvent
-
-// Wave.Essence.BodyTracking.BodyRoleData/RoleData
-
-// Wave.Essence.BodyTracking.BodyRoleData/RoleData
 
 // System.AsyncCallback
 
@@ -5430,6 +5186,19 @@ struct HandManager_t24AAE56AC9A9230BA044455D4C85782886D69F18_StaticFields
 
 // Wave.Essence.Hand.HandManager
 
+// Wave.Essence.BodyTracking.Demo.HumanoidIKMenu
+
+// Wave.Essence.BodyTracking.Demo.HumanoidIKMenu
+
+// Wave.Essence.BodyTracking.Demo.HumanoidIKSample
+struct HumanoidIKSample_t299AC6AE30503274166DF4AD9CDA94C4DEA6A670_StaticFields
+{
+	// System.Threading.ReaderWriterLockSlim Wave.Essence.BodyTracking.Demo.HumanoidIKSample::m_TrackingStatusRWLock
+	ReaderWriterLockSlim_t3BF29C18C9FC0EE07209EDD54D938EA473FB3906* ___m_TrackingStatusRWLock_9;
+};
+
+// Wave.Essence.BodyTracking.Demo.HumanoidIKSample
+
 // Wave.Essence.BodyTracking.RolePose
 
 // Wave.Essence.BodyTracking.RolePose
@@ -5478,18 +5247,6 @@ struct Graphic_tCBFCA4585A19E2B75465AECFEAC43F4016BF7931_StaticFields
 };
 
 // UnityEngine.UI.Graphic
-
-// Wave.Essence.BodyTracking.RolePoseController
-
-// Wave.Essence.BodyTracking.RolePoseController
-
-// Wave.Essence.BodyTracking.RolePoseHand
-
-// Wave.Essence.BodyTracking.RolePoseHand
-
-// Wave.Essence.BodyTracking.RolePoseHead
-
-// Wave.Essence.BodyTracking.RolePoseHead
 
 // Wave.Essence.BodyTracking.RolePoseTracker
 
@@ -5798,151 +5555,43 @@ struct ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918  : public RuntimeA
 };
 
 
-// System.Void System.Collections.Generic.Dictionary`2<System.UInt32Enum,System.Object>::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Dictionary_2__ctor_m552218E4B68F6C7C51DCF1A45DE0F527A167E835_gshared (Dictionary_2_tE16E3D7F052319FEE5BEBD869B503332D5DC5F84* __this, const RuntimeMethod* method) ;
-// System.Boolean System.Collections.Generic.Dictionary`2<System.UInt32Enum,System.Object>::ContainsKey(TKey)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Dictionary_2_ContainsKey_m08968B4E444D2F86EDAE12EC321BE5C00EEBF145_gshared (Dictionary_2_tE16E3D7F052319FEE5BEBD869B503332D5DC5F84* __this, uint32_t ___0_key, const RuntimeMethod* method) ;
-// System.Void System.Collections.Generic.Dictionary`2<System.UInt32Enum,System.Object>::Add(TKey,TValue)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Dictionary_2_Add_m6CEDA0FA9D12BAB0B1B8656CCA79E803D146D4B9_gshared (Dictionary_2_tE16E3D7F052319FEE5BEBD869B503332D5DC5F84* __this, uint32_t ___0_key, RuntimeObject* ___1_value, const RuntimeMethod* method) ;
-// System.Void System.Collections.Generic.Dictionary`2<System.UInt32Enum,System.Object>::set_Item(TKey,TValue)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Dictionary_2_set_Item_m3B1A5293A941F4A2015F24026C0655FDBE44CD54_gshared (Dictionary_2_tE16E3D7F052319FEE5BEBD869B503332D5DC5F84* __this, uint32_t ___0_key, RuntimeObject* ___1_value, const RuntimeMethod* method) ;
 // TValue System.Collections.Generic.Dictionary`2<System.UInt32Enum,System.Object>::get_Item(TKey)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Dictionary_2_get_Item_mA5693CB49EC406D4BE0FE048A8CE588129FFCDA1_gshared (Dictionary_2_tE16E3D7F052319FEE5BEBD869B503332D5DC5F84* __this, uint32_t ___0_key, const RuntimeMethod* method) ;
-// System.Boolean System.Collections.Generic.Dictionary`2<System.UInt32Enum,System.Object>::Remove(TKey)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Dictionary_2_Remove_m1BE3497D38F844A1C05435F03A1212DE36DEF33B_gshared (Dictionary_2_tE16E3D7F052319FEE5BEBD869B503332D5DC5F84* __this, uint32_t ___0_key, const RuntimeMethod* method) ;
 // T System.Collections.Generic.List`1<System.Object>::get_Item(System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* List_1_get_Item_m33561245D64798C2AB07584C0EC4F240E4839A38_gshared (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, int32_t ___0_index, const RuntimeMethod* method) ;
 // System.Int32 System.Collections.Generic.List`1<System.Object>::get_Count()
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t List_1_get_Count_m4407E4C389F22B8CEC282C15D56516658746C383_gshared_inline (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.Dictionary`2<System.UInt32Enum,System.Object>::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Dictionary_2__ctor_m552218E4B68F6C7C51DCF1A45DE0F527A167E835_gshared (Dictionary_2_tE16E3D7F052319FEE5BEBD869B503332D5DC5F84* __this, const RuntimeMethod* method) ;
 // System.Void System.Collections.Generic.List`1<System.Object>::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void List_1__ctor_m7F078BB342729BDF11327FD89D7872265328F690_gshared (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, const RuntimeMethod* method) ;
 // System.Void System.Collections.Generic.List`1<System.Object>::Add(T)
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Add_mEBCF994CC3814631017F46A387B1A192ED6C85C7_gshared_inline (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, RuntimeObject* ___0_item, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.Dictionary`2<System.UInt32Enum,System.Object>::Add(TKey,TValue)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Dictionary_2_Add_m6CEDA0FA9D12BAB0B1B8656CCA79E803D146D4B9_gshared (Dictionary_2_tE16E3D7F052319FEE5BEBD869B503332D5DC5F84* __this, uint32_t ___0_key, RuntimeObject* ___1_value, const RuntimeMethod* method) ;
 // T UnityEngine.Component::GetComponent<System.Object>()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Component_GetComponent_TisRuntimeObject_m7181F81CAEC2CF53F5D2BC79B7425C16E1F80D33_gshared (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3* __this, const RuntimeMethod* method) ;
 // T UnityEngine.Component::GetComponentInChildren<System.Object>()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Component_GetComponentInChildren_TisRuntimeObject_mE483A27E876DE8E4E6901D6814837F81D7C42F65_gshared (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3* __this, const RuntimeMethod* method) ;
 
-// System.Void System.Object::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2 (RuntimeObject* __this, const RuntimeMethod* method) ;
-// System.Void Wave.Essence.BodyTracking.BodyRoleData/RoleData::.ctor(Wave.Essence.BodyTracking.BodyRoleData/VelocityFlag,Wave.Essence.BodyTracking.TrackedDevicePose)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RoleData__ctor_m91B644789F3ED3A72500340B827D493BCDECD5F0 (RoleData_t5926C18DC0FE85E5FFB7DE194388A965764F9E80* __this, int32_t ___0_in_state, TrackedDevicePose_t6C997B56E38666F733216FCED72A96A703FFCA7B ___1_in_pose, const RuntimeMethod* method) ;
-// Wave.Essence.BodyTracking.TrackedDevicePose Wave.Essence.BodyTracking.TrackedDevicePose::get_identity()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TrackedDevicePose_t6C997B56E38666F733216FCED72A96A703FFCA7B TrackedDevicePose_get_identity_mC8F598D5DAA51EE470298ED618904403127A421C (const RuntimeMethod* method) ;
-// System.Void Wave.Essence.BodyTracking.RolePoseProvider::RegisterRolePose(Wave.Essence.BodyTracking.RolePoseType&,Wave.Essence.BodyTracking.RolePose&)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RolePoseProvider_RegisterRolePose_m63FC196367D96FE23A4A71D650E788D91F1B59A8 (uint32_t* ___0_type, RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717** ___1_pose, const RuntimeMethod* method) ;
-// System.Void Wave.Essence.BodyTracking.RolePoseProvider::RemoveRolePose(Wave.Essence.BodyTracking.RolePoseType&)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RolePoseProvider_RemoveRolePose_mD9F677F01A08663591459F820467B5F5B1BC055F (uint32_t* ___0_type, const RuntimeMethod* method) ;
-// UnityEngine.Quaternion UnityEngine.Quaternion::get_identity()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 Quaternion_get_identity_m7E701AE095ED10FD5EA0B50ABCFDE2EEFF2173A5_inline (const RuntimeMethod* method) ;
-// UnityEngine.Vector3 UnityEngine.Vector3::get_zero()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Vector3_get_zero_m0C1249C3F25B1C70EAD3CC8B31259975A457AE39_inline (const RuntimeMethod* method) ;
-// System.Void UnityEngine.MonoBehaviour::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E (MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71* __this, const RuntimeMethod* method) ;
 // System.Void Wave.Essence.BodyTracking.RolePose::OnEnable()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RolePose_OnEnable_m601A8C0433F23F226EEA7B918E1114B7DCC08109 (RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717* __this, const RuntimeMethod* method) ;
-// System.Collections.IEnumerator Wave.Essence.BodyTracking.RolePoseController::UpdatePose()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* RolePoseController_UpdatePose_m8B118EDAD925A3D46E7E8538A543C45B78AD3831 (RolePoseController_t706AE56FE73EFD4EA44F938D506D6CFE2A934DB9* __this, const RuntimeMethod* method) ;
+// System.Collections.IEnumerator Wave.Essence.BodyTracking.RolePoseTracker::UpdatePose()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* RolePoseTracker_UpdatePose_m5F796DD3EF44FCA7FDBE1C662FE9AE647D7E3C1C (RolePoseTracker_tEE1C9DDB109A1546DFAC2B3B9AA359CB269D97FA* __this, const RuntimeMethod* method) ;
 // UnityEngine.Coroutine UnityEngine.MonoBehaviour::StartCoroutine(System.Collections.IEnumerator)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812 (MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71* __this, RuntimeObject* ___0_routine, const RuntimeMethod* method) ;
 // System.Void Wave.Essence.BodyTracking.RolePose::OnDisable()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RolePose_OnDisable_mC3DF3ADA3E0D17BC636E877E260A2FF83E8C2179 (RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717* __this, const RuntimeMethod* method) ;
 // System.Void UnityEngine.MonoBehaviour::StopCoroutine(System.Collections.IEnumerator)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MonoBehaviour_StopCoroutine_mF9E93B82091E804595BE13AA29F9AB7517F7E04A (MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71* __this, RuntimeObject* ___0_routine, const RuntimeMethod* method) ;
-// System.Void Wave.Essence.BodyTracking.RolePoseController/<UpdatePose>d__5::.ctor(System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CUpdatePoseU3Ed__5__ctor_m368E6BC7037872B0F7C064048E5F722A8F620304 (U3CUpdatePoseU3Ed__5_tF3C5AB469CDEA8FE5F79DB484AE2B14C3701C10F* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) ;
-// System.Void Wave.Essence.BodyTracking.RolePose::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RolePose__ctor_m9DA2A03E0BA98404CC5725C79E9320ABCF93DFBF (RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717* __this, const RuntimeMethod* method) ;
-// System.Void UnityEngine.WaitForEndOfFrame::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WaitForEndOfFrame__ctor_m4AF7E576C01E6B04443BB898B1AE5D645F7D45AB (WaitForEndOfFrame_tE38D80923E3F8380069B423968C25ABE50A46663* __this, const RuntimeMethod* method) ;
-// System.Boolean Wave.Essence.WXRDevice::IsTracked(Wave.Essence.XR_Device,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool WXRDevice_IsTracked_m9FC57E2D43ADBEE54F43FAAD510B8C8AD3CBED5D (int32_t ___0_device, bool ___1_adaptiveHanded, const RuntimeMethod* method) ;
-// System.Boolean Wave.Essence.WXRDevice::GetRotation(Wave.Essence.XR_Device,UnityEngine.Quaternion&,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool WXRDevice_GetRotation_m9EC0CAD078980C8F1FB1043D0D75D901FAC13F88 (int32_t ___0_device, Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974* ___1_rotation, bool ___2_adaptiveHanded, const RuntimeMethod* method) ;
-// System.Boolean Wave.Essence.WXRDevice::GetPosition(Wave.Essence.XR_Device,UnityEngine.Vector3&,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool WXRDevice_GetPosition_m80793AA78194320068D96377A9EBF7E8FA3398BF (int32_t ___0_device, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___1_position, bool ___2_adaptiveHanded, const RuntimeMethod* method) ;
-// System.Boolean Wave.Essence.WXRDevice::GetAngularVelocity(Wave.Essence.XR_Device,UnityEngine.Vector3&,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool WXRDevice_GetAngularVelocity_m3E25C88D6682FC142334AE70F7F4D9E68AB638E1 (int32_t ___0_device, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___1_angularVelocity, bool ___2_adaptiveHanded, const RuntimeMethod* method) ;
-// System.Boolean Wave.Essence.WXRDevice::GetVelocity(Wave.Essence.XR_Device,UnityEngine.Vector3&,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool WXRDevice_GetVelocity_m0C7E27C268A714070C6F7AC7028F09E9E540C851 (int32_t ___0_device, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___1_velocity, bool ___2_adaptiveHanded, const RuntimeMethod* method) ;
-// System.Boolean Wave.Essence.WXRDevice::GetAcceleration(Wave.Essence.XR_Device,UnityEngine.Vector3&,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool WXRDevice_GetAcceleration_mCFCE198C16514E2C71E53C506EFF12B3B95B0928 (int32_t ___0_device, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___1_acceleration, bool ___2_adaptiveHanded, const RuntimeMethod* method) ;
-// System.Void System.NotSupportedException::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NotSupportedException__ctor_m1398D0CDE19B36AA3DE9392879738C1EA2439CDF (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* __this, const RuntimeMethod* method) ;
-// System.Collections.IEnumerator Wave.Essence.BodyTracking.RolePoseHand::UpdatePose()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* RolePoseHand_UpdatePose_m54AF23F41288D3787C8ABB365568913894D64664 (RolePoseHand_t1077BA77E30CBE89252EAB5A70028A3F86442B5E* __this, const RuntimeMethod* method) ;
-// System.Void Wave.Essence.BodyTracking.RolePoseHand/<UpdatePose>d__5::.ctor(System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CUpdatePoseU3Ed__5__ctor_mCF1CAFBA7CC40E37FD405B82DB9F4CD3A4A1F36E (U3CUpdatePoseU3Ed__5_t1DEA6962212108D9FF7E4207A17B66687915677F* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) ;
-// System.Boolean Wave.Essence.BodyTracking.RuntimeDependency.Rdp/Hand::IsTracked(System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Hand_IsTracked_mEA05D009A2EC81D7D74417835FCB9CE7954945C3 (bool ___0_isLeft, const RuntimeMethod* method) ;
-// System.Boolean Wave.Essence.BodyTracking.RuntimeDependency.Rdp/Hand::GetJointRotation(Wave.Essence.BodyTracking.RuntimeDependency.Rdp/Hand/Joint,UnityEngine.Quaternion&,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Hand_GetJointRotation_m71FFC0CF6291761E388C48D8E23A3B57E8F70C5C (int32_t ___0_joint, Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974* ___1_rotation, bool ___2_isLeft, const RuntimeMethod* method) ;
-// System.Boolean Wave.Essence.BodyTracking.RuntimeDependency.Rdp/Hand::GetJointPosition(Wave.Essence.BodyTracking.RuntimeDependency.Rdp/Hand/Joint,UnityEngine.Vector3&,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Hand_GetJointPosition_m374A0E638138BBF21B34A2F014C9AF24103FD6C7 (int32_t ___0_joint, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___1_position, bool ___2_isLeft, const RuntimeMethod* method) ;
-// System.Boolean Wave.Essence.BodyTracking.RuntimeDependency.Rdp/Hand::GetWristAngularVelocity(UnityEngine.Vector3&,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Hand_GetWristAngularVelocity_m1B431E64E19B5EC32DDD153D30847A7661330FE1 (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___0_velocity, bool ___1_isLeft, const RuntimeMethod* method) ;
-// System.Boolean Wave.Essence.BodyTracking.RuntimeDependency.Rdp/Hand::GetWristLinearVelocity(UnityEngine.Vector3&,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Hand_GetWristLinearVelocity_mCA84F23126F19F12AFF9ED011243BE399CDC73A7 (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___0_velocity, bool ___1_isLeft, const RuntimeMethod* method) ;
-// System.Collections.IEnumerator Wave.Essence.BodyTracking.RolePoseHead::UpdatePose()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* RolePoseHead_UpdatePose_m4784AD52AD4DEBA31C5E20B64BB41048D95E9A2C (RolePoseHead_tA28A41EADF5B284248557F43EC13EAAF7513F8EB* __this, const RuntimeMethod* method) ;
-// System.Void Wave.Essence.BodyTracking.RolePoseHead/<UpdatePose>d__4::.ctor(System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CUpdatePoseU3Ed__4__ctor_m7736C18769B32E6745D471FBB949FBD69945026C (U3CUpdatePoseU3Ed__4_t809F8C7D7C2795583AE5A68953F4326F21D94291* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) ;
-// System.Void System.Text.StringBuilder::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StringBuilder__ctor_m1D99713357DE05DAFA296633639DB55F8C30587D (StringBuilder_t* __this, const RuntimeMethod* method) ;
-// System.Void Wave.Essence.BodyTracking.RuntimeDependency.Rdp::i(System.String,System.Text.StringBuilder,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Rdp_i_mEA7D36A1BFF7D60F646638579CA935F7C5222B78 (String_t* ___0_tag, StringBuilder_t* ___1_sb, bool ___2_logInEditor, const RuntimeMethod* method) ;
-// System.Void System.Collections.Generic.Dictionary`2<Wave.Essence.BodyTracking.RolePoseType,Wave.Essence.BodyTracking.RolePose>::.ctor()
-inline void Dictionary_2__ctor_m73855285B997792A7ED75A3332DD9AE97C5C5D19 (Dictionary_2_t4D42736F171A409CC8E74C010E98CD26C81E4BD4* __this, const RuntimeMethod* method)
-{
-	((  void (*) (Dictionary_2_t4D42736F171A409CC8E74C010E98CD26C81E4BD4*, const RuntimeMethod*))Dictionary_2__ctor_m552218E4B68F6C7C51DCF1A45DE0F527A167E835_gshared)(__this, method);
-}
-// System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605 (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* ___0_x, Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* ___1_y, const RuntimeMethod* method) ;
-// System.Collections.Generic.Dictionary`2<Wave.Essence.BodyTracking.RolePoseType,Wave.Essence.BodyTracking.RolePose> Wave.Essence.BodyTracking.RolePoseProvider::get_RolePoseMap()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Dictionary_2_t4D42736F171A409CC8E74C010E98CD26C81E4BD4* RolePoseProvider_get_RolePoseMap_m0BF73821C9191B404A2AE830C17B6A0B6EB58805 (const RuntimeMethod* method) ;
-// System.Boolean System.Collections.Generic.Dictionary`2<Wave.Essence.BodyTracking.RolePoseType,Wave.Essence.BodyTracking.RolePose>::ContainsKey(TKey)
-inline bool Dictionary_2_ContainsKey_mB1DD086C3362A9E8CA6398A7697768728598193F (Dictionary_2_t4D42736F171A409CC8E74C010E98CD26C81E4BD4* __this, uint32_t ___0_key, const RuntimeMethod* method)
-{
-	return ((  bool (*) (Dictionary_2_t4D42736F171A409CC8E74C010E98CD26C81E4BD4*, uint32_t, const RuntimeMethod*))Dictionary_2_ContainsKey_m08968B4E444D2F86EDAE12EC321BE5C00EEBF145_gshared)(__this, ___0_key, method);
-}
-// System.Void System.Collections.Generic.Dictionary`2<Wave.Essence.BodyTracking.RolePoseType,Wave.Essence.BodyTracking.RolePose>::Add(TKey,TValue)
-inline void Dictionary_2_Add_mF4F1D1AED134AAF2507EFCD3F376C7554AF611A4 (Dictionary_2_t4D42736F171A409CC8E74C010E98CD26C81E4BD4* __this, uint32_t ___0_key, RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717* ___1_value, const RuntimeMethod* method)
-{
-	((  void (*) (Dictionary_2_t4D42736F171A409CC8E74C010E98CD26C81E4BD4*, uint32_t, RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*, const RuntimeMethod*))Dictionary_2_Add_m6CEDA0FA9D12BAB0B1B8656CCA79E803D146D4B9_gshared)(__this, ___0_key, ___1_value, method);
-}
-// System.Void System.Collections.Generic.Dictionary`2<Wave.Essence.BodyTracking.RolePoseType,Wave.Essence.BodyTracking.RolePose>::set_Item(TKey,TValue)
-inline void Dictionary_2_set_Item_m99739B1F83C571AFAE15AE51A91177FB2EAA1937 (Dictionary_2_t4D42736F171A409CC8E74C010E98CD26C81E4BD4* __this, uint32_t ___0_key, RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717* ___1_value, const RuntimeMethod* method)
-{
-	((  void (*) (Dictionary_2_t4D42736F171A409CC8E74C010E98CD26C81E4BD4*, uint32_t, RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*, const RuntimeMethod*))Dictionary_2_set_Item_m3B1A5293A941F4A2015F24026C0655FDBE44CD54_gshared)(__this, ___0_key, ___1_value, method);
-}
-// System.Text.StringBuilder Wave.Essence.BodyTracking.RolePoseProvider::get_sb()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringBuilder_t* RolePoseProvider_get_sb_mCED50ADBE50C64BF05BF344E8DE69D30443BF3B0 (const RuntimeMethod* method) ;
-// System.Text.StringBuilder System.Text.StringBuilder::Clear()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringBuilder_t* StringBuilder_Clear_m2D76F6533574F40A4E3E2DC4E730277CBD0AF8F6 (StringBuilder_t* __this, const RuntimeMethod* method) ;
-// System.Text.StringBuilder System.Text.StringBuilder::Append(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringBuilder_t* StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D (StringBuilder_t* __this, String_t* ___0_value, const RuntimeMethod* method) ;
-// System.String Wave.Essence.BodyTracking.RolePoseProvider::Name(Wave.Essence.BodyTracking.RolePoseType)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* RolePoseProvider_Name_m036D83985F61A876CD47B5748838675C86A8EB84 (uint32_t ___0_type, const RuntimeMethod* method) ;
-// TValue System.Collections.Generic.Dictionary`2<Wave.Essence.BodyTracking.RolePoseType,Wave.Essence.BodyTracking.RolePose>::get_Item(TKey)
-inline RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717* Dictionary_2_get_Item_m6C7BE1B1AA3F7676AC6FFA6170ADE1D476FF745C (Dictionary_2_t4D42736F171A409CC8E74C010E98CD26C81E4BD4* __this, uint32_t ___0_key, const RuntimeMethod* method)
-{
-	return ((  RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717* (*) (Dictionary_2_t4D42736F171A409CC8E74C010E98CD26C81E4BD4*, uint32_t, const RuntimeMethod*))Dictionary_2_get_Item_mA5693CB49EC406D4BE0FE048A8CE588129FFCDA1_gshared)(__this, ___0_key, method);
-}
-// UnityEngine.GameObject UnityEngine.Component::get_gameObject()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3* __this, const RuntimeMethod* method) ;
-// System.String UnityEngine.Object::get_name()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Object_get_name_mAC2F6B897CF1303BA4249B4CB55271AFACBB6392 (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* __this, const RuntimeMethod* method) ;
-// System.Void Wave.Essence.BodyTracking.RolePoseProvider::INFO(System.Text.StringBuilder)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RolePoseProvider_INFO_mC19233B4089BC7EC5C658F2EE9FC0740790BEDAE (StringBuilder_t* ___0_msg, const RuntimeMethod* method) ;
-// System.Boolean System.Collections.Generic.Dictionary`2<Wave.Essence.BodyTracking.RolePoseType,Wave.Essence.BodyTracking.RolePose>::Remove(TKey)
-inline bool Dictionary_2_Remove_m0EBAD94576B92633974EBF7ADB2987F8E533014E (Dictionary_2_t4D42736F171A409CC8E74C010E98CD26C81E4BD4* __this, uint32_t ___0_key, const RuntimeMethod* method)
-{
-	return ((  bool (*) (Dictionary_2_t4D42736F171A409CC8E74C010E98CD26C81E4BD4*, uint32_t, const RuntimeMethod*))Dictionary_2_Remove_m1BE3497D38F844A1C05435F03A1212DE36DEF33B_gshared)(__this, ___0_key, method);
-}
-// System.Collections.IEnumerator Wave.Essence.BodyTracking.RolePoseTracker::UpdatePose()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* RolePoseTracker_UpdatePose_m5F796DD3EF44FCA7FDBE1C662FE9AE647D7E3C1C (RolePoseTracker_tEE1C9DDB109A1546DFAC2B3B9AA359CB269D97FA* __this, const RuntimeMethod* method) ;
 // System.Void Wave.Essence.BodyTracking.RolePoseTracker/<UpdatePose>d__5::.ctor(System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CUpdatePoseU3Ed__5__ctor_mCE66FA9B8BB0917D82F7DD057F32CDA9E34C6433 (U3CUpdatePoseU3Ed__5_t4737C4BDECCCC1366F6C55381A938330CA3725D5* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) ;
+// System.Void Wave.Essence.BodyTracking.RolePose::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RolePose__ctor_m9DA2A03E0BA98404CC5725C79E9320ABCF93DFBF (RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717* __this, const RuntimeMethod* method) ;
+// System.Void System.Object::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2 (RuntimeObject* __this, const RuntimeMethod* method) ;
+// System.Void UnityEngine.WaitForEndOfFrame::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WaitForEndOfFrame__ctor_m4AF7E576C01E6B04443BB898B1AE5D645F7D45AB (WaitForEndOfFrame_tE38D80923E3F8380069B423968C25ABE50A46663* __this, const RuntimeMethod* method) ;
 // Wave.Essence.BodyTracking.RuntimeDependency.TrackerType Wave.Essence.BodyTracking.RuntimeDependency.Rdp/Tracker::GetTrackerType(Wave.Essence.BodyTracking.RuntimeDependency.Rdp/Tracker/Id,System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR uint32_t Tracker_GetTrackerType_m470A901FA03D3D902D98C5642F2A95384631889D (int32_t ___0_id, bool ___1_printLog, const RuntimeMethod* method) ;
 // System.Boolean Wave.Essence.BodyTracking.RuntimeDependency.Rdp/Tracker::GetTrackerRotation(Wave.Essence.BodyTracking.RuntimeDependency.Rdp/Tracker/Id,UnityEngine.Quaternion&)
@@ -5955,6 +5604,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Tracker_GetTrackerAngularVelocity_mB3327
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Tracker_GetTrackerVelocity_mD4B6E29E9E8F4BF44605F91598BBA173CE07389D (int32_t ___0_trackerId, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___1_velocity, const RuntimeMethod* method) ;
 // System.Boolean Wave.Essence.BodyTracking.RuntimeDependency.Rdp/Tracker::GetTrackerAcceleration(Wave.Essence.BodyTracking.RuntimeDependency.Rdp/Tracker/Id,UnityEngine.Vector3&)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Tracker_GetTrackerAcceleration_m89F210CB2497639C7874B8AB9A4E91FE4A25B554 (int32_t ___0_trackerId, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___1_acceleration, const RuntimeMethod* method) ;
+// System.Void System.NotSupportedException::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NotSupportedException__ctor_m1398D0CDE19B36AA3DE9392879738C1EA2439CDF (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* __this, const RuntimeMethod* method) ;
 // System.Void Wave.Native.Log::v(System.String,System.Text.StringBuilder,System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Log_v_mB10EE8EC35753D1F08095C87ED7618CDDF42E44F (String_t* ___0_tag, StringBuilder_t* ___1_sb, bool ___2_logInEditor, const RuntimeMethod* method) ;
 // System.Void Wave.Native.Log::d(System.String,System.Text.StringBuilder,System.Boolean)
@@ -5965,6 +5616,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Log_i_mD9F2D1A4B0D38E6302FC3F13E6B46DF1E
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Log_w_m1D9666DBC6BF72FF3EF2C22698DFA87BB3989BDF (String_t* ___0_tag, StringBuilder_t* ___1_sb, bool ___2_logInEditor, const RuntimeMethod* method) ;
 // System.Void Wave.Native.Log::e(System.String,System.Text.StringBuilder,System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Log_e_m655F511B71803F04CF5F3FE05E0B2A8D2E34F08E (String_t* ___0_tag, StringBuilder_t* ___1_sb, bool ___2_logInEditor, const RuntimeMethod* method) ;
+// System.Void System.Text.StringBuilder::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StringBuilder__ctor_m1D99713357DE05DAFA296633639DB55F8C30587D (StringBuilder_t* __this, const RuntimeMethod* method) ;
 // System.Void Wave.Essence.BodyTracking.RuntimeDependency.Rdp::d(System.String,System.Text.StringBuilder,System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Rdp_d_mF35489EADD63997A0A4979F1991FF1730344709F (String_t* ___0_tag, StringBuilder_t* ___1_sb, bool ___2_logInEditor, const RuntimeMethod* method) ;
 // System.Boolean Wave.Essence.BodyTracking.RuntimeDependency.Rdp::isZero(Wave.Native.WVR_Quatf_t)
@@ -5977,6 +5630,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR WVR_Quatf_t_tBD6F81CF834EC5F728A0502B6F04F990
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Rdp_isZero_mA38D9CD994C030E50060A16C8F011C697EB5E7EE (Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 ___0_qua, const RuntimeMethod* method) ;
 // System.Boolean Wave.Essence.BodyTracking.RuntimeDependency.Rdp::isMinusHomogeneous(UnityEngine.Quaternion)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Rdp_isMinusHomogeneous_m10A74CD93662C72A0BCE6E9CD04BC631FF8C94B1 (Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 ___0_qua, const RuntimeMethod* method) ;
+// UnityEngine.Quaternion UnityEngine.Quaternion::get_identity()
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 Quaternion_get_identity_m7E701AE095ED10FD5EA0B50ABCFDE2EEFF2173A5_inline (const RuntimeMethod* method) ;
 // System.Boolean Wave.Essence.BodyTracking.RuntimeDependency.Rdp::isZero(UnityEngine.Vector4)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Rdp_isZero_m4B85D6CEC925DD615E2370EBC65ECEF98E67598E (Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 ___0_qua, const RuntimeMethod* method) ;
 // System.Boolean Wave.Essence.BodyTracking.RuntimeDependency.Rdp::isMinusHomogeneous(UnityEngine.Vector4)
@@ -6017,16 +5672,36 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Extrinsic_tC89F03DD681976C1C5BE814CCA64399B06
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR WVR_Pose_t_tABA6476918610FE5E3BACB5F6C3F1615EDE00BF8 Rdp_GetExtrinsicWVR_m0B56A4F035236117B669F90607920DD31E059D3B (Extrinsic_tC89F03DD681976C1C5BE814CCA64399B06FCFE08 ___0_ext, const RuntimeMethod* method) ;
 // System.Text.StringBuilder Wave.Essence.BodyTracking.RuntimeDependency.Rdp::get_sb()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringBuilder_t* Rdp_get_sb_m21E648BF8CE0E0EDA6DB084E1478978439A944CD (const RuntimeMethod* method) ;
+// System.Text.StringBuilder System.Text.StringBuilder::Clear()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringBuilder_t* StringBuilder_Clear_m2D76F6533574F40A4E3E2DC4E730277CBD0AF8F6 (StringBuilder_t* __this, const RuntimeMethod* method) ;
+// System.Text.StringBuilder System.Text.StringBuilder::Append(System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringBuilder_t* StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D (StringBuilder_t* __this, String_t* ___0_value, const RuntimeMethod* method) ;
 // System.Void Wave.Essence.BodyTracking.RuntimeDependency.Rdp::DEBUG(System.Text.StringBuilder)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Rdp_DEBUG_mC86D6F88DFCA83C66F26E356D25FC95F19FE3B27 (StringBuilder_t* ___0_msg, const RuntimeMethod* method) ;
 // System.IntPtr System.Runtime.InteropServices.Marshal::StringToHGlobalAnsi(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t Marshal_StringToHGlobalAnsi_mE6070591B7CC1DC279324657D93B6EB0FD4CACDD (String_t* ___0_s, const RuntimeMethod* method) ;
 // System.Void Wave.Native.Interop::WVR_SetParameters(Wave.Native.WVR_DeviceType,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Interop_WVR_SetParameters_m485B8DB4D139B2D3527B3FAD846E587459E3976F (int32_t ___0_type, intptr_t ___1_pchValue, const RuntimeMethod* method) ;
+// System.Boolean Wave.Essence.WXRDevice::IsTracked(Wave.Essence.XR_Device,System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool WXRDevice_IsTracked_m9FC57E2D43ADBEE54F43FAAD510B8C8AD3CBED5D (int32_t ___0_device, bool ___1_adaptiveHanded, const RuntimeMethod* method) ;
+// System.Boolean Wave.Essence.WXRDevice::GetRotation(Wave.Essence.XR_Device,UnityEngine.Quaternion&,System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool WXRDevice_GetRotation_m9EC0CAD078980C8F1FB1043D0D75D901FAC13F88 (int32_t ___0_device, Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974* ___1_rotation, bool ___2_adaptiveHanded, const RuntimeMethod* method) ;
+// System.Boolean Wave.Essence.WXRDevice::GetPosition(Wave.Essence.XR_Device,UnityEngine.Vector3&,System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool WXRDevice_GetPosition_m80793AA78194320068D96377A9EBF7E8FA3398BF (int32_t ___0_device, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___1_position, bool ___2_adaptiveHanded, const RuntimeMethod* method) ;
+// System.Boolean Wave.Essence.WXRDevice::GetVelocity(Wave.Essence.XR_Device,UnityEngine.Vector3&,System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool WXRDevice_GetVelocity_m0C7E27C268A714070C6F7AC7028F09E9E540C851 (int32_t ___0_device, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___1_velocity, bool ___2_adaptiveHanded, const RuntimeMethod* method) ;
+// System.Boolean Wave.Essence.WXRDevice::GetAngularVelocity(Wave.Essence.XR_Device,UnityEngine.Vector3&,System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool WXRDevice_GetAngularVelocity_m3E25C88D6682FC142334AE70F7F4D9E68AB638E1 (int32_t ___0_device, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___1_angularVelocity, bool ___2_adaptiveHanded, const RuntimeMethod* method) ;
+// System.Boolean Wave.Essence.WXRDevice::GetAcceleration(Wave.Essence.XR_Device,UnityEngine.Vector3&,System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool WXRDevice_GetAcceleration_mCFCE198C16514E2C71E53C506EFF12B3B95B0928 (int32_t ___0_device, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___1_acceleration, bool ___2_adaptiveHanded, const RuntimeMethod* method) ;
 // Wave.Essence.Hand.HandManager Wave.Essence.Hand.HandManager::get_Instance()
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR HandManager_t24AAE56AC9A9230BA044455D4C85782886D69F18* HandManager_get_Instance_m442EAFF9693FF317C60D6901820159FE209D4F71_inline (const RuntimeMethod* method) ;
+// System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605 (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* ___0_x, Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* ___1_y, const RuntimeMethod* method) ;
 // System.Boolean Wave.Essence.Hand.HandManager::IsHandPoseValid(System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool HandManager_IsHandPoseValid_mF1A77074A2BD9672628EDDEE3C3CE283ADFCD89E (HandManager_t24AAE56AC9A9230BA044455D4C85782886D69F18* __this, bool ___0_isLeft, const RuntimeMethod* method) ;
+// System.Boolean Wave.Essence.BodyTracking.RuntimeDependency.Rdp/Hand::IsTracked(System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Hand_IsTracked_mEA05D009A2EC81D7D74417835FCB9CE7954945C3 (bool ___0_isLeft, const RuntimeMethod* method) ;
 // System.Boolean Wave.Essence.Hand.HandManager::GetJointRotation(Wave.Essence.Hand.HandManager/HandJoint,UnityEngine.Quaternion&,System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool HandManager_GetJointRotation_m2DC8D1009B41AB212780E291B010E152EC0896F5 (HandManager_t24AAE56AC9A9230BA044455D4C85782886D69F18* __this, int32_t ___0_joint, Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974* ___1_rotation, bool ___2_isLeft, const RuntimeMethod* method) ;
 // System.Boolean Wave.Essence.Hand.HandManager::GetJointPosition(Wave.Essence.Hand.HandManager/HandJoint,UnityEngine.Vector3&,System.Boolean)
@@ -6049,6 +5724,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Tracker_IsTracked_mDA2F106BB6D6E351395EE
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TrackerManager_GetTrackerRotation_mAF69991E75617714C7FAE98A8BA21926E936B357 (TrackerManager_tCED165EE7BF6B0822B3FC88CEFBB418FABCF6D64* __this, int32_t ___0_trackerId, Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974* ___1_rotation, const RuntimeMethod* method) ;
 // System.Boolean Wave.Essence.Tracker.TrackerManager::GetTrackerPosition(Wave.Essence.Tracker.TrackerId,UnityEngine.Vector3&)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TrackerManager_GetTrackerPosition_m03DCDD8710DFBA3BAAF1354F4430D1A62C690FBE (TrackerManager_tCED165EE7BF6B0822B3FC88CEFBB418FABCF6D64* __this, int32_t ___0_trackerId, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___1_position, const RuntimeMethod* method) ;
+// UnityEngine.Vector3 UnityEngine.Vector3::get_zero()
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Vector3_get_zero_m0C1249C3F25B1C70EAD3CC8B31259975A457AE39_inline (const RuntimeMethod* method) ;
 // System.Boolean Wave.Essence.Tracker.TrackerManager::GetTrackerAngularVelocity(Wave.Essence.Tracker.TrackerId,UnityEngine.Vector3&)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TrackerManager_GetTrackerAngularVelocity_m0F2444F09D4109AB141B5B3B52D6BA39BB585C3F (TrackerManager_tCED165EE7BF6B0822B3FC88CEFBB418FABCF6D64* __this, int32_t ___0_trackerId, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___1_angularVelocity, const RuntimeMethod* method) ;
 // System.Boolean Wave.Essence.Tracker.TrackerManager::GetTrackerVelocity(Wave.Essence.Tracker.TrackerId,UnityEngine.Vector3&)
@@ -6142,6 +5819,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Rdp_Name_m8E19758B52F1F492AEB959EC5
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void TrackerRoleDelegate_Invoke_m45CFD778ED5FF3A3C63AA454B76981DD9EDF3244_inline (TrackerRoleDelegate_tD11E5373F5D129D62211088416AA2EDF26D1B595* __this, int32_t ___0_id, bool ___1_connected, int32_t ___2_location, const RuntimeMethod* method) ;
 // System.Void Wave.Essence.BodyTracking.RuntimeDependency.Srdp/TrackerTypeDelegate::Invoke(Wave.Essence.BodyTracking.RuntimeDependency.Rdp/Tracker/Id,System.Boolean,Wave.Essence.BodyTracking.RuntimeDependency.TrackerType)
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void TrackerTypeDelegate_Invoke_m1135EF10D462C28CC93D02C22FE83C57723F7180_inline (TrackerTypeDelegate_t5EE528481A92BF9087A50ECC8F37B6B0C1B9D603* __this, int32_t ___0_id, bool ___1_connected, uint32_t ___2_type, const RuntimeMethod* method) ;
+// System.Void UnityEngine.MonoBehaviour::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E (MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71* __this, const RuntimeMethod* method) ;
 // System.Void Wave.Essence.BodyTracking.AvatarCoordinate.CoordinateDefine::.ctor(Wave.Essence.BodyTracking.AvatarCoordinate.AxisDefine,Wave.Essence.BodyTracking.AvatarCoordinate.AxisDefine,Wave.Essence.BodyTracking.AvatarCoordinate.AxisDefine)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CoordinateDefine__ctor_m7E5212738083B3C21372C703137B4C98E43EE8D8 (CoordinateDefine_tEB1FD35E0FAE9326DE3B8B570D5D9F1883BEDB06* __this, int32_t ___0_in_x, int32_t ___1_in_y, int32_t ___2_in_z, const RuntimeMethod* method) ;
 // System.Boolean Wave.Essence.BodyTracking.AvatarCoordinate.CoordinateDefine::op_Equality(Wave.Essence.BodyTracking.AvatarCoordinate.CoordinateDefine,Wave.Essence.BodyTracking.AvatarCoordinate.CoordinateDefine)
@@ -6200,6 +5879,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BodyJointCoordinate_ApplyBodyOffsetEachF
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BodyAvatar_Update_mAA157FADA9F655B90AE304ECA307E4332974C801 (BodyAvatar_t2C8E331178D60F0E95118D7D9D0F887523923AD2* __this, int32_t ___0_jointType, Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1** ___1_trans, float ___2_scale, const RuntimeMethod* method) ;
 // System.Text.StringBuilder Wave.Essence.BodyTracking.Demo.BodyTrackerPose::get_sb()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringBuilder_t* BodyTrackerPose_get_sb_mFC77239F34786D73EE5C268B67DC9AF439536E56 (BodyTrackerPose_tD44A661AE37175B8C5D24B04D04682070E3ADA04* __this, const RuntimeMethod* method) ;
+// UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3* __this, const RuntimeMethod* method) ;
+// System.String UnityEngine.Object::get_name()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Object_get_name_mAC2F6B897CF1303BA4249B4CB55271AFACBB6392 (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* __this, const RuntimeMethod* method) ;
 // System.Void Wave.Essence.BodyTracking.Demo.BodyTrackerPose::DEBUG(System.Text.StringBuilder)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BodyTrackerPose_DEBUG_mDA1358D4556AEB88F3F3AAD4D51D34644115EDE8 (BodyTrackerPose_tD44A661AE37175B8C5D24B04D04682070E3ADA04* __this, StringBuilder_t* ___0_msg, const RuntimeMethod* method) ;
 // System.Void Wave.Essence.BodyTracking.Demo.BodyTrackerPose::CheckConnection()
@@ -6490,2144 +6173,30 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BodyTrackingSample_RecoverBodyOffset_m39
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStartBodyTrackingU3Ed__41__ctor_m6F14AD4C219A16B9348ED1FCA8D0C83E3211FF1B (U3CStartBodyTrackingU3Ed__41_t4040ACE24B90527EA05CCF98736A60F606F97025* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) ;
 // System.Void Wave.Essence.BodyTracking.Demo.BodyTrackingSample::UpdateBodyTransform(Wave.Essence.BodyTracking.JointType,Wave.Essence.BodyTracking.RotateSpace[],System.UInt32,UnityEngine.Quaternion,UnityEngine.Transform&)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BodyTrackingSample_UpdateBodyTransform_mE35053B2DEF5F6AA858DE1EEFC3BD87E216A5381 (BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* __this, int32_t ___0_type, RotateSpaceU5BU5D_tAB46B4B26C807527769E92317DC5D49F503EFAD1* ___1_rotationSpaces, uint32_t ___2_rotationSpaceCount, Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 ___3_customRot, Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1** ___4_joint, const RuntimeMethod* method) ;
+// Wave.Essence.BodyTracking.BodyTrackingResult Wave.Essence.BodyTracking.BodyManager::CreateBodyTracking(System.Int32&,Wave.Essence.BodyTracking.BodyTrackingMode)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR uint8_t BodyManager_CreateBodyTracking_m5C110646B4D29B5459E98756E0D8D39A80C9F1E1 (BodyManager_t33248D59E5367A79FBADED3676FECDE4A5E4554E* __this, int32_t* ___0_skeletonId, int32_t ___1_mode, const RuntimeMethod* method) ;
+// Wave.Essence.BodyTracking.BodyTrackingResult Wave.Essence.BodyTracking.BodyManager::GetDefaultRotationSpace(System.Int32,Wave.Essence.BodyTracking.RotateSpace[]&,System.UInt32&)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR uint8_t BodyManager_GetDefaultRotationSpace_m3CE74183B3858F853B65A538C5B7B15F9943F92D (BodyManager_t33248D59E5367A79FBADED3676FECDE4A5E4554E* __this, int32_t ___0_skeletonId, RotateSpaceU5BU5D_tAB46B4B26C807527769E92317DC5D49F503EFAD1** ___1_spaces, uint32_t* ___2_count, const RuntimeMethod* method) ;
+// System.Text.StringBuilder System.Text.StringBuilder::Append(System.UInt32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringBuilder_t* StringBuilder_Append_m3C5F10B877B802CA99FA61EC5360B30631270062 (StringBuilder_t* __this, uint32_t ___0_value, const RuntimeMethod* method) ;
+// System.Void Wave.Essence.BodyTracking.Demo.BodyTrackingSample::ApplyBodyScale(System.Single)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BodyTrackingSample_ApplyBodyScale_m9DE1DCE8B7AFE1F529C1136173DF0C47914BF899 (BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* __this, float ___0_scale, const RuntimeMethod* method) ;
+// System.Void Wave.Essence.BodyTracking.Demo.BodyTrackingSample::UpdateBodyPosesInOrder(Wave.Essence.BodyTracking.BodyAvatar,Wave.Essence.BodyTracking.RotateSpace[],System.UInt32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BodyTrackingSample_UpdateBodyPosesInOrder_m186359A895D65BFD43A57F1F7DED8FE115C3B7A9 (BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* __this, BodyAvatar_t2C8E331178D60F0E95118D7D9D0F887523923AD2* ___0_avatarBody, RotateSpaceU5BU5D_tAB46B4B26C807527769E92317DC5D49F503EFAD1* ___1_rotationSpaces, uint32_t ___2_rotationSpaceCount, const RuntimeMethod* method) ;
+// System.Void Wave.Essence.BodyTracking.Demo.BodyTrackingSample::ApplyBodyOffsetEachFrame(UnityEngine.Transform)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BodyTrackingSample_ApplyBodyOffsetEachFrame_mC33B63CAA28166BF68D5F81711EA7BF1374FF9A1 (BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* __this, Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___0_offset, const RuntimeMethod* method) ;
+// System.Text.StringBuilder Wave.Essence.BodyTracking.Demo.HumanoidIKMenu::get_sb()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringBuilder_t* HumanoidIKMenu_get_sb_m45758CEF81A9BB4B0CCA37049452905D349CC5A5 (HumanoidIKMenu_t5063882FCD2429C610477C3D77DD988372D3975C* __this, const RuntimeMethod* method) ;
+// System.Void Wave.Essence.BodyTracking.Demo.HumanoidIKMenu::DEBUG(System.Text.StringBuilder)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidIKMenu_DEBUG_m96C0709141DD241F69D552817F58F9C8E700765D (HumanoidIKMenu_t5063882FCD2429C610477C3D77DD988372D3975C* __this, StringBuilder_t* ___0_msg, const RuntimeMethod* method) ;
+// System.Void Wave.Essence.BodyTracking.Demo.HumanoidIKSample::BeginTracking()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidIKSample_BeginTracking_m035E9A91F82B04AA76AF9951BF12603B0D80B964 (HumanoidIKSample_t299AC6AE30503274166DF4AD9CDA94C4DEA6A670* __this, const RuntimeMethod* method) ;
+// System.Void Wave.Essence.BodyTracking.Demo.HumanoidIKSample::StopTracking()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidIKSample_StopTracking_mE46993FA1AB1EEA999EE6F5398B6EF035331025F (HumanoidIKSample_t299AC6AE30503274166DF4AD9CDA94C4DEA6A670* __this, const RuntimeMethod* method) ;
+// Wave.Essence.BodyTracking.Demo.HumanoidIKSample/TrackingStatus Wave.Essence.BodyTracking.Demo.HumanoidIKSample::GetTrackingStatus()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t HumanoidIKSample_GetTrackingStatus_mBCAE2D9261D6461B76D6B12570DD845B1DB4EFB8 (HumanoidIKSample_t299AC6AE30503274166DF4AD9CDA94C4DEA6A670* __this, const RuntimeMethod* method) ;
 // System.Void UnityEngine.Quaternion::.ctor(System.Single,System.Single,System.Single,System.Single)
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Quaternion__ctor_m868FD60AA65DD5A8AC0C5DEB0608381A8D85FCD8_inline (Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974* __this, float ___0_x, float ___1_y, float ___2_z, float ___3_w, const RuntimeMethod* method) ;
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-// System.Void Wave.Essence.BodyTracking.BodyRoleData/TrackerIndexBase::.ctor(Wave.Essence.BodyTracking.RuntimeDependency.TrackerLocation,System.UInt32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TrackerIndexBase__ctor_mEA64F2740593D02E6557E2B7CF6D2F346D30E5DE (TrackerIndexBase_t768ED669DED93CE00FF25C67C43315B1730AAAB3* __this, int32_t ___0_in_loc, uint32_t ___1_in_id, const RuntimeMethod* method) 
-{
-	{
-		// public TrackerLocation location = TrackerLocation.Undefined;
-		__this->___location_0 = (-1);
-		// public TrackerIndexBase(TrackerLocation in_loc, UInt32 in_id)
-		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
-		// location = in_loc;
-		int32_t L_0 = ___0_in_loc;
-		__this->___location_0 = L_0;
-		// trackerId = in_id;
-		uint32_t L_1 = ___1_in_id;
-		__this->___trackerId_1 = L_1;
-		// }
-		return;
-	}
-}
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-// System.Void Wave.Essence.BodyTracking.BodyRoleData/TrackerTypeBase::.ctor(Wave.Essence.BodyTracking.RuntimeDependency.TrackerLocation,Wave.Essence.BodyTracking.RuntimeDependency.TrackerType)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TrackerTypeBase__ctor_m8C7864C9A8428475FCF67B8EAF98606565BEC31F (TrackerTypeBase_t686FCEF20967E3CDF632B5174088352DC0D72E46* __this, int32_t ___0_in_loc, uint32_t ___1_in_type, const RuntimeMethod* method) 
-{
-	{
-		// public TrackerLocation location = TrackerLocation.Undefined;
-		__this->___location_0 = (-1);
-		// public TrackerTypeBase(TrackerLocation in_loc, TrackerType in_type)
-		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
-		// location = in_loc;
-		int32_t L_0 = ___0_in_loc;
-		__this->___location_0 = L_0;
-		// type = in_type;
-		uint32_t L_1 = ___1_in_type;
-		__this->___type_1 = L_1;
-		// }
-		return;
-	}
-}
-// System.Void Wave.Essence.BodyTracking.BodyRoleData/TrackerTypeBase::Update(Wave.Essence.BodyTracking.RuntimeDependency.TrackerLocation,Wave.Essence.BodyTracking.RuntimeDependency.TrackerType)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TrackerTypeBase_Update_m8876FA9522BF11D335F59BF6475DC60597FCA1A8 (TrackerTypeBase_t686FCEF20967E3CDF632B5174088352DC0D72E46* __this, int32_t ___0_in_loc, uint32_t ___1_in_type, const RuntimeMethod* method) 
-{
-	{
-		// location = in_loc;
-		int32_t L_0 = ___0_in_loc;
-		__this->___location_0 = L_0;
-		// type = in_type;
-		uint32_t L_1 = ___1_in_type;
-		__this->___type_1 = L_1;
-		// }
-		return;
-	}
-}
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-// System.Void Wave.Essence.BodyTracking.BodyRoleData/RoleData::.ctor(Wave.Essence.BodyTracking.BodyRoleData/VelocityFlag,Wave.Essence.BodyTracking.TrackedDevicePose)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RoleData__ctor_m91B644789F3ED3A72500340B827D493BCDECD5F0 (RoleData_t5926C18DC0FE85E5FFB7DE194388A965764F9E80* __this, int32_t ___0_in_state, TrackedDevicePose_t6C997B56E38666F733216FCED72A96A703FFCA7B ___1_in_pose, const RuntimeMethod* method) 
-{
-	{
-		// velocityState = in_state;
-		int32_t L_0 = ___0_in_state;
-		__this->___velocityState_0 = L_0;
-		// devicePose = in_pose;
-		TrackedDevicePose_t6C997B56E38666F733216FCED72A96A703FFCA7B L_1 = ___1_in_pose;
-		__this->___devicePose_1 = L_1;
-		// }
-		return;
-	}
-}
-IL2CPP_EXTERN_C  void RoleData__ctor_m91B644789F3ED3A72500340B827D493BCDECD5F0_AdjustorThunk (RuntimeObject* __this, int32_t ___0_in_state, TrackedDevicePose_t6C997B56E38666F733216FCED72A96A703FFCA7B ___1_in_pose, const RuntimeMethod* method)
-{
-	RoleData_t5926C18DC0FE85E5FFB7DE194388A965764F9E80* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<RoleData_t5926C18DC0FE85E5FFB7DE194388A965764F9E80*>(__this + _offset);
-	RoleData__ctor_m91B644789F3ED3A72500340B827D493BCDECD5F0(_thisAdjusted, ___0_in_state, ___1_in_pose, method);
-}
-// Wave.Essence.BodyTracking.BodyRoleData/RoleData Wave.Essence.BodyTracking.BodyRoleData/RoleData::get_identity()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RoleData_t5926C18DC0FE85E5FFB7DE194388A965764F9E80 RoleData_get_identity_mFE91B34C90CF547DAA326934C25938DB2A4519A9 (const RuntimeMethod* method) 
-{
-	{
-		// get { return new RoleData(0, TrackedDevicePose.identity); }
-		TrackedDevicePose_t6C997B56E38666F733216FCED72A96A703FFCA7B L_0;
-		L_0 = TrackedDevicePose_get_identity_mC8F598D5DAA51EE470298ED618904403127A421C(NULL);
-		RoleData_t5926C18DC0FE85E5FFB7DE194388A965764F9E80 L_1;
-		memset((&L_1), 0, sizeof(L_1));
-		RoleData__ctor_m91B644789F3ED3A72500340B827D493BCDECD5F0((&L_1), 0, L_0, /*hidden argument*/NULL);
-		return L_1;
-	}
-}
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-// System.Void Wave.Essence.BodyTracking.RolePose::OnEnable()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RolePose_OnEnable_m601A8C0433F23F226EEA7B918E1114B7DCC08109 (RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717* __this, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		// RolePoseProvider.RegisterRolePose(m_PoseType, this);
-		uint32_t* L_0 = (&__this->___m_PoseType_4);
-		il2cpp_codegen_runtime_class_init_inline(RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_il2cpp_TypeInfo_var);
-		RolePoseProvider_RegisterRolePose_m63FC196367D96FE23A4A71D650E788D91F1B59A8(L_0, (&__this), NULL);
-		// }
-		return;
-	}
-}
-// System.Void Wave.Essence.BodyTracking.RolePose::OnDisable()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RolePose_OnDisable_mC3DF3ADA3E0D17BC636E877E260A2FF83E8C2179 (RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717* __this, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		// RolePoseProvider.RemoveRolePose(m_PoseType);
-		uint32_t* L_0 = (&__this->___m_PoseType_4);
-		il2cpp_codegen_runtime_class_init_inline(RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_il2cpp_TypeInfo_var);
-		RolePoseProvider_RemoveRolePose_mD9F677F01A08663591459F820467B5F5B1BC055F(L_0, NULL);
-		// }
-		return;
-	}
-}
-// System.Boolean Wave.Essence.BodyTracking.RolePose::IsTracked()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool RolePose_IsTracked_m4706F0438D04CCC6BF522ED21FB9963E5BB95E7B (RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717* __this, const RuntimeMethod* method) 
-{
-	{
-		// return (m_LocationFlag != 0);
-		int32_t L_0 = __this->___m_LocationFlag_5;
-		return (bool)((!(((uint32_t)L_0) <= ((uint32_t)0)))? 1 : 0);
-	}
-}
-// System.Boolean Wave.Essence.BodyTracking.RolePose::GetRotation(UnityEngine.Quaternion&)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool RolePose_GetRotation_mF0AF1F8803E95047102B92A404E590D4EAD7CAA3 (RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717* __this, Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974* ___0_value, const RuntimeMethod* method) 
-{
-	{
-		// value = m_Rotation;
-		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974* L_0 = ___0_value;
-		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_1 = __this->___m_Rotation_7;
-		*(Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974*)L_0 = L_1;
-		// return m_LocationFlag.HasFlag(LocationFlag.ROTATION);
-		int32_t L_2 = __this->___m_LocationFlag_5;
-		int32_t L_3 = L_2;
-		int32_t L_4 = 1;
-		bool L_5 = il2cpp_codegen_enum_has_flag((int32_t)L_3, (int32_t)L_4);
-		return L_5;
-	}
-}
-// System.Boolean Wave.Essence.BodyTracking.RolePose::GetPosition(UnityEngine.Vector3&)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool RolePose_GetPosition_mC73FB4AFD9D3A0156F61AC580B3DC733DEDE9C50 (RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___0_value, const RuntimeMethod* method) 
-{
-	{
-		// value = m_Position;
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* L_0 = ___0_value;
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_1 = __this->___m_Position_8;
-		*(Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2*)L_0 = L_1;
-		// return m_LocationFlag.HasFlag(LocationFlag.POSITION);
-		int32_t L_2 = __this->___m_LocationFlag_5;
-		int32_t L_3 = L_2;
-		int32_t L_4 = 2;
-		bool L_5 = il2cpp_codegen_enum_has_flag((int32_t)L_3, (int32_t)L_4);
-		return L_5;
-	}
-}
-// System.Boolean Wave.Essence.BodyTracking.RolePose::GetAngularVelocity(UnityEngine.Vector3&)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool RolePose_GetAngularVelocity_mB8D37A3ACF845C1CFAF6C373184318323DCC4E3A (RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___0_value, const RuntimeMethod* method) 
-{
-	{
-		// value = m_AngularVelocity;
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* L_0 = ___0_value;
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_1 = __this->___m_AngularVelocity_9;
-		*(Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2*)L_0 = L_1;
-		// return m_VelocityFlag.HasFlag(VelocityFlag.ANGULAR);
-		int32_t L_2 = __this->___m_VelocityFlag_6;
-		int32_t L_3 = L_2;
-		int32_t L_4 = 1;
-		bool L_5 = il2cpp_codegen_enum_has_flag((int32_t)L_3, (int32_t)L_4);
-		return L_5;
-	}
-}
-// System.Boolean Wave.Essence.BodyTracking.RolePose::GetLinearVelocity(UnityEngine.Vector3&)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool RolePose_GetLinearVelocity_m9C008D9B2C1D218A01C2EFB13599DB6C86C4DE2C (RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___0_value, const RuntimeMethod* method) 
-{
-	{
-		// value = m_LinearVelocity;
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* L_0 = ___0_value;
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_1 = __this->___m_LinearVelocity_10;
-		*(Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2*)L_0 = L_1;
-		// return m_VelocityFlag.HasFlag(VelocityFlag.LINEAR);
-		int32_t L_2 = __this->___m_VelocityFlag_6;
-		int32_t L_3 = L_2;
-		int32_t L_4 = 2;
-		bool L_5 = il2cpp_codegen_enum_has_flag((int32_t)L_3, (int32_t)L_4);
-		return L_5;
-	}
-}
-// System.Boolean Wave.Essence.BodyTracking.RolePose::GetAcceleration(UnityEngine.Vector3&)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool RolePose_GetAcceleration_m1092E0570B6DBBC4251E06DC05C8D5F712C4FC6E (RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___0_value, const RuntimeMethod* method) 
-{
-	{
-		// value = m_Acceleration;
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* L_0 = ___0_value;
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_1 = __this->___m_Acceleration_11;
-		*(Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2*)L_0 = L_1;
-		// return m_LocationFlag.HasFlag(LocationFlag.POSITION);
-		int32_t L_2 = __this->___m_LocationFlag_5;
-		int32_t L_3 = L_2;
-		int32_t L_4 = 2;
-		bool L_5 = il2cpp_codegen_enum_has_flag((int32_t)L_3, (int32_t)L_4);
-		return L_5;
-	}
-}
-// System.Void Wave.Essence.BodyTracking.RolePose::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RolePose__ctor_m9DA2A03E0BA98404CC5725C79E9320ABCF93DFBF (RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717* __this, const RuntimeMethod* method) 
-{
-	{
-		// protected RolePoseType m_PoseType = RolePoseType.UNKNOWN;
-		__this->___m_PoseType_4 = ((int32_t)2147483647LL);
-		// protected Quaternion m_Rotation = Quaternion.identity;
-		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_0;
-		L_0 = Quaternion_get_identity_m7E701AE095ED10FD5EA0B50ABCFDE2EEFF2173A5_inline(NULL);
-		__this->___m_Rotation_7 = L_0;
-		// protected Vector3 m_Position = Vector3.zero;
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_1;
-		L_1 = Vector3_get_zero_m0C1249C3F25B1C70EAD3CC8B31259975A457AE39_inline(NULL);
-		__this->___m_Position_8 = L_1;
-		// protected Vector3 m_AngularVelocity = Vector3.zero;
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_2;
-		L_2 = Vector3_get_zero_m0C1249C3F25B1C70EAD3CC8B31259975A457AE39_inline(NULL);
-		__this->___m_AngularVelocity_9 = L_2;
-		// protected Vector3 m_LinearVelocity = Vector3.zero;
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_3;
-		L_3 = Vector3_get_zero_m0C1249C3F25B1C70EAD3CC8B31259975A457AE39_inline(NULL);
-		__this->___m_LinearVelocity_10 = L_3;
-		// protected Vector3 m_Acceleration = Vector3.zero;
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_4;
-		L_4 = Vector3_get_zero_m0C1249C3F25B1C70EAD3CC8B31259975A457AE39_inline(NULL);
-		__this->___m_Acceleration_11 = L_4;
-		MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E(__this, NULL);
-		return;
-	}
-}
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-// System.Void Wave.Essence.BodyTracking.RolePoseController::Awake()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RolePoseController_Awake_mCCB9B4D6706F330ABBDFDC76190A31424C325B95 (RolePoseController_t706AE56FE73EFD4EA44F938D506D6CFE2A934DB9* __this, const RuntimeMethod* method) 
-{
-	RolePoseController_t706AE56FE73EFD4EA44F938D506D6CFE2A934DB9* G_B2_0 = NULL;
-	RolePoseController_t706AE56FE73EFD4EA44F938D506D6CFE2A934DB9* G_B1_0 = NULL;
-	int32_t G_B3_0 = 0;
-	RolePoseController_t706AE56FE73EFD4EA44F938D506D6CFE2A934DB9* G_B3_1 = NULL;
-	{
-		// m_PoseType = isLeft ? RolePoseType.CONTROLLER_LEFT : RolePoseType.CONTROLLER_RIGHT;
-		bool L_0 = __this->___isLeft_12;
-		G_B1_0 = __this;
-		if (L_0)
-		{
-			G_B2_0 = __this;
-			goto IL_0010;
-		}
-	}
-	{
-		G_B3_0 = ((int32_t)201);
-		G_B3_1 = G_B1_0;
-		goto IL_0015;
-	}
-
-IL_0010:
-	{
-		G_B3_0 = ((int32_t)200);
-		G_B3_1 = G_B2_0;
-	}
-
-IL_0015:
-	{
-		NullCheck(G_B3_1);
-		((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*)G_B3_1)->___m_PoseType_4 = G_B3_0;
-		// }
-		return;
-	}
-}
-// System.Void Wave.Essence.BodyTracking.RolePoseController::OnEnable()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RolePoseController_OnEnable_m6EA3AC310E63DE57E3F7B4BFC88FBAD2EC986328 (RolePoseController_t706AE56FE73EFD4EA44F938D506D6CFE2A934DB9* __this, const RuntimeMethod* method) 
-{
-	{
-		// base.OnEnable();
-		RolePose_OnEnable_m601A8C0433F23F226EEA7B918E1114B7DCC08109(__this, NULL);
-		// if (!toUpdate)
-		bool L_0 = __this->___toUpdate_13;
-		if (L_0)
-		{
-			goto IL_0022;
-		}
-	}
-	{
-		// toUpdate = true;
-		__this->___toUpdate_13 = (bool)1;
-		// StartCoroutine(UpdatePose());
-		RuntimeObject* L_1;
-		L_1 = RolePoseController_UpdatePose_m8B118EDAD925A3D46E7E8538A543C45B78AD3831(__this, NULL);
-		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_2;
-		L_2 = MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812(__this, L_1, NULL);
-	}
-
-IL_0022:
-	{
-		// }
-		return;
-	}
-}
-// System.Void Wave.Essence.BodyTracking.RolePoseController::OnDisable()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RolePoseController_OnDisable_m82EFCA46E7F2960726A4041B724AE8F84203D6FA (RolePoseController_t706AE56FE73EFD4EA44F938D506D6CFE2A934DB9* __this, const RuntimeMethod* method) 
-{
-	{
-		// base.OnDisable();
-		RolePose_OnDisable_mC3DF3ADA3E0D17BC636E877E260A2FF83E8C2179(__this, NULL);
-		// if (toUpdate)
-		bool L_0 = __this->___toUpdate_13;
-		if (!L_0)
-		{
-			goto IL_0021;
-		}
-	}
-	{
-		// toUpdate = false;
-		__this->___toUpdate_13 = (bool)0;
-		// StopCoroutine(UpdatePose());
-		RuntimeObject* L_1;
-		L_1 = RolePoseController_UpdatePose_m8B118EDAD925A3D46E7E8538A543C45B78AD3831(__this, NULL);
-		MonoBehaviour_StopCoroutine_mF9E93B82091E804595BE13AA29F9AB7517F7E04A(__this, L_1, NULL);
-	}
-
-IL_0021:
-	{
-		// }
-		return;
-	}
-}
-// System.Collections.IEnumerator Wave.Essence.BodyTracking.RolePoseController::UpdatePose()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* RolePoseController_UpdatePose_m8B118EDAD925A3D46E7E8538A543C45B78AD3831 (RolePoseController_t706AE56FE73EFD4EA44F938D506D6CFE2A934DB9* __this, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CUpdatePoseU3Ed__5_tF3C5AB469CDEA8FE5F79DB484AE2B14C3701C10F_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		U3CUpdatePoseU3Ed__5_tF3C5AB469CDEA8FE5F79DB484AE2B14C3701C10F* L_0 = (U3CUpdatePoseU3Ed__5_tF3C5AB469CDEA8FE5F79DB484AE2B14C3701C10F*)il2cpp_codegen_object_new(U3CUpdatePoseU3Ed__5_tF3C5AB469CDEA8FE5F79DB484AE2B14C3701C10F_il2cpp_TypeInfo_var);
-		NullCheck(L_0);
-		U3CUpdatePoseU3Ed__5__ctor_m368E6BC7037872B0F7C064048E5F722A8F620304(L_0, 0, NULL);
-		U3CUpdatePoseU3Ed__5_tF3C5AB469CDEA8FE5F79DB484AE2B14C3701C10F* L_1 = L_0;
-		NullCheck(L_1);
-		L_1->___U3CU3E4__this_2 = __this;
-		Il2CppCodeGenWriteBarrier((void**)(&L_1->___U3CU3E4__this_2), (void*)__this);
-		return L_1;
-	}
-}
-// System.Void Wave.Essence.BodyTracking.RolePoseController::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RolePoseController__ctor_m5D55E224FA1FC5C5B484FA845370AAE1A68B3F5F (RolePoseController_t706AE56FE73EFD4EA44F938D506D6CFE2A934DB9* __this, const RuntimeMethod* method) 
-{
-	{
-		RolePose__ctor_m9DA2A03E0BA98404CC5725C79E9320ABCF93DFBF(__this, NULL);
-		return;
-	}
-}
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-// System.Void Wave.Essence.BodyTracking.RolePoseController/<UpdatePose>d__5::.ctor(System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CUpdatePoseU3Ed__5__ctor_m368E6BC7037872B0F7C064048E5F722A8F620304 (U3CUpdatePoseU3Ed__5_tF3C5AB469CDEA8FE5F79DB484AE2B14C3701C10F* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
-{
-	{
-		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
-		int32_t L_0 = ___0_U3CU3E1__state;
-		__this->___U3CU3E1__state_0 = L_0;
-		return;
-	}
-}
-// System.Void Wave.Essence.BodyTracking.RolePoseController/<UpdatePose>d__5::System.IDisposable.Dispose()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CUpdatePoseU3Ed__5_System_IDisposable_Dispose_mFB1176D5E577C129446B254AC0B07B95EF5E1058 (U3CUpdatePoseU3Ed__5_tF3C5AB469CDEA8FE5F79DB484AE2B14C3701C10F* __this, const RuntimeMethod* method) 
-{
-	{
-		return;
-	}
-}
-// System.Boolean Wave.Essence.BodyTracking.RolePoseController/<UpdatePose>d__5::MoveNext()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CUpdatePoseU3Ed__5_MoveNext_m1E09CD6B50FF1FAE1E34CC3D286DCABB8BE6382F (U3CUpdatePoseU3Ed__5_tF3C5AB469CDEA8FE5F79DB484AE2B14C3701C10F* __this, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&WXRDevice_t771D8AE648B6DB95A8C9A67C7198DBD6074DB8B1_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&WaitForEndOfFrame_tE38D80923E3F8380069B423968C25ABE50A46663_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	int32_t V_0 = 0;
-	RolePoseController_t706AE56FE73EFD4EA44F938D506D6CFE2A934DB9* V_1 = NULL;
-	int32_t V_2 = 0;
-	int32_t G_B8_0 = 0;
-	{
-		int32_t L_0 = __this->___U3CU3E1__state_0;
-		V_0 = L_0;
-		RolePoseController_t706AE56FE73EFD4EA44F938D506D6CFE2A934DB9* L_1 = __this->___U3CU3E4__this_2;
-		V_1 = L_1;
-		int32_t L_2 = V_0;
-		if (!L_2)
-		{
-			goto IL_0017;
-		}
-	}
-	{
-		int32_t L_3 = V_0;
-		if ((((int32_t)L_3) == ((int32_t)1)))
-		{
-			goto IL_0037;
-		}
-	}
-	{
-		return (bool)0;
-	}
-
-IL_0017:
-	{
-		__this->___U3CU3E1__state_0 = (-1);
-		goto IL_00e7;
-	}
-
-IL_0023:
-	{
-		// yield return new WaitForEndOfFrame();
-		WaitForEndOfFrame_tE38D80923E3F8380069B423968C25ABE50A46663* L_4 = (WaitForEndOfFrame_tE38D80923E3F8380069B423968C25ABE50A46663*)il2cpp_codegen_object_new(WaitForEndOfFrame_tE38D80923E3F8380069B423968C25ABE50A46663_il2cpp_TypeInfo_var);
-		NullCheck(L_4);
-		WaitForEndOfFrame__ctor_m4AF7E576C01E6B04443BB898B1AE5D645F7D45AB(L_4, NULL);
-		__this->___U3CU3E2__current_1 = L_4;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current_1), (void*)L_4);
-		__this->___U3CU3E1__state_0 = 1;
-		return (bool)1;
-	}
-
-IL_0037:
-	{
-		__this->___U3CU3E1__state_0 = (-1);
-		// XR_Device device = isLeft ? XR_Device.Left : XR_Device.Right;
-		RolePoseController_t706AE56FE73EFD4EA44F938D506D6CFE2A934DB9* L_5 = V_1;
-		NullCheck(L_5);
-		bool L_6 = L_5->___isLeft_12;
-		if (L_6)
-		{
-			goto IL_0049;
-		}
-	}
-	{
-		G_B8_0 = 2;
-		goto IL_004a;
-	}
-
-IL_0049:
-	{
-		G_B8_0 = 3;
-	}
-
-IL_004a:
-	{
-		V_2 = G_B8_0;
-		// m_LocationFlag = 0;
-		RolePoseController_t706AE56FE73EFD4EA44F938D506D6CFE2A934DB9* L_7 = V_1;
-		NullCheck(L_7);
-		((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*)L_7)->___m_LocationFlag_5 = 0;
-		// m_VelocityFlag = 0;
-		RolePoseController_t706AE56FE73EFD4EA44F938D506D6CFE2A934DB9* L_8 = V_1;
-		NullCheck(L_8);
-		((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*)L_8)->___m_VelocityFlag_6 = 0;
-		// if (!WXRDevice.IsTracked(device)) { continue; }
-		int32_t L_9 = V_2;
-		il2cpp_codegen_runtime_class_init_inline(WXRDevice_t771D8AE648B6DB95A8C9A67C7198DBD6074DB8B1_il2cpp_TypeInfo_var);
-		bool L_10;
-		L_10 = WXRDevice_IsTracked_m9FC57E2D43ADBEE54F43FAAD510B8C8AD3CBED5D(L_9, (bool)0, NULL);
-		if (!L_10)
-		{
-			goto IL_00e7;
-		}
-	}
-	{
-		// if (WXRDevice.GetRotation(device, ref m_Rotation)) { m_LocationFlag |= LocationFlag.ROTATION; }
-		int32_t L_11 = V_2;
-		RolePoseController_t706AE56FE73EFD4EA44F938D506D6CFE2A934DB9* L_12 = V_1;
-		NullCheck(L_12);
-		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974* L_13 = (&((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*)L_12)->___m_Rotation_7);
-		il2cpp_codegen_runtime_class_init_inline(WXRDevice_t771D8AE648B6DB95A8C9A67C7198DBD6074DB8B1_il2cpp_TypeInfo_var);
-		bool L_14;
-		L_14 = WXRDevice_GetRotation_m9EC0CAD078980C8F1FB1043D0D75D901FAC13F88(L_11, L_13, (bool)0, NULL);
-		if (!L_14)
-		{
-			goto IL_0082;
-		}
-	}
-	{
-		// if (WXRDevice.GetRotation(device, ref m_Rotation)) { m_LocationFlag |= LocationFlag.ROTATION; }
-		RolePoseController_t706AE56FE73EFD4EA44F938D506D6CFE2A934DB9* L_15 = V_1;
-		RolePoseController_t706AE56FE73EFD4EA44F938D506D6CFE2A934DB9* L_16 = V_1;
-		NullCheck(L_16);
-		int32_t L_17 = ((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*)L_16)->___m_LocationFlag_5;
-		NullCheck(L_15);
-		((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*)L_15)->___m_LocationFlag_5 = ((int32_t)((int32_t)L_17|1));
-	}
-
-IL_0082:
-	{
-		// if (WXRDevice.GetPosition(device, ref m_Position)) { m_LocationFlag |= LocationFlag.POSITION; }
-		int32_t L_18 = V_2;
-		RolePoseController_t706AE56FE73EFD4EA44F938D506D6CFE2A934DB9* L_19 = V_1;
-		NullCheck(L_19);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* L_20 = (&((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*)L_19)->___m_Position_8);
-		il2cpp_codegen_runtime_class_init_inline(WXRDevice_t771D8AE648B6DB95A8C9A67C7198DBD6074DB8B1_il2cpp_TypeInfo_var);
-		bool L_21;
-		L_21 = WXRDevice_GetPosition_m80793AA78194320068D96377A9EBF7E8FA3398BF(L_18, L_20, (bool)0, NULL);
-		if (!L_21)
-		{
-			goto IL_009f;
-		}
-	}
-	{
-		// if (WXRDevice.GetPosition(device, ref m_Position)) { m_LocationFlag |= LocationFlag.POSITION; }
-		RolePoseController_t706AE56FE73EFD4EA44F938D506D6CFE2A934DB9* L_22 = V_1;
-		RolePoseController_t706AE56FE73EFD4EA44F938D506D6CFE2A934DB9* L_23 = V_1;
-		NullCheck(L_23);
-		int32_t L_24 = ((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*)L_23)->___m_LocationFlag_5;
-		NullCheck(L_22);
-		((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*)L_22)->___m_LocationFlag_5 = ((int32_t)((int32_t)L_24|2));
-	}
-
-IL_009f:
-	{
-		// if (WXRDevice.GetAngularVelocity(device, ref m_AngularVelocity)) { m_VelocityFlag |= VelocityFlag.ANGULAR; }
-		int32_t L_25 = V_2;
-		RolePoseController_t706AE56FE73EFD4EA44F938D506D6CFE2A934DB9* L_26 = V_1;
-		NullCheck(L_26);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* L_27 = (&((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*)L_26)->___m_AngularVelocity_9);
-		il2cpp_codegen_runtime_class_init_inline(WXRDevice_t771D8AE648B6DB95A8C9A67C7198DBD6074DB8B1_il2cpp_TypeInfo_var);
-		bool L_28;
-		L_28 = WXRDevice_GetAngularVelocity_m3E25C88D6682FC142334AE70F7F4D9E68AB638E1(L_25, L_27, (bool)0, NULL);
-		if (!L_28)
-		{
-			goto IL_00bc;
-		}
-	}
-	{
-		// if (WXRDevice.GetAngularVelocity(device, ref m_AngularVelocity)) { m_VelocityFlag |= VelocityFlag.ANGULAR; }
-		RolePoseController_t706AE56FE73EFD4EA44F938D506D6CFE2A934DB9* L_29 = V_1;
-		RolePoseController_t706AE56FE73EFD4EA44F938D506D6CFE2A934DB9* L_30 = V_1;
-		NullCheck(L_30);
-		int32_t L_31 = ((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*)L_30)->___m_VelocityFlag_6;
-		NullCheck(L_29);
-		((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*)L_29)->___m_VelocityFlag_6 = ((int32_t)((int32_t)L_31|1));
-	}
-
-IL_00bc:
-	{
-		// if (WXRDevice.GetVelocity(device, ref m_LinearVelocity)) { m_VelocityFlag |= VelocityFlag.LINEAR; }
-		int32_t L_32 = V_2;
-		RolePoseController_t706AE56FE73EFD4EA44F938D506D6CFE2A934DB9* L_33 = V_1;
-		NullCheck(L_33);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* L_34 = (&((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*)L_33)->___m_LinearVelocity_10);
-		il2cpp_codegen_runtime_class_init_inline(WXRDevice_t771D8AE648B6DB95A8C9A67C7198DBD6074DB8B1_il2cpp_TypeInfo_var);
-		bool L_35;
-		L_35 = WXRDevice_GetVelocity_m0C7E27C268A714070C6F7AC7028F09E9E540C851(L_32, L_34, (bool)0, NULL);
-		if (!L_35)
-		{
-			goto IL_00d9;
-		}
-	}
-	{
-		// if (WXRDevice.GetVelocity(device, ref m_LinearVelocity)) { m_VelocityFlag |= VelocityFlag.LINEAR; }
-		RolePoseController_t706AE56FE73EFD4EA44F938D506D6CFE2A934DB9* L_36 = V_1;
-		RolePoseController_t706AE56FE73EFD4EA44F938D506D6CFE2A934DB9* L_37 = V_1;
-		NullCheck(L_37);
-		int32_t L_38 = ((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*)L_37)->___m_VelocityFlag_6;
-		NullCheck(L_36);
-		((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*)L_36)->___m_VelocityFlag_6 = ((int32_t)((int32_t)L_38|2));
-	}
-
-IL_00d9:
-	{
-		// WXRDevice.GetAcceleration(device, ref m_Acceleration);
-		int32_t L_39 = V_2;
-		RolePoseController_t706AE56FE73EFD4EA44F938D506D6CFE2A934DB9* L_40 = V_1;
-		NullCheck(L_40);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* L_41 = (&((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*)L_40)->___m_Acceleration_11);
-		il2cpp_codegen_runtime_class_init_inline(WXRDevice_t771D8AE648B6DB95A8C9A67C7198DBD6074DB8B1_il2cpp_TypeInfo_var);
-		bool L_42;
-		L_42 = WXRDevice_GetAcceleration_mCFCE198C16514E2C71E53C506EFF12B3B95B0928(L_39, L_41, (bool)0, NULL);
-	}
-
-IL_00e7:
-	{
-		// while (toUpdate)
-		RolePoseController_t706AE56FE73EFD4EA44F938D506D6CFE2A934DB9* L_43 = V_1;
-		NullCheck(L_43);
-		bool L_44 = L_43->___toUpdate_13;
-		if (L_44)
-		{
-			goto IL_0023;
-		}
-	}
-	{
-		// }
-		return (bool)0;
-	}
-}
-// System.Object Wave.Essence.BodyTracking.RolePoseController/<UpdatePose>d__5::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CUpdatePoseU3Ed__5_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m3134041C52F29B6F96E57E6109C53E8FBF088552 (U3CUpdatePoseU3Ed__5_tF3C5AB469CDEA8FE5F79DB484AE2B14C3701C10F* __this, const RuntimeMethod* method) 
-{
-	{
-		RuntimeObject* L_0 = __this->___U3CU3E2__current_1;
-		return L_0;
-	}
-}
-// System.Void Wave.Essence.BodyTracking.RolePoseController/<UpdatePose>d__5::System.Collections.IEnumerator.Reset()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CUpdatePoseU3Ed__5_System_Collections_IEnumerator_Reset_m83ABA3182CD6D3D3BF3AD5D1293167C6ED91B60C (U3CUpdatePoseU3Ed__5_tF3C5AB469CDEA8FE5F79DB484AE2B14C3701C10F* __this, const RuntimeMethod* method) 
-{
-	{
-		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
-		NullCheck(L_0);
-		NotSupportedException__ctor_m1398D0CDE19B36AA3DE9392879738C1EA2439CDF(L_0, NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CUpdatePoseU3Ed__5_System_Collections_IEnumerator_Reset_m83ABA3182CD6D3D3BF3AD5D1293167C6ED91B60C_RuntimeMethod_var)));
-	}
-}
-// System.Object Wave.Essence.BodyTracking.RolePoseController/<UpdatePose>d__5::System.Collections.IEnumerator.get_Current()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CUpdatePoseU3Ed__5_System_Collections_IEnumerator_get_Current_m128E8186FE31066E6319BB336797EBA81523612C (U3CUpdatePoseU3Ed__5_tF3C5AB469CDEA8FE5F79DB484AE2B14C3701C10F* __this, const RuntimeMethod* method) 
-{
-	{
-		RuntimeObject* L_0 = __this->___U3CU3E2__current_1;
-		return L_0;
-	}
-}
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-// System.Void Wave.Essence.BodyTracking.RolePoseHand::Awake()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RolePoseHand_Awake_m1F816865DB8C8151860093D1C6555A6EDD267FC5 (RolePoseHand_t1077BA77E30CBE89252EAB5A70028A3F86442B5E* __this, const RuntimeMethod* method) 
-{
-	RolePoseHand_t1077BA77E30CBE89252EAB5A70028A3F86442B5E* G_B2_0 = NULL;
-	RolePoseHand_t1077BA77E30CBE89252EAB5A70028A3F86442B5E* G_B1_0 = NULL;
-	int32_t G_B3_0 = 0;
-	RolePoseHand_t1077BA77E30CBE89252EAB5A70028A3F86442B5E* G_B3_1 = NULL;
-	{
-		// m_PoseType = isLeft ? RolePoseType.HAND_LEFT : RolePoseType.HAND_RIGHT;
-		bool L_0 = __this->___isLeft_12;
-		G_B1_0 = __this;
-		if (L_0)
-		{
-			G_B2_0 = __this;
-			goto IL_0010;
-		}
-	}
-	{
-		G_B3_0 = ((int32_t)301);
-		G_B3_1 = G_B1_0;
-		goto IL_0015;
-	}
-
-IL_0010:
-	{
-		G_B3_0 = ((int32_t)300);
-		G_B3_1 = G_B2_0;
-	}
-
-IL_0015:
-	{
-		NullCheck(G_B3_1);
-		((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*)G_B3_1)->___m_PoseType_4 = G_B3_0;
-		// }
-		return;
-	}
-}
-// System.Void Wave.Essence.BodyTracking.RolePoseHand::OnEnable()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RolePoseHand_OnEnable_m6E675DFE40CEC85444E2B2826353DF621E7D684B (RolePoseHand_t1077BA77E30CBE89252EAB5A70028A3F86442B5E* __this, const RuntimeMethod* method) 
-{
-	{
-		// base.OnEnable();
-		RolePose_OnEnable_m601A8C0433F23F226EEA7B918E1114B7DCC08109(__this, NULL);
-		// if (!toUpdate)
-		bool L_0 = __this->___toUpdate_13;
-		if (L_0)
-		{
-			goto IL_0022;
-		}
-	}
-	{
-		// toUpdate = true;
-		__this->___toUpdate_13 = (bool)1;
-		// StartCoroutine(UpdatePose());
-		RuntimeObject* L_1;
-		L_1 = RolePoseHand_UpdatePose_m54AF23F41288D3787C8ABB365568913894D64664(__this, NULL);
-		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_2;
-		L_2 = MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812(__this, L_1, NULL);
-	}
-
-IL_0022:
-	{
-		// }
-		return;
-	}
-}
-// System.Void Wave.Essence.BodyTracking.RolePoseHand::OnDisable()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RolePoseHand_OnDisable_mEB6DABAF80E29FD65A5144B393A98C72B27F4F0A (RolePoseHand_t1077BA77E30CBE89252EAB5A70028A3F86442B5E* __this, const RuntimeMethod* method) 
-{
-	{
-		// base.OnDisable();
-		RolePose_OnDisable_mC3DF3ADA3E0D17BC636E877E260A2FF83E8C2179(__this, NULL);
-		// if (toUpdate)
-		bool L_0 = __this->___toUpdate_13;
-		if (!L_0)
-		{
-			goto IL_0021;
-		}
-	}
-	{
-		// toUpdate = false;
-		__this->___toUpdate_13 = (bool)0;
-		// StopCoroutine(UpdatePose());
-		RuntimeObject* L_1;
-		L_1 = RolePoseHand_UpdatePose_m54AF23F41288D3787C8ABB365568913894D64664(__this, NULL);
-		MonoBehaviour_StopCoroutine_mF9E93B82091E804595BE13AA29F9AB7517F7E04A(__this, L_1, NULL);
-	}
-
-IL_0021:
-	{
-		// }
-		return;
-	}
-}
-// System.Collections.IEnumerator Wave.Essence.BodyTracking.RolePoseHand::UpdatePose()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* RolePoseHand_UpdatePose_m54AF23F41288D3787C8ABB365568913894D64664 (RolePoseHand_t1077BA77E30CBE89252EAB5A70028A3F86442B5E* __this, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CUpdatePoseU3Ed__5_t1DEA6962212108D9FF7E4207A17B66687915677F_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		U3CUpdatePoseU3Ed__5_t1DEA6962212108D9FF7E4207A17B66687915677F* L_0 = (U3CUpdatePoseU3Ed__5_t1DEA6962212108D9FF7E4207A17B66687915677F*)il2cpp_codegen_object_new(U3CUpdatePoseU3Ed__5_t1DEA6962212108D9FF7E4207A17B66687915677F_il2cpp_TypeInfo_var);
-		NullCheck(L_0);
-		U3CUpdatePoseU3Ed__5__ctor_mCF1CAFBA7CC40E37FD405B82DB9F4CD3A4A1F36E(L_0, 0, NULL);
-		U3CUpdatePoseU3Ed__5_t1DEA6962212108D9FF7E4207A17B66687915677F* L_1 = L_0;
-		NullCheck(L_1);
-		L_1->___U3CU3E4__this_2 = __this;
-		Il2CppCodeGenWriteBarrier((void**)(&L_1->___U3CU3E4__this_2), (void*)__this);
-		return L_1;
-	}
-}
-// System.Void Wave.Essence.BodyTracking.RolePoseHand::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RolePoseHand__ctor_m1C7F2637348B6C525A8D66C38564E524650D3043 (RolePoseHand_t1077BA77E30CBE89252EAB5A70028A3F86442B5E* __this, const RuntimeMethod* method) 
-{
-	{
-		RolePose__ctor_m9DA2A03E0BA98404CC5725C79E9320ABCF93DFBF(__this, NULL);
-		return;
-	}
-}
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-// System.Void Wave.Essence.BodyTracking.RolePoseHand/<UpdatePose>d__5::.ctor(System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CUpdatePoseU3Ed__5__ctor_mCF1CAFBA7CC40E37FD405B82DB9F4CD3A4A1F36E (U3CUpdatePoseU3Ed__5_t1DEA6962212108D9FF7E4207A17B66687915677F* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
-{
-	{
-		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
-		int32_t L_0 = ___0_U3CU3E1__state;
-		__this->___U3CU3E1__state_0 = L_0;
-		return;
-	}
-}
-// System.Void Wave.Essence.BodyTracking.RolePoseHand/<UpdatePose>d__5::System.IDisposable.Dispose()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CUpdatePoseU3Ed__5_System_IDisposable_Dispose_mF42699E5B5C647A891E1BF921198A0CDD45C3A67 (U3CUpdatePoseU3Ed__5_t1DEA6962212108D9FF7E4207A17B66687915677F* __this, const RuntimeMethod* method) 
-{
-	{
-		return;
-	}
-}
-// System.Boolean Wave.Essence.BodyTracking.RolePoseHand/<UpdatePose>d__5::MoveNext()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CUpdatePoseU3Ed__5_MoveNext_m489597E8A0741B2F80C16F1E81E79B1F2A0F734B (U3CUpdatePoseU3Ed__5_t1DEA6962212108D9FF7E4207A17B66687915677F* __this, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&WaitForEndOfFrame_tE38D80923E3F8380069B423968C25ABE50A46663_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	int32_t V_0 = 0;
-	RolePoseHand_t1077BA77E30CBE89252EAB5A70028A3F86442B5E* V_1 = NULL;
-	{
-		int32_t L_0 = __this->___U3CU3E1__state_0;
-		V_0 = L_0;
-		RolePoseHand_t1077BA77E30CBE89252EAB5A70028A3F86442B5E* L_1 = __this->___U3CU3E4__this_2;
-		V_1 = L_1;
-		int32_t L_2 = V_0;
-		if (!L_2)
-		{
-			goto IL_0017;
-		}
-	}
-	{
-		int32_t L_3 = V_0;
-		if ((((int32_t)L_3) == ((int32_t)1)))
-		{
-			goto IL_0037;
-		}
-	}
-	{
-		return (bool)0;
-	}
-
-IL_0017:
-	{
-		__this->___U3CU3E1__state_0 = (-1);
-		goto IL_00e2;
-	}
-
-IL_0023:
-	{
-		// yield return new WaitForEndOfFrame();
-		WaitForEndOfFrame_tE38D80923E3F8380069B423968C25ABE50A46663* L_4 = (WaitForEndOfFrame_tE38D80923E3F8380069B423968C25ABE50A46663*)il2cpp_codegen_object_new(WaitForEndOfFrame_tE38D80923E3F8380069B423968C25ABE50A46663_il2cpp_TypeInfo_var);
-		NullCheck(L_4);
-		WaitForEndOfFrame__ctor_m4AF7E576C01E6B04443BB898B1AE5D645F7D45AB(L_4, NULL);
-		__this->___U3CU3E2__current_1 = L_4;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current_1), (void*)L_4);
-		__this->___U3CU3E1__state_0 = 1;
-		return (bool)1;
-	}
-
-IL_0037:
-	{
-		__this->___U3CU3E1__state_0 = (-1);
-		// m_LocationFlag = 0;
-		RolePoseHand_t1077BA77E30CBE89252EAB5A70028A3F86442B5E* L_5 = V_1;
-		NullCheck(L_5);
-		((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*)L_5)->___m_LocationFlag_5 = 0;
-		// m_VelocityFlag = 0;
-		RolePoseHand_t1077BA77E30CBE89252EAB5A70028A3F86442B5E* L_6 = V_1;
-		NullCheck(L_6);
-		((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*)L_6)->___m_VelocityFlag_6 = 0;
-		// if (!Rdp.Hand.IsTracked(isLeft)) { continue; }
-		RolePoseHand_t1077BA77E30CBE89252EAB5A70028A3F86442B5E* L_7 = V_1;
-		NullCheck(L_7);
-		bool L_8 = L_7->___isLeft_12;
-		bool L_9;
-		L_9 = Hand_IsTracked_mEA05D009A2EC81D7D74417835FCB9CE7954945C3(L_8, NULL);
-		if (!L_9)
-		{
-			goto IL_00e2;
-		}
-	}
-	{
-		// if (Rdp.Hand.GetJointRotation(Rdp.Hand.Joint.Palm, ref m_Rotation, isLeft)) { m_LocationFlag |= LocationFlag.ROTATION; }
-		RolePoseHand_t1077BA77E30CBE89252EAB5A70028A3F86442B5E* L_10 = V_1;
-		NullCheck(L_10);
-		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974* L_11 = (&((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*)L_10)->___m_Rotation_7);
-		RolePoseHand_t1077BA77E30CBE89252EAB5A70028A3F86442B5E* L_12 = V_1;
-		NullCheck(L_12);
-		bool L_13 = L_12->___isLeft_12;
-		bool L_14;
-		L_14 = Hand_GetJointRotation_m71FFC0CF6291761E388C48D8E23A3B57E8F70C5C(0, L_11, L_13, NULL);
-		if (!L_14)
-		{
-			goto IL_007e;
-		}
-	}
-	{
-		// if (Rdp.Hand.GetJointRotation(Rdp.Hand.Joint.Palm, ref m_Rotation, isLeft)) { m_LocationFlag |= LocationFlag.ROTATION; }
-		RolePoseHand_t1077BA77E30CBE89252EAB5A70028A3F86442B5E* L_15 = V_1;
-		RolePoseHand_t1077BA77E30CBE89252EAB5A70028A3F86442B5E* L_16 = V_1;
-		NullCheck(L_16);
-		int32_t L_17 = ((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*)L_16)->___m_LocationFlag_5;
-		NullCheck(L_15);
-		((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*)L_15)->___m_LocationFlag_5 = ((int32_t)((int32_t)L_17|1));
-	}
-
-IL_007e:
-	{
-		// if (Rdp.Hand.GetJointPosition(Rdp.Hand.Joint.Palm, ref m_Position, isLeft)) { m_LocationFlag |= LocationFlag.POSITION; }
-		RolePoseHand_t1077BA77E30CBE89252EAB5A70028A3F86442B5E* L_18 = V_1;
-		NullCheck(L_18);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* L_19 = (&((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*)L_18)->___m_Position_8);
-		RolePoseHand_t1077BA77E30CBE89252EAB5A70028A3F86442B5E* L_20 = V_1;
-		NullCheck(L_20);
-		bool L_21 = L_20->___isLeft_12;
-		bool L_22;
-		L_22 = Hand_GetJointPosition_m374A0E638138BBF21B34A2F014C9AF24103FD6C7(0, L_19, L_21, NULL);
-		if (!L_22)
-		{
-			goto IL_00a0;
-		}
-	}
-	{
-		// if (Rdp.Hand.GetJointPosition(Rdp.Hand.Joint.Palm, ref m_Position, isLeft)) { m_LocationFlag |= LocationFlag.POSITION; }
-		RolePoseHand_t1077BA77E30CBE89252EAB5A70028A3F86442B5E* L_23 = V_1;
-		RolePoseHand_t1077BA77E30CBE89252EAB5A70028A3F86442B5E* L_24 = V_1;
-		NullCheck(L_24);
-		int32_t L_25 = ((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*)L_24)->___m_LocationFlag_5;
-		NullCheck(L_23);
-		((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*)L_23)->___m_LocationFlag_5 = ((int32_t)((int32_t)L_25|2));
-	}
-
-IL_00a0:
-	{
-		// if (Rdp.Hand.GetWristAngularVelocity(ref m_AngularVelocity, isLeft)) { m_VelocityFlag |= VelocityFlag.ANGULAR; }
-		RolePoseHand_t1077BA77E30CBE89252EAB5A70028A3F86442B5E* L_26 = V_1;
-		NullCheck(L_26);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* L_27 = (&((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*)L_26)->___m_AngularVelocity_9);
-		RolePoseHand_t1077BA77E30CBE89252EAB5A70028A3F86442B5E* L_28 = V_1;
-		NullCheck(L_28);
-		bool L_29 = L_28->___isLeft_12;
-		bool L_30;
-		L_30 = Hand_GetWristAngularVelocity_m1B431E64E19B5EC32DDD153D30847A7661330FE1(L_27, L_29, NULL);
-		if (!L_30)
-		{
-			goto IL_00c1;
-		}
-	}
-	{
-		// if (Rdp.Hand.GetWristAngularVelocity(ref m_AngularVelocity, isLeft)) { m_VelocityFlag |= VelocityFlag.ANGULAR; }
-		RolePoseHand_t1077BA77E30CBE89252EAB5A70028A3F86442B5E* L_31 = V_1;
-		RolePoseHand_t1077BA77E30CBE89252EAB5A70028A3F86442B5E* L_32 = V_1;
-		NullCheck(L_32);
-		int32_t L_33 = ((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*)L_32)->___m_VelocityFlag_6;
-		NullCheck(L_31);
-		((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*)L_31)->___m_VelocityFlag_6 = ((int32_t)((int32_t)L_33|1));
-	}
-
-IL_00c1:
-	{
-		// if (Rdp.Hand.GetWristLinearVelocity(ref m_LinearVelocity, isLeft)) { m_VelocityFlag |= VelocityFlag.LINEAR; }
-		RolePoseHand_t1077BA77E30CBE89252EAB5A70028A3F86442B5E* L_34 = V_1;
-		NullCheck(L_34);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* L_35 = (&((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*)L_34)->___m_LinearVelocity_10);
-		RolePoseHand_t1077BA77E30CBE89252EAB5A70028A3F86442B5E* L_36 = V_1;
-		NullCheck(L_36);
-		bool L_37 = L_36->___isLeft_12;
-		bool L_38;
-		L_38 = Hand_GetWristLinearVelocity_mCA84F23126F19F12AFF9ED011243BE399CDC73A7(L_35, L_37, NULL);
-		if (!L_38)
-		{
-			goto IL_00e2;
-		}
-	}
-	{
-		// if (Rdp.Hand.GetWristLinearVelocity(ref m_LinearVelocity, isLeft)) { m_VelocityFlag |= VelocityFlag.LINEAR; }
-		RolePoseHand_t1077BA77E30CBE89252EAB5A70028A3F86442B5E* L_39 = V_1;
-		RolePoseHand_t1077BA77E30CBE89252EAB5A70028A3F86442B5E* L_40 = V_1;
-		NullCheck(L_40);
-		int32_t L_41 = ((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*)L_40)->___m_VelocityFlag_6;
-		NullCheck(L_39);
-		((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*)L_39)->___m_VelocityFlag_6 = ((int32_t)((int32_t)L_41|2));
-	}
-
-IL_00e2:
-	{
-		// while (toUpdate)
-		RolePoseHand_t1077BA77E30CBE89252EAB5A70028A3F86442B5E* L_42 = V_1;
-		NullCheck(L_42);
-		bool L_43 = L_42->___toUpdate_13;
-		if (L_43)
-		{
-			goto IL_0023;
-		}
-	}
-	{
-		// }
-		return (bool)0;
-	}
-}
-// System.Object Wave.Essence.BodyTracking.RolePoseHand/<UpdatePose>d__5::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CUpdatePoseU3Ed__5_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m441E2D40B705674BBB4A3E73034937519D389CF0 (U3CUpdatePoseU3Ed__5_t1DEA6962212108D9FF7E4207A17B66687915677F* __this, const RuntimeMethod* method) 
-{
-	{
-		RuntimeObject* L_0 = __this->___U3CU3E2__current_1;
-		return L_0;
-	}
-}
-// System.Void Wave.Essence.BodyTracking.RolePoseHand/<UpdatePose>d__5::System.Collections.IEnumerator.Reset()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CUpdatePoseU3Ed__5_System_Collections_IEnumerator_Reset_mEBCE082C9F98E9417B78D2E56183BA4B51643B2C (U3CUpdatePoseU3Ed__5_t1DEA6962212108D9FF7E4207A17B66687915677F* __this, const RuntimeMethod* method) 
-{
-	{
-		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
-		NullCheck(L_0);
-		NotSupportedException__ctor_m1398D0CDE19B36AA3DE9392879738C1EA2439CDF(L_0, NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CUpdatePoseU3Ed__5_System_Collections_IEnumerator_Reset_mEBCE082C9F98E9417B78D2E56183BA4B51643B2C_RuntimeMethod_var)));
-	}
-}
-// System.Object Wave.Essence.BodyTracking.RolePoseHand/<UpdatePose>d__5::System.Collections.IEnumerator.get_Current()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CUpdatePoseU3Ed__5_System_Collections_IEnumerator_get_Current_m18D3F1A1322C60A9079EDC854359D3CD63BB8DF5 (U3CUpdatePoseU3Ed__5_t1DEA6962212108D9FF7E4207A17B66687915677F* __this, const RuntimeMethod* method) 
-{
-	{
-		RuntimeObject* L_0 = __this->___U3CU3E2__current_1;
-		return L_0;
-	}
-}
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-// System.Void Wave.Essence.BodyTracking.RolePoseHead::Awake()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RolePoseHead_Awake_m14C1F42AF61FD52E3F38AA4944D88D05E11A97BA (RolePoseHead_tA28A41EADF5B284248557F43EC13EAAF7513F8EB* __this, const RuntimeMethod* method) 
-{
-	{
-		// m_PoseType = RolePoseType.HMD;
-		((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*)__this)->___m_PoseType_4 = ((int32_t)100);
-		// }
-		return;
-	}
-}
-// System.Void Wave.Essence.BodyTracking.RolePoseHead::OnEnable()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RolePoseHead_OnEnable_m8A47424290DEDEA203CAA4798FA8F4AA576A9A00 (RolePoseHead_tA28A41EADF5B284248557F43EC13EAAF7513F8EB* __this, const RuntimeMethod* method) 
-{
-	{
-		// base.OnEnable();
-		RolePose_OnEnable_m601A8C0433F23F226EEA7B918E1114B7DCC08109(__this, NULL);
-		// if (!toUpdate)
-		bool L_0 = __this->___toUpdate_12;
-		if (L_0)
-		{
-			goto IL_0022;
-		}
-	}
-	{
-		// toUpdate = true;
-		__this->___toUpdate_12 = (bool)1;
-		// StartCoroutine(UpdatePose());
-		RuntimeObject* L_1;
-		L_1 = RolePoseHead_UpdatePose_m4784AD52AD4DEBA31C5E20B64BB41048D95E9A2C(__this, NULL);
-		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_2;
-		L_2 = MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812(__this, L_1, NULL);
-	}
-
-IL_0022:
-	{
-		// }
-		return;
-	}
-}
-// System.Void Wave.Essence.BodyTracking.RolePoseHead::OnDisable()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RolePoseHead_OnDisable_m83ECB4F8443B9741E8D11CD1A4F7ACFC89C7F0CD (RolePoseHead_tA28A41EADF5B284248557F43EC13EAAF7513F8EB* __this, const RuntimeMethod* method) 
-{
-	{
-		// base.OnDisable();
-		RolePose_OnDisable_mC3DF3ADA3E0D17BC636E877E260A2FF83E8C2179(__this, NULL);
-		// if (toUpdate)
-		bool L_0 = __this->___toUpdate_12;
-		if (!L_0)
-		{
-			goto IL_0021;
-		}
-	}
-	{
-		// toUpdate = false;
-		__this->___toUpdate_12 = (bool)0;
-		// StopCoroutine(UpdatePose());
-		RuntimeObject* L_1;
-		L_1 = RolePoseHead_UpdatePose_m4784AD52AD4DEBA31C5E20B64BB41048D95E9A2C(__this, NULL);
-		MonoBehaviour_StopCoroutine_mF9E93B82091E804595BE13AA29F9AB7517F7E04A(__this, L_1, NULL);
-	}
-
-IL_0021:
-	{
-		// }
-		return;
-	}
-}
-// System.Collections.IEnumerator Wave.Essence.BodyTracking.RolePoseHead::UpdatePose()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* RolePoseHead_UpdatePose_m4784AD52AD4DEBA31C5E20B64BB41048D95E9A2C (RolePoseHead_tA28A41EADF5B284248557F43EC13EAAF7513F8EB* __this, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CUpdatePoseU3Ed__4_t809F8C7D7C2795583AE5A68953F4326F21D94291_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		U3CUpdatePoseU3Ed__4_t809F8C7D7C2795583AE5A68953F4326F21D94291* L_0 = (U3CUpdatePoseU3Ed__4_t809F8C7D7C2795583AE5A68953F4326F21D94291*)il2cpp_codegen_object_new(U3CUpdatePoseU3Ed__4_t809F8C7D7C2795583AE5A68953F4326F21D94291_il2cpp_TypeInfo_var);
-		NullCheck(L_0);
-		U3CUpdatePoseU3Ed__4__ctor_m7736C18769B32E6745D471FBB949FBD69945026C(L_0, 0, NULL);
-		U3CUpdatePoseU3Ed__4_t809F8C7D7C2795583AE5A68953F4326F21D94291* L_1 = L_0;
-		NullCheck(L_1);
-		L_1->___U3CU3E4__this_2 = __this;
-		Il2CppCodeGenWriteBarrier((void**)(&L_1->___U3CU3E4__this_2), (void*)__this);
-		return L_1;
-	}
-}
-// System.Void Wave.Essence.BodyTracking.RolePoseHead::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RolePoseHead__ctor_mA9D426FFE6811DA0B93D7DC1629A1F249F535770 (RolePoseHead_tA28A41EADF5B284248557F43EC13EAAF7513F8EB* __this, const RuntimeMethod* method) 
-{
-	{
-		RolePose__ctor_m9DA2A03E0BA98404CC5725C79E9320ABCF93DFBF(__this, NULL);
-		return;
-	}
-}
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-// System.Void Wave.Essence.BodyTracking.RolePoseHead/<UpdatePose>d__4::.ctor(System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CUpdatePoseU3Ed__4__ctor_m7736C18769B32E6745D471FBB949FBD69945026C (U3CUpdatePoseU3Ed__4_t809F8C7D7C2795583AE5A68953F4326F21D94291* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
-{
-	{
-		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
-		int32_t L_0 = ___0_U3CU3E1__state;
-		__this->___U3CU3E1__state_0 = L_0;
-		return;
-	}
-}
-// System.Void Wave.Essence.BodyTracking.RolePoseHead/<UpdatePose>d__4::System.IDisposable.Dispose()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CUpdatePoseU3Ed__4_System_IDisposable_Dispose_mB13BBB0E6B14B28E256F0FB841C362BA0065CCE4 (U3CUpdatePoseU3Ed__4_t809F8C7D7C2795583AE5A68953F4326F21D94291* __this, const RuntimeMethod* method) 
-{
-	{
-		return;
-	}
-}
-// System.Boolean Wave.Essence.BodyTracking.RolePoseHead/<UpdatePose>d__4::MoveNext()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CUpdatePoseU3Ed__4_MoveNext_m04EC9A2213FB97090B84A87C14E9C09BDDF344DF (U3CUpdatePoseU3Ed__4_t809F8C7D7C2795583AE5A68953F4326F21D94291* __this, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&WXRDevice_t771D8AE648B6DB95A8C9A67C7198DBD6074DB8B1_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&WaitForEndOfFrame_tE38D80923E3F8380069B423968C25ABE50A46663_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	int32_t V_0 = 0;
-	RolePoseHead_tA28A41EADF5B284248557F43EC13EAAF7513F8EB* V_1 = NULL;
-	int32_t V_2 = 0;
-	{
-		int32_t L_0 = __this->___U3CU3E1__state_0;
-		V_0 = L_0;
-		RolePoseHead_tA28A41EADF5B284248557F43EC13EAAF7513F8EB* L_1 = __this->___U3CU3E4__this_2;
-		V_1 = L_1;
-		int32_t L_2 = V_0;
-		if (!L_2)
-		{
-			goto IL_0017;
-		}
-	}
-	{
-		int32_t L_3 = V_0;
-		if ((((int32_t)L_3) == ((int32_t)1)))
-		{
-			goto IL_0037;
-		}
-	}
-	{
-		return (bool)0;
-	}
-
-IL_0017:
-	{
-		__this->___U3CU3E1__state_0 = (-1);
-		goto IL_00dc;
-	}
-
-IL_0023:
-	{
-		// yield return new WaitForEndOfFrame();
-		WaitForEndOfFrame_tE38D80923E3F8380069B423968C25ABE50A46663* L_4 = (WaitForEndOfFrame_tE38D80923E3F8380069B423968C25ABE50A46663*)il2cpp_codegen_object_new(WaitForEndOfFrame_tE38D80923E3F8380069B423968C25ABE50A46663_il2cpp_TypeInfo_var);
-		NullCheck(L_4);
-		WaitForEndOfFrame__ctor_m4AF7E576C01E6B04443BB898B1AE5D645F7D45AB(L_4, NULL);
-		__this->___U3CU3E2__current_1 = L_4;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current_1), (void*)L_4);
-		__this->___U3CU3E1__state_0 = 1;
-		return (bool)1;
-	}
-
-IL_0037:
-	{
-		__this->___U3CU3E1__state_0 = (-1);
-		// XR_Device device = XR_Device.Head;
-		V_2 = 1;
-		// m_LocationFlag = 0;
-		RolePoseHead_tA28A41EADF5B284248557F43EC13EAAF7513F8EB* L_5 = V_1;
-		NullCheck(L_5);
-		((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*)L_5)->___m_LocationFlag_5 = 0;
-		// m_VelocityFlag = 0;
-		RolePoseHead_tA28A41EADF5B284248557F43EC13EAAF7513F8EB* L_6 = V_1;
-		NullCheck(L_6);
-		((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*)L_6)->___m_VelocityFlag_6 = 0;
-		// if (!WXRDevice.IsTracked(device)) { continue; }
-		int32_t L_7 = V_2;
-		il2cpp_codegen_runtime_class_init_inline(WXRDevice_t771D8AE648B6DB95A8C9A67C7198DBD6074DB8B1_il2cpp_TypeInfo_var);
-		bool L_8;
-		L_8 = WXRDevice_IsTracked_m9FC57E2D43ADBEE54F43FAAD510B8C8AD3CBED5D(L_7, (bool)0, NULL);
-		if (!L_8)
-		{
-			goto IL_00dc;
-		}
-	}
-	{
-		// if (WXRDevice.GetRotation(device, ref m_Rotation)) { m_LocationFlag |= LocationFlag.ROTATION; }
-		int32_t L_9 = V_2;
-		RolePoseHead_tA28A41EADF5B284248557F43EC13EAAF7513F8EB* L_10 = V_1;
-		NullCheck(L_10);
-		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974* L_11 = (&((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*)L_10)->___m_Rotation_7);
-		il2cpp_codegen_runtime_class_init_inline(WXRDevice_t771D8AE648B6DB95A8C9A67C7198DBD6074DB8B1_il2cpp_TypeInfo_var);
-		bool L_12;
-		L_12 = WXRDevice_GetRotation_m9EC0CAD078980C8F1FB1043D0D75D901FAC13F88(L_9, L_11, (bool)0, NULL);
-		if (!L_12)
-		{
-			goto IL_0077;
-		}
-	}
-	{
-		// if (WXRDevice.GetRotation(device, ref m_Rotation)) { m_LocationFlag |= LocationFlag.ROTATION; }
-		RolePoseHead_tA28A41EADF5B284248557F43EC13EAAF7513F8EB* L_13 = V_1;
-		RolePoseHead_tA28A41EADF5B284248557F43EC13EAAF7513F8EB* L_14 = V_1;
-		NullCheck(L_14);
-		int32_t L_15 = ((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*)L_14)->___m_LocationFlag_5;
-		NullCheck(L_13);
-		((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*)L_13)->___m_LocationFlag_5 = ((int32_t)((int32_t)L_15|1));
-	}
-
-IL_0077:
-	{
-		// if (WXRDevice.GetPosition(device, ref m_Position)) { m_LocationFlag |= LocationFlag.POSITION; }
-		int32_t L_16 = V_2;
-		RolePoseHead_tA28A41EADF5B284248557F43EC13EAAF7513F8EB* L_17 = V_1;
-		NullCheck(L_17);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* L_18 = (&((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*)L_17)->___m_Position_8);
-		il2cpp_codegen_runtime_class_init_inline(WXRDevice_t771D8AE648B6DB95A8C9A67C7198DBD6074DB8B1_il2cpp_TypeInfo_var);
-		bool L_19;
-		L_19 = WXRDevice_GetPosition_m80793AA78194320068D96377A9EBF7E8FA3398BF(L_16, L_18, (bool)0, NULL);
-		if (!L_19)
-		{
-			goto IL_0094;
-		}
-	}
-	{
-		// if (WXRDevice.GetPosition(device, ref m_Position)) { m_LocationFlag |= LocationFlag.POSITION; }
-		RolePoseHead_tA28A41EADF5B284248557F43EC13EAAF7513F8EB* L_20 = V_1;
-		RolePoseHead_tA28A41EADF5B284248557F43EC13EAAF7513F8EB* L_21 = V_1;
-		NullCheck(L_21);
-		int32_t L_22 = ((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*)L_21)->___m_LocationFlag_5;
-		NullCheck(L_20);
-		((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*)L_20)->___m_LocationFlag_5 = ((int32_t)((int32_t)L_22|2));
-	}
-
-IL_0094:
-	{
-		// if (WXRDevice.GetAngularVelocity(device, ref m_AngularVelocity)) { m_VelocityFlag |= VelocityFlag.ANGULAR; }
-		int32_t L_23 = V_2;
-		RolePoseHead_tA28A41EADF5B284248557F43EC13EAAF7513F8EB* L_24 = V_1;
-		NullCheck(L_24);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* L_25 = (&((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*)L_24)->___m_AngularVelocity_9);
-		il2cpp_codegen_runtime_class_init_inline(WXRDevice_t771D8AE648B6DB95A8C9A67C7198DBD6074DB8B1_il2cpp_TypeInfo_var);
-		bool L_26;
-		L_26 = WXRDevice_GetAngularVelocity_m3E25C88D6682FC142334AE70F7F4D9E68AB638E1(L_23, L_25, (bool)0, NULL);
-		if (!L_26)
-		{
-			goto IL_00b1;
-		}
-	}
-	{
-		// if (WXRDevice.GetAngularVelocity(device, ref m_AngularVelocity)) { m_VelocityFlag |= VelocityFlag.ANGULAR; }
-		RolePoseHead_tA28A41EADF5B284248557F43EC13EAAF7513F8EB* L_27 = V_1;
-		RolePoseHead_tA28A41EADF5B284248557F43EC13EAAF7513F8EB* L_28 = V_1;
-		NullCheck(L_28);
-		int32_t L_29 = ((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*)L_28)->___m_VelocityFlag_6;
-		NullCheck(L_27);
-		((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*)L_27)->___m_VelocityFlag_6 = ((int32_t)((int32_t)L_29|1));
-	}
-
-IL_00b1:
-	{
-		// if (WXRDevice.GetVelocity(device, ref m_LinearVelocity)) { m_VelocityFlag |= VelocityFlag.LINEAR; }
-		int32_t L_30 = V_2;
-		RolePoseHead_tA28A41EADF5B284248557F43EC13EAAF7513F8EB* L_31 = V_1;
-		NullCheck(L_31);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* L_32 = (&((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*)L_31)->___m_LinearVelocity_10);
-		il2cpp_codegen_runtime_class_init_inline(WXRDevice_t771D8AE648B6DB95A8C9A67C7198DBD6074DB8B1_il2cpp_TypeInfo_var);
-		bool L_33;
-		L_33 = WXRDevice_GetVelocity_m0C7E27C268A714070C6F7AC7028F09E9E540C851(L_30, L_32, (bool)0, NULL);
-		if (!L_33)
-		{
-			goto IL_00ce;
-		}
-	}
-	{
-		// if (WXRDevice.GetVelocity(device, ref m_LinearVelocity)) { m_VelocityFlag |= VelocityFlag.LINEAR; }
-		RolePoseHead_tA28A41EADF5B284248557F43EC13EAAF7513F8EB* L_34 = V_1;
-		RolePoseHead_tA28A41EADF5B284248557F43EC13EAAF7513F8EB* L_35 = V_1;
-		NullCheck(L_35);
-		int32_t L_36 = ((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*)L_35)->___m_VelocityFlag_6;
-		NullCheck(L_34);
-		((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*)L_34)->___m_VelocityFlag_6 = ((int32_t)((int32_t)L_36|2));
-	}
-
-IL_00ce:
-	{
-		// WXRDevice.GetAcceleration(device, ref m_Acceleration);
-		int32_t L_37 = V_2;
-		RolePoseHead_tA28A41EADF5B284248557F43EC13EAAF7513F8EB* L_38 = V_1;
-		NullCheck(L_38);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* L_39 = (&((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*)L_38)->___m_Acceleration_11);
-		il2cpp_codegen_runtime_class_init_inline(WXRDevice_t771D8AE648B6DB95A8C9A67C7198DBD6074DB8B1_il2cpp_TypeInfo_var);
-		bool L_40;
-		L_40 = WXRDevice_GetAcceleration_mCFCE198C16514E2C71E53C506EFF12B3B95B0928(L_37, L_39, (bool)0, NULL);
-	}
-
-IL_00dc:
-	{
-		// while (toUpdate)
-		RolePoseHead_tA28A41EADF5B284248557F43EC13EAAF7513F8EB* L_41 = V_1;
-		NullCheck(L_41);
-		bool L_42 = L_41->___toUpdate_12;
-		if (L_42)
-		{
-			goto IL_0023;
-		}
-	}
-	{
-		// }
-		return (bool)0;
-	}
-}
-// System.Object Wave.Essence.BodyTracking.RolePoseHead/<UpdatePose>d__4::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CUpdatePoseU3Ed__4_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m53678789931A353FE5632142F241C7FD17F39586 (U3CUpdatePoseU3Ed__4_t809F8C7D7C2795583AE5A68953F4326F21D94291* __this, const RuntimeMethod* method) 
-{
-	{
-		RuntimeObject* L_0 = __this->___U3CU3E2__current_1;
-		return L_0;
-	}
-}
-// System.Void Wave.Essence.BodyTracking.RolePoseHead/<UpdatePose>d__4::System.Collections.IEnumerator.Reset()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CUpdatePoseU3Ed__4_System_Collections_IEnumerator_Reset_m5D4C0A403FEC181A5DD8ED24497D8292AF81052A (U3CUpdatePoseU3Ed__4_t809F8C7D7C2795583AE5A68953F4326F21D94291* __this, const RuntimeMethod* method) 
-{
-	{
-		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
-		NullCheck(L_0);
-		NotSupportedException__ctor_m1398D0CDE19B36AA3DE9392879738C1EA2439CDF(L_0, NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CUpdatePoseU3Ed__4_System_Collections_IEnumerator_Reset_m5D4C0A403FEC181A5DD8ED24497D8292AF81052A_RuntimeMethod_var)));
-	}
-}
-// System.Object Wave.Essence.BodyTracking.RolePoseHead/<UpdatePose>d__4::System.Collections.IEnumerator.get_Current()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CUpdatePoseU3Ed__4_System_Collections_IEnumerator_get_Current_m967F731A9C4BCD96457E16A6B5F65C0ECEB184FD (U3CUpdatePoseU3Ed__4_t809F8C7D7C2795583AE5A68953F4326F21D94291* __this, const RuntimeMethod* method) 
-{
-	{
-		RuntimeObject* L_0 = __this->___U3CU3E2__current_1;
-		return L_0;
-	}
-}
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-// System.Text.StringBuilder Wave.Essence.BodyTracking.RolePoseProvider::get_sb()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringBuilder_t* RolePoseProvider_get_sb_mCED50ADBE50C64BF05BF344E8DE69D30443BF3B0 (const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&StringBuilder_t_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		// if (m_sb == null) { m_sb = new StringBuilder(); }
-		il2cpp_codegen_runtime_class_init_inline(RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_il2cpp_TypeInfo_var);
-		StringBuilder_t* L_0 = ((RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_StaticFields*)il2cpp_codegen_static_fields_for(RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_il2cpp_TypeInfo_var))->___m_sb_1;
-		if (L_0)
-		{
-			goto IL_0011;
-		}
-	}
-	{
-		// if (m_sb == null) { m_sb = new StringBuilder(); }
-		StringBuilder_t* L_1 = (StringBuilder_t*)il2cpp_codegen_object_new(StringBuilder_t_il2cpp_TypeInfo_var);
-		NullCheck(L_1);
-		StringBuilder__ctor_m1D99713357DE05DAFA296633639DB55F8C30587D(L_1, NULL);
-		il2cpp_codegen_runtime_class_init_inline(RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_il2cpp_TypeInfo_var);
-		((RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_StaticFields*)il2cpp_codegen_static_fields_for(RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_il2cpp_TypeInfo_var))->___m_sb_1 = L_1;
-		Il2CppCodeGenWriteBarrier((void**)(&((RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_StaticFields*)il2cpp_codegen_static_fields_for(RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_il2cpp_TypeInfo_var))->___m_sb_1), (void*)L_1);
-	}
-
-IL_0011:
-	{
-		// return m_sb;
-		il2cpp_codegen_runtime_class_init_inline(RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_il2cpp_TypeInfo_var);
-		StringBuilder_t* L_2 = ((RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_StaticFields*)il2cpp_codegen_static_fields_for(RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_il2cpp_TypeInfo_var))->___m_sb_1;
-		return L_2;
-	}
-}
-// System.Void Wave.Essence.BodyTracking.RolePoseProvider::INFO(System.Text.StringBuilder)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RolePoseProvider_INFO_mC19233B4089BC7EC5C658F2EE9FC0740790BEDAE (StringBuilder_t* ___0_msg, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralAA505DB69D890A8314E9268D4E59D1C44293AB9D);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		// private static void INFO(StringBuilder msg) { Rdp.i(LOG_TAG, msg, true); }
-		StringBuilder_t* L_0 = ___0_msg;
-		Rdp_i_mEA7D36A1BFF7D60F646638579CA935F7C5222B78(_stringLiteralAA505DB69D890A8314E9268D4E59D1C44293AB9D, L_0, (bool)1, NULL);
-		// private static void INFO(StringBuilder msg) { Rdp.i(LOG_TAG, msg, true); }
-		return;
-	}
-}
-// System.Collections.Generic.Dictionary`2<Wave.Essence.BodyTracking.RolePoseType,Wave.Essence.BodyTracking.RolePose> Wave.Essence.BodyTracking.RolePoseProvider::get_RolePoseMap()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Dictionary_2_t4D42736F171A409CC8E74C010E98CD26C81E4BD4* RolePoseProvider_get_RolePoseMap_m0BF73821C9191B404A2AE830C17B6A0B6EB58805 (const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Dictionary_2__ctor_m73855285B997792A7ED75A3332DD9AE97C5C5D19_RuntimeMethod_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Dictionary_2_t4D42736F171A409CC8E74C010E98CD26C81E4BD4_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		// if (m_RolePoseMap == null) { m_RolePoseMap = new Dictionary<RolePoseType, RolePose>(); }
-		il2cpp_codegen_runtime_class_init_inline(RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_il2cpp_TypeInfo_var);
-		Dictionary_2_t4D42736F171A409CC8E74C010E98CD26C81E4BD4* L_0 = ((RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_StaticFields*)il2cpp_codegen_static_fields_for(RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_il2cpp_TypeInfo_var))->___m_RolePoseMap_2;
-		if (L_0)
-		{
-			goto IL_0011;
-		}
-	}
-	{
-		// if (m_RolePoseMap == null) { m_RolePoseMap = new Dictionary<RolePoseType, RolePose>(); }
-		Dictionary_2_t4D42736F171A409CC8E74C010E98CD26C81E4BD4* L_1 = (Dictionary_2_t4D42736F171A409CC8E74C010E98CD26C81E4BD4*)il2cpp_codegen_object_new(Dictionary_2_t4D42736F171A409CC8E74C010E98CD26C81E4BD4_il2cpp_TypeInfo_var);
-		NullCheck(L_1);
-		Dictionary_2__ctor_m73855285B997792A7ED75A3332DD9AE97C5C5D19(L_1, Dictionary_2__ctor_m73855285B997792A7ED75A3332DD9AE97C5C5D19_RuntimeMethod_var);
-		il2cpp_codegen_runtime_class_init_inline(RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_il2cpp_TypeInfo_var);
-		((RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_StaticFields*)il2cpp_codegen_static_fields_for(RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_il2cpp_TypeInfo_var))->___m_RolePoseMap_2 = L_1;
-		Il2CppCodeGenWriteBarrier((void**)(&((RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_StaticFields*)il2cpp_codegen_static_fields_for(RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_il2cpp_TypeInfo_var))->___m_RolePoseMap_2), (void*)L_1);
-	}
-
-IL_0011:
-	{
-		// return m_RolePoseMap;
-		il2cpp_codegen_runtime_class_init_inline(RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_il2cpp_TypeInfo_var);
-		Dictionary_2_t4D42736F171A409CC8E74C010E98CD26C81E4BD4* L_2 = ((RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_StaticFields*)il2cpp_codegen_static_fields_for(RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_il2cpp_TypeInfo_var))->___m_RolePoseMap_2;
-		return L_2;
-	}
-}
-// System.Void Wave.Essence.BodyTracking.RolePoseProvider::set_RolePoseMap(System.Collections.Generic.Dictionary`2<Wave.Essence.BodyTracking.RolePoseType,Wave.Essence.BodyTracking.RolePose>)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RolePoseProvider_set_RolePoseMap_m7B6ABC9DF7B4217AB0D86212196349D3E9D4A1F3 (Dictionary_2_t4D42736F171A409CC8E74C010E98CD26C81E4BD4* ___0_value, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		// private set { m_RolePoseMap = value; }
-		Dictionary_2_t4D42736F171A409CC8E74C010E98CD26C81E4BD4* L_0 = ___0_value;
-		il2cpp_codegen_runtime_class_init_inline(RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_il2cpp_TypeInfo_var);
-		((RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_StaticFields*)il2cpp_codegen_static_fields_for(RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_il2cpp_TypeInfo_var))->___m_RolePoseMap_2 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&((RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_StaticFields*)il2cpp_codegen_static_fields_for(RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_il2cpp_TypeInfo_var))->___m_RolePoseMap_2), (void*)L_0);
-		// private set { m_RolePoseMap = value; }
-		return;
-	}
-}
-// System.Void Wave.Essence.BodyTracking.RolePoseProvider::RegisterRolePose(Wave.Essence.BodyTracking.RolePoseType&,Wave.Essence.BodyTracking.RolePose&)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RolePoseProvider_RegisterRolePose_m63FC196367D96FE23A4A71D650E788D91F1B59A8 (uint32_t* ___0_type, RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717** ___1_pose, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Dictionary_2_Add_mF4F1D1AED134AAF2507EFCD3F376C7554AF611A4_RuntimeMethod_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Dictionary_2_ContainsKey_mB1DD086C3362A9E8CA6398A7697768728598193F_RuntimeMethod_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Dictionary_2_get_Item_m6C7BE1B1AA3F7676AC6FFA6170ADE1D476FF745C_RuntimeMethod_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Dictionary_2_set_Item_m99739B1F83C571AFAE15AE51A91177FB2EAA1937_RuntimeMethod_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral5E2DD2B20C2D8172B51DCAD723DD424929A7F36A);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralF652530F436891F11688FEBD3FF6C4B433BAAC82);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		// if (type == RolePoseType.UNKNOWN || pose == null) { return; }
-		uint32_t* L_0 = ___0_type;
-		int32_t L_1 = *((uint32_t*)L_0);
-		if ((((int32_t)L_1) == ((int32_t)((int32_t)2147483647LL))))
-		{
-			goto IL_0013;
-		}
-	}
-	{
-		RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717** L_2 = ___1_pose;
-		RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717* L_3 = *((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717**)L_2);
-		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		bool L_4;
-		L_4 = Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605(L_3, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
-		if (!L_4)
-		{
-			goto IL_0014;
-		}
-	}
-
-IL_0013:
-	{
-		// if (type == RolePoseType.UNKNOWN || pose == null) { return; }
-		return;
-	}
-
-IL_0014:
-	{
-		// if (!RolePoseMap.ContainsKey(type))
-		il2cpp_codegen_runtime_class_init_inline(RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_il2cpp_TypeInfo_var);
-		Dictionary_2_t4D42736F171A409CC8E74C010E98CD26C81E4BD4* L_5;
-		L_5 = RolePoseProvider_get_RolePoseMap_m0BF73821C9191B404A2AE830C17B6A0B6EB58805(NULL);
-		uint32_t* L_6 = ___0_type;
-		int32_t L_7 = *((uint32_t*)L_6);
-		NullCheck(L_5);
-		bool L_8;
-		L_8 = Dictionary_2_ContainsKey_mB1DD086C3362A9E8CA6398A7697768728598193F(L_5, L_7, Dictionary_2_ContainsKey_mB1DD086C3362A9E8CA6398A7697768728598193F_RuntimeMethod_var);
-		if (L_8)
-		{
-			goto IL_0032;
-		}
-	}
-	{
-		// RolePoseMap.Add(type, pose);
-		il2cpp_codegen_runtime_class_init_inline(RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_il2cpp_TypeInfo_var);
-		Dictionary_2_t4D42736F171A409CC8E74C010E98CD26C81E4BD4* L_9;
-		L_9 = RolePoseProvider_get_RolePoseMap_m0BF73821C9191B404A2AE830C17B6A0B6EB58805(NULL);
-		uint32_t* L_10 = ___0_type;
-		int32_t L_11 = *((uint32_t*)L_10);
-		RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717** L_12 = ___1_pose;
-		RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717* L_13 = *((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717**)L_12);
-		NullCheck(L_9);
-		Dictionary_2_Add_mF4F1D1AED134AAF2507EFCD3F376C7554AF611A4(L_9, L_11, L_13, Dictionary_2_Add_mF4F1D1AED134AAF2507EFCD3F376C7554AF611A4_RuntimeMethod_var);
-		goto IL_0040;
-	}
-
-IL_0032:
-	{
-		// RolePoseMap[type] = pose;
-		il2cpp_codegen_runtime_class_init_inline(RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_il2cpp_TypeInfo_var);
-		Dictionary_2_t4D42736F171A409CC8E74C010E98CD26C81E4BD4* L_14;
-		L_14 = RolePoseProvider_get_RolePoseMap_m0BF73821C9191B404A2AE830C17B6A0B6EB58805(NULL);
-		uint32_t* L_15 = ___0_type;
-		int32_t L_16 = *((uint32_t*)L_15);
-		RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717** L_17 = ___1_pose;
-		RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717* L_18 = *((RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717**)L_17);
-		NullCheck(L_14);
-		Dictionary_2_set_Item_m99739B1F83C571AFAE15AE51A91177FB2EAA1937(L_14, L_16, L_18, Dictionary_2_set_Item_m99739B1F83C571AFAE15AE51A91177FB2EAA1937_RuntimeMethod_var);
-	}
-
-IL_0040:
-	{
-		// sb.Clear().Append("RegisterRolePose() ").Append(type.Name()).Append(" from ").Append(RolePoseMap[type].gameObject.name);
-		il2cpp_codegen_runtime_class_init_inline(RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_il2cpp_TypeInfo_var);
-		StringBuilder_t* L_19;
-		L_19 = RolePoseProvider_get_sb_mCED50ADBE50C64BF05BF344E8DE69D30443BF3B0(NULL);
-		NullCheck(L_19);
-		StringBuilder_t* L_20;
-		L_20 = StringBuilder_Clear_m2D76F6533574F40A4E3E2DC4E730277CBD0AF8F6(L_19, NULL);
-		NullCheck(L_20);
-		StringBuilder_t* L_21;
-		L_21 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_20, _stringLiteral5E2DD2B20C2D8172B51DCAD723DD424929A7F36A, NULL);
-		uint32_t* L_22 = ___0_type;
-		int32_t L_23 = *((uint32_t*)L_22);
-		String_t* L_24;
-		L_24 = RolePoseProvider_Name_m036D83985F61A876CD47B5748838675C86A8EB84(L_23, NULL);
-		NullCheck(L_21);
-		StringBuilder_t* L_25;
-		L_25 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_21, L_24, NULL);
-		NullCheck(L_25);
-		StringBuilder_t* L_26;
-		L_26 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_25, _stringLiteralF652530F436891F11688FEBD3FF6C4B433BAAC82, NULL);
-		Dictionary_2_t4D42736F171A409CC8E74C010E98CD26C81E4BD4* L_27;
-		L_27 = RolePoseProvider_get_RolePoseMap_m0BF73821C9191B404A2AE830C17B6A0B6EB58805(NULL);
-		uint32_t* L_28 = ___0_type;
-		int32_t L_29 = *((uint32_t*)L_28);
-		NullCheck(L_27);
-		RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717* L_30;
-		L_30 = Dictionary_2_get_Item_m6C7BE1B1AA3F7676AC6FFA6170ADE1D476FF745C(L_27, L_29, Dictionary_2_get_Item_m6C7BE1B1AA3F7676AC6FFA6170ADE1D476FF745C_RuntimeMethod_var);
-		NullCheck(L_30);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_31;
-		L_31 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(L_30, NULL);
-		NullCheck(L_31);
-		String_t* L_32;
-		L_32 = Object_get_name_mAC2F6B897CF1303BA4249B4CB55271AFACBB6392(L_31, NULL);
-		NullCheck(L_26);
-		StringBuilder_t* L_33;
-		L_33 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_26, L_32, NULL);
-		// INFO(sb);
-		StringBuilder_t* L_34;
-		L_34 = RolePoseProvider_get_sb_mCED50ADBE50C64BF05BF344E8DE69D30443BF3B0(NULL);
-		RolePoseProvider_INFO_mC19233B4089BC7EC5C658F2EE9FC0740790BEDAE(L_34, NULL);
-		// }
-		return;
-	}
-}
-// System.Void Wave.Essence.BodyTracking.RolePoseProvider::RemoveRolePose(Wave.Essence.BodyTracking.RolePoseType&)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RolePoseProvider_RemoveRolePose_mD9F677F01A08663591459F820467B5F5B1BC055F (uint32_t* ___0_type, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Dictionary_2_ContainsKey_mB1DD086C3362A9E8CA6398A7697768728598193F_RuntimeMethod_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Dictionary_2_Remove_m0EBAD94576B92633974EBF7ADB2987F8E533014E_RuntimeMethod_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralED565A972452E9F9D4B155561336FB97EE79DAB8);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		// if (type == RolePoseType.UNKNOWN) { return; }
-		uint32_t* L_0 = ___0_type;
-		int32_t L_1 = *((uint32_t*)L_0);
-		if ((!(((uint32_t)L_1) == ((uint32_t)((int32_t)2147483647LL)))))
-		{
-			goto IL_000a;
-		}
-	}
-	{
-		// if (type == RolePoseType.UNKNOWN) { return; }
-		return;
-	}
-
-IL_000a:
-	{
-		// if (RolePoseMap.ContainsKey(type))
-		il2cpp_codegen_runtime_class_init_inline(RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_il2cpp_TypeInfo_var);
-		Dictionary_2_t4D42736F171A409CC8E74C010E98CD26C81E4BD4* L_2;
-		L_2 = RolePoseProvider_get_RolePoseMap_m0BF73821C9191B404A2AE830C17B6A0B6EB58805(NULL);
-		uint32_t* L_3 = ___0_type;
-		int32_t L_4 = *((uint32_t*)L_3);
-		NullCheck(L_2);
-		bool L_5;
-		L_5 = Dictionary_2_ContainsKey_mB1DD086C3362A9E8CA6398A7697768728598193F(L_2, L_4, Dictionary_2_ContainsKey_mB1DD086C3362A9E8CA6398A7697768728598193F_RuntimeMethod_var);
-		if (!L_5)
-		{
-			goto IL_0050;
-		}
-	}
-	{
-		// RolePoseMap.Remove(type);
-		il2cpp_codegen_runtime_class_init_inline(RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_il2cpp_TypeInfo_var);
-		Dictionary_2_t4D42736F171A409CC8E74C010E98CD26C81E4BD4* L_6;
-		L_6 = RolePoseProvider_get_RolePoseMap_m0BF73821C9191B404A2AE830C17B6A0B6EB58805(NULL);
-		uint32_t* L_7 = ___0_type;
-		int32_t L_8 = *((uint32_t*)L_7);
-		NullCheck(L_6);
-		bool L_9;
-		L_9 = Dictionary_2_Remove_m0EBAD94576B92633974EBF7ADB2987F8E533014E(L_6, L_8, Dictionary_2_Remove_m0EBAD94576B92633974EBF7ADB2987F8E533014E_RuntimeMethod_var);
-		// sb.Clear().Append("RemoveRolePose() ").Append(type.Name());
-		StringBuilder_t* L_10;
-		L_10 = RolePoseProvider_get_sb_mCED50ADBE50C64BF05BF344E8DE69D30443BF3B0(NULL);
-		NullCheck(L_10);
-		StringBuilder_t* L_11;
-		L_11 = StringBuilder_Clear_m2D76F6533574F40A4E3E2DC4E730277CBD0AF8F6(L_10, NULL);
-		NullCheck(L_11);
-		StringBuilder_t* L_12;
-		L_12 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_11, _stringLiteralED565A972452E9F9D4B155561336FB97EE79DAB8, NULL);
-		uint32_t* L_13 = ___0_type;
-		int32_t L_14 = *((uint32_t*)L_13);
-		String_t* L_15;
-		L_15 = RolePoseProvider_Name_m036D83985F61A876CD47B5748838675C86A8EB84(L_14, NULL);
-		NullCheck(L_12);
-		StringBuilder_t* L_16;
-		L_16 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_12, L_15, NULL);
-		// INFO(sb);
-		StringBuilder_t* L_17;
-		L_17 = RolePoseProvider_get_sb_mCED50ADBE50C64BF05BF344E8DE69D30443BF3B0(NULL);
-		RolePoseProvider_INFO_mC19233B4089BC7EC5C658F2EE9FC0740790BEDAE(L_17, NULL);
-	}
-
-IL_0050:
-	{
-		// }
-		return;
-	}
-}
-// Wave.Essence.BodyTracking.RolePose Wave.Essence.BodyTracking.RolePoseProvider::GetRolePose(Wave.Essence.BodyTracking.RolePoseType&)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717* RolePoseProvider_GetRolePose_mC6CBE845215CDC5B2F5FCAAF5F16B22354F3E2E3 (uint32_t* ___0_type, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Dictionary_2_ContainsKey_mB1DD086C3362A9E8CA6398A7697768728598193F_RuntimeMethod_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Dictionary_2_get_Item_m6C7BE1B1AA3F7676AC6FFA6170ADE1D476FF745C_RuntimeMethod_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		// if (RolePoseMap.ContainsKey(type))
-		il2cpp_codegen_runtime_class_init_inline(RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_il2cpp_TypeInfo_var);
-		Dictionary_2_t4D42736F171A409CC8E74C010E98CD26C81E4BD4* L_0;
-		L_0 = RolePoseProvider_get_RolePoseMap_m0BF73821C9191B404A2AE830C17B6A0B6EB58805(NULL);
-		uint32_t* L_1 = ___0_type;
-		int32_t L_2 = *((uint32_t*)L_1);
-		NullCheck(L_0);
-		bool L_3;
-		L_3 = Dictionary_2_ContainsKey_mB1DD086C3362A9E8CA6398A7697768728598193F(L_0, L_2, Dictionary_2_ContainsKey_mB1DD086C3362A9E8CA6398A7697768728598193F_RuntimeMethod_var);
-		if (!L_3)
-		{
-			goto IL_001b;
-		}
-	}
-	{
-		// return RolePoseMap[type];
-		il2cpp_codegen_runtime_class_init_inline(RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_il2cpp_TypeInfo_var);
-		Dictionary_2_t4D42736F171A409CC8E74C010E98CD26C81E4BD4* L_4;
-		L_4 = RolePoseProvider_get_RolePoseMap_m0BF73821C9191B404A2AE830C17B6A0B6EB58805(NULL);
-		uint32_t* L_5 = ___0_type;
-		int32_t L_6 = *((uint32_t*)L_5);
-		NullCheck(L_4);
-		RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717* L_7;
-		L_7 = Dictionary_2_get_Item_m6C7BE1B1AA3F7676AC6FFA6170ADE1D476FF745C(L_4, L_6, Dictionary_2_get_Item_m6C7BE1B1AA3F7676AC6FFA6170ADE1D476FF745C_RuntimeMethod_var);
-		return L_7;
-	}
-
-IL_001b:
-	{
-		// return null;
-		return (RolePose_t620E9997B76004789CDB134C99DD9BAA250C9717*)NULL;
-	}
-}
-// System.String Wave.Essence.BodyTracking.RolePoseProvider::Name(Wave.Essence.BodyTracking.RolePoseType)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* RolePoseProvider_Name_m036D83985F61A876CD47B5748838675C86A8EB84 (uint32_t ___0_type, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral02EDE63E3888B6FFBB20639A14174478CEB4B364);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral1E306F2FF88B3EF30CA36910355714B9FDAF39E5);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral1F417135E74860F18CC7FEEE1CEDB5486AEA8443);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral2B2F84FCC4B8E2546C6D3F555EF41D06FB0A820A);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral31CDE7EA5DADA0B66B5197862E8CB0B4B419D4A9);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral39E8508782A92F848E97D10E6D820A71061DC562);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral4A17D806C8BB572731BFDD50B0456BCA3D4A3451);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral528DE0EF5DE2BE746BBDF28AEDBBCBB6F23F2255);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral55C8C3FC613FBD3D2E508468EF8ECD60110896C2);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral68326D5FE1F4795FEE9432362D41C9814B3D76EF);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral6A15148CBF6756D102DA3F3E13E03435FBC4B08A);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral74B72255061385EDF22E501D953B0A772D33371B);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral7AD3E5763C9BF9CF942E9089D4EEDA77A35AAB7E);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral99A89C7B49A207FE7B37E4443489D2D2AC8713BB);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral9B19516519BDF95A5666A9CB8FF76FCB1E05B532);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral9BED417E1566466FEE6C35E61D3A2030A3D973E5);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralA6A2564619B6F2FC35B19B51B972B6109F2EFAC4);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralB9E5971E63411DA52451A9B653672581A1F7F8A3);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralC7DEEF181F54598572511BB41BC5214B97BB3715);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralDA6E6A2BC0B9BBA60907FA993DD41EEDC3168036);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralFFCE80EB50C7320E3DEBC7CF92674A39FD2D28B2);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		// if (type == RolePoseType.HMD) { return "HMD"; }
-		uint32_t L_0 = ___0_type;
-		if ((!(((uint32_t)L_0) == ((uint32_t)((int32_t)100)))))
-		{
-			goto IL_000b;
-		}
-	}
-	{
-		// if (type == RolePoseType.HMD) { return "HMD"; }
-		return _stringLiteral1E306F2FF88B3EF30CA36910355714B9FDAF39E5;
-	}
-
-IL_000b:
-	{
-		// if (type == RolePoseType.CONTROLLER_LEFT) { return "CONTROLLER_LEFT"; }
-		uint32_t L_1 = ___0_type;
-		if ((!(((uint32_t)L_1) == ((uint32_t)((int32_t)200)))))
-		{
-			goto IL_0019;
-		}
-	}
-	{
-		// if (type == RolePoseType.CONTROLLER_LEFT) { return "CONTROLLER_LEFT"; }
-		return _stringLiteral74B72255061385EDF22E501D953B0A772D33371B;
-	}
-
-IL_0019:
-	{
-		// if (type == RolePoseType.CONTROLLER_RIGHT) { return "CONTROLLER_RIGHT"; }
-		uint32_t L_2 = ___0_type;
-		if ((!(((uint32_t)L_2) == ((uint32_t)((int32_t)201)))))
-		{
-			goto IL_0027;
-		}
-	}
-	{
-		// if (type == RolePoseType.CONTROLLER_RIGHT) { return "CONTROLLER_RIGHT"; }
-		return _stringLiteral9B19516519BDF95A5666A9CB8FF76FCB1E05B532;
-	}
-
-IL_0027:
-	{
-		// if (type == RolePoseType.HAND_LEFT) { return "HAND_LEFT"; }
-		uint32_t L_3 = ___0_type;
-		if ((!(((uint32_t)L_3) == ((uint32_t)((int32_t)300)))))
-		{
-			goto IL_0035;
-		}
-	}
-	{
-		// if (type == RolePoseType.HAND_LEFT) { return "HAND_LEFT"; }
-		return _stringLiteral39E8508782A92F848E97D10E6D820A71061DC562;
-	}
-
-IL_0035:
-	{
-		// if (type == RolePoseType.HAND_RIGHT) { return "HAND_RIGHT"; }
-		uint32_t L_4 = ___0_type;
-		if ((!(((uint32_t)L_4) == ((uint32_t)((int32_t)301)))))
-		{
-			goto IL_0043;
-		}
-	}
-	{
-		// if (type == RolePoseType.HAND_RIGHT) { return "HAND_RIGHT"; }
-		return _stringLiteral9BED417E1566466FEE6C35E61D3A2030A3D973E5;
-	}
-
-IL_0043:
-	{
-		// if (type == RolePoseType.TRACKER_0) { return "TRACKER_0"; }
-		uint32_t L_5 = ___0_type;
-		if ((!(((uint32_t)L_5) == ((uint32_t)((int32_t)400)))))
-		{
-			goto IL_0051;
-		}
-	}
-	{
-		// if (type == RolePoseType.TRACKER_0) { return "TRACKER_0"; }
-		return _stringLiteralC7DEEF181F54598572511BB41BC5214B97BB3715;
-	}
-
-IL_0051:
-	{
-		// if (type == RolePoseType.TRACKER_1) { return "TRACKER_1"; }
-		uint32_t L_6 = ___0_type;
-		if ((!(((uint32_t)L_6) == ((uint32_t)((int32_t)401)))))
-		{
-			goto IL_005f;
-		}
-	}
-	{
-		// if (type == RolePoseType.TRACKER_1) { return "TRACKER_1"; }
-		return _stringLiteral55C8C3FC613FBD3D2E508468EF8ECD60110896C2;
-	}
-
-IL_005f:
-	{
-		// if (type == RolePoseType.TRACKER_2) { return "TRACKER_2"; }
-		uint32_t L_7 = ___0_type;
-		if ((!(((uint32_t)L_7) == ((uint32_t)((int32_t)402)))))
-		{
-			goto IL_006d;
-		}
-	}
-	{
-		// if (type == RolePoseType.TRACKER_2) { return "TRACKER_2"; }
-		return _stringLiteral7AD3E5763C9BF9CF942E9089D4EEDA77A35AAB7E;
-	}
-
-IL_006d:
-	{
-		// if (type == RolePoseType.TRACKER_3) { return "TRACKER_3"; }
-		uint32_t L_8 = ___0_type;
-		if ((!(((uint32_t)L_8) == ((uint32_t)((int32_t)403)))))
-		{
-			goto IL_007b;
-		}
-	}
-	{
-		// if (type == RolePoseType.TRACKER_3) { return "TRACKER_3"; }
-		return _stringLiteral68326D5FE1F4795FEE9432362D41C9814B3D76EF;
-	}
-
-IL_007b:
-	{
-		// if (type == RolePoseType.TRACKER_4) { return "TRACKER_4"; }
-		uint32_t L_9 = ___0_type;
-		if ((!(((uint32_t)L_9) == ((uint32_t)((int32_t)404)))))
-		{
-			goto IL_0089;
-		}
-	}
-	{
-		// if (type == RolePoseType.TRACKER_4) { return "TRACKER_4"; }
-		return _stringLiteralDA6E6A2BC0B9BBA60907FA993DD41EEDC3168036;
-	}
-
-IL_0089:
-	{
-		// if (type == RolePoseType.TRACKER_5) { return "TRACKER_5"; }
-		uint32_t L_10 = ___0_type;
-		if ((!(((uint32_t)L_10) == ((uint32_t)((int32_t)405)))))
-		{
-			goto IL_0097;
-		}
-	}
-	{
-		// if (type == RolePoseType.TRACKER_5) { return "TRACKER_5"; }
-		return _stringLiteral6A15148CBF6756D102DA3F3E13E03435FBC4B08A;
-	}
-
-IL_0097:
-	{
-		// if (type == RolePoseType.TRACKER_6) { return "TRACKER_6"; }
-		uint32_t L_11 = ___0_type;
-		if ((!(((uint32_t)L_11) == ((uint32_t)((int32_t)406)))))
-		{
-			goto IL_00a5;
-		}
-	}
-	{
-		// if (type == RolePoseType.TRACKER_6) { return "TRACKER_6"; }
-		return _stringLiteral1F417135E74860F18CC7FEEE1CEDB5486AEA8443;
-	}
-
-IL_00a5:
-	{
-		// if (type == RolePoseType.TRACKER_7) { return "TRACKER_7"; }
-		uint32_t L_12 = ___0_type;
-		if ((!(((uint32_t)L_12) == ((uint32_t)((int32_t)407)))))
-		{
-			goto IL_00b3;
-		}
-	}
-	{
-		// if (type == RolePoseType.TRACKER_7) { return "TRACKER_7"; }
-		return _stringLiteralA6A2564619B6F2FC35B19B51B972B6109F2EFAC4;
-	}
-
-IL_00b3:
-	{
-		// if (type == RolePoseType.TRACKER_8) { return "TRACKER_8"; }
-		uint32_t L_13 = ___0_type;
-		if ((!(((uint32_t)L_13) == ((uint32_t)((int32_t)408)))))
-		{
-			goto IL_00c1;
-		}
-	}
-	{
-		// if (type == RolePoseType.TRACKER_8) { return "TRACKER_8"; }
-		return _stringLiteral99A89C7B49A207FE7B37E4443489D2D2AC8713BB;
-	}
-
-IL_00c1:
-	{
-		// if (type == RolePoseType.TRACKER_9) { return "TRACKER_9"; }
-		uint32_t L_14 = ___0_type;
-		if ((!(((uint32_t)L_14) == ((uint32_t)((int32_t)409)))))
-		{
-			goto IL_00cf;
-		}
-	}
-	{
-		// if (type == RolePoseType.TRACKER_9) { return "TRACKER_9"; }
-		return _stringLiteral02EDE63E3888B6FFBB20639A14174478CEB4B364;
-	}
-
-IL_00cf:
-	{
-		// if (type == RolePoseType.TRACKER_10) { return "TRACKER_10"; }
-		uint32_t L_15 = ___0_type;
-		if ((!(((uint32_t)L_15) == ((uint32_t)((int32_t)410)))))
-		{
-			goto IL_00dd;
-		}
-	}
-	{
-		// if (type == RolePoseType.TRACKER_10) { return "TRACKER_10"; }
-		return _stringLiteralFFCE80EB50C7320E3DEBC7CF92674A39FD2D28B2;
-	}
-
-IL_00dd:
-	{
-		// if (type == RolePoseType.TRACKER_11) { return "TRACKER_11"; }
-		uint32_t L_16 = ___0_type;
-		if ((!(((uint32_t)L_16) == ((uint32_t)((int32_t)411)))))
-		{
-			goto IL_00eb;
-		}
-	}
-	{
-		// if (type == RolePoseType.TRACKER_11) { return "TRACKER_11"; }
-		return _stringLiteralB9E5971E63411DA52451A9B653672581A1F7F8A3;
-	}
-
-IL_00eb:
-	{
-		// if (type == RolePoseType.TRACKER_12) { return "TRACKER_12"; }
-		uint32_t L_17 = ___0_type;
-		if ((!(((uint32_t)L_17) == ((uint32_t)((int32_t)412)))))
-		{
-			goto IL_00f9;
-		}
-	}
-	{
-		// if (type == RolePoseType.TRACKER_12) { return "TRACKER_12"; }
-		return _stringLiteral528DE0EF5DE2BE746BBDF28AEDBBCBB6F23F2255;
-	}
-
-IL_00f9:
-	{
-		// if (type == RolePoseType.TRACKER_13) { return "TRACKER_13"; }
-		uint32_t L_18 = ___0_type;
-		if ((!(((uint32_t)L_18) == ((uint32_t)((int32_t)413)))))
-		{
-			goto IL_0107;
-		}
-	}
-	{
-		// if (type == RolePoseType.TRACKER_13) { return "TRACKER_13"; }
-		return _stringLiteral4A17D806C8BB572731BFDD50B0456BCA3D4A3451;
-	}
-
-IL_0107:
-	{
-		// if (type == RolePoseType.TRACKER_14) { return "TRACKER_14"; }
-		uint32_t L_19 = ___0_type;
-		if ((!(((uint32_t)L_19) == ((uint32_t)((int32_t)414)))))
-		{
-			goto IL_0115;
-		}
-	}
-	{
-		// if (type == RolePoseType.TRACKER_14) { return "TRACKER_14"; }
-		return _stringLiteral2B2F84FCC4B8E2546C6D3F555EF41D06FB0A820A;
-	}
-
-IL_0115:
-	{
-		// if (type == RolePoseType.TRACKER_15) { return "TRACKER_15"; }
-		uint32_t L_20 = ___0_type;
-		if ((!(((uint32_t)L_20) == ((uint32_t)((int32_t)415)))))
-		{
-			goto IL_0123;
-		}
-	}
-	{
-		// if (type == RolePoseType.TRACKER_15) { return "TRACKER_15"; }
-		return _stringLiteral31CDE7EA5DADA0B66B5197862E8CB0B4B419D4A9;
-	}
-
-IL_0123:
-	{
-		// return "";
-		return _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709;
-	}
-}
-// System.Void Wave.Essence.BodyTracking.RolePoseProvider::.cctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RolePoseProvider__cctor_mE4B2B87D1FC92B9D2CFD2797B1CA247967402182 (const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Dictionary_2__ctor_m73855285B997792A7ED75A3332DD9AE97C5C5D19_RuntimeMethod_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Dictionary_2_t4D42736F171A409CC8E74C010E98CD26C81E4BD4_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		// private static StringBuilder m_sb = null;
-		((RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_StaticFields*)il2cpp_codegen_static_fields_for(RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_il2cpp_TypeInfo_var))->___m_sb_1 = (StringBuilder_t*)NULL;
-		Il2CppCodeGenWriteBarrier((void**)(&((RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_StaticFields*)il2cpp_codegen_static_fields_for(RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_il2cpp_TypeInfo_var))->___m_sb_1), (void*)(StringBuilder_t*)NULL);
-		// private static Dictionary<RolePoseType, RolePose> m_RolePoseMap = new Dictionary<RolePoseType, RolePose>();
-		Dictionary_2_t4D42736F171A409CC8E74C010E98CD26C81E4BD4* L_0 = (Dictionary_2_t4D42736F171A409CC8E74C010E98CD26C81E4BD4*)il2cpp_codegen_object_new(Dictionary_2_t4D42736F171A409CC8E74C010E98CD26C81E4BD4_il2cpp_TypeInfo_var);
-		NullCheck(L_0);
-		Dictionary_2__ctor_m73855285B997792A7ED75A3332DD9AE97C5C5D19(L_0, Dictionary_2__ctor_m73855285B997792A7ED75A3332DD9AE97C5C5D19_RuntimeMethod_var);
-		((RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_StaticFields*)il2cpp_codegen_static_fields_for(RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_il2cpp_TypeInfo_var))->___m_RolePoseMap_2 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&((RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_StaticFields*)il2cpp_codegen_static_fields_for(RolePoseProvider_tE10A512E8FA6F71F282BD9C210F5328A50CBFC8C_il2cpp_TypeInfo_var))->___m_RolePoseMap_2), (void*)L_0);
-		return;
-	}
-}
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -26902,6 +24471,983 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BodyTrackingSample__cctor_mF668BE8E65C21
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// System.Void Wave.Essence.BodyTracking.Demo.BodyTrackingSample/<StartBodyTracking>d__41::.ctor(System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStartBodyTrackingU3Ed__41__ctor_m6F14AD4C219A16B9348ED1FCA8D0C83E3211FF1B (U3CStartBodyTrackingU3Ed__41_t4040ACE24B90527EA05CCF98736A60F606F97025* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
+{
+	{
+		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
+		int32_t L_0 = ___0_U3CU3E1__state;
+		__this->___U3CU3E1__state_0 = L_0;
+		return;
+	}
+}
+// System.Void Wave.Essence.BodyTracking.Demo.BodyTrackingSample/<StartBodyTracking>d__41::System.IDisposable.Dispose()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStartBodyTrackingU3Ed__41_System_IDisposable_Dispose_mDA093FF366764A025BF9429CE03BBC7CB594061A (U3CStartBodyTrackingU3Ed__41_t4040ACE24B90527EA05CCF98736A60F606F97025* __this, const RuntimeMethod* method) 
+{
+	{
+		return;
+	}
+}
+// System.Boolean Wave.Essence.BodyTracking.Demo.BodyTrackingSample/<StartBodyTracking>d__41::MoveNext()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CStartBodyTrackingU3Ed__41_MoveNext_m61ABDE81E20EA9DABA81F696934DD580F2ACCA2B (U3CStartBodyTrackingU3Ed__41_t4040ACE24B90527EA05CCF98736A60F606F97025* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&BodyTrackingUtils_t33B372876873BF1E13AE6300C400B89AEC3FA7B9_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&WaitForEndOfFrame_tE38D80923E3F8380069B423968C25ABE50A46663_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral098F8A4779DBC39DF7367A03881E99F26B45FFC9);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral09C7F4F9D456A44D2A8B20A818F795B573360C46);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral1D8D175CFF10865393C8B56F7ADE518D69A05F04);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral43D1AE57667F16420A902D179524489E608F1BBB);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral51A8FF8E280CC099C1F7178FAB191DDA1CF694BA);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral56E72C17B6BC27637F9BFE2D9CA774AD88A7F454);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral758733BDBED83CBFF4F635AC26CA92AAE477F75D);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral76D6BE1C6DCE46870C1F6DAAB0C1B31559BC90A6);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralAF19D49FBC442F77B011D87292BB970BD8415665);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralB3F14BF976EFD974E34846B742502C802FABAE9D);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralE166C9564FBDE461738077E3B1B506525EB6ACCC);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralE9147E9E17E7A19569168962EEDD0C19E02A2725);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralEBD579DCEEC564BEA150613A9E3AE6C7DC2E6516);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralEDC508C9C0B8CCA8F5B410A10C3EB05B7817C5BF);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralF289538A91A7D933B13FCDB598703D47187D3D4F);
+		s_Il2CppMethodInitialized = true;
+	}
+	int32_t V_0 = 0;
+	BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* V_1 = NULL;
+	uint8_t V_2 = 0;
+	float V_3 = 0.0f;
+	float V_4 = 0.0f;
+	uint32_t V_5 = 0;
+	float V_6 = 0.0f;
+	{
+		int32_t L_0 = __this->___U3CU3E1__state_0;
+		V_0 = L_0;
+		BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* L_1 = __this->___U3CU3E4__this_2;
+		V_1 = L_1;
+		int32_t L_2 = V_0;
+		switch (L_2)
+		{
+			case 0:
+			{
+				goto IL_0022;
+			}
+			case 1:
+			{
+				goto IL_0351;
+			}
+			case 2:
+			{
+				goto IL_03c3;
+			}
+		}
+	}
+	{
+		return (bool)0;
+	}
+
+IL_0022:
+	{
+		__this->___U3CU3E1__state_0 = (-1);
+		// if (BodyManager.Instance == null || inputBody == null)
+		BodyManager_t33248D59E5367A79FBADED3676FECDE4A5E4554E* L_3;
+		L_3 = BodyManager_get_Instance_m7CE8CA31564F7791BAFB402E1B733815750ACC59_inline(NULL);
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_4;
+		L_4 = Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605(L_3, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (L_4)
+		{
+			goto IL_003e;
+		}
+	}
+	{
+		BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* L_5 = V_1;
+		NullCheck(L_5);
+		Body_t0ABDF8C6FAFD5D8E4F7EE522F825A6ACFC51B074* L_6 = L_5->___inputBody_10;
+		if (L_6)
+		{
+			goto IL_0047;
+		}
+	}
+
+IL_003e:
+	{
+		// SetTrackingStatus(TrackingStatus.StartFailure);
+		BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* L_7 = V_1;
+		NullCheck(L_7);
+		BodyTrackingSample_SetTrackingStatus_mC099C1ADC89268A08BEFD8A0B2C7F96D13F50939(L_7, 1, NULL);
+		// yield break;
+		return (bool)0;
+	}
+
+IL_0047:
+	{
+		// sb.Clear().Append("StartBodyTracking() ").Append(m_TrackingMode.Name()); DEBUG(sb);
+		BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* L_8 = V_1;
+		NullCheck(L_8);
+		StringBuilder_t* L_9;
+		L_9 = BodyTrackingSample_get_sb_m67C1663B3907E69CA62C07576C4DCE6A298E9CC4(L_8, NULL);
+		NullCheck(L_9);
+		StringBuilder_t* L_10;
+		L_10 = StringBuilder_Clear_m2D76F6533574F40A4E3E2DC4E730277CBD0AF8F6(L_9, NULL);
+		NullCheck(L_10);
+		StringBuilder_t* L_11;
+		L_11 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_10, _stringLiteralF289538A91A7D933B13FCDB598703D47187D3D4F, NULL);
+		BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* L_12 = V_1;
+		NullCheck(L_12);
+		uint32_t L_13 = L_12->___m_TrackingMode_14;
+		String_t* L_14;
+		L_14 = BTDemoHelper_Name_mB8B562A3B37DCD4F248CACE648359BC9D9DB9252(L_13, NULL);
+		NullCheck(L_11);
+		StringBuilder_t* L_15;
+		L_15 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_11, L_14, NULL);
+		// sb.Clear().Append("StartBodyTracking() ").Append(m_TrackingMode.Name()); DEBUG(sb);
+		BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* L_16 = V_1;
+		BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* L_17 = V_1;
+		NullCheck(L_17);
+		StringBuilder_t* L_18;
+		L_18 = BodyTrackingSample_get_sb_m67C1663B3907E69CA62C07576C4DCE6A298E9CC4(L_17, NULL);
+		NullCheck(L_16);
+		BodyTrackingSample_DEBUG_m31FF95AAC13F6BB1A96708F7B50E699DE2927951(L_16, L_18, NULL);
+		// BodyTrackingResult result = BodyTrackingResult.ERROR_FATAL_ERROR;
+		V_2 = ((int32_t)255);
+		// result = BodyManager.Instance.CreateBodyTracking(ref m_TrackerId, (BodyTrackingMode)m_TrackingMode);
+		BodyManager_t33248D59E5367A79FBADED3676FECDE4A5E4554E* L_19;
+		L_19 = BodyManager_get_Instance_m7CE8CA31564F7791BAFB402E1B733815750ACC59_inline(NULL);
+		BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* L_20 = V_1;
+		NullCheck(L_20);
+		int32_t* L_21 = (&L_20->___m_TrackerId_16);
+		BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* L_22 = V_1;
+		NullCheck(L_22);
+		uint32_t L_23 = L_22->___m_TrackingMode_14;
+		NullCheck(L_19);
+		uint8_t L_24;
+		L_24 = BodyManager_CreateBodyTracking_m5C110646B4D29B5459E98756E0D8D39A80C9F1E1(L_19, L_21, L_23, NULL);
+		V_2 = L_24;
+		// sb.Clear().Append("StartBodyTracking() CreateBodyTracking(").Append(m_TrackerId).Append(") result: ").Append(result.Name()); DEBUG(sb);
+		BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* L_25 = V_1;
+		NullCheck(L_25);
+		StringBuilder_t* L_26;
+		L_26 = BodyTrackingSample_get_sb_m67C1663B3907E69CA62C07576C4DCE6A298E9CC4(L_25, NULL);
+		NullCheck(L_26);
+		StringBuilder_t* L_27;
+		L_27 = StringBuilder_Clear_m2D76F6533574F40A4E3E2DC4E730277CBD0AF8F6(L_26, NULL);
+		NullCheck(L_27);
+		StringBuilder_t* L_28;
+		L_28 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_27, _stringLiteral098F8A4779DBC39DF7367A03881E99F26B45FFC9, NULL);
+		BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* L_29 = V_1;
+		NullCheck(L_29);
+		int32_t L_30 = L_29->___m_TrackerId_16;
+		NullCheck(L_28);
+		StringBuilder_t* L_31;
+		L_31 = StringBuilder_Append_m283B617AC29FB0DD6F3A7D8C01D385C25A5F0FAA(L_28, L_30, NULL);
+		NullCheck(L_31);
+		StringBuilder_t* L_32;
+		L_32 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_31, _stringLiteral09C7F4F9D456A44D2A8B20A818F795B573360C46, NULL);
+		uint8_t L_33 = V_2;
+		il2cpp_codegen_runtime_class_init_inline(BodyTrackingUtils_t33B372876873BF1E13AE6300C400B89AEC3FA7B9_il2cpp_TypeInfo_var);
+		String_t* L_34;
+		L_34 = BodyTrackingUtils_Name_m6FD313E3C69CB058ADDD331719E90C7A7F7361A6(L_33, NULL);
+		NullCheck(L_32);
+		StringBuilder_t* L_35;
+		L_35 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_32, L_34, NULL);
+		// sb.Clear().Append("StartBodyTracking() CreateBodyTracking(").Append(m_TrackerId).Append(") result: ").Append(result.Name()); DEBUG(sb);
+		BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* L_36 = V_1;
+		BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* L_37 = V_1;
+		NullCheck(L_37);
+		StringBuilder_t* L_38;
+		L_38 = BodyTrackingSample_get_sb_m67C1663B3907E69CA62C07576C4DCE6A298E9CC4(L_37, NULL);
+		NullCheck(L_36);
+		BodyTrackingSample_DEBUG_m31FF95AAC13F6BB1A96708F7B50E699DE2927951(L_36, L_38, NULL);
+		// if (result != BodyTrackingResult.SUCCESS)
+		uint8_t L_39 = V_2;
+		if (!L_39)
+		{
+			goto IL_00e4;
+		}
+	}
+	{
+		// SetTrackingStatus(TrackingStatus.StartFailure);
+		BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* L_40 = V_1;
+		NullCheck(L_40);
+		BodyTrackingSample_SetTrackingStatus_mC099C1ADC89268A08BEFD8A0B2C7F96D13F50939(L_40, 1, NULL);
+		// yield break;
+		return (bool)0;
+	}
+
+IL_00e4:
+	{
+		// float userCalibrationHeight = 0, avatarScale = 0;
+		V_3 = (0.0f);
+		// float userCalibrationHeight = 0, avatarScale = 0;
+		V_4 = (0.0f);
+		// result = BodyManager.Instance.GetDefaultRotationSpace(m_TrackerId, out RotateSpace[] rotationSpaces, out UInt32 rotationSpaceCount);
+		BodyManager_t33248D59E5367A79FBADED3676FECDE4A5E4554E* L_41;
+		L_41 = BodyManager_get_Instance_m7CE8CA31564F7791BAFB402E1B733815750ACC59_inline(NULL);
+		BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* L_42 = V_1;
+		NullCheck(L_42);
+		int32_t L_43 = L_42->___m_TrackerId_16;
+		RotateSpaceU5BU5D_tAB46B4B26C807527769E92317DC5D49F503EFAD1** L_44 = (&__this->___U3CrotationSpacesU3E5__2_3);
+		uint32_t* L_45 = (&__this->___U3CrotationSpaceCountU3E5__3_4);
+		NullCheck(L_41);
+		uint8_t L_46;
+		L_46 = BodyManager_GetDefaultRotationSpace_m3CE74183B3858F853B65A538C5B7B15F9943F92D(L_41, L_43, L_44, L_45, NULL);
+		V_2 = L_46;
+		// sb.Clear().Append("StartBodyTracking() GetBodyRotationSpaces result: ").Append(result.Name()).Append(", jointCount: ").Append(rotationSpaceCount); DEBUG(sb);
+		BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* L_47 = V_1;
+		NullCheck(L_47);
+		StringBuilder_t* L_48;
+		L_48 = BodyTrackingSample_get_sb_m67C1663B3907E69CA62C07576C4DCE6A298E9CC4(L_47, NULL);
+		NullCheck(L_48);
+		StringBuilder_t* L_49;
+		L_49 = StringBuilder_Clear_m2D76F6533574F40A4E3E2DC4E730277CBD0AF8F6(L_48, NULL);
+		NullCheck(L_49);
+		StringBuilder_t* L_50;
+		L_50 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_49, _stringLiteralE9147E9E17E7A19569168962EEDD0C19E02A2725, NULL);
+		uint8_t L_51 = V_2;
+		il2cpp_codegen_runtime_class_init_inline(BodyTrackingUtils_t33B372876873BF1E13AE6300C400B89AEC3FA7B9_il2cpp_TypeInfo_var);
+		String_t* L_52;
+		L_52 = BodyTrackingUtils_Name_m6FD313E3C69CB058ADDD331719E90C7A7F7361A6(L_51, NULL);
+		NullCheck(L_50);
+		StringBuilder_t* L_53;
+		L_53 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_50, L_52, NULL);
+		NullCheck(L_53);
+		StringBuilder_t* L_54;
+		L_54 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_53, _stringLiteral56E72C17B6BC27637F9BFE2D9CA774AD88A7F454, NULL);
+		uint32_t L_55 = __this->___U3CrotationSpaceCountU3E5__3_4;
+		NullCheck(L_54);
+		StringBuilder_t* L_56;
+		L_56 = StringBuilder_Append_m3C5F10B877B802CA99FA61EC5360B30631270062(L_54, L_55, NULL);
+		// sb.Clear().Append("StartBodyTracking() GetBodyRotationSpaces result: ").Append(result.Name()).Append(", jointCount: ").Append(rotationSpaceCount); DEBUG(sb);
+		BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* L_57 = V_1;
+		BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* L_58 = V_1;
+		NullCheck(L_58);
+		StringBuilder_t* L_59;
+		L_59 = BodyTrackingSample_get_sb_m67C1663B3907E69CA62C07576C4DCE6A298E9CC4(L_58, NULL);
+		NullCheck(L_57);
+		BodyTrackingSample_DEBUG_m31FF95AAC13F6BB1A96708F7B50E699DE2927951(L_57, L_59, NULL);
+		// for (UInt32 i = 0; i < rotationSpaceCount; i++)
+		V_5 = 0;
+		goto IL_0233;
+	}
+
+IL_0158:
+	{
+		// sb.Clear().Append("StartBodyTracking() rotationSpaces[").Append(i).Append("]")
+		//     .Append(", rotation(").Append(rotationSpaces[i].rotation.x)
+		//     .Append(", ").Append(rotationSpaces[i].rotation.y)
+		//     .Append(", ").Append(rotationSpaces[i].rotation.z)
+		//     .Append(", ").Append(rotationSpaces[i].rotation.w).Append(")");
+		BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* L_60 = V_1;
+		NullCheck(L_60);
+		StringBuilder_t* L_61;
+		L_61 = BodyTrackingSample_get_sb_m67C1663B3907E69CA62C07576C4DCE6A298E9CC4(L_60, NULL);
+		NullCheck(L_61);
+		StringBuilder_t* L_62;
+		L_62 = StringBuilder_Clear_m2D76F6533574F40A4E3E2DC4E730277CBD0AF8F6(L_61, NULL);
+		NullCheck(L_62);
+		StringBuilder_t* L_63;
+		L_63 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_62, _stringLiteralEBD579DCEEC564BEA150613A9E3AE6C7DC2E6516, NULL);
+		uint32_t L_64 = V_5;
+		NullCheck(L_63);
+		StringBuilder_t* L_65;
+		L_65 = StringBuilder_Append_m3C5F10B877B802CA99FA61EC5360B30631270062(L_63, L_64, NULL);
+		NullCheck(L_65);
+		StringBuilder_t* L_66;
+		L_66 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_65, _stringLiteralE166C9564FBDE461738077E3B1B506525EB6ACCC, NULL);
+		NullCheck(L_66);
+		StringBuilder_t* L_67;
+		L_67 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_66, _stringLiteral43D1AE57667F16420A902D179524489E608F1BBB, NULL);
+		RotateSpaceU5BU5D_tAB46B4B26C807527769E92317DC5D49F503EFAD1* L_68 = __this->___U3CrotationSpacesU3E5__2_3;
+		uint32_t L_69 = V_5;
+		NullCheck(L_68);
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974* L_70 = (&((L_68)->GetAddressAt(static_cast<il2cpp_array_size_t>(L_69)))->___rotation_1);
+		float L_71 = L_70->___x_0;
+		NullCheck(L_67);
+		StringBuilder_t* L_72;
+		L_72 = StringBuilder_Append_m789EC7C63CDC0DE5136AE3FF0C85CA5EE11A842E(L_67, L_71, NULL);
+		NullCheck(L_72);
+		StringBuilder_t* L_73;
+		L_73 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_72, _stringLiteral758733BDBED83CBFF4F635AC26CA92AAE477F75D, NULL);
+		RotateSpaceU5BU5D_tAB46B4B26C807527769E92317DC5D49F503EFAD1* L_74 = __this->___U3CrotationSpacesU3E5__2_3;
+		uint32_t L_75 = V_5;
+		NullCheck(L_74);
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974* L_76 = (&((L_74)->GetAddressAt(static_cast<il2cpp_array_size_t>(L_75)))->___rotation_1);
+		float L_77 = L_76->___y_1;
+		NullCheck(L_73);
+		StringBuilder_t* L_78;
+		L_78 = StringBuilder_Append_m789EC7C63CDC0DE5136AE3FF0C85CA5EE11A842E(L_73, L_77, NULL);
+		NullCheck(L_78);
+		StringBuilder_t* L_79;
+		L_79 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_78, _stringLiteral758733BDBED83CBFF4F635AC26CA92AAE477F75D, NULL);
+		RotateSpaceU5BU5D_tAB46B4B26C807527769E92317DC5D49F503EFAD1* L_80 = __this->___U3CrotationSpacesU3E5__2_3;
+		uint32_t L_81 = V_5;
+		NullCheck(L_80);
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974* L_82 = (&((L_80)->GetAddressAt(static_cast<il2cpp_array_size_t>(L_81)))->___rotation_1);
+		float L_83 = L_82->___z_2;
+		NullCheck(L_79);
+		StringBuilder_t* L_84;
+		L_84 = StringBuilder_Append_m789EC7C63CDC0DE5136AE3FF0C85CA5EE11A842E(L_79, L_83, NULL);
+		NullCheck(L_84);
+		StringBuilder_t* L_85;
+		L_85 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_84, _stringLiteral758733BDBED83CBFF4F635AC26CA92AAE477F75D, NULL);
+		RotateSpaceU5BU5D_tAB46B4B26C807527769E92317DC5D49F503EFAD1* L_86 = __this->___U3CrotationSpacesU3E5__2_3;
+		uint32_t L_87 = V_5;
+		NullCheck(L_86);
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974* L_88 = (&((L_86)->GetAddressAt(static_cast<il2cpp_array_size_t>(L_87)))->___rotation_1);
+		float L_89 = L_88->___w_3;
+		NullCheck(L_85);
+		StringBuilder_t* L_90;
+		L_90 = StringBuilder_Append_m789EC7C63CDC0DE5136AE3FF0C85CA5EE11A842E(L_85, L_89, NULL);
+		NullCheck(L_90);
+		StringBuilder_t* L_91;
+		L_91 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_90, _stringLiteralB3F14BF976EFD974E34846B742502C802FABAE9D, NULL);
+		// DEBUG(sb);
+		BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* L_92 = V_1;
+		BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* L_93 = V_1;
+		NullCheck(L_93);
+		StringBuilder_t* L_94;
+		L_94 = BodyTrackingSample_get_sb_m67C1663B3907E69CA62C07576C4DCE6A298E9CC4(L_93, NULL);
+		NullCheck(L_92);
+		BodyTrackingSample_DEBUG_m31FF95AAC13F6BB1A96708F7B50E699DE2927951(L_92, L_94, NULL);
+		// for (UInt32 i = 0; i < rotationSpaceCount; i++)
+		uint32_t L_95 = V_5;
+		V_5 = ((int32_t)il2cpp_codegen_add((int32_t)L_95, 1));
+	}
+
+IL_0233:
+	{
+		// for (UInt32 i = 0; i < rotationSpaceCount; i++)
+		uint32_t L_96 = V_5;
+		uint32_t L_97 = __this->___U3CrotationSpaceCountU3E5__3_4;
+		if ((!(((uint32_t)L_96) >= ((uint32_t)L_97))))
+		{
+			goto IL_0158;
+		}
+	}
+	{
+		// result = BodyManager.Instance.GetBodyTrackingInfo(m_TrackerId, out userCalibrationHeight, out avatarScale);
+		BodyManager_t33248D59E5367A79FBADED3676FECDE4A5E4554E* L_98;
+		L_98 = BodyManager_get_Instance_m7CE8CA31564F7791BAFB402E1B733815750ACC59_inline(NULL);
+		BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* L_99 = V_1;
+		NullCheck(L_99);
+		int32_t L_100 = L_99->___m_TrackerId_16;
+		NullCheck(L_98);
+		uint8_t L_101;
+		L_101 = BodyManager_GetBodyTrackingInfo_m45EC63B0910FE447837B2E5049B54E977E05390E(L_98, L_100, (&V_3), (&V_4), NULL);
+		V_2 = L_101;
+		// sb.Clear().Append("StartBodyTracking() GetBodyTrackingInfo result ").Append(result.Name()).Append(", userCalibrationHeight ").Append(userCalibrationHeight).Append(", avatarScale ").Append(avatarScale); DEBUG(sb);
+		BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* L_102 = V_1;
+		NullCheck(L_102);
+		StringBuilder_t* L_103;
+		L_103 = BodyTrackingSample_get_sb_m67C1663B3907E69CA62C07576C4DCE6A298E9CC4(L_102, NULL);
+		NullCheck(L_103);
+		StringBuilder_t* L_104;
+		L_104 = StringBuilder_Clear_m2D76F6533574F40A4E3E2DC4E730277CBD0AF8F6(L_103, NULL);
+		NullCheck(L_104);
+		StringBuilder_t* L_105;
+		L_105 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_104, _stringLiteralEDC508C9C0B8CCA8F5B410A10C3EB05B7817C5BF, NULL);
+		uint8_t L_106 = V_2;
+		il2cpp_codegen_runtime_class_init_inline(BodyTrackingUtils_t33B372876873BF1E13AE6300C400B89AEC3FA7B9_il2cpp_TypeInfo_var);
+		String_t* L_107;
+		L_107 = BodyTrackingUtils_Name_m6FD313E3C69CB058ADDD331719E90C7A7F7361A6(L_106, NULL);
+		NullCheck(L_105);
+		StringBuilder_t* L_108;
+		L_108 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_105, L_107, NULL);
+		NullCheck(L_108);
+		StringBuilder_t* L_109;
+		L_109 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_108, _stringLiteral51A8FF8E280CC099C1F7178FAB191DDA1CF694BA, NULL);
+		float L_110 = V_3;
+		NullCheck(L_109);
+		StringBuilder_t* L_111;
+		L_111 = StringBuilder_Append_m789EC7C63CDC0DE5136AE3FF0C85CA5EE11A842E(L_109, L_110, NULL);
+		NullCheck(L_111);
+		StringBuilder_t* L_112;
+		L_112 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_111, _stringLiteralAF19D49FBC442F77B011D87292BB970BD8415665, NULL);
+		float L_113 = V_4;
+		NullCheck(L_112);
+		StringBuilder_t* L_114;
+		L_114 = StringBuilder_Append_m789EC7C63CDC0DE5136AE3FF0C85CA5EE11A842E(L_112, L_113, NULL);
+		// sb.Clear().Append("StartBodyTracking() GetBodyTrackingInfo result ").Append(result.Name()).Append(", userCalibrationHeight ").Append(userCalibrationHeight).Append(", avatarScale ").Append(avatarScale); DEBUG(sb);
+		BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* L_115 = V_1;
+		BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* L_116 = V_1;
+		NullCheck(L_116);
+		StringBuilder_t* L_117;
+		L_117 = BodyTrackingSample_get_sb_m67C1663B3907E69CA62C07576C4DCE6A298E9CC4(L_116, NULL);
+		NullCheck(L_115);
+		BodyTrackingSample_DEBUG_m31FF95AAC13F6BB1A96708F7B50E699DE2927951(L_115, L_117, NULL);
+		// if (result == BodyTrackingResult.SUCCESS)
+		uint8_t L_118 = V_2;
+		if (L_118)
+		{
+			goto IL_0360;
+		}
+	}
+	{
+		// float scale = userCalibrationHeight / m_InitialBody.height;
+		float L_119 = V_3;
+		BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* L_120 = V_1;
+		NullCheck(L_120);
+		Body_t0ABDF8C6FAFD5D8E4F7EE522F825A6ACFC51B074* L_121 = L_120->___m_InitialBody_12;
+		NullCheck(L_121);
+		float L_122 = L_121->___height_52;
+		V_6 = ((float)(L_119/L_122));
+		// sb.Clear().Append("StartBodyTracking() Apply avatar scale with ").Append(scale); DEBUG(sb);
+		BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* L_123 = V_1;
+		NullCheck(L_123);
+		StringBuilder_t* L_124;
+		L_124 = BodyTrackingSample_get_sb_m67C1663B3907E69CA62C07576C4DCE6A298E9CC4(L_123, NULL);
+		NullCheck(L_124);
+		StringBuilder_t* L_125;
+		L_125 = StringBuilder_Clear_m2D76F6533574F40A4E3E2DC4E730277CBD0AF8F6(L_124, NULL);
+		NullCheck(L_125);
+		StringBuilder_t* L_126;
+		L_126 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_125, _stringLiteral76D6BE1C6DCE46870C1F6DAAB0C1B31559BC90A6, NULL);
+		float L_127 = V_6;
+		NullCheck(L_126);
+		StringBuilder_t* L_128;
+		L_128 = StringBuilder_Append_m789EC7C63CDC0DE5136AE3FF0C85CA5EE11A842E(L_126, L_127, NULL);
+		// sb.Clear().Append("StartBodyTracking() Apply avatar scale with ").Append(scale); DEBUG(sb);
+		BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* L_129 = V_1;
+		BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* L_130 = V_1;
+		NullCheck(L_130);
+		StringBuilder_t* L_131;
+		L_131 = BodyTrackingSample_get_sb_m67C1663B3907E69CA62C07576C4DCE6A298E9CC4(L_130, NULL);
+		NullCheck(L_129);
+		BodyTrackingSample_DEBUG_m31FF95AAC13F6BB1A96708F7B50E699DE2927951(L_129, L_131, NULL);
+		// ApplyBodyScale(scale);
+		BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* L_132 = V_1;
+		float L_133 = V_6;
+		NullCheck(L_132);
+		BodyTrackingSample_ApplyBodyScale_m9DE1DCE8B7AFE1F529C1136173DF0C47914BF899(L_132, L_133, NULL);
+		// SetTrackingStatus(TrackingStatus.Available); // Tracking is available then going into the loop for retrieving poses.
+		BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* L_134 = V_1;
+		NullCheck(L_134);
+		BodyTrackingSample_SetTrackingStatus_mC099C1ADC89268A08BEFD8A0B2C7F96D13F50939(L_134, 4, NULL);
+		// updateTrackingData = true;
+		BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* L_135 = V_1;
+		NullCheck(L_135);
+		L_135->___updateTrackingData_15 = (bool)1;
+		goto IL_0358;
+	}
+
+IL_02f9:
+	{
+		// result = BodyManager.Instance.GetBodyTrackingPoseOnce(m_TrackerId, out avatarBody);
+		BodyManager_t33248D59E5367A79FBADED3676FECDE4A5E4554E* L_136;
+		L_136 = BodyManager_get_Instance_m7CE8CA31564F7791BAFB402E1B733815750ACC59_inline(NULL);
+		BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* L_137 = V_1;
+		NullCheck(L_137);
+		int32_t L_138 = L_137->___m_TrackerId_16;
+		BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* L_139 = V_1;
+		NullCheck(L_139);
+		BodyAvatar_t2C8E331178D60F0E95118D7D9D0F887523923AD2** L_140 = (&L_139->___avatarBody_17);
+		NullCheck(L_136);
+		uint8_t L_141;
+		L_141 = BodyManager_GetBodyTrackingPoseOnce_m0462A87BC38B34E3DD76172A0D90246903B88514(L_136, L_138, L_140, NULL);
+		V_2 = L_141;
+		// if (result == BodyTrackingResult.SUCCESS)
+		uint8_t L_142 = V_2;
+		if (L_142)
+		{
+			goto IL_033d;
+		}
+	}
+	{
+		// RecoverBodyOffset();
+		BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* L_143 = V_1;
+		NullCheck(L_143);
+		BodyTrackingSample_RecoverBodyOffset_m3982BD2343FC96B495A80432FD67A6F9AD0F927C(L_143, NULL);
+		// UpdateBodyPosesInOrder(avatarBody, rotationSpaces, rotationSpaceCount);
+		BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* L_144 = V_1;
+		BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* L_145 = V_1;
+		NullCheck(L_145);
+		BodyAvatar_t2C8E331178D60F0E95118D7D9D0F887523923AD2* L_146 = L_145->___avatarBody_17;
+		RotateSpaceU5BU5D_tAB46B4B26C807527769E92317DC5D49F503EFAD1* L_147 = __this->___U3CrotationSpacesU3E5__2_3;
+		uint32_t L_148 = __this->___U3CrotationSpaceCountU3E5__3_4;
+		NullCheck(L_144);
+		BodyTrackingSample_UpdateBodyPosesInOrder_m186359A895D65BFD43A57F1F7DED8FE115C3B7A9(L_144, L_146, L_147, L_148, NULL);
+		// ApplyBodyOffsetEachFrame(avatarOffset);
+		BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* L_149 = V_1;
+		BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* L_150 = V_1;
+		NullCheck(L_150);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_151 = L_150->___avatarOffset_11;
+		NullCheck(L_149);
+		BodyTrackingSample_ApplyBodyOffsetEachFrame_mC33B63CAA28166BF68D5F81711EA7BF1374FF9A1(L_149, L_151, NULL);
+	}
+
+IL_033d:
+	{
+		// yield return new WaitForEndOfFrame();
+		WaitForEndOfFrame_tE38D80923E3F8380069B423968C25ABE50A46663* L_152 = (WaitForEndOfFrame_tE38D80923E3F8380069B423968C25ABE50A46663*)il2cpp_codegen_object_new(WaitForEndOfFrame_tE38D80923E3F8380069B423968C25ABE50A46663_il2cpp_TypeInfo_var);
+		NullCheck(L_152);
+		WaitForEndOfFrame__ctor_m4AF7E576C01E6B04443BB898B1AE5D645F7D45AB(L_152, NULL);
+		__this->___U3CU3E2__current_1 = L_152;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current_1), (void*)L_152);
+		__this->___U3CU3E1__state_0 = 1;
+		return (bool)1;
+	}
+
+IL_0351:
+	{
+		__this->___U3CU3E1__state_0 = (-1);
+	}
+
+IL_0358:
+	{
+		// while (updateTrackingData)
+		BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* L_153 = V_1;
+		NullCheck(L_153);
+		bool L_154 = L_153->___updateTrackingData_15;
+		if (L_154)
+		{
+			goto IL_02f9;
+		}
+	}
+
+IL_0360:
+	{
+		// result = BodyManager.Instance.DestroyBodyTracking(m_TrackerId);
+		BodyManager_t33248D59E5367A79FBADED3676FECDE4A5E4554E* L_155;
+		L_155 = BodyManager_get_Instance_m7CE8CA31564F7791BAFB402E1B733815750ACC59_inline(NULL);
+		BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* L_156 = V_1;
+		NullCheck(L_156);
+		int32_t L_157 = L_156->___m_TrackerId_16;
+		NullCheck(L_155);
+		uint8_t L_158;
+		L_158 = BodyManager_DestroyBodyTracking_m5188756E32D3DBD2969B84CBCB8365457BADB0A6(L_155, L_157, NULL);
+		V_2 = L_158;
+		// sb.Clear().Append("StartBodyTracking() DestroyBodyTracking(").Append(m_TrackerId).Append(") result: ").Append(result.Name()); DEBUG(sb);
+		BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* L_159 = V_1;
+		NullCheck(L_159);
+		StringBuilder_t* L_160;
+		L_160 = BodyTrackingSample_get_sb_m67C1663B3907E69CA62C07576C4DCE6A298E9CC4(L_159, NULL);
+		NullCheck(L_160);
+		StringBuilder_t* L_161;
+		L_161 = StringBuilder_Clear_m2D76F6533574F40A4E3E2DC4E730277CBD0AF8F6(L_160, NULL);
+		NullCheck(L_161);
+		StringBuilder_t* L_162;
+		L_162 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_161, _stringLiteral1D8D175CFF10865393C8B56F7ADE518D69A05F04, NULL);
+		BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* L_163 = V_1;
+		NullCheck(L_163);
+		int32_t L_164 = L_163->___m_TrackerId_16;
+		NullCheck(L_162);
+		StringBuilder_t* L_165;
+		L_165 = StringBuilder_Append_m283B617AC29FB0DD6F3A7D8C01D385C25A5F0FAA(L_162, L_164, NULL);
+		NullCheck(L_165);
+		StringBuilder_t* L_166;
+		L_166 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_165, _stringLiteral09C7F4F9D456A44D2A8B20A818F795B573360C46, NULL);
+		uint8_t L_167 = V_2;
+		il2cpp_codegen_runtime_class_init_inline(BodyTrackingUtils_t33B372876873BF1E13AE6300C400B89AEC3FA7B9_il2cpp_TypeInfo_var);
+		String_t* L_168;
+		L_168 = BodyTrackingUtils_Name_m6FD313E3C69CB058ADDD331719E90C7A7F7361A6(L_167, NULL);
+		NullCheck(L_166);
+		StringBuilder_t* L_169;
+		L_169 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_166, L_168, NULL);
+		// sb.Clear().Append("StartBodyTracking() DestroyBodyTracking(").Append(m_TrackerId).Append(") result: ").Append(result.Name()); DEBUG(sb);
+		BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* L_170 = V_1;
+		BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* L_171 = V_1;
+		NullCheck(L_171);
+		StringBuilder_t* L_172;
+		L_172 = BodyTrackingSample_get_sb_m67C1663B3907E69CA62C07576C4DCE6A298E9CC4(L_171, NULL);
+		NullCheck(L_170);
+		BodyTrackingSample_DEBUG_m31FF95AAC13F6BB1A96708F7B50E699DE2927951(L_170, L_172, NULL);
+		// yield return null; // waits next frame
+		__this->___U3CU3E2__current_1 = NULL;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current_1), (void*)NULL);
+		__this->___U3CU3E1__state_0 = 2;
+		return (bool)1;
+	}
+
+IL_03c3:
+	{
+		__this->___U3CU3E1__state_0 = (-1);
+		// SetTrackingStatus(TrackingStatus.NotStart); // Resets the tracking status last.
+		BodyTrackingSample_tBEB448BF3D16B3E3FACC1F8CAC2AFBA8B1B343CB* L_173 = V_1;
+		NullCheck(L_173);
+		BodyTrackingSample_SetTrackingStatus_mC099C1ADC89268A08BEFD8A0B2C7F96D13F50939(L_173, 0, NULL);
+		// }
+		return (bool)0;
+	}
+}
+// System.Object Wave.Essence.BodyTracking.Demo.BodyTrackingSample/<StartBodyTracking>d__41::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CStartBodyTrackingU3Ed__41_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m352F06464BD67B448B0557DA6668E7C4C1A1A831 (U3CStartBodyTrackingU3Ed__41_t4040ACE24B90527EA05CCF98736A60F606F97025* __this, const RuntimeMethod* method) 
+{
+	{
+		RuntimeObject* L_0 = __this->___U3CU3E2__current_1;
+		return L_0;
+	}
+}
+// System.Void Wave.Essence.BodyTracking.Demo.BodyTrackingSample/<StartBodyTracking>d__41::System.Collections.IEnumerator.Reset()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStartBodyTrackingU3Ed__41_System_Collections_IEnumerator_Reset_m984D1038D5170A3931EF00A1AA520CC9A4E531B9 (U3CStartBodyTrackingU3Ed__41_t4040ACE24B90527EA05CCF98736A60F606F97025* __this, const RuntimeMethod* method) 
+{
+	{
+		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
+		NullCheck(L_0);
+		NotSupportedException__ctor_m1398D0CDE19B36AA3DE9392879738C1EA2439CDF(L_0, NULL);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CStartBodyTrackingU3Ed__41_System_Collections_IEnumerator_Reset_m984D1038D5170A3931EF00A1AA520CC9A4E531B9_RuntimeMethod_var)));
+	}
+}
+// System.Object Wave.Essence.BodyTracking.Demo.BodyTrackingSample/<StartBodyTracking>d__41::System.Collections.IEnumerator.get_Current()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CStartBodyTrackingU3Ed__41_System_Collections_IEnumerator_get_Current_m6B47811CFC4BF16C593AC8F26998053F63F916C8 (U3CStartBodyTrackingU3Ed__41_t4040ACE24B90527EA05CCF98736A60F606F97025* __this, const RuntimeMethod* method) 
+{
+	{
+		RuntimeObject* L_0 = __this->___U3CU3E2__current_1;
+		return L_0;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// System.String Wave.Essence.BodyTracking.Demo.BTDemoHelper::Name(Wave.Essence.BodyTracking.Demo.BTDemoHelper/TrackingMode)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* BTDemoHelper_Name_mB8B562A3B37DCD4F248CACE648359BC9D9DB9252 (uint32_t ___0_mode, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral3F45847426A5CCEBD2A2226DC7D1EA311A3121E7);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral7B278367F7D00A96FF817A43542FCB64B3C80FAD);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral8F87F3C659C6553C3FB3C314F018CCE4BA277C9D);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralEA3EE92B86AF5F061AEB38B1382362D92683F962);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		// if (mode == TrackingMode.Arm) { return "Arm"; }
+		uint32_t L_0 = ___0_mode;
+		if (L_0)
+		{
+			goto IL_0009;
+		}
+	}
+	{
+		// if (mode == TrackingMode.Arm) { return "Arm"; }
+		return _stringLiteralEA3EE92B86AF5F061AEB38B1382362D92683F962;
+	}
+
+IL_0009:
+	{
+		// if (mode == TrackingMode.FullBody) { return "FullBody"; }
+		uint32_t L_1 = ___0_mode;
+		if ((!(((uint32_t)L_1) == ((uint32_t)2))))
+		{
+			goto IL_0013;
+		}
+	}
+	{
+		// if (mode == TrackingMode.FullBody) { return "FullBody"; }
+		return _stringLiteral7B278367F7D00A96FF817A43542FCB64B3C80FAD;
+	}
+
+IL_0013:
+	{
+		// if (mode == TrackingMode.UpperBody) { return "UpperBody"; }
+		uint32_t L_2 = ___0_mode;
+		if ((!(((uint32_t)L_2) == ((uint32_t)1))))
+		{
+			goto IL_001d;
+		}
+	}
+	{
+		// if (mode == TrackingMode.UpperBody) { return "UpperBody"; }
+		return _stringLiteral3F45847426A5CCEBD2A2226DC7D1EA311A3121E7;
+	}
+
+IL_001d:
+	{
+		// if (mode == TrackingMode.UpperBodyAndLeg) { return "UpperLeg"; }
+		uint32_t L_3 = ___0_mode;
+		if ((!(((uint32_t)L_3) == ((uint32_t)3))))
+		{
+			goto IL_0027;
+		}
+	}
+	{
+		// if (mode == TrackingMode.UpperBodyAndLeg) { return "UpperLeg"; }
+		return _stringLiteral8F87F3C659C6553C3FB3C314F018CCE4BA277C9D;
+	}
+
+IL_0027:
+	{
+		// return "";
+		return _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// System.Text.StringBuilder Wave.Essence.BodyTracking.Demo.HumanoidIKMenu::get_sb()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringBuilder_t* HumanoidIKMenu_get_sb_m45758CEF81A9BB4B0CCA37049452905D349CC5A5 (HumanoidIKMenu_t5063882FCD2429C610477C3D77DD988372D3975C* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&StringBuilder_t_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		// if (m_sb == null) { m_sb = new StringBuilder(); }
+		StringBuilder_t* L_0 = __this->___m_sb_5;
+		if (L_0)
+		{
+			goto IL_0013;
+		}
+	}
+	{
+		// if (m_sb == null) { m_sb = new StringBuilder(); }
+		StringBuilder_t* L_1 = (StringBuilder_t*)il2cpp_codegen_object_new(StringBuilder_t_il2cpp_TypeInfo_var);
+		NullCheck(L_1);
+		StringBuilder__ctor_m1D99713357DE05DAFA296633639DB55F8C30587D(L_1, NULL);
+		__this->___m_sb_5 = L_1;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___m_sb_5), (void*)L_1);
+	}
+
+IL_0013:
+	{
+		// return m_sb;
+		StringBuilder_t* L_2 = __this->___m_sb_5;
+		return L_2;
+	}
+}
+// System.Void Wave.Essence.BodyTracking.Demo.HumanoidIKMenu::DEBUG(System.Text.StringBuilder)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidIKMenu_DEBUG_m96C0709141DD241F69D552817F58F9C8E700765D (HumanoidIKMenu_t5063882FCD2429C610477C3D77DD988372D3975C* __this, StringBuilder_t* ___0_msg, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral5DACB1929F40B4B9D63CA5DD140F5A0B3B71DDFC);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		// void DEBUG(StringBuilder msg) { Rdp.d(LOG_TAG, msg, true); }
+		StringBuilder_t* L_0 = ___0_msg;
+		Rdp_d_mF35489EADD63997A0A4979F1991FF1730344709F(_stringLiteral5DACB1929F40B4B9D63CA5DD140F5A0B3B71DDFC, L_0, (bool)1, NULL);
+		// void DEBUG(StringBuilder msg) { Rdp.d(LOG_TAG, msg, true); }
+		return;
+	}
+}
+// System.Void Wave.Essence.BodyTracking.Demo.HumanoidIKMenu::BeginTracking()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidIKMenu_BeginTracking_m037E9AC21C77594EDE33A3F2736CC2A8972DA199 (HumanoidIKMenu_t5063882FCD2429C610477C3D77DD988372D3975C* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral1F55274EC8AB664993C7E308EED424DCEE5F791C);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		// if (humanoidIK != null)
+		HumanoidIKSample_t299AC6AE30503274166DF4AD9CDA94C4DEA6A670* L_0 = __this->___humanoidIK_6;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_1;
+		L_1 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_1)
+		{
+			goto IL_003b;
+		}
+	}
+	{
+		// sb.Clear().Append("BeginTracking()"); DEBUG(sb);
+		StringBuilder_t* L_2;
+		L_2 = HumanoidIKMenu_get_sb_m45758CEF81A9BB4B0CCA37049452905D349CC5A5(__this, NULL);
+		NullCheck(L_2);
+		StringBuilder_t* L_3;
+		L_3 = StringBuilder_Clear_m2D76F6533574F40A4E3E2DC4E730277CBD0AF8F6(L_2, NULL);
+		NullCheck(L_3);
+		StringBuilder_t* L_4;
+		L_4 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_3, _stringLiteral1F55274EC8AB664993C7E308EED424DCEE5F791C, NULL);
+		// sb.Clear().Append("BeginTracking()"); DEBUG(sb);
+		StringBuilder_t* L_5;
+		L_5 = HumanoidIKMenu_get_sb_m45758CEF81A9BB4B0CCA37049452905D349CC5A5(__this, NULL);
+		HumanoidIKMenu_DEBUG_m96C0709141DD241F69D552817F58F9C8E700765D(__this, L_5, NULL);
+		// humanoidIK.BeginTracking();
+		HumanoidIKSample_t299AC6AE30503274166DF4AD9CDA94C4DEA6A670* L_6 = __this->___humanoidIK_6;
+		NullCheck(L_6);
+		HumanoidIKSample_BeginTracking_m035E9A91F82B04AA76AF9951BF12603B0D80B964(L_6, NULL);
+	}
+
+IL_003b:
+	{
+		// }
+		return;
+	}
+}
+// System.Void Wave.Essence.BodyTracking.Demo.HumanoidIKMenu::EndTracking()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidIKMenu_EndTracking_m74C9378650CF99BB70F6336973085045B373DA7B (HumanoidIKMenu_t5063882FCD2429C610477C3D77DD988372D3975C* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralF9AD4FD4AEB30A7880F6ABD1C85EFFFBF090656D);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		// if (humanoidIK != null)
+		HumanoidIKSample_t299AC6AE30503274166DF4AD9CDA94C4DEA6A670* L_0 = __this->___humanoidIK_6;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_1;
+		L_1 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_1)
+		{
+			goto IL_003b;
+		}
+	}
+	{
+		// sb.Clear().Append("EndTracking()"); DEBUG(sb);
+		StringBuilder_t* L_2;
+		L_2 = HumanoidIKMenu_get_sb_m45758CEF81A9BB4B0CCA37049452905D349CC5A5(__this, NULL);
+		NullCheck(L_2);
+		StringBuilder_t* L_3;
+		L_3 = StringBuilder_Clear_m2D76F6533574F40A4E3E2DC4E730277CBD0AF8F6(L_2, NULL);
+		NullCheck(L_3);
+		StringBuilder_t* L_4;
+		L_4 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_3, _stringLiteralF9AD4FD4AEB30A7880F6ABD1C85EFFFBF090656D, NULL);
+		// sb.Clear().Append("EndTracking()"); DEBUG(sb);
+		StringBuilder_t* L_5;
+		L_5 = HumanoidIKMenu_get_sb_m45758CEF81A9BB4B0CCA37049452905D349CC5A5(__this, NULL);
+		HumanoidIKMenu_DEBUG_m96C0709141DD241F69D552817F58F9C8E700765D(__this, L_5, NULL);
+		// humanoidIK.StopTracking();
+		HumanoidIKSample_t299AC6AE30503274166DF4AD9CDA94C4DEA6A670* L_6 = __this->___humanoidIK_6;
+		NullCheck(L_6);
+		HumanoidIKSample_StopTracking_mE46993FA1AB1EEA999EE6F5398B6EF035331025F(L_6, NULL);
+	}
+
+IL_003b:
+	{
+		// }
+		return;
+	}
+}
+// System.Void Wave.Essence.BodyTracking.Demo.HumanoidIKMenu::Update()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidIKMenu_Update_m18FD134BDAE468032C69F682679E9C5ED6171A54 (HumanoidIKMenu_t5063882FCD2429C610477C3D77DD988372D3975C* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	int32_t V_0 = 0;
+	Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* G_B4_0 = NULL;
+	Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* G_B3_0 = NULL;
+	int32_t G_B5_0 = 0;
+	Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* G_B5_1 = NULL;
+	{
+		// if (humanoidIK != null)
+		HumanoidIKSample_t299AC6AE30503274166DF4AD9CDA94C4DEA6A670* L_0 = __this->___humanoidIK_6;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_1;
+		L_1 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_1)
+		{
+			goto IL_005a;
+		}
+	}
+	{
+		// var status = humanoidIK.GetTrackingStatus();
+		HumanoidIKSample_t299AC6AE30503274166DF4AD9CDA94C4DEA6A670* L_2 = __this->___humanoidIK_6;
+		NullCheck(L_2);
+		int32_t L_3;
+		L_3 = HumanoidIKSample_GetTrackingStatus_mBCAE2D9261D6461B76D6B12570DD845B1DB4EFB8(L_2, NULL);
+		V_0 = L_3;
+		// if (beginTrackingButton != null)
+		Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* L_4 = __this->___beginTrackingButton_7;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_5;
+		L_5 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_4, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_5)
+		{
+			goto IL_003d;
+		}
+	}
+	{
+		// beginTrackingButton.interactable = (
+		//     status == HumanoidIKSample.TrackingStatus.NotStart ||
+		//     status == HumanoidIKSample.TrackingStatus.StartFailure
+		// );
+		Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* L_6 = __this->___beginTrackingButton_7;
+		int32_t L_7 = V_0;
+		G_B3_0 = L_6;
+		if (!L_7)
+		{
+			G_B4_0 = L_6;
+			goto IL_0037;
+		}
+	}
+	{
+		int32_t L_8 = V_0;
+		G_B5_0 = ((((int32_t)L_8) == ((int32_t)1))? 1 : 0);
+		G_B5_1 = G_B3_0;
+		goto IL_0038;
+	}
+
+IL_0037:
+	{
+		G_B5_0 = 1;
+		G_B5_1 = G_B4_0;
+	}
+
+IL_0038:
+	{
+		NullCheck(G_B5_1);
+		Selectable_set_interactable_m8DD581C1AD99B2EFA8B3EE9AF69EDDF26688B492(G_B5_1, (bool)G_B5_0, NULL);
+	}
+
+IL_003d:
+	{
+		// if (endTrackingButton != null)
+		Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* L_9 = __this->___endTrackingButton_8;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_10;
+		L_10 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_9, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_10)
+		{
+			goto IL_005a;
+		}
+	}
+	{
+		// endTrackingButton.interactable = (status == HumanoidIKSample.TrackingStatus.Available);
+		Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* L_11 = __this->___endTrackingButton_8;
+		int32_t L_12 = V_0;
+		NullCheck(L_11);
+		Selectable_set_interactable_m8DD581C1AD99B2EFA8B3EE9AF69EDDF26688B492(L_11, (bool)((((int32_t)L_12) == ((int32_t)4))? 1 : 0), NULL);
+	}
+
+IL_005a:
+	{
+		// }
+		return;
+	}
+}
+// System.Void Wave.Essence.BodyTracking.Demo.HumanoidIKMenu::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidIKMenu__ctor_mEA9AFDD9A2C0D7C758EC3EC9AF624AA914150B21 (HumanoidIKMenu_t5063882FCD2429C610477C3D77DD988372D3975C* __this, const RuntimeMethod* method) 
+{
+	{
+		MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E(__this, NULL);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 Quaternion_get_identity_m7E701AE095ED10FD5EA0B50ABCFDE2EEFF2173A5_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26921,28 +25467,6 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Quaternion_tDA59F214EF07D7700B26E
 IL_0009:
 	{
 		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_1 = V_0;
-		return L_1;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Vector3_get_zero_m0C1249C3F25B1C70EAD3CC8B31259975A457AE39_inline (const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_0 = ((Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2_StaticFields*)il2cpp_codegen_static_fields_for(Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2_il2cpp_TypeInfo_var))->___zeroVector_5;
-		V_0 = L_0;
-		goto IL_0009;
-	}
-
-IL_0009:
-	{
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_1 = V_0;
 		return L_1;
 	}
 }
@@ -27020,6 +25544,28 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR TrackerManager_tCED165EE7BF6B0822
 		il2cpp_codegen_runtime_class_init_inline(TrackerManager_tCED165EE7BF6B0822B3FC88CEFBB418FABCF6D64_il2cpp_TypeInfo_var);
 		TrackerManager_tCED165EE7BF6B0822B3FC88CEFBB418FABCF6D64* L_0 = ((TrackerManager_tCED165EE7BF6B0822B3FC88CEFBB418FABCF6D64_StaticFields*)il2cpp_codegen_static_fields_for(TrackerManager_tCED165EE7BF6B0822B3FC88CEFBB418FABCF6D64_il2cpp_TypeInfo_var))->___instance_10;
 		return L_0;
+	}
+}
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Vector3_get_zero_m0C1249C3F25B1C70EAD3CC8B31259975A457AE39_inline (const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_0;
+	memset((&V_0), 0, sizeof(V_0));
+	{
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_0 = ((Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2_StaticFields*)il2cpp_codegen_static_fields_for(Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2_il2cpp_TypeInfo_var))->___zeroVector_5;
+		V_0 = L_0;
+		goto IL_0009;
+	}
+
+IL_0009:
+	{
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_1 = V_0;
+		return L_1;
 	}
 }
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Vector3__ctor_m376936E6B999EF1ECBE57D990A386303E2283DE0_inline (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* __this, float ___0_x, float ___1_y, float ___2_z, const RuntimeMethod* method) 

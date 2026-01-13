@@ -46,26 +46,10 @@ struct AnimatorControllerParameterU5BU5D_tAB05125F5DC0D98F59351CD7D8C9880DFFA8EA
 struct CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB;
 // System.Delegate[]
 struct DelegateU5BU5D_tC5AB7E8F745616680F337909D3A8E6C722CDF771;
-// UnityEngine.HumanBone[]
-struct HumanBoneU5BU5D_t443B81D55400778CBB921DF04BE932ABF14BAA52;
 // System.IntPtr[]
 struct IntPtrU5BU5D_tFD177F8C806A6921AD7150264CCC62FA00CAD832;
-// System.Single[]
-struct SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C;
-// UnityEngine.SkeletonBone[]
-struct SkeletonBoneU5BU5D_t84722CE071EF9295326D5A84492716DBC7A15A85;
 // System.Diagnostics.StackTrace[]
 struct StackTraceU5BU5D_t32FBCB20930EAF5BAE3F450FF75228E5450DA0DF;
-// System.String[]
-struct StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248;
-// System.Type[]
-struct TypeU5BU5D_t97234E1129B564EB38B8D85CAC2AD8B5B9522FFB;
-// UnityEngine.Animation
-struct Animation_t6593B06C39E3B139808B19F2C719C860F3F61040;
-// UnityEngine.AnimationClip
-struct AnimationClip_t00BD2F131D308A4AD2C6B0BF66644FC25FECE712;
-// UnityEngine.AnimationCurve
-struct AnimationCurve_tCBFFAAD05CEBB35EF8D8631BD99914BE1A6BB354;
 // UnityEngine.AnimationEvent
 struct AnimationEvent_t77294DB2372A5C387B53EEA3EFDC550C75EC3174;
 // UnityEngine.AnimationState
@@ -76,68 +60,40 @@ struct Animator_t8A52E42AE54F76681838FE9E632683EF3952E883;
 struct AnimatorControllerParameter_t1FA67485445446540D4F2857762C960AE6980E02;
 // UnityEngine.AnimatorOverrideController
 struct AnimatorOverrideController_tF78BD58B30BB0D767E7A96F8428EA66F2DFD5493;
-// System.ArgumentException
-struct ArgumentException_tAD90411542A20A9C72D5CDA3A84181D8B947A263;
-// System.ArgumentNullException
-struct ArgumentNullException_t327031E412FAB2351B0022DD5DAD47E67E597129;
 // UnityEngine.Avatar
 struct Avatar_t7861E57EEE2CF8CC61BD63C09737BA22F7ABCA0F;
-// System.Reflection.Binder
-struct Binder_t91BFCE95A7057FADF4D8A1A342AFE52872246235;
 // System.Delegate
 struct Delegate_t;
 // System.DelegateData
 struct DelegateData_t9B286B493293CD2D23A5B2B5EF0E5B1324C2B77E;
 // System.Enum
 struct Enum_t2A1A94B24E3B776EEF4E5E485E290BB9D4D072E2;
-// UnityEngine.GameObject
-struct GameObject_t76FEDD663AB33C991A9C9A23129337651094216F;
-// UnityEngine.HumanBone
-struct HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8;
-// UnityEngine.HumanPoseHandler
-struct HumanPoseHandler_t57D245FE7D20329F34675018C4142944EE3B3992;
 // System.Collections.IDictionary
 struct IDictionary_t6D03155AF1FA9083817AA5B6AD7DEEACC26AB220;
-// System.Collections.IEnumerator
-struct IEnumerator_t7B609C2FFA6EB5167D9C62A0C32A21DE2F666DAA;
 // System.IndexOutOfRangeException
 struct IndexOutOfRangeException_t7ECB35264FB6CA8FAA516BD958F4B2ADC78E8A82;
 // System.InvalidCastException
 struct InvalidCastException_t47FC62F21A3937E814D20381DDACEF240E95AC2E;
 // System.InvalidOperationException
 struct InvalidOperationException_t5DDE4D49B7405FAAB1E4576F4715A42A3FAD4BAB;
-// System.Reflection.MemberFilter
-struct MemberFilter_tF644F1AE82F611B677CE1964D5A3277DDA21D553;
 // System.Reflection.MethodInfo
 struct MethodInfo_t;
-// UnityEngine.Motion
-struct Motion_tBCD49FBF5608AD21FC03B63C8182FABCEF2707AC;
-// System.NullReferenceException
-struct NullReferenceException_tBDE63A6D24569B964908408389070C6A9F5005BB;
 // UnityEngine.Object
 struct Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C;
 // System.Runtime.Serialization.SafeSerializationManager
 struct SafeSerializationManager_tCBB85B95DFD1634237140CD892E82D06ECB3F5E6;
 // UnityEngine.ScriptableObject
 struct ScriptableObject_tB3BFDB921A1B1795B38A5417D3B97A89A140436A;
-// UnityEngine.SkeletonBone
-struct SkeletonBone_tA999028EED923DB65E286BB99F81541872F5B126;
 // UnityEngine.StateMachineBehaviour
 struct StateMachineBehaviour_t59C5685227B06222F5AF7027E2DA530AB99AFDF7;
 // System.String
 struct String_t;
-// UnityEngine.TrackedReference
-struct TrackedReference_tF35FF4FB6E89ACD81C24469FAF0CA6FFF29262A2;
 // UnityEngine.Transform
 struct Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1;
-// System.Type
-struct Type_t;
 // System.ValueType
 struct ValueType_t6D9B272BD21782F0A9A14F2E41F85A50E97A986F;
 // System.Void
 struct Void_t4861ACF8F4594C3437BB48B6E56783494B843915;
-// UnityEngine.Animation/Enumerator
-struct Enumerator_t81434F7D5603121F3D7BD6DB916FE1C755307530;
 // UnityEngine.AnimatorOverrideController/OnOverrideControllerDirtyCallback
 struct OnOverrideControllerDirtyCallback_tDC67F7661A27502AD804BDE0B696955AFD4A44D5;
 
@@ -150,31 +106,15 @@ IL2CPP_EXTERN_C RuntimeClass* AnimationRemoveScalePlayable_t915611F6D3CC150DDCAF
 IL2CPP_EXTERN_C RuntimeClass* AnimationScriptPlayable_t1326433F6848D93D7D90BC54B4AB6649A5D59127_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* AnimatorControllerParameter_t1FA67485445446540D4F2857762C960AE6980E02_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* AnimatorControllerPlayable_tADDCB301674D6243EFE1BD032E7D118FD091210A_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeClass* ArgumentException_tAD90411542A20A9C72D5CDA3A84181D8B947A263_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeClass* ArgumentNullException_t327031E412FAB2351B0022DD5DAD47E67E597129_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeClass* Enumerator_t81434F7D5603121F3D7BD6DB916FE1C755307530_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeClass* GC_t920F9CF6EBB7C787E5010A4352E1B587F356DC58_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* HumanBodyBones_tA2A904890A05ABCFFAB7E119244E97C5EA9807E6_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeClass* HumanBoneU5BU5D_t443B81D55400778CBB921DF04BE932ABF14BAA52_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* IndexOutOfRangeException_t7ECB35264FB6CA8FAA516BD958F4B2ADC78E8A82_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeClass* IntPtr_t_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* InvalidCastException_t47FC62F21A3937E814D20381DDACEF240E95AC2E_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* InvalidOperationException_t5DDE4D49B7405FAAB1E4576F4715A42A3FAD4BAB_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeClass* NullReferenceException_tBDE63A6D24569B964908408389070C6A9F5005BB_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* PlayableHandle_t5D6A01EF94382EFEDC047202F71DF882769654D4_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeClass* SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeClass* Single_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeClass* SkeletonBoneU5BU5D_t84722CE071EF9295326D5A84492716DBC7A15A85_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C String_t* _stringLiteral00F97321929E0D7989E72D633D157BD761DD173A;
-IL2CPP_EXTERN_C String_t* _stringLiteral1B02D2B7BBCCE456AE8279172AB09AD9661B9C9F;
-IL2CPP_EXTERN_C String_t* _stringLiteral27372C9083CBD735FA3B68818A3BDEBC42320FC6;
-IL2CPP_EXTERN_C String_t* _stringLiteral48598D3A8AD17D70B80304BF1FBF4143B7204154;
 IL2CPP_EXTERN_C String_t* _stringLiteral4A3C80CF84F07DA0E7531332FF2B387B07C77760;
 IL2CPP_EXTERN_C String_t* _stringLiteral4DEE968069F34C26613ADFCD69C41EFC29314286;
-IL2CPP_EXTERN_C String_t* _stringLiteral5A26837B342D49978F4BCEE0E05772F011F8722C;
-IL2CPP_EXTERN_C String_t* _stringLiteral60912CD366073773BCB944DEFFD0060C2E4C6128;
-IL2CPP_EXTERN_C String_t* _stringLiteral6F9CF104B806E6C21D14BBE0B4FADAE908B21197;
 IL2CPP_EXTERN_C String_t* _stringLiteral860B9EA7CDAB02A8A4B38336805EAE2FBA31F09C;
 IL2CPP_EXTERN_C String_t* _stringLiteral8DC2252638D84FAF2C30B95D54EC83F52FA6C630;
 IL2CPP_EXTERN_C String_t* _stringLiteral98C704D69BD1A288ED31DEE4ED4E50097A2D7018;
@@ -194,11 +134,6 @@ IL2CPP_EXTERN_C const RuntimeMethod* AnimationScriptPlayable__ctor_m6DEFD72735E7
 IL2CPP_EXTERN_C const RuntimeMethod* AnimatorControllerPlayable_SetHandle_mD86A3C0D03453FAF21903F7A52A743AB2DA6DED4_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Animator_GetBoneTransform_m02042CB47C468D576C6EE436F4AA71D8C47AAF56_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Animator_GetParameter_m0F1E53A9845596EA75366518BEB15733FD4E124F_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* AvatarBuilder_BuildHumanAvatar_m4BA84E1731C8C60C700A02764C183D5FA980A411_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* HumanPoseHandler_GetHumanPose_m9323A5049D8A755FDE0E3DC21701A4788D4A7B00_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* HumanPoseHandler_SetHumanPose_mA7FD443D9B103114E4872FBC5B0A827E1D721562_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* HumanPoseHandler__ctor_mF51EEC25B7A32ED62AC281B22D12C4B58E10B1F9_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* HumanPose_Init_m9BBDA2B4B2EB0DE3082EE7FE36A92F19870F682D_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* PlayableHandle_IsPlayableOfType_TisAnimationLayerMixerPlayable_tAD8D28A1E2FB76567E9748CDD11699AEF0B4317D_m23764EE36FE7A81A245C7146FF1E9DF6530DA321_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* PlayableHandle_IsPlayableOfType_TisAnimationMixerPlayable_t2984697B87B8719A34519FCF2130545D6D7AB6C0_m644E76378CB4DDC0CE669FE1DCE8A8917595D0ED_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* PlayableHandle_IsPlayableOfType_TisAnimationMotionXToDeltaPlayable_t3946605ADB0B4C054A27B3D65A59F8EB75B6BE18_mE6DAD58415B04EE79FD34641B365283758722ABF_RuntimeMethod_var;
@@ -211,28 +146,14 @@ struct Delegate_t_marshaled_com;
 struct Delegate_t_marshaled_pinvoke;
 struct Exception_t_marshaled_com;
 struct Exception_t_marshaled_pinvoke;
-struct HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8;;
-struct HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8_marshaled_com;
-struct HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8_marshaled_com;;
-struct HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8_marshaled_pinvoke;
-struct HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8_marshaled_pinvoke;;
 struct Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C;;
 struct Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_marshaled_com;
 struct Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_marshaled_com;;
 struct Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_marshaled_pinvoke;
 struct Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_marshaled_pinvoke;;
-struct SkeletonBone_tA999028EED923DB65E286BB99F81541872F5B126;;
-struct SkeletonBone_tA999028EED923DB65E286BB99F81541872F5B126_marshaled_com;
-struct SkeletonBone_tA999028EED923DB65E286BB99F81541872F5B126_marshaled_com;;
-struct SkeletonBone_tA999028EED923DB65E286BB99F81541872F5B126_marshaled_pinvoke;
-struct SkeletonBone_tA999028EED923DB65E286BB99F81541872F5B126_marshaled_pinvoke;;
 
 struct AnimatorControllerParameterU5BU5D_tAB05125F5DC0D98F59351CD7D8C9880DFFA8EA21;
 struct DelegateU5BU5D_tC5AB7E8F745616680F337909D3A8E6C722CDF771;
-struct HumanBoneU5BU5D_t443B81D55400778CBB921DF04BE932ABF14BAA52;
-struct SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C;
-struct SkeletonBoneU5BU5D_t84722CE071EF9295326D5A84492716DBC7A15A85;
-struct StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248;
 
 IL2CPP_EXTERN_C_BEGIN
 IL2CPP_EXTERN_C_END
@@ -286,18 +207,8 @@ struct Attribute_tFDA8EFEFB0711976D22474794576DAF28F7440AA  : public RuntimeObje
 {
 };
 
-// UnityEngine.AvatarBuilder
-struct AvatarBuilder_t189C7366CD3C732261561022A5E9A75E2F3A1F1D  : public RuntimeObject
-{
-};
-
 // UnityEngine.HumanTrait
 struct HumanTrait_t4EF6FC8790C40BD5BC9D36765D43202A4FAF219C  : public RuntimeObject
-{
-};
-
-// System.Reflection.MemberInfo
-struct MemberInfo_t  : public RuntimeObject
 {
 };
 
@@ -321,15 +232,6 @@ struct ValueType_t6D9B272BD21782F0A9A14F2E41F85A50E97A986F_marshaled_pinvoke
 // Native definition for COM marshalling of System.ValueType
 struct ValueType_t6D9B272BD21782F0A9A14F2E41F85A50E97A986F_marshaled_com
 {
-};
-
-// UnityEngine.Animation/Enumerator
-struct Enumerator_t81434F7D5603121F3D7BD6DB916FE1C755307530  : public RuntimeObject
-{
-	// UnityEngine.Animation UnityEngine.Animation/Enumerator::m_Outer
-	Animation_t6593B06C39E3B139808B19F2C719C860F3F61040* ___m_Outer_0;
-	// System.Int32 UnityEngine.Animation/Enumerator::m_CurrentIndex
-	int32_t ___m_CurrentIndex_1;
 };
 
 // UnityEngine.AnimatorClipInfo
@@ -434,75 +336,6 @@ struct Enum_t2A1A94B24E3B776EEF4E5E485E290BB9D4D072E2_marshaled_com
 {
 };
 
-// UnityEngine.HumanDescription
-struct HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44 
-{
-	// UnityEngine.HumanBone[] UnityEngine.HumanDescription::human
-	HumanBoneU5BU5D_t443B81D55400778CBB921DF04BE932ABF14BAA52* ___human_0;
-	// UnityEngine.SkeletonBone[] UnityEngine.HumanDescription::skeleton
-	SkeletonBoneU5BU5D_t84722CE071EF9295326D5A84492716DBC7A15A85* ___skeleton_1;
-	// System.Single UnityEngine.HumanDescription::m_ArmTwist
-	float ___m_ArmTwist_2;
-	// System.Single UnityEngine.HumanDescription::m_ForeArmTwist
-	float ___m_ForeArmTwist_3;
-	// System.Single UnityEngine.HumanDescription::m_UpperLegTwist
-	float ___m_UpperLegTwist_4;
-	// System.Single UnityEngine.HumanDescription::m_LegTwist
-	float ___m_LegTwist_5;
-	// System.Single UnityEngine.HumanDescription::m_ArmStretch
-	float ___m_ArmStretch_6;
-	// System.Single UnityEngine.HumanDescription::m_LegStretch
-	float ___m_LegStretch_7;
-	// System.Single UnityEngine.HumanDescription::m_FeetSpacing
-	float ___m_FeetSpacing_8;
-	// System.Single UnityEngine.HumanDescription::m_GlobalScale
-	float ___m_GlobalScale_9;
-	// System.String UnityEngine.HumanDescription::m_RootMotionBoneName
-	String_t* ___m_RootMotionBoneName_10;
-	// System.Boolean UnityEngine.HumanDescription::m_HasTranslationDoF
-	bool ___m_HasTranslationDoF_11;
-	// System.Boolean UnityEngine.HumanDescription::m_HasExtraRoot
-	bool ___m_HasExtraRoot_12;
-	// System.Boolean UnityEngine.HumanDescription::m_SkeletonHasParents
-	bool ___m_SkeletonHasParents_13;
-};
-// Native definition for P/Invoke marshalling of UnityEngine.HumanDescription
-struct HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44_marshaled_pinvoke
-{
-	HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8_marshaled_pinvoke* ___human_0;
-	SkeletonBone_tA999028EED923DB65E286BB99F81541872F5B126_marshaled_pinvoke* ___skeleton_1;
-	float ___m_ArmTwist_2;
-	float ___m_ForeArmTwist_3;
-	float ___m_UpperLegTwist_4;
-	float ___m_LegTwist_5;
-	float ___m_ArmStretch_6;
-	float ___m_LegStretch_7;
-	float ___m_FeetSpacing_8;
-	float ___m_GlobalScale_9;
-	char* ___m_RootMotionBoneName_10;
-	int32_t ___m_HasTranslationDoF_11;
-	int32_t ___m_HasExtraRoot_12;
-	int32_t ___m_SkeletonHasParents_13;
-};
-// Native definition for COM marshalling of UnityEngine.HumanDescription
-struct HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44_marshaled_com
-{
-	HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8_marshaled_com* ___human_0;
-	SkeletonBone_tA999028EED923DB65E286BB99F81541872F5B126_marshaled_com* ___skeleton_1;
-	float ___m_ArmTwist_2;
-	float ___m_ForeArmTwist_3;
-	float ___m_UpperLegTwist_4;
-	float ___m_LegTwist_5;
-	float ___m_ArmStretch_6;
-	float ___m_LegStretch_7;
-	float ___m_FeetSpacing_8;
-	float ___m_GlobalScale_9;
-	Il2CppChar* ___m_RootMotionBoneName_10;
-	int32_t ___m_HasTranslationDoF_11;
-	int32_t ___m_HasExtraRoot_12;
-	int32_t ___m_SkeletonHasParents_13;
-};
-
 // System.Int32
 struct Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C 
 {
@@ -568,23 +401,6 @@ struct Void_t4861ACF8F4594C3437BB48B6E56783494B843915
 		};
 		uint8_t Void_t4861ACF8F4594C3437BB48B6E56783494B843915__padding[1];
 	};
-};
-
-// UnityEngine.AnimationCurve
-struct AnimationCurve_tCBFFAAD05CEBB35EF8D8631BD99914BE1A6BB354  : public RuntimeObject
-{
-	// System.IntPtr UnityEngine.AnimationCurve::m_Ptr
-	intptr_t ___m_Ptr_0;
-};
-// Native definition for P/Invoke marshalling of UnityEngine.AnimationCurve
-struct AnimationCurve_tCBFFAAD05CEBB35EF8D8631BD99914BE1A6BB354_marshaled_pinvoke
-{
-	intptr_t ___m_Ptr_0;
-};
-// Native definition for COM marshalling of UnityEngine.AnimationCurve
-struct AnimationCurve_tCBFFAAD05CEBB35EF8D8631BD99914BE1A6BB354_marshaled_com
-{
-	intptr_t ___m_Ptr_0;
 };
 
 // UnityEngine.Animations.AnimationHumanStream
@@ -770,38 +586,6 @@ struct HumanLimit_tE825F951DEE60E2641DD91F3C92C6B56A139A36E
 	int32_t ___m_UseDefaultValues_4;
 };
 
-// UnityEngine.HumanPose
-struct HumanPose_t4FD3BF9D666DD3F1B7361BD77E5BFD46560DAB6A 
-{
-	// UnityEngine.Vector3 UnityEngine.HumanPose::bodyPosition
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___bodyPosition_0;
-	// UnityEngine.Quaternion UnityEngine.HumanPose::bodyRotation
-	Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 ___bodyRotation_1;
-	// System.Single[] UnityEngine.HumanPose::muscles
-	SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* ___muscles_2;
-};
-// Native definition for P/Invoke marshalling of UnityEngine.HumanPose
-struct HumanPose_t4FD3BF9D666DD3F1B7361BD77E5BFD46560DAB6A_marshaled_pinvoke
-{
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___bodyPosition_0;
-	Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 ___bodyRotation_1;
-	Il2CppSafeArray/*NONE*/* ___muscles_2;
-};
-// Native definition for COM marshalling of UnityEngine.HumanPose
-struct HumanPose_t4FD3BF9D666DD3F1B7361BD77E5BFD46560DAB6A_marshaled_com
-{
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___bodyPosition_0;
-	Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 ___bodyRotation_1;
-	Il2CppSafeArray/*NONE*/* ___muscles_2;
-};
-
-// UnityEngine.HumanPoseHandler
-struct HumanPoseHandler_t57D245FE7D20329F34675018C4142944EE3B3992  : public RuntimeObject
-{
-	// System.IntPtr UnityEngine.HumanPoseHandler::m_Ptr
-	intptr_t ___m_Ptr_0;
-};
-
 // UnityEngine.Object
 struct Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C  : public RuntimeObject
 {
@@ -835,13 +619,6 @@ struct PlayableOutputHandle_tEB217645A8C0356A3AC6F964F283003B9740E883
 	intptr_t ___m_Handle_0;
 	// System.UInt32 UnityEngine.Playables.PlayableOutputHandle::m_Version
 	uint32_t ___m_Version_1;
-};
-
-// System.RuntimeTypeHandle
-struct RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B 
-{
-	// System.IntPtr System.RuntimeTypeHandle::value
-	intptr_t ___value_0;
 };
 
 // UnityEngine.SkeletonBone
@@ -1036,11 +813,6 @@ struct Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3  : public Object_tC12
 {
 };
 
-// UnityEngine.GameObject
-struct GameObject_t76FEDD663AB33C991A9C9A23129337651094216F  : public Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C
-{
-};
-
 // UnityEngine.HumanBone
 struct HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8 
 {
@@ -1069,8 +841,6 @@ struct HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8_marshaled_com
 // UnityEngine.Motion
 struct Motion_tBCD49FBF5608AD21FC03B63C8182FABCEF2707AC  : public Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C
 {
-	// System.Boolean UnityEngine.Motion::<isAnimatorMotion>k__BackingField
-	bool ___U3CisAnimatorMotionU3Ek__BackingField_4;
 };
 
 // System.MulticastDelegate
@@ -1113,13 +883,6 @@ struct SystemException_tCC48D868298F4C0705279823E34B00F4FBDB7295  : public Excep
 {
 };
 
-// System.Type
-struct Type_t  : public MemberInfo_t
-{
-	// System.RuntimeTypeHandle System.Type::_impl
-	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B ____impl_8;
-};
-
 // UnityEngine.AnimationClip
 struct AnimationClip_t00BD2F131D308A4AD2C6B0BF66644FC25FECE712  : public Motion_tBCD49FBF5608AD21FC03B63C8182FABCEF2707AC
 {
@@ -1130,13 +893,6 @@ struct AnimatorOverrideController_tF78BD58B30BB0D767E7A96F8428EA66F2DFD5493  : p
 {
 	// UnityEngine.AnimatorOverrideController/OnOverrideControllerDirtyCallback UnityEngine.AnimatorOverrideController::OnOverrideControllerDirty
 	OnOverrideControllerDirtyCallback_tDC67F7661A27502AD804BDE0B696955AFD4A44D5* ___OnOverrideControllerDirty_4;
-};
-
-// System.ArgumentException
-struct ArgumentException_tAD90411542A20A9C72D5CDA3A84181D8B947A263  : public SystemException_tCC48D868298F4C0705279823E34B00F4FBDB7295
-{
-	// System.String System.ArgumentException::_paramName
-	String_t* ____paramName_18;
 };
 
 // UnityEngine.Behaviour
@@ -1159,11 +915,6 @@ struct InvalidOperationException_t5DDE4D49B7405FAAB1E4576F4715A42A3FAD4BAB  : pu
 {
 };
 
-// System.NullReferenceException
-struct NullReferenceException_tBDE63A6D24569B964908408389070C6A9F5005BB  : public SystemException_tCC48D868298F4C0705279823E34B00F4FBDB7295
-{
-};
-
 // UnityEngine.StateMachineBehaviour
 struct StateMachineBehaviour_t59C5685227B06222F5AF7027E2DA530AB99AFDF7  : public ScriptableObject_tB3BFDB921A1B1795B38A5417D3B97A89A140436A
 {
@@ -1179,21 +930,11 @@ struct OnOverrideControllerDirtyCallback_tDC67F7661A27502AD804BDE0B696955AFD4A44
 {
 };
 
-// UnityEngine.Animation
-struct Animation_t6593B06C39E3B139808B19F2C719C860F3F61040  : public Behaviour_t01970CFBBA658497AE30F311C447DB0440BAB7FA
-{
-};
-
 // UnityEngine.Animator
 struct Animator_t8A52E42AE54F76681838FE9E632683EF3952E883  : public Behaviour_t01970CFBBA658497AE30F311C447DB0440BAB7FA
 {
 };
 
-// System.ArgumentNullException
-struct ArgumentNullException_t327031E412FAB2351B0022DD5DAD47E67E597129  : public ArgumentException_tAD90411542A20A9C72D5CDA3A84181D8B947A263
-{
-};
-
 // <Module>
 
 // <Module>
@@ -1206,17 +947,9 @@ struct ArgumentNullException_t327031E412FAB2351B0022DD5DAD47E67E597129  : public
 
 // System.Attribute
 
-// UnityEngine.AvatarBuilder
-
-// UnityEngine.AvatarBuilder
-
 // UnityEngine.HumanTrait
 
 // UnityEngine.HumanTrait
-
-// System.Reflection.MemberInfo
-
-// System.Reflection.MemberInfo
 
 // System.String
 struct String_t_StaticFields
@@ -1230,10 +963,6 @@ struct String_t_StaticFields
 // System.ValueType
 
 // System.ValueType
-
-// UnityEngine.Animation/Enumerator
-
-// UnityEngine.Animation/Enumerator
 
 // UnityEngine.AnimatorClipInfo
 
@@ -1270,10 +999,6 @@ struct Enum_t2A1A94B24E3B776EEF4E5E485E290BB9D4D072E2_StaticFields
 };
 
 // System.Enum
-
-// UnityEngine.HumanDescription
-
-// UnityEngine.HumanDescription
 
 // System.Int32
 
@@ -1340,10 +1065,6 @@ struct Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2_StaticFields
 
 // System.Void
 
-// UnityEngine.AnimationCurve
-
-// UnityEngine.AnimationCurve
-
 // UnityEngine.Animations.AnimationHumanStream
 
 // UnityEngine.Animations.AnimationHumanStream
@@ -1368,14 +1089,6 @@ struct Exception_t_StaticFields
 // UnityEngine.HumanLimit
 
 // UnityEngine.HumanLimit
-
-// UnityEngine.HumanPose
-
-// UnityEngine.HumanPose
-
-// UnityEngine.HumanPoseHandler
-
-// UnityEngine.HumanPoseHandler
 
 // UnityEngine.Object
 struct Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_StaticFields
@@ -1403,10 +1116,6 @@ struct PlayableOutputHandle_tEB217645A8C0356A3AC6F964F283003B9740E883_StaticFiel
 };
 
 // UnityEngine.Playables.PlayableOutputHandle
-
-// System.RuntimeTypeHandle
-
-// System.RuntimeTypeHandle
 
 // UnityEngine.SkeletonBone
 
@@ -1512,10 +1221,6 @@ struct AnimatorControllerPlayable_tADDCB301674D6243EFE1BD032E7D118FD091210A_Stat
 
 // UnityEngine.Component
 
-// UnityEngine.GameObject
-
-// UnityEngine.GameObject
-
 // UnityEngine.HumanBone
 
 // UnityEngine.HumanBone
@@ -1540,27 +1245,6 @@ struct AnimatorControllerPlayable_tADDCB301674D6243EFE1BD032E7D118FD091210A_Stat
 
 // System.SystemException
 
-// System.Type
-struct Type_t_StaticFields
-{
-	// System.Reflection.Binder modreq(System.Runtime.CompilerServices.IsVolatile) System.Type::s_defaultBinder
-	Binder_t91BFCE95A7057FADF4D8A1A342AFE52872246235* ___s_defaultBinder_0;
-	// System.Char System.Type::Delimiter
-	Il2CppChar ___Delimiter_1;
-	// System.Type[] System.Type::EmptyTypes
-	TypeU5BU5D_t97234E1129B564EB38B8D85CAC2AD8B5B9522FFB* ___EmptyTypes_2;
-	// System.Object System.Type::Missing
-	RuntimeObject* ___Missing_3;
-	// System.Reflection.MemberFilter System.Type::FilterAttribute
-	MemberFilter_tF644F1AE82F611B677CE1964D5A3277DDA21D553* ___FilterAttribute_4;
-	// System.Reflection.MemberFilter System.Type::FilterName
-	MemberFilter_tF644F1AE82F611B677CE1964D5A3277DDA21D553* ___FilterName_5;
-	// System.Reflection.MemberFilter System.Type::FilterNameIgnoreCase
-	MemberFilter_tF644F1AE82F611B677CE1964D5A3277DDA21D553* ___FilterNameIgnoreCase_6;
-};
-
-// System.Type
-
 // UnityEngine.AnimationClip
 
 // UnityEngine.AnimationClip
@@ -1568,10 +1252,6 @@ struct Type_t_StaticFields
 // UnityEngine.AnimatorOverrideController
 
 // UnityEngine.AnimatorOverrideController
-
-// System.ArgumentException
-
-// System.ArgumentException
 
 // UnityEngine.Behaviour
 
@@ -1589,10 +1269,6 @@ struct Type_t_StaticFields
 
 // System.InvalidOperationException
 
-// System.NullReferenceException
-
-// System.NullReferenceException
-
 // UnityEngine.StateMachineBehaviour
 
 // UnityEngine.StateMachineBehaviour
@@ -1605,17 +1281,9 @@ struct Type_t_StaticFields
 
 // UnityEngine.AnimatorOverrideController/OnOverrideControllerDirtyCallback
 
-// UnityEngine.Animation
-
-// UnityEngine.Animation
-
 // UnityEngine.Animator
 
 // UnityEngine.Animator
-
-// System.ArgumentNullException
-
-// System.ArgumentNullException
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
@@ -1649,123 +1317,6 @@ struct DelegateU5BU5D_tC5AB7E8F745616680F337909D3A8E6C722CDF771  : public Runtim
 		return m_Items + index;
 	}
 	inline void SetAtUnchecked(il2cpp_array_size_t index, Delegate_t* value)
-	{
-		m_Items[index] = value;
-		Il2CppCodeGenWriteBarrier((void**)m_Items + index, (void*)value);
-	}
-};
-// UnityEngine.HumanBone[]
-struct HumanBoneU5BU5D_t443B81D55400778CBB921DF04BE932ABF14BAA52  : public RuntimeArray
-{
-	ALIGN_FIELD (8) HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8 m_Items[1];
-
-	inline HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8 GetAt(il2cpp_array_size_t index) const
-	{
-		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
-		return m_Items[index];
-	}
-	inline HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8* GetAddressAt(il2cpp_array_size_t index)
-	{
-		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
-		return m_Items + index;
-	}
-	inline void SetAt(il2cpp_array_size_t index, HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8 value)
-	{
-		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
-		m_Items[index] = value;
-		Il2CppCodeGenWriteBarrier((void**)&((m_Items + index)->___m_BoneName_0), (void*)NULL);
-		#if IL2CPP_ENABLE_STRICT_WRITE_BARRIERS
-		Il2CppCodeGenWriteBarrier((void**)&((m_Items + index)->___m_HumanName_1), (void*)NULL);
-		#endif
-	}
-	inline HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8 GetAtUnchecked(il2cpp_array_size_t index) const
-	{
-		return m_Items[index];
-	}
-	inline HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8* GetAddressAtUnchecked(il2cpp_array_size_t index)
-	{
-		return m_Items + index;
-	}
-	inline void SetAtUnchecked(il2cpp_array_size_t index, HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8 value)
-	{
-		m_Items[index] = value;
-		Il2CppCodeGenWriteBarrier((void**)&((m_Items + index)->___m_BoneName_0), (void*)NULL);
-		#if IL2CPP_ENABLE_STRICT_WRITE_BARRIERS
-		Il2CppCodeGenWriteBarrier((void**)&((m_Items + index)->___m_HumanName_1), (void*)NULL);
-		#endif
-	}
-};
-// UnityEngine.SkeletonBone[]
-struct SkeletonBoneU5BU5D_t84722CE071EF9295326D5A84492716DBC7A15A85  : public RuntimeArray
-{
-	ALIGN_FIELD (8) SkeletonBone_tA999028EED923DB65E286BB99F81541872F5B126 m_Items[1];
-
-	inline SkeletonBone_tA999028EED923DB65E286BB99F81541872F5B126 GetAt(il2cpp_array_size_t index) const
-	{
-		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
-		return m_Items[index];
-	}
-	inline SkeletonBone_tA999028EED923DB65E286BB99F81541872F5B126* GetAddressAt(il2cpp_array_size_t index)
-	{
-		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
-		return m_Items + index;
-	}
-	inline void SetAt(il2cpp_array_size_t index, SkeletonBone_tA999028EED923DB65E286BB99F81541872F5B126 value)
-	{
-		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
-		m_Items[index] = value;
-		Il2CppCodeGenWriteBarrier((void**)&((m_Items + index)->___name_0), (void*)NULL);
-		#if IL2CPP_ENABLE_STRICT_WRITE_BARRIERS
-		Il2CppCodeGenWriteBarrier((void**)&((m_Items + index)->___parentName_1), (void*)NULL);
-		#endif
-	}
-	inline SkeletonBone_tA999028EED923DB65E286BB99F81541872F5B126 GetAtUnchecked(il2cpp_array_size_t index) const
-	{
-		return m_Items[index];
-	}
-	inline SkeletonBone_tA999028EED923DB65E286BB99F81541872F5B126* GetAddressAtUnchecked(il2cpp_array_size_t index)
-	{
-		return m_Items + index;
-	}
-	inline void SetAtUnchecked(il2cpp_array_size_t index, SkeletonBone_tA999028EED923DB65E286BB99F81541872F5B126 value)
-	{
-		m_Items[index] = value;
-		Il2CppCodeGenWriteBarrier((void**)&((m_Items + index)->___name_0), (void*)NULL);
-		#if IL2CPP_ENABLE_STRICT_WRITE_BARRIERS
-		Il2CppCodeGenWriteBarrier((void**)&((m_Items + index)->___parentName_1), (void*)NULL);
-		#endif
-	}
-};
-// System.String[]
-struct StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248  : public RuntimeArray
-{
-	ALIGN_FIELD (8) String_t* m_Items[1];
-
-	inline String_t* GetAt(il2cpp_array_size_t index) const
-	{
-		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
-		return m_Items[index];
-	}
-	inline String_t** GetAddressAt(il2cpp_array_size_t index)
-	{
-		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
-		return m_Items + index;
-	}
-	inline void SetAt(il2cpp_array_size_t index, String_t* value)
-	{
-		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
-		m_Items[index] = value;
-		Il2CppCodeGenWriteBarrier((void**)m_Items + index, (void*)value);
-	}
-	inline String_t* GetAtUnchecked(il2cpp_array_size_t index) const
-	{
-		return m_Items[index];
-	}
-	inline String_t** GetAddressAtUnchecked(il2cpp_array_size_t index)
-	{
-		return m_Items + index;
-	}
-	inline void SetAtUnchecked(il2cpp_array_size_t index, String_t* value)
 	{
 		m_Items[index] = value;
 		Il2CppCodeGenWriteBarrier((void**)m_Items + index, (void*)value);
@@ -1806,52 +1357,7 @@ struct AnimatorControllerParameterU5BU5D_tAB05125F5DC0D98F59351CD7D8C9880DFFA8EA
 		Il2CppCodeGenWriteBarrier((void**)m_Items + index, (void*)value);
 	}
 };
-// System.Single[]
-struct SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C  : public RuntimeArray
-{
-	ALIGN_FIELD (8) float m_Items[1];
 
-	inline float GetAt(il2cpp_array_size_t index) const
-	{
-		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
-		return m_Items[index];
-	}
-	inline float* GetAddressAt(il2cpp_array_size_t index)
-	{
-		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
-		return m_Items + index;
-	}
-	inline void SetAt(il2cpp_array_size_t index, float value)
-	{
-		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
-		m_Items[index] = value;
-	}
-	inline float GetAtUnchecked(il2cpp_array_size_t index) const
-	{
-		return m_Items[index];
-	}
-	inline float* GetAddressAtUnchecked(il2cpp_array_size_t index)
-	{
-		return m_Items + index;
-	}
-	inline void SetAtUnchecked(il2cpp_array_size_t index, float value)
-	{
-		m_Items[index] = value;
-	}
-};
-
-IL2CPP_EXTERN_C void HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8_marshal_pinvoke(const HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8& unmarshaled, HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8_marshaled_pinvoke& marshaled);
-IL2CPP_EXTERN_C void HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8_marshal_pinvoke_back(const HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8_marshaled_pinvoke& marshaled, HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8& unmarshaled);
-IL2CPP_EXTERN_C void HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8_marshal_pinvoke_cleanup(HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8_marshaled_pinvoke& marshaled);
-IL2CPP_EXTERN_C void SkeletonBone_tA999028EED923DB65E286BB99F81541872F5B126_marshal_pinvoke(const SkeletonBone_tA999028EED923DB65E286BB99F81541872F5B126& unmarshaled, SkeletonBone_tA999028EED923DB65E286BB99F81541872F5B126_marshaled_pinvoke& marshaled);
-IL2CPP_EXTERN_C void SkeletonBone_tA999028EED923DB65E286BB99F81541872F5B126_marshal_pinvoke_back(const SkeletonBone_tA999028EED923DB65E286BB99F81541872F5B126_marshaled_pinvoke& marshaled, SkeletonBone_tA999028EED923DB65E286BB99F81541872F5B126& unmarshaled);
-IL2CPP_EXTERN_C void SkeletonBone_tA999028EED923DB65E286BB99F81541872F5B126_marshal_pinvoke_cleanup(SkeletonBone_tA999028EED923DB65E286BB99F81541872F5B126_marshaled_pinvoke& marshaled);
-IL2CPP_EXTERN_C void HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8_marshal_com(const HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8& unmarshaled, HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8_marshaled_com& marshaled);
-IL2CPP_EXTERN_C void HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8_marshal_com_back(const HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8_marshaled_com& marshaled, HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8& unmarshaled);
-IL2CPP_EXTERN_C void HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8_marshal_com_cleanup(HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8_marshaled_com& marshaled);
-IL2CPP_EXTERN_C void SkeletonBone_tA999028EED923DB65E286BB99F81541872F5B126_marshal_com(const SkeletonBone_tA999028EED923DB65E286BB99F81541872F5B126& unmarshaled, SkeletonBone_tA999028EED923DB65E286BB99F81541872F5B126_marshaled_com& marshaled);
-IL2CPP_EXTERN_C void SkeletonBone_tA999028EED923DB65E286BB99F81541872F5B126_marshal_com_back(const SkeletonBone_tA999028EED923DB65E286BB99F81541872F5B126_marshaled_com& marshaled, SkeletonBone_tA999028EED923DB65E286BB99F81541872F5B126& unmarshaled);
-IL2CPP_EXTERN_C void SkeletonBone_tA999028EED923DB65E286BB99F81541872F5B126_marshal_com_cleanup(SkeletonBone_tA999028EED923DB65E286BB99F81541872F5B126_marshaled_com& marshaled);
 IL2CPP_EXTERN_C void Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_marshal_pinvoke(const Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C& unmarshaled, Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_marshaled_pinvoke& marshaled);
 IL2CPP_EXTERN_C void Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_marshal_pinvoke_back(const Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_marshaled_pinvoke& marshaled, Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C& unmarshaled);
 IL2CPP_EXTERN_C void Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_marshal_pinvoke_cleanup(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_marshaled_pinvoke& marshaled);
@@ -1878,74 +1384,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PlayableHandle_IsPlayableOfType_TisAnima
 
 // System.Void UnityEngine.AnimatorOverrideController/OnOverrideControllerDirtyCallback::Invoke()
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void OnOverrideControllerDirtyCallback_Invoke_m538DCB0FFFE75495DC3977DBBF55A07C570F8B5A_inline (OnOverrideControllerDirtyCallback_tDC67F7661A27502AD804BDE0B696955AFD4A44D5* __this, const RuntimeMethod* method) ;
-// System.Boolean UnityEngine.HumanLimit::get_useDefaultValues()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool HumanLimit_get_useDefaultValues_mA6C116B2DC3D800FDACE2907D52B85E632914677 (HumanLimit_tE825F951DEE60E2641DD91F3C92C6B56A139A36E* __this, const RuntimeMethod* method) ;
-// System.Void UnityEngine.HumanLimit::set_useDefaultValues(System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanLimit_set_useDefaultValues_m3BD1D01F9652270133D307C7709FDD554621ADE8 (HumanLimit_tE825F951DEE60E2641DD91F3C92C6B56A139A36E* __this, bool ___0_value, const RuntimeMethod* method) ;
-// UnityEngine.Vector3 UnityEngine.HumanLimit::get_min()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 HumanLimit_get_min_m12EAAB4E0EBBBBD221BDB213130DE9643906AB9D (HumanLimit_tE825F951DEE60E2641DD91F3C92C6B56A139A36E* __this, const RuntimeMethod* method) ;
-// System.Void UnityEngine.HumanLimit::set_min(UnityEngine.Vector3)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanLimit_set_min_mE1EFA9D3BBB3047BF25554696FEEFF1F218A7227 (HumanLimit_tE825F951DEE60E2641DD91F3C92C6B56A139A36E* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_value, const RuntimeMethod* method) ;
-// UnityEngine.Vector3 UnityEngine.HumanLimit::get_max()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 HumanLimit_get_max_m4E5E907AE7FFFCAC65026ECA444507B0B608F02A (HumanLimit_tE825F951DEE60E2641DD91F3C92C6B56A139A36E* __this, const RuntimeMethod* method) ;
-// System.Void UnityEngine.HumanLimit::set_max(UnityEngine.Vector3)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanLimit_set_max_m68A852091164B5EA6CD138615DEC75EC9917DA78 (HumanLimit_tE825F951DEE60E2641DD91F3C92C6B56A139A36E* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_value, const RuntimeMethod* method) ;
-// UnityEngine.Vector3 UnityEngine.HumanLimit::get_center()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 HumanLimit_get_center_m6F488F439245F5E54D0DFBE04CD63816BAFEFF6B (HumanLimit_tE825F951DEE60E2641DD91F3C92C6B56A139A36E* __this, const RuntimeMethod* method) ;
-// System.Void UnityEngine.HumanLimit::set_center(UnityEngine.Vector3)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanLimit_set_center_mC1C73D9F6B3EFADCF99E6906A0D464146F2FCDF8 (HumanLimit_tE825F951DEE60E2641DD91F3C92C6B56A139A36E* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_value, const RuntimeMethod* method) ;
-// System.Single UnityEngine.HumanLimit::get_axisLength()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float HumanLimit_get_axisLength_m9691117C17DFCC40ECB9C1A459CE998831678947 (HumanLimit_tE825F951DEE60E2641DD91F3C92C6B56A139A36E* __this, const RuntimeMethod* method) ;
-// System.Void UnityEngine.HumanLimit::set_axisLength(System.Single)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanLimit_set_axisLength_m7DACA3E1AA03B9733E0C1D34051859A45D5B8FB3 (HumanLimit_tE825F951DEE60E2641DD91F3C92C6B56A139A36E* __this, float ___0_value, const RuntimeMethod* method) ;
-// System.String UnityEngine.HumanBone::get_boneName()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* HumanBone_get_boneName_m09C4D3365F4D1E69CD0907DEC3A2298A2CF6E18B (HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8* __this, const RuntimeMethod* method) ;
-// System.Void UnityEngine.HumanBone::set_boneName(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanBone_set_boneName_m22857CD9738A623436C8F7A31D51D1EBA4BD8F58 (HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8* __this, String_t* ___0_value, const RuntimeMethod* method) ;
-// System.String UnityEngine.HumanBone::get_humanName()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* HumanBone_get_humanName_mC5FF6D0EDE66B773EF7E6DD7722E20C07EBCDCF6 (HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8* __this, const RuntimeMethod* method) ;
-// System.Void UnityEngine.HumanBone::set_humanName(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanBone_set_humanName_m460C6620AEE45FC9601B8D05448DD6C397B12D4B (HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8* __this, String_t* ___0_value, const RuntimeMethod* method) ;
-// System.Single UnityEngine.HumanDescription::get_upperArmTwist()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float HumanDescription_get_upperArmTwist_m92E2B3BCA433012179892DE9493CBC5F8ADB8D52 (HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* __this, const RuntimeMethod* method) ;
-// System.Void UnityEngine.HumanDescription::set_upperArmTwist(System.Single)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanDescription_set_upperArmTwist_m4056390E30A30DCEB48D55D4E536F146E431E100 (HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* __this, float ___0_value, const RuntimeMethod* method) ;
-// System.Single UnityEngine.HumanDescription::get_lowerArmTwist()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float HumanDescription_get_lowerArmTwist_m8F57099DCEAC2B1D0D03F5443F500953E1E086E6 (HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* __this, const RuntimeMethod* method) ;
-// System.Void UnityEngine.HumanDescription::set_lowerArmTwist(System.Single)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanDescription_set_lowerArmTwist_mD24F728854AC5AD545E09D6E74CDD0B7AD6DF139 (HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* __this, float ___0_value, const RuntimeMethod* method) ;
-// System.Single UnityEngine.HumanDescription::get_upperLegTwist()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float HumanDescription_get_upperLegTwist_mB9429634218671A47EAB4E73C4ABCB4EDC1FDCF1 (HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* __this, const RuntimeMethod* method) ;
-// System.Void UnityEngine.HumanDescription::set_upperLegTwist(System.Single)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanDescription_set_upperLegTwist_m0552329018CAC469A2443BFBC89B83DFB5288782 (HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* __this, float ___0_value, const RuntimeMethod* method) ;
-// System.Single UnityEngine.HumanDescription::get_lowerLegTwist()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float HumanDescription_get_lowerLegTwist_m8AB325E825835D0A05A20F447191CF2FBA604B35 (HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* __this, const RuntimeMethod* method) ;
-// System.Void UnityEngine.HumanDescription::set_lowerLegTwist(System.Single)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanDescription_set_lowerLegTwist_m477F6F9AEC4E7E3F8D6FA72B05BCBF05C02FFB19 (HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* __this, float ___0_value, const RuntimeMethod* method) ;
-// System.Single UnityEngine.HumanDescription::get_armStretch()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float HumanDescription_get_armStretch_m9C47D234F9BD5C1807E40DF748AE51CC4433C11B (HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* __this, const RuntimeMethod* method) ;
-// System.Void UnityEngine.HumanDescription::set_armStretch(System.Single)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanDescription_set_armStretch_m52A43854E332057B62C07306CB1663CEFDB01C71 (HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* __this, float ___0_value, const RuntimeMethod* method) ;
-// System.Single UnityEngine.HumanDescription::get_legStretch()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float HumanDescription_get_legStretch_m568292F633E3849E7C8DAB4D738C8E6F52AB662F (HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* __this, const RuntimeMethod* method) ;
-// System.Void UnityEngine.HumanDescription::set_legStretch(System.Single)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanDescription_set_legStretch_m40D8FE0E122F5EF4143253814D732AF8413578DC (HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* __this, float ___0_value, const RuntimeMethod* method) ;
-// System.Single UnityEngine.HumanDescription::get_feetSpacing()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float HumanDescription_get_feetSpacing_mF8283F0B14F35F3FD82BA3D6FF6D82609B924643 (HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* __this, const RuntimeMethod* method) ;
-// System.Void UnityEngine.HumanDescription::set_feetSpacing(System.Single)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanDescription_set_feetSpacing_mC0F12305CA30ADA53D08E987E52DE1611E9511D3 (HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* __this, float ___0_value, const RuntimeMethod* method) ;
-// System.Boolean UnityEngine.HumanDescription::get_hasTranslationDoF()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool HumanDescription_get_hasTranslationDoF_m735B027773FA7BA045C7B1D5A129B504F7B97896 (HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* __this, const RuntimeMethod* method) ;
-// System.Void UnityEngine.HumanDescription::set_hasTranslationDoF(System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanDescription_set_hasTranslationDoF_mE5E5B11F3DC450708723875A5B1D7CFC340FD20E (HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* __this, bool ___0_value, const RuntimeMethod* method) ;
-// System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605 (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* ___0_x, Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* ___1_y, const RuntimeMethod* method) ;
-// System.Void System.NullReferenceException::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NullReferenceException__ctor_mD26D62094A5E49C18D817817E17FDFBC1D3BD752 (NullReferenceException_tBDE63A6D24569B964908408389070C6A9F5005BB* __this, const RuntimeMethod* method) ;
-// UnityEngine.Avatar UnityEngine.AvatarBuilder::BuildHumanAvatarInternal(UnityEngine.GameObject,UnityEngine.HumanDescription)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Avatar_t7861E57EEE2CF8CC61BD63C09737BA22F7ABCA0F* AvatarBuilder_BuildHumanAvatarInternal_m80FBC857C0DF3E09682437DDD5CBE240D9D7B90D (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_go, HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44 ___1_humanDescription, const RuntimeMethod* method) ;
-// UnityEngine.Avatar UnityEngine.AvatarBuilder::BuildHumanAvatarInternal_Injected(UnityEngine.GameObject,UnityEngine.HumanDescription&)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Avatar_t7861E57EEE2CF8CC61BD63C09737BA22F7ABCA0F* AvatarBuilder_BuildHumanAvatarInternal_Injected_m1D682F8482BFE1BD78843F10FA092203609C4E85 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_go, HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* ___1_humanDescription, const RuntimeMethod* method) ;
 // System.Void UnityEngine.Object::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Object__ctor_m2149FA40CEC8D82AC20D3508AB40C0D8EFEF68E6 (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* __this, const RuntimeMethod* method) ;
 // System.Int32 UnityEngine.Animator::StringToHash(System.String)
@@ -1956,34 +1394,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool String_op_Equality_m030E1B219352228970A0
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AnimatorControllerParameter_get_name_mEB3938ADDF296A0FB37283C987AEE6EC0F4F629E (AnimatorControllerParameter_t1FA67485445446540D4F2857762C960AE6980E02* __this, const RuntimeMethod* method) ;
 // System.Void System.Object::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2 (RuntimeObject* __this, const RuntimeMethod* method) ;
-// System.Boolean UnityEngine.Animation::Play(UnityEngine.PlayMode)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Animation_Play_m5E86FA3D4C8C7F144565B6E3962FD5CF3E51F1C0 (Animation_t6593B06C39E3B139808B19F2C719C860F3F61040* __this, int32_t ___0_mode, const RuntimeMethod* method) ;
-// System.Boolean UnityEngine.Animation::PlayDefaultAnimation(UnityEngine.PlayMode)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Animation_PlayDefaultAnimation_mD2F0091CD4214603FE368C658A3DB28A53D6D48F (Animation_t6593B06C39E3B139808B19F2C719C860F3F61040* __this, int32_t ___0_mode, const RuntimeMethod* method) ;
-// System.Void UnityEngine.Animation::AddClip(UnityEngine.AnimationClip,System.String,System.Int32,System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animation_AddClip_m0DBAB71E23EA248D6A18C705B8AF0EA140D2FFDF (Animation_t6593B06C39E3B139808B19F2C719C860F3F61040* __this, AnimationClip_t00BD2F131D308A4AD2C6B0BF66644FC25FECE712* ___0_clip, String_t* ___1_newName, int32_t ___2_firstFrame, int32_t ___3_lastFrame, const RuntimeMethod* method) ;
-// System.Void UnityEngine.Animation::AddClip(UnityEngine.AnimationClip,System.String,System.Int32,System.Int32,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animation_AddClip_m87A5BE2BFAC7F12D7C0FE5D954E657FDB8B4A7F6 (Animation_t6593B06C39E3B139808B19F2C719C860F3F61040* __this, AnimationClip_t00BD2F131D308A4AD2C6B0BF66644FC25FECE712* ___0_clip, String_t* ___1_newName, int32_t ___2_firstFrame, int32_t ___3_lastFrame, bool ___4_addLoopFrame, const RuntimeMethod* method) ;
-// System.Void UnityEngine.Animation/Enumerator::.ctor(UnityEngine.Animation)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Enumerator__ctor_mF3FB66377864673B8DAF14A36DB6D069B98A92F4 (Enumerator_t81434F7D5603121F3D7BD6DB916FE1C755307530* __this, Animation_t6593B06C39E3B139808B19F2C719C860F3F61040* ___0_outer, const RuntimeMethod* method) ;
-// UnityEngine.AnimationState UnityEngine.Animation::GetStateAtIndex(System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AnimationState_tC704F25A20169025B6CFDC2F00DC84152B5B73CE* Animation_GetStateAtIndex_mA06564CBB11021A3ADA69EA0BCDCD820183E240F (Animation_t6593B06C39E3B139808B19F2C719C860F3F61040* __this, int32_t ___0_index, const RuntimeMethod* method) ;
-// System.Int32 UnityEngine.Animation::GetStateCount()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Animation_GetStateCount_mB779E6750180C77CE5F2E81B78C9AFEE93FCB1FE (Animation_t6593B06C39E3B139808B19F2C719C860F3F61040* __this, const RuntimeMethod* method) ;
-// System.Void UnityEngine.TrackedReference::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TrackedReference__ctor_m0E498FD0AD5807B7B91CB0005170E522DAE3616A (TrackedReference_tF35FF4FB6E89ACD81C24469FAF0CA6FFF29262A2* __this, const RuntimeMethod* method) ;
-// System.Boolean UnityEngine.AnimatorStateInfo::IsName(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AnimatorStateInfo_IsName_mB936F493D6BDDB9372C8E9D813CE0416B002C4D0 (AnimatorStateInfo_t1F47379289C7CE7FD588FBC3BBD79A777243B6B2* __this, String_t* ___0_name, const RuntimeMethod* method) ;
-// System.Single UnityEngine.AnimatorStateInfo::get_normalizedTime()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float AnimatorStateInfo_get_normalizedTime_m087C7E5A72122ADF18EBB4AC8391103B9119CCC6 (AnimatorStateInfo_t1F47379289C7CE7FD588FBC3BBD79A777243B6B2* __this, const RuntimeMethod* method) ;
-// System.Single UnityEngine.Animator::GetFloatString(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Animator_GetFloatString_mB1E5C90624A736A6D98D30FF5318BC1D0C494A38 (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, String_t* ___0_name, const RuntimeMethod* method) ;
-// System.Void UnityEngine.Animator::SetFloatString(System.String,System.Single)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_SetFloatString_m1AA50083AAAE1DFFA7FB64502EA106795D3756B4 (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, String_t* ___0_name, float ___1_value, const RuntimeMethod* method) ;
 // System.Void UnityEngine.Animator::SetBoolString(System.String,System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_SetBoolString_m08A0BC6717BF5FD3E43D3EFB2509E359C1196C00 (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, String_t* ___0_name, bool ___1_value, const RuntimeMethod* method) ;
-// System.Void UnityEngine.Animator::SetIntegerString(System.String,System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_SetIntegerString_m3080217346B85D69FA5A99B2ABC64BF5E4580455 (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, String_t* ___0_name, int32_t ___1_value, const RuntimeMethod* method) ;
 // System.Void UnityEngine.Animator::SetTriggerString(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_SetTriggerString_m177C75DFBE070DE66FC08A3232444CCEA409C25E (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, String_t* ___0_name, const RuntimeMethod* method) ;
 // System.Void UnityEngine.Animator::SetTriggerID(System.Int32)
@@ -1992,8 +1404,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_SetTriggerID_mCC0A74BF79A56BC1E
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_ResetTriggerString_m78259348CED35F156148A64B95EBD73CE3951868 (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, String_t* ___0_name, const RuntimeMethod* method) ;
 // System.Void UnityEngine.Animator::ResetTriggerID(System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_ResetTriggerID_mD3E0C24AC862F049622D09933E7A3A2CDE256C13 (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, int32_t ___0_id, const RuntimeMethod* method) ;
-// System.Void UnityEngine.Animator::GetAnimatorStateInfo(System.Int32,UnityEngine.StateInfoIndex,UnityEngine.AnimatorStateInfo&)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_GetAnimatorStateInfo_mC6C046A539DE6E8D481E830D3DA1FBF96DFC367D (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, int32_t ___0_layerIndex, int32_t ___1_stateInfoIndex, AnimatorStateInfo_t1F47379289C7CE7FD588FBC3BBD79A777243B6B2* ___2_info, const RuntimeMethod* method) ;
 // UnityEngine.AnimatorControllerParameter[] UnityEngine.Animator::get_parameters()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AnimatorControllerParameterU5BU5D_tAB05125F5DC0D98F59351CD7D8C9880DFFA8EA21* Animator_get_parameters_m3DE35688D8EBD3D1526346C7B71E468436A4463B (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, const RuntimeMethod* method) ;
 // System.String System.Int32::ToString()
@@ -2002,52 +1412,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Int32_ToString_m030E01C24E294D6762F
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Concat_m9E3155FB84015C823606188F53B47CB44C444991 (String_t* ___0_str0, String_t* ___1_str1, const RuntimeMethod* method) ;
 // System.Void System.IndexOutOfRangeException::.ctor(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void IndexOutOfRangeException__ctor_mFD06819F05B815BE2D6E826D4E04F4C449D0A425 (IndexOutOfRangeException_t7ECB35264FB6CA8FAA516BD958F4B2ADC78E8A82* __this, String_t* ___0_message, const RuntimeMethod* method) ;
-// System.Void UnityEngine.Animator::Play(System.String,System.Int32,System.Single)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_Play_m5565F093F0752D4DD9B451686F71C7A8F23F6744 (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, String_t* ___0_stateName, int32_t ___1_layer, float ___2_normalizedTime, const RuntimeMethod* method) ;
-// System.Void UnityEngine.Animator::Play(System.Int32,System.Int32,System.Single)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_Play_m3011727F1A3F331EE7F5D7CF9B98EFEADE547BBD (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, int32_t ___0_stateNameHash, int32_t ___1_layer, float ___2_normalizedTime, const RuntimeMethod* method) ;
 // System.String System.Enum::ToString()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Enum_ToString_m946B0B83C4470457D0FF555D862022C72BB55741 (RuntimeObject* __this, const RuntimeMethod* method) ;
 // System.Int32 UnityEngine.HumanTrait::GetBoneIndexFromMono(System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t HumanTrait_GetBoneIndexFromMono_mDE16E21275A55D263014CFD3307BEB7353AE6925 (int32_t ___0_humanId, const RuntimeMethod* method) ;
 // UnityEngine.Transform UnityEngine.Animator::GetBoneTransformInternal(System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* Animator_GetBoneTransformInternal_m875DC36979BC9FB162D83E799421243AD3842857 (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, int32_t ___0_humanBoneId, const RuntimeMethod* method) ;
-// System.Void UnityEngine.Animator::Rebind(System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_Rebind_mA8163C9B7150958C0FB3F071B7ED41850BE3A130 (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, bool ___0_writeDefaultValues, const RuntimeMethod* method) ;
-// System.Void UnityEngine.Motion::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Motion__ctor_mB6190858E566BFA1B80D2E94B65CD27920A49443 (Motion_tBCD49FBF5608AD21FC03B63C8182FABCEF2707AC* __this, const RuntimeMethod* method) ;
-// System.Void UnityEngine.AnimationClip::Internal_CreateAnimationClip(UnityEngine.AnimationClip)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AnimationClip_Internal_CreateAnimationClip_m1410C35D6386CEA1F068C9314751D0F6A7D34789 (AnimationClip_t00BD2F131D308A4AD2C6B0BF66644FC25FECE712* ___0_self, const RuntimeMethod* method) ;
-// System.Int32 UnityEngine.HumanTrait::get_MuscleCount()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t HumanTrait_get_MuscleCount_m1710B0FAD40DB860AD5C117A831F7554F5C55678 (const RuntimeMethod* method) ;
-// System.Void System.InvalidOperationException::.ctor(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InvalidOperationException__ctor_mE4CB6F4712AB6D99A2358FBAE2E052B3EE976162 (InvalidOperationException_t5DDE4D49B7405FAAB1E4576F4715A42A3FAD4BAB* __this, String_t* ___0_message, const RuntimeMethod* method) ;
-// System.Void UnityEngine.HumanPose::Init()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanPose_Init_m9BBDA2B4B2EB0DE3082EE7FE36A92F19870F682D (HumanPose_t4FD3BF9D666DD3F1B7361BD77E5BFD46560DAB6A* __this, const RuntimeMethod* method) ;
-// System.Boolean System.IntPtr::op_Inequality(System.IntPtr,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool IntPtr_op_Inequality_m90EFC9C4CAD9A33E309F2DDF98EE4E1DD253637B (intptr_t ___0_value1, intptr_t ___1_value2, const RuntimeMethod* method) ;
-// System.Void UnityEngine.HumanPoseHandler::Internal_Destroy(System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanPoseHandler_Internal_Destroy_m824560DD4448B327FFF1227E260F6A92F42F0940 (intptr_t ___0_ptr, const RuntimeMethod* method) ;
-// System.Void System.GC::SuppressFinalize(System.Object)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GC_SuppressFinalize_m71815DBD5A0CD2EA1BE43317B08B7A14949EDC65 (RuntimeObject* ___0_obj, const RuntimeMethod* method) ;
-// System.Void System.ArgumentNullException::.ctor(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArgumentNullException__ctor_m444AE141157E333844FC1A9500224C2F9FD24F4B (ArgumentNullException_t327031E412FAB2351B0022DD5DAD47E67E597129* __this, String_t* ___0_paramName, const RuntimeMethod* method) ;
-// System.Boolean UnityEngine.Avatar::get_isValid()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Avatar_get_isValid_m89626D009C80028727A9C6F8F8F477C23934B94C (Avatar_t7861E57EEE2CF8CC61BD63C09737BA22F7ABCA0F* __this, const RuntimeMethod* method) ;
-// System.Void System.ArgumentException::.ctor(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArgumentException__ctor_m026938A67AF9D36BB7ED27F80425D7194B514465 (ArgumentException_tAD90411542A20A9C72D5CDA3A84181D8B947A263* __this, String_t* ___0_message, const RuntimeMethod* method) ;
-// System.Boolean UnityEngine.Avatar::get_isHuman()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Avatar_get_isHuman_m1CDE3C2BCB2A683AB72088B26C9824E0FCF00FBE (Avatar_t7861E57EEE2CF8CC61BD63C09737BA22F7ABCA0F* __this, const RuntimeMethod* method) ;
-// System.IntPtr UnityEngine.HumanPoseHandler::Internal_CreateFromRoot(UnityEngine.Avatar,UnityEngine.Transform)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t HumanPoseHandler_Internal_CreateFromRoot_m93990E1FEE4C5FD08663157192B112CCF251BCEA (Avatar_t7861E57EEE2CF8CC61BD63C09737BA22F7ABCA0F* ___0_avatar, Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___1_root, const RuntimeMethod* method) ;
-// System.Boolean System.IntPtr::op_Equality(System.IntPtr,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool IntPtr_op_Equality_m7D9CDCDE9DC2A0C2C614633F4921E90187FAB271 (intptr_t ___0_value1, intptr_t ___1_value2, const RuntimeMethod* method) ;
-// System.Void System.NullReferenceException::.ctor(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NullReferenceException__ctor_mA41317A57F5C1C0E3F59C7EB25ABD484564B23D4 (NullReferenceException_tBDE63A6D24569B964908408389070C6A9F5005BB* __this, String_t* ___0_message, const RuntimeMethod* method) ;
-// System.Void UnityEngine.HumanPoseHandler::GetHumanPose(UnityEngine.Vector3&,UnityEngine.Quaternion&,System.Single[])
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanPoseHandler_GetHumanPose_m7F8C4612504D3197D42D6DA82F8D27B1C808AAF0 (HumanPoseHandler_t57D245FE7D20329F34675018C4142944EE3B3992* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___0_bodyPosition, Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974* ___1_bodyRotation, SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* ___2_muscles, const RuntimeMethod* method) ;
-// System.Void UnityEngine.HumanPoseHandler::SetHumanPose(UnityEngine.Vector3&,UnityEngine.Quaternion&,System.Single[])
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanPoseHandler_SetHumanPose_mA5E4639B077C37CF5CB269D1EA59C42847BC2C87 (HumanPoseHandler_t57D245FE7D20329F34675018C4142944EE3B3992* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___0_bodyPosition, Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974* ___1_bodyRotation, SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* ___2_muscles, const RuntimeMethod* method) ;
 // System.Void UnityEngine.ScriptableObject::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ScriptableObject__ctor_mD037FDB0B487295EA47F79A4DB1BF1846C9087FF (ScriptableObject_tB3BFDB921A1B1795B38A5417D3B97A89A140436A* __this, const RuntimeMethod* method) ;
 // System.Boolean UnityEngine.Playables.PlayableHandle::IsValid()
@@ -2075,6 +1445,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AnimatorControllerPlayable_SetHandle_mD8
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AnimatorControllerPlayable__ctor_mBCB9475E2740BE1AEB94C08BAD14D51333258BFE (AnimatorControllerPlayable_tADDCB301674D6243EFE1BD032E7D118FD091210A* __this, PlayableHandle_t5D6A01EF94382EFEDC047202F71DF882769654D4 ___0_handle, const RuntimeMethod* method) ;
 // UnityEngine.Playables.PlayableHandle UnityEngine.Animations.AnimatorControllerPlayable::GetHandle()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR PlayableHandle_t5D6A01EF94382EFEDC047202F71DF882769654D4 AnimatorControllerPlayable_GetHandle_m718D9A4E0DB7AC62947B1D09E47DBCD25C27AF6C (AnimatorControllerPlayable_tADDCB301674D6243EFE1BD032E7D118FD091210A* __this, const RuntimeMethod* method) ;
+// System.Void System.InvalidOperationException::.ctor(System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InvalidOperationException__ctor_mE4CB6F4712AB6D99A2358FBAE2E052B3EE976162 (InvalidOperationException_t5DDE4D49B7405FAAB1E4576F4715A42A3FAD4BAB* __this, String_t* ___0_message, const RuntimeMethod* method) ;
 // System.Boolean UnityEngine.Playables.PlayableHandle::IsPlayableOfType<UnityEngine.Animations.AnimatorControllerPlayable>()
 inline bool PlayableHandle_IsPlayableOfType_TisAnimatorControllerPlayable_tADDCB301674D6243EFE1BD032E7D118FD091210A_m83ED61FDEBC627830082467B83BF64724C68CD70 (PlayableHandle_t5D6A01EF94382EFEDC047202F71DF882769654D4* __this, const RuntimeMethod* method)
 {
@@ -2371,239 +1743,6 @@ IL2CPP_EXTERN_C void SkeletonBone_tA999028EED923DB65E286BB99F81541872F5B126_mars
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// System.Boolean UnityEngine.HumanLimit::get_useDefaultValues()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool HumanLimit_get_useDefaultValues_mA6C116B2DC3D800FDACE2907D52B85E632914677 (HumanLimit_tE825F951DEE60E2641DD91F3C92C6B56A139A36E* __this, const RuntimeMethod* method) 
-{
-	bool V_0 = false;
-	{
-		int32_t L_0 = __this->___m_UseDefaultValues_4;
-		V_0 = (bool)((!(((uint32_t)L_0) <= ((uint32_t)0)))? 1 : 0);
-		goto IL_000d;
-	}
-
-IL_000d:
-	{
-		bool L_1 = V_0;
-		return L_1;
-	}
-}
-IL2CPP_EXTERN_C  bool HumanLimit_get_useDefaultValues_mA6C116B2DC3D800FDACE2907D52B85E632914677_AdjustorThunk (RuntimeObject* __this, const RuntimeMethod* method)
-{
-	HumanLimit_tE825F951DEE60E2641DD91F3C92C6B56A139A36E* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<HumanLimit_tE825F951DEE60E2641DD91F3C92C6B56A139A36E*>(__this + _offset);
-	bool _returnValue;
-	_returnValue = HumanLimit_get_useDefaultValues_mA6C116B2DC3D800FDACE2907D52B85E632914677(_thisAdjusted, method);
-	return _returnValue;
-}
-// System.Void UnityEngine.HumanLimit::set_useDefaultValues(System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanLimit_set_useDefaultValues_m3BD1D01F9652270133D307C7709FDD554621ADE8 (HumanLimit_tE825F951DEE60E2641DD91F3C92C6B56A139A36E* __this, bool ___0_value, const RuntimeMethod* method) 
-{
-	HumanLimit_tE825F951DEE60E2641DD91F3C92C6B56A139A36E* G_B2_0 = NULL;
-	HumanLimit_tE825F951DEE60E2641DD91F3C92C6B56A139A36E* G_B1_0 = NULL;
-	int32_t G_B3_0 = 0;
-	HumanLimit_tE825F951DEE60E2641DD91F3C92C6B56A139A36E* G_B3_1 = NULL;
-	{
-		bool L_0 = ___0_value;
-		G_B1_0 = __this;
-		if (L_0)
-		{
-			G_B2_0 = __this;
-			goto IL_0008;
-		}
-	}
-	{
-		G_B3_0 = 0;
-		G_B3_1 = G_B1_0;
-		goto IL_0009;
-	}
-
-IL_0008:
-	{
-		G_B3_0 = 1;
-		G_B3_1 = G_B2_0;
-	}
-
-IL_0009:
-	{
-		G_B3_1->___m_UseDefaultValues_4 = G_B3_0;
-		return;
-	}
-}
-IL2CPP_EXTERN_C  void HumanLimit_set_useDefaultValues_m3BD1D01F9652270133D307C7709FDD554621ADE8_AdjustorThunk (RuntimeObject* __this, bool ___0_value, const RuntimeMethod* method)
-{
-	HumanLimit_tE825F951DEE60E2641DD91F3C92C6B56A139A36E* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<HumanLimit_tE825F951DEE60E2641DD91F3C92C6B56A139A36E*>(__this + _offset);
-	HumanLimit_set_useDefaultValues_m3BD1D01F9652270133D307C7709FDD554621ADE8(_thisAdjusted, ___0_value, method);
-}
-// UnityEngine.Vector3 UnityEngine.HumanLimit::get_min()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 HumanLimit_get_min_m12EAAB4E0EBBBBD221BDB213130DE9643906AB9D (HumanLimit_tE825F951DEE60E2641DD91F3C92C6B56A139A36E* __this, const RuntimeMethod* method) 
-{
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_0 = __this->___m_Min_0;
-		V_0 = L_0;
-		goto IL_000a;
-	}
-
-IL_000a:
-	{
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_1 = V_0;
-		return L_1;
-	}
-}
-IL2CPP_EXTERN_C  Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 HumanLimit_get_min_m12EAAB4E0EBBBBD221BDB213130DE9643906AB9D_AdjustorThunk (RuntimeObject* __this, const RuntimeMethod* method)
-{
-	HumanLimit_tE825F951DEE60E2641DD91F3C92C6B56A139A36E* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<HumanLimit_tE825F951DEE60E2641DD91F3C92C6B56A139A36E*>(__this + _offset);
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 _returnValue;
-	_returnValue = HumanLimit_get_min_m12EAAB4E0EBBBBD221BDB213130DE9643906AB9D(_thisAdjusted, method);
-	return _returnValue;
-}
-// System.Void UnityEngine.HumanLimit::set_min(UnityEngine.Vector3)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanLimit_set_min_mE1EFA9D3BBB3047BF25554696FEEFF1F218A7227 (HumanLimit_tE825F951DEE60E2641DD91F3C92C6B56A139A36E* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_0 = ___0_value;
-		__this->___m_Min_0 = L_0;
-		return;
-	}
-}
-IL2CPP_EXTERN_C  void HumanLimit_set_min_mE1EFA9D3BBB3047BF25554696FEEFF1F218A7227_AdjustorThunk (RuntimeObject* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_value, const RuntimeMethod* method)
-{
-	HumanLimit_tE825F951DEE60E2641DD91F3C92C6B56A139A36E* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<HumanLimit_tE825F951DEE60E2641DD91F3C92C6B56A139A36E*>(__this + _offset);
-	HumanLimit_set_min_mE1EFA9D3BBB3047BF25554696FEEFF1F218A7227(_thisAdjusted, ___0_value, method);
-}
-// UnityEngine.Vector3 UnityEngine.HumanLimit::get_max()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 HumanLimit_get_max_m4E5E907AE7FFFCAC65026ECA444507B0B608F02A (HumanLimit_tE825F951DEE60E2641DD91F3C92C6B56A139A36E* __this, const RuntimeMethod* method) 
-{
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_0 = __this->___m_Max_1;
-		V_0 = L_0;
-		goto IL_000a;
-	}
-
-IL_000a:
-	{
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_1 = V_0;
-		return L_1;
-	}
-}
-IL2CPP_EXTERN_C  Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 HumanLimit_get_max_m4E5E907AE7FFFCAC65026ECA444507B0B608F02A_AdjustorThunk (RuntimeObject* __this, const RuntimeMethod* method)
-{
-	HumanLimit_tE825F951DEE60E2641DD91F3C92C6B56A139A36E* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<HumanLimit_tE825F951DEE60E2641DD91F3C92C6B56A139A36E*>(__this + _offset);
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 _returnValue;
-	_returnValue = HumanLimit_get_max_m4E5E907AE7FFFCAC65026ECA444507B0B608F02A(_thisAdjusted, method);
-	return _returnValue;
-}
-// System.Void UnityEngine.HumanLimit::set_max(UnityEngine.Vector3)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanLimit_set_max_m68A852091164B5EA6CD138615DEC75EC9917DA78 (HumanLimit_tE825F951DEE60E2641DD91F3C92C6B56A139A36E* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_0 = ___0_value;
-		__this->___m_Max_1 = L_0;
-		return;
-	}
-}
-IL2CPP_EXTERN_C  void HumanLimit_set_max_m68A852091164B5EA6CD138615DEC75EC9917DA78_AdjustorThunk (RuntimeObject* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_value, const RuntimeMethod* method)
-{
-	HumanLimit_tE825F951DEE60E2641DD91F3C92C6B56A139A36E* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<HumanLimit_tE825F951DEE60E2641DD91F3C92C6B56A139A36E*>(__this + _offset);
-	HumanLimit_set_max_m68A852091164B5EA6CD138615DEC75EC9917DA78(_thisAdjusted, ___0_value, method);
-}
-// UnityEngine.Vector3 UnityEngine.HumanLimit::get_center()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 HumanLimit_get_center_m6F488F439245F5E54D0DFBE04CD63816BAFEFF6B (HumanLimit_tE825F951DEE60E2641DD91F3C92C6B56A139A36E* __this, const RuntimeMethod* method) 
-{
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_0 = __this->___m_Center_2;
-		V_0 = L_0;
-		goto IL_000a;
-	}
-
-IL_000a:
-	{
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_1 = V_0;
-		return L_1;
-	}
-}
-IL2CPP_EXTERN_C  Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 HumanLimit_get_center_m6F488F439245F5E54D0DFBE04CD63816BAFEFF6B_AdjustorThunk (RuntimeObject* __this, const RuntimeMethod* method)
-{
-	HumanLimit_tE825F951DEE60E2641DD91F3C92C6B56A139A36E* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<HumanLimit_tE825F951DEE60E2641DD91F3C92C6B56A139A36E*>(__this + _offset);
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 _returnValue;
-	_returnValue = HumanLimit_get_center_m6F488F439245F5E54D0DFBE04CD63816BAFEFF6B(_thisAdjusted, method);
-	return _returnValue;
-}
-// System.Void UnityEngine.HumanLimit::set_center(UnityEngine.Vector3)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanLimit_set_center_mC1C73D9F6B3EFADCF99E6906A0D464146F2FCDF8 (HumanLimit_tE825F951DEE60E2641DD91F3C92C6B56A139A36E* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_value, const RuntimeMethod* method) 
-{
-	{
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_0 = ___0_value;
-		__this->___m_Center_2 = L_0;
-		return;
-	}
-}
-IL2CPP_EXTERN_C  void HumanLimit_set_center_mC1C73D9F6B3EFADCF99E6906A0D464146F2FCDF8_AdjustorThunk (RuntimeObject* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_value, const RuntimeMethod* method)
-{
-	HumanLimit_tE825F951DEE60E2641DD91F3C92C6B56A139A36E* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<HumanLimit_tE825F951DEE60E2641DD91F3C92C6B56A139A36E*>(__this + _offset);
-	HumanLimit_set_center_mC1C73D9F6B3EFADCF99E6906A0D464146F2FCDF8(_thisAdjusted, ___0_value, method);
-}
-// System.Single UnityEngine.HumanLimit::get_axisLength()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float HumanLimit_get_axisLength_m9691117C17DFCC40ECB9C1A459CE998831678947 (HumanLimit_tE825F951DEE60E2641DD91F3C92C6B56A139A36E* __this, const RuntimeMethod* method) 
-{
-	float V_0 = 0.0f;
-	{
-		float L_0 = __this->___m_AxisLength_3;
-		V_0 = L_0;
-		goto IL_000a;
-	}
-
-IL_000a:
-	{
-		float L_1 = V_0;
-		return L_1;
-	}
-}
-IL2CPP_EXTERN_C  float HumanLimit_get_axisLength_m9691117C17DFCC40ECB9C1A459CE998831678947_AdjustorThunk (RuntimeObject* __this, const RuntimeMethod* method)
-{
-	HumanLimit_tE825F951DEE60E2641DD91F3C92C6B56A139A36E* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<HumanLimit_tE825F951DEE60E2641DD91F3C92C6B56A139A36E*>(__this + _offset);
-	float _returnValue;
-	_returnValue = HumanLimit_get_axisLength_m9691117C17DFCC40ECB9C1A459CE998831678947(_thisAdjusted, method);
-	return _returnValue;
-}
-// System.Void UnityEngine.HumanLimit::set_axisLength(System.Single)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanLimit_set_axisLength_m7DACA3E1AA03B9733E0C1D34051859A45D5B8FB3 (HumanLimit_tE825F951DEE60E2641DD91F3C92C6B56A139A36E* __this, float ___0_value, const RuntimeMethod* method) 
-{
-	{
-		float L_0 = ___0_value;
-		__this->___m_AxisLength_3 = L_0;
-		return;
-	}
-}
-IL2CPP_EXTERN_C  void HumanLimit_set_axisLength_m7DACA3E1AA03B9733E0C1D34051859A45D5B8FB3_AdjustorThunk (RuntimeObject* __this, float ___0_value, const RuntimeMethod* method)
-{
-	HumanLimit_tE825F951DEE60E2641DD91F3C92C6B56A139A36E* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<HumanLimit_tE825F951DEE60E2641DD91F3C92C6B56A139A36E*>(__this + _offset);
-	HumanLimit_set_axisLength_m7DACA3E1AA03B9733E0C1D34051859A45D5B8FB3(_thisAdjusted, ___0_value, method);
-}
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
@@ -2663,798 +1802,6 @@ IL2CPP_EXTERN_C void HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8_marshal
 	marshaled.___m_BoneName_0 = NULL;
 	il2cpp_codegen_marshal_free_bstring(marshaled.___m_HumanName_1);
 	marshaled.___m_HumanName_1 = NULL;
-}
-// System.String UnityEngine.HumanBone::get_boneName()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* HumanBone_get_boneName_m09C4D3365F4D1E69CD0907DEC3A2298A2CF6E18B (HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8* __this, const RuntimeMethod* method) 
-{
-	String_t* V_0 = NULL;
-	{
-		String_t* L_0 = __this->___m_BoneName_0;
-		V_0 = L_0;
-		goto IL_000a;
-	}
-
-IL_000a:
-	{
-		String_t* L_1 = V_0;
-		return L_1;
-	}
-}
-IL2CPP_EXTERN_C  String_t* HumanBone_get_boneName_m09C4D3365F4D1E69CD0907DEC3A2298A2CF6E18B_AdjustorThunk (RuntimeObject* __this, const RuntimeMethod* method)
-{
-	HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8*>(__this + _offset);
-	String_t* _returnValue;
-	_returnValue = HumanBone_get_boneName_m09C4D3365F4D1E69CD0907DEC3A2298A2CF6E18B(_thisAdjusted, method);
-	return _returnValue;
-}
-// System.Void UnityEngine.HumanBone::set_boneName(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanBone_set_boneName_m22857CD9738A623436C8F7A31D51D1EBA4BD8F58 (HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8* __this, String_t* ___0_value, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = ___0_value;
-		__this->___m_BoneName_0 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___m_BoneName_0), (void*)L_0);
-		return;
-	}
-}
-IL2CPP_EXTERN_C  void HumanBone_set_boneName_m22857CD9738A623436C8F7A31D51D1EBA4BD8F58_AdjustorThunk (RuntimeObject* __this, String_t* ___0_value, const RuntimeMethod* method)
-{
-	HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8*>(__this + _offset);
-	HumanBone_set_boneName_m22857CD9738A623436C8F7A31D51D1EBA4BD8F58(_thisAdjusted, ___0_value, method);
-}
-// System.String UnityEngine.HumanBone::get_humanName()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* HumanBone_get_humanName_mC5FF6D0EDE66B773EF7E6DD7722E20C07EBCDCF6 (HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8* __this, const RuntimeMethod* method) 
-{
-	String_t* V_0 = NULL;
-	{
-		String_t* L_0 = __this->___m_HumanName_1;
-		V_0 = L_0;
-		goto IL_000a;
-	}
-
-IL_000a:
-	{
-		String_t* L_1 = V_0;
-		return L_1;
-	}
-}
-IL2CPP_EXTERN_C  String_t* HumanBone_get_humanName_mC5FF6D0EDE66B773EF7E6DD7722E20C07EBCDCF6_AdjustorThunk (RuntimeObject* __this, const RuntimeMethod* method)
-{
-	HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8*>(__this + _offset);
-	String_t* _returnValue;
-	_returnValue = HumanBone_get_humanName_mC5FF6D0EDE66B773EF7E6DD7722E20C07EBCDCF6(_thisAdjusted, method);
-	return _returnValue;
-}
-// System.Void UnityEngine.HumanBone::set_humanName(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanBone_set_humanName_m460C6620AEE45FC9601B8D05448DD6C397B12D4B (HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8* __this, String_t* ___0_value, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = ___0_value;
-		__this->___m_HumanName_1 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___m_HumanName_1), (void*)L_0);
-		return;
-	}
-}
-IL2CPP_EXTERN_C  void HumanBone_set_humanName_m460C6620AEE45FC9601B8D05448DD6C397B12D4B_AdjustorThunk (RuntimeObject* __this, String_t* ___0_value, const RuntimeMethod* method)
-{
-	HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8*>(__this + _offset);
-	HumanBone_set_humanName_m460C6620AEE45FC9601B8D05448DD6C397B12D4B(_thisAdjusted, ___0_value, method);
-}
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-
-
-
-
-// Conversion methods for marshalling of: UnityEngine.HumanDescription
-IL2CPP_EXTERN_C void HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44_marshal_pinvoke(const HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44& unmarshaled, HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44_marshaled_pinvoke& marshaled)
-{
-	if (unmarshaled.___human_0 != NULL)
-	{
-		il2cpp_array_size_t _unmarshaledhuman_Length = (unmarshaled.___human_0)->max_length;
-		marshaled.___human_0 = il2cpp_codegen_marshal_allocate_array<HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8_marshaled_pinvoke>(_unmarshaledhuman_Length);
-		for (int32_t i = 0; i < ARRAY_LENGTH_AS_INT32(_unmarshaledhuman_Length); i++)
-		{
-			HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8_marshal_pinvoke((unmarshaled.___human_0)->GetAtUnchecked(static_cast<il2cpp_array_size_t>(i)), (marshaled.___human_0)[i]);
-		}
-	}
-	else
-	{
-		marshaled.___human_0 = NULL;
-	}
-	if (unmarshaled.___skeleton_1 != NULL)
-	{
-		il2cpp_array_size_t _unmarshaledskeleton_Length = (unmarshaled.___skeleton_1)->max_length;
-		marshaled.___skeleton_1 = il2cpp_codegen_marshal_allocate_array<SkeletonBone_tA999028EED923DB65E286BB99F81541872F5B126_marshaled_pinvoke>(_unmarshaledskeleton_Length);
-		for (int32_t i = 0; i < ARRAY_LENGTH_AS_INT32(_unmarshaledskeleton_Length); i++)
-		{
-			SkeletonBone_tA999028EED923DB65E286BB99F81541872F5B126_marshal_pinvoke((unmarshaled.___skeleton_1)->GetAtUnchecked(static_cast<il2cpp_array_size_t>(i)), (marshaled.___skeleton_1)[i]);
-		}
-	}
-	else
-	{
-		marshaled.___skeleton_1 = NULL;
-	}
-	marshaled.___m_ArmTwist_2 = unmarshaled.___m_ArmTwist_2;
-	marshaled.___m_ForeArmTwist_3 = unmarshaled.___m_ForeArmTwist_3;
-	marshaled.___m_UpperLegTwist_4 = unmarshaled.___m_UpperLegTwist_4;
-	marshaled.___m_LegTwist_5 = unmarshaled.___m_LegTwist_5;
-	marshaled.___m_ArmStretch_6 = unmarshaled.___m_ArmStretch_6;
-	marshaled.___m_LegStretch_7 = unmarshaled.___m_LegStretch_7;
-	marshaled.___m_FeetSpacing_8 = unmarshaled.___m_FeetSpacing_8;
-	marshaled.___m_GlobalScale_9 = unmarshaled.___m_GlobalScale_9;
-	marshaled.___m_RootMotionBoneName_10 = il2cpp_codegen_marshal_string(unmarshaled.___m_RootMotionBoneName_10);
-	marshaled.___m_HasTranslationDoF_11 = static_cast<int32_t>(unmarshaled.___m_HasTranslationDoF_11);
-	marshaled.___m_HasExtraRoot_12 = static_cast<int32_t>(unmarshaled.___m_HasExtraRoot_12);
-	marshaled.___m_SkeletonHasParents_13 = static_cast<int32_t>(unmarshaled.___m_SkeletonHasParents_13);
-}
-IL2CPP_EXTERN_C void HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44_marshal_pinvoke_back(const HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44_marshaled_pinvoke& marshaled, HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44& unmarshaled)
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&HumanBoneU5BU5D_t443B81D55400778CBB921DF04BE932ABF14BAA52_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&SkeletonBoneU5BU5D_t84722CE071EF9295326D5A84492716DBC7A15A85_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	if (marshaled.___human_0 != NULL)
-	{
-		if (unmarshaled.___human_0 == NULL)
-		{
-			unmarshaled.___human_0 = reinterpret_cast<HumanBoneU5BU5D_t443B81D55400778CBB921DF04BE932ABF14BAA52*>((HumanBoneU5BU5D_t443B81D55400778CBB921DF04BE932ABF14BAA52*)SZArrayNew(HumanBoneU5BU5D_t443B81D55400778CBB921DF04BE932ABF14BAA52_il2cpp_TypeInfo_var, 1));
-			Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___human_0), (void*)reinterpret_cast<HumanBoneU5BU5D_t443B81D55400778CBB921DF04BE932ABF14BAA52*>((HumanBoneU5BU5D_t443B81D55400778CBB921DF04BE932ABF14BAA52*)SZArrayNew(HumanBoneU5BU5D_t443B81D55400778CBB921DF04BE932ABF14BAA52_il2cpp_TypeInfo_var, 1)));
-		}
-		il2cpp_array_size_t _arrayLength = (unmarshaled.___human_0)->max_length;
-		for (int32_t i = 0; i < ARRAY_LENGTH_AS_INT32(_arrayLength); i++)
-		{
-			HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8 _marshaled____human_0_i__unmarshaled;
-			memset((&_marshaled____human_0_i__unmarshaled), 0, sizeof(_marshaled____human_0_i__unmarshaled));
-			HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8_marshal_pinvoke_back((marshaled.___human_0)[i], _marshaled____human_0_i__unmarshaled);
-			(unmarshaled.___human_0)->SetAtUnchecked(static_cast<il2cpp_array_size_t>(i), _marshaled____human_0_i__unmarshaled);
-		}
-	}
-	if (marshaled.___skeleton_1 != NULL)
-	{
-		if (unmarshaled.___skeleton_1 == NULL)
-		{
-			unmarshaled.___skeleton_1 = reinterpret_cast<SkeletonBoneU5BU5D_t84722CE071EF9295326D5A84492716DBC7A15A85*>((SkeletonBoneU5BU5D_t84722CE071EF9295326D5A84492716DBC7A15A85*)SZArrayNew(SkeletonBoneU5BU5D_t84722CE071EF9295326D5A84492716DBC7A15A85_il2cpp_TypeInfo_var, 1));
-			Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___skeleton_1), (void*)reinterpret_cast<SkeletonBoneU5BU5D_t84722CE071EF9295326D5A84492716DBC7A15A85*>((SkeletonBoneU5BU5D_t84722CE071EF9295326D5A84492716DBC7A15A85*)SZArrayNew(SkeletonBoneU5BU5D_t84722CE071EF9295326D5A84492716DBC7A15A85_il2cpp_TypeInfo_var, 1)));
-		}
-		il2cpp_array_size_t _arrayLength = (unmarshaled.___skeleton_1)->max_length;
-		for (int32_t i = 0; i < ARRAY_LENGTH_AS_INT32(_arrayLength); i++)
-		{
-			SkeletonBone_tA999028EED923DB65E286BB99F81541872F5B126 _marshaled____skeleton_1_i__unmarshaled;
-			memset((&_marshaled____skeleton_1_i__unmarshaled), 0, sizeof(_marshaled____skeleton_1_i__unmarshaled));
-			SkeletonBone_tA999028EED923DB65E286BB99F81541872F5B126_marshal_pinvoke_back((marshaled.___skeleton_1)[i], _marshaled____skeleton_1_i__unmarshaled);
-			(unmarshaled.___skeleton_1)->SetAtUnchecked(static_cast<il2cpp_array_size_t>(i), _marshaled____skeleton_1_i__unmarshaled);
-		}
-	}
-	float unmarshaledm_ArmTwist_temp_2 = 0.0f;
-	unmarshaledm_ArmTwist_temp_2 = marshaled.___m_ArmTwist_2;
-	unmarshaled.___m_ArmTwist_2 = unmarshaledm_ArmTwist_temp_2;
-	float unmarshaledm_ForeArmTwist_temp_3 = 0.0f;
-	unmarshaledm_ForeArmTwist_temp_3 = marshaled.___m_ForeArmTwist_3;
-	unmarshaled.___m_ForeArmTwist_3 = unmarshaledm_ForeArmTwist_temp_3;
-	float unmarshaledm_UpperLegTwist_temp_4 = 0.0f;
-	unmarshaledm_UpperLegTwist_temp_4 = marshaled.___m_UpperLegTwist_4;
-	unmarshaled.___m_UpperLegTwist_4 = unmarshaledm_UpperLegTwist_temp_4;
-	float unmarshaledm_LegTwist_temp_5 = 0.0f;
-	unmarshaledm_LegTwist_temp_5 = marshaled.___m_LegTwist_5;
-	unmarshaled.___m_LegTwist_5 = unmarshaledm_LegTwist_temp_5;
-	float unmarshaledm_ArmStretch_temp_6 = 0.0f;
-	unmarshaledm_ArmStretch_temp_6 = marshaled.___m_ArmStretch_6;
-	unmarshaled.___m_ArmStretch_6 = unmarshaledm_ArmStretch_temp_6;
-	float unmarshaledm_LegStretch_temp_7 = 0.0f;
-	unmarshaledm_LegStretch_temp_7 = marshaled.___m_LegStretch_7;
-	unmarshaled.___m_LegStretch_7 = unmarshaledm_LegStretch_temp_7;
-	float unmarshaledm_FeetSpacing_temp_8 = 0.0f;
-	unmarshaledm_FeetSpacing_temp_8 = marshaled.___m_FeetSpacing_8;
-	unmarshaled.___m_FeetSpacing_8 = unmarshaledm_FeetSpacing_temp_8;
-	float unmarshaledm_GlobalScale_temp_9 = 0.0f;
-	unmarshaledm_GlobalScale_temp_9 = marshaled.___m_GlobalScale_9;
-	unmarshaled.___m_GlobalScale_9 = unmarshaledm_GlobalScale_temp_9;
-	unmarshaled.___m_RootMotionBoneName_10 = il2cpp_codegen_marshal_string_result(marshaled.___m_RootMotionBoneName_10);
-	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___m_RootMotionBoneName_10), (void*)il2cpp_codegen_marshal_string_result(marshaled.___m_RootMotionBoneName_10));
-	bool unmarshaledm_HasTranslationDoF_temp_11 = false;
-	unmarshaledm_HasTranslationDoF_temp_11 = static_cast<bool>(marshaled.___m_HasTranslationDoF_11);
-	unmarshaled.___m_HasTranslationDoF_11 = unmarshaledm_HasTranslationDoF_temp_11;
-	bool unmarshaledm_HasExtraRoot_temp_12 = false;
-	unmarshaledm_HasExtraRoot_temp_12 = static_cast<bool>(marshaled.___m_HasExtraRoot_12);
-	unmarshaled.___m_HasExtraRoot_12 = unmarshaledm_HasExtraRoot_temp_12;
-	bool unmarshaledm_SkeletonHasParents_temp_13 = false;
-	unmarshaledm_SkeletonHasParents_temp_13 = static_cast<bool>(marshaled.___m_SkeletonHasParents_13);
-	unmarshaled.___m_SkeletonHasParents_13 = unmarshaledm_SkeletonHasParents_temp_13;
-}
-// Conversion method for clean up from marshalling of: UnityEngine.HumanDescription
-IL2CPP_EXTERN_C void HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44_marshal_pinvoke_cleanup(HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44_marshaled_pinvoke& marshaled)
-{
-	if (marshaled.___human_0 != NULL)
-	{
-		const il2cpp_array_size_t marshaled____human_0_CleanupLoopCount = 1;
-		for (int32_t i = 0; i < ARRAY_LENGTH_AS_INT32(marshaled____human_0_CleanupLoopCount); i++)
-		{
-			HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8_marshal_pinvoke_cleanup((marshaled.___human_0)[i]);
-		}
-		il2cpp_codegen_marshal_free(marshaled.___human_0);
-		marshaled.___human_0 = NULL;
-	}
-	if (marshaled.___skeleton_1 != NULL)
-	{
-		const il2cpp_array_size_t marshaled____skeleton_1_CleanupLoopCount = 1;
-		for (int32_t i = 0; i < ARRAY_LENGTH_AS_INT32(marshaled____skeleton_1_CleanupLoopCount); i++)
-		{
-			SkeletonBone_tA999028EED923DB65E286BB99F81541872F5B126_marshal_pinvoke_cleanup((marshaled.___skeleton_1)[i]);
-		}
-		il2cpp_codegen_marshal_free(marshaled.___skeleton_1);
-		marshaled.___skeleton_1 = NULL;
-	}
-	il2cpp_codegen_marshal_free(marshaled.___m_RootMotionBoneName_10);
-	marshaled.___m_RootMotionBoneName_10 = NULL;
-}
-
-
-
-
-// Conversion methods for marshalling of: UnityEngine.HumanDescription
-IL2CPP_EXTERN_C void HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44_marshal_com(const HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44& unmarshaled, HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44_marshaled_com& marshaled)
-{
-	if (unmarshaled.___human_0 != NULL)
-	{
-		il2cpp_array_size_t _unmarshaledhuman_Length = (unmarshaled.___human_0)->max_length;
-		marshaled.___human_0 = il2cpp_codegen_marshal_allocate_array<HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8_marshaled_com>(_unmarshaledhuman_Length);
-		for (int32_t i = 0; i < ARRAY_LENGTH_AS_INT32(_unmarshaledhuman_Length); i++)
-		{
-			HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8_marshal_com((unmarshaled.___human_0)->GetAtUnchecked(static_cast<il2cpp_array_size_t>(i)), (marshaled.___human_0)[i]);
-		}
-	}
-	else
-	{
-		marshaled.___human_0 = NULL;
-	}
-	if (unmarshaled.___skeleton_1 != NULL)
-	{
-		il2cpp_array_size_t _unmarshaledskeleton_Length = (unmarshaled.___skeleton_1)->max_length;
-		marshaled.___skeleton_1 = il2cpp_codegen_marshal_allocate_array<SkeletonBone_tA999028EED923DB65E286BB99F81541872F5B126_marshaled_com>(_unmarshaledskeleton_Length);
-		for (int32_t i = 0; i < ARRAY_LENGTH_AS_INT32(_unmarshaledskeleton_Length); i++)
-		{
-			SkeletonBone_tA999028EED923DB65E286BB99F81541872F5B126_marshal_com((unmarshaled.___skeleton_1)->GetAtUnchecked(static_cast<il2cpp_array_size_t>(i)), (marshaled.___skeleton_1)[i]);
-		}
-	}
-	else
-	{
-		marshaled.___skeleton_1 = NULL;
-	}
-	marshaled.___m_ArmTwist_2 = unmarshaled.___m_ArmTwist_2;
-	marshaled.___m_ForeArmTwist_3 = unmarshaled.___m_ForeArmTwist_3;
-	marshaled.___m_UpperLegTwist_4 = unmarshaled.___m_UpperLegTwist_4;
-	marshaled.___m_LegTwist_5 = unmarshaled.___m_LegTwist_5;
-	marshaled.___m_ArmStretch_6 = unmarshaled.___m_ArmStretch_6;
-	marshaled.___m_LegStretch_7 = unmarshaled.___m_LegStretch_7;
-	marshaled.___m_FeetSpacing_8 = unmarshaled.___m_FeetSpacing_8;
-	marshaled.___m_GlobalScale_9 = unmarshaled.___m_GlobalScale_9;
-	marshaled.___m_RootMotionBoneName_10 = il2cpp_codegen_marshal_bstring(unmarshaled.___m_RootMotionBoneName_10);
-	marshaled.___m_HasTranslationDoF_11 = static_cast<int32_t>(unmarshaled.___m_HasTranslationDoF_11);
-	marshaled.___m_HasExtraRoot_12 = static_cast<int32_t>(unmarshaled.___m_HasExtraRoot_12);
-	marshaled.___m_SkeletonHasParents_13 = static_cast<int32_t>(unmarshaled.___m_SkeletonHasParents_13);
-}
-IL2CPP_EXTERN_C void HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44_marshal_com_back(const HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44_marshaled_com& marshaled, HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44& unmarshaled)
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&HumanBoneU5BU5D_t443B81D55400778CBB921DF04BE932ABF14BAA52_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&SkeletonBoneU5BU5D_t84722CE071EF9295326D5A84492716DBC7A15A85_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	if (marshaled.___human_0 != NULL)
-	{
-		if (unmarshaled.___human_0 == NULL)
-		{
-			unmarshaled.___human_0 = reinterpret_cast<HumanBoneU5BU5D_t443B81D55400778CBB921DF04BE932ABF14BAA52*>((HumanBoneU5BU5D_t443B81D55400778CBB921DF04BE932ABF14BAA52*)SZArrayNew(HumanBoneU5BU5D_t443B81D55400778CBB921DF04BE932ABF14BAA52_il2cpp_TypeInfo_var, 1));
-			Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___human_0), (void*)reinterpret_cast<HumanBoneU5BU5D_t443B81D55400778CBB921DF04BE932ABF14BAA52*>((HumanBoneU5BU5D_t443B81D55400778CBB921DF04BE932ABF14BAA52*)SZArrayNew(HumanBoneU5BU5D_t443B81D55400778CBB921DF04BE932ABF14BAA52_il2cpp_TypeInfo_var, 1)));
-		}
-		il2cpp_array_size_t _arrayLength = (unmarshaled.___human_0)->max_length;
-		for (int32_t i = 0; i < ARRAY_LENGTH_AS_INT32(_arrayLength); i++)
-		{
-			HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8 _marshaled____human_0_i__unmarshaled;
-			memset((&_marshaled____human_0_i__unmarshaled), 0, sizeof(_marshaled____human_0_i__unmarshaled));
-			HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8_marshal_com_back((marshaled.___human_0)[i], _marshaled____human_0_i__unmarshaled);
-			(unmarshaled.___human_0)->SetAtUnchecked(static_cast<il2cpp_array_size_t>(i), _marshaled____human_0_i__unmarshaled);
-		}
-	}
-	if (marshaled.___skeleton_1 != NULL)
-	{
-		if (unmarshaled.___skeleton_1 == NULL)
-		{
-			unmarshaled.___skeleton_1 = reinterpret_cast<SkeletonBoneU5BU5D_t84722CE071EF9295326D5A84492716DBC7A15A85*>((SkeletonBoneU5BU5D_t84722CE071EF9295326D5A84492716DBC7A15A85*)SZArrayNew(SkeletonBoneU5BU5D_t84722CE071EF9295326D5A84492716DBC7A15A85_il2cpp_TypeInfo_var, 1));
-			Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___skeleton_1), (void*)reinterpret_cast<SkeletonBoneU5BU5D_t84722CE071EF9295326D5A84492716DBC7A15A85*>((SkeletonBoneU5BU5D_t84722CE071EF9295326D5A84492716DBC7A15A85*)SZArrayNew(SkeletonBoneU5BU5D_t84722CE071EF9295326D5A84492716DBC7A15A85_il2cpp_TypeInfo_var, 1)));
-		}
-		il2cpp_array_size_t _arrayLength = (unmarshaled.___skeleton_1)->max_length;
-		for (int32_t i = 0; i < ARRAY_LENGTH_AS_INT32(_arrayLength); i++)
-		{
-			SkeletonBone_tA999028EED923DB65E286BB99F81541872F5B126 _marshaled____skeleton_1_i__unmarshaled;
-			memset((&_marshaled____skeleton_1_i__unmarshaled), 0, sizeof(_marshaled____skeleton_1_i__unmarshaled));
-			SkeletonBone_tA999028EED923DB65E286BB99F81541872F5B126_marshal_com_back((marshaled.___skeleton_1)[i], _marshaled____skeleton_1_i__unmarshaled);
-			(unmarshaled.___skeleton_1)->SetAtUnchecked(static_cast<il2cpp_array_size_t>(i), _marshaled____skeleton_1_i__unmarshaled);
-		}
-	}
-	float unmarshaledm_ArmTwist_temp_2 = 0.0f;
-	unmarshaledm_ArmTwist_temp_2 = marshaled.___m_ArmTwist_2;
-	unmarshaled.___m_ArmTwist_2 = unmarshaledm_ArmTwist_temp_2;
-	float unmarshaledm_ForeArmTwist_temp_3 = 0.0f;
-	unmarshaledm_ForeArmTwist_temp_3 = marshaled.___m_ForeArmTwist_3;
-	unmarshaled.___m_ForeArmTwist_3 = unmarshaledm_ForeArmTwist_temp_3;
-	float unmarshaledm_UpperLegTwist_temp_4 = 0.0f;
-	unmarshaledm_UpperLegTwist_temp_4 = marshaled.___m_UpperLegTwist_4;
-	unmarshaled.___m_UpperLegTwist_4 = unmarshaledm_UpperLegTwist_temp_4;
-	float unmarshaledm_LegTwist_temp_5 = 0.0f;
-	unmarshaledm_LegTwist_temp_5 = marshaled.___m_LegTwist_5;
-	unmarshaled.___m_LegTwist_5 = unmarshaledm_LegTwist_temp_5;
-	float unmarshaledm_ArmStretch_temp_6 = 0.0f;
-	unmarshaledm_ArmStretch_temp_6 = marshaled.___m_ArmStretch_6;
-	unmarshaled.___m_ArmStretch_6 = unmarshaledm_ArmStretch_temp_6;
-	float unmarshaledm_LegStretch_temp_7 = 0.0f;
-	unmarshaledm_LegStretch_temp_7 = marshaled.___m_LegStretch_7;
-	unmarshaled.___m_LegStretch_7 = unmarshaledm_LegStretch_temp_7;
-	float unmarshaledm_FeetSpacing_temp_8 = 0.0f;
-	unmarshaledm_FeetSpacing_temp_8 = marshaled.___m_FeetSpacing_8;
-	unmarshaled.___m_FeetSpacing_8 = unmarshaledm_FeetSpacing_temp_8;
-	float unmarshaledm_GlobalScale_temp_9 = 0.0f;
-	unmarshaledm_GlobalScale_temp_9 = marshaled.___m_GlobalScale_9;
-	unmarshaled.___m_GlobalScale_9 = unmarshaledm_GlobalScale_temp_9;
-	unmarshaled.___m_RootMotionBoneName_10 = il2cpp_codegen_marshal_bstring_result(marshaled.___m_RootMotionBoneName_10);
-	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___m_RootMotionBoneName_10), (void*)il2cpp_codegen_marshal_bstring_result(marshaled.___m_RootMotionBoneName_10));
-	bool unmarshaledm_HasTranslationDoF_temp_11 = false;
-	unmarshaledm_HasTranslationDoF_temp_11 = static_cast<bool>(marshaled.___m_HasTranslationDoF_11);
-	unmarshaled.___m_HasTranslationDoF_11 = unmarshaledm_HasTranslationDoF_temp_11;
-	bool unmarshaledm_HasExtraRoot_temp_12 = false;
-	unmarshaledm_HasExtraRoot_temp_12 = static_cast<bool>(marshaled.___m_HasExtraRoot_12);
-	unmarshaled.___m_HasExtraRoot_12 = unmarshaledm_HasExtraRoot_temp_12;
-	bool unmarshaledm_SkeletonHasParents_temp_13 = false;
-	unmarshaledm_SkeletonHasParents_temp_13 = static_cast<bool>(marshaled.___m_SkeletonHasParents_13);
-	unmarshaled.___m_SkeletonHasParents_13 = unmarshaledm_SkeletonHasParents_temp_13;
-}
-// Conversion method for clean up from marshalling of: UnityEngine.HumanDescription
-IL2CPP_EXTERN_C void HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44_marshal_com_cleanup(HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44_marshaled_com& marshaled)
-{
-	if (marshaled.___human_0 != NULL)
-	{
-		const il2cpp_array_size_t marshaled____human_0_CleanupLoopCount = 1;
-		for (int32_t i = 0; i < ARRAY_LENGTH_AS_INT32(marshaled____human_0_CleanupLoopCount); i++)
-		{
-			HumanBone_t9A978BB2457E935D0B6FA64ADDE60562ADAE5FD8_marshal_com_cleanup((marshaled.___human_0)[i]);
-		}
-		il2cpp_codegen_marshal_free(marshaled.___human_0);
-		marshaled.___human_0 = NULL;
-	}
-	if (marshaled.___skeleton_1 != NULL)
-	{
-		const il2cpp_array_size_t marshaled____skeleton_1_CleanupLoopCount = 1;
-		for (int32_t i = 0; i < ARRAY_LENGTH_AS_INT32(marshaled____skeleton_1_CleanupLoopCount); i++)
-		{
-			SkeletonBone_tA999028EED923DB65E286BB99F81541872F5B126_marshal_com_cleanup((marshaled.___skeleton_1)[i]);
-		}
-		il2cpp_codegen_marshal_free(marshaled.___skeleton_1);
-		marshaled.___skeleton_1 = NULL;
-	}
-	il2cpp_codegen_marshal_free_bstring(marshaled.___m_RootMotionBoneName_10);
-	marshaled.___m_RootMotionBoneName_10 = NULL;
-}
-// System.Single UnityEngine.HumanDescription::get_upperArmTwist()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float HumanDescription_get_upperArmTwist_m92E2B3BCA433012179892DE9493CBC5F8ADB8D52 (HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* __this, const RuntimeMethod* method) 
-{
-	float V_0 = 0.0f;
-	{
-		float L_0 = __this->___m_ArmTwist_2;
-		V_0 = L_0;
-		goto IL_000a;
-	}
-
-IL_000a:
-	{
-		float L_1 = V_0;
-		return L_1;
-	}
-}
-IL2CPP_EXTERN_C  float HumanDescription_get_upperArmTwist_m92E2B3BCA433012179892DE9493CBC5F8ADB8D52_AdjustorThunk (RuntimeObject* __this, const RuntimeMethod* method)
-{
-	HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44*>(__this + _offset);
-	float _returnValue;
-	_returnValue = HumanDescription_get_upperArmTwist_m92E2B3BCA433012179892DE9493CBC5F8ADB8D52(_thisAdjusted, method);
-	return _returnValue;
-}
-// System.Void UnityEngine.HumanDescription::set_upperArmTwist(System.Single)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanDescription_set_upperArmTwist_m4056390E30A30DCEB48D55D4E536F146E431E100 (HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* __this, float ___0_value, const RuntimeMethod* method) 
-{
-	{
-		float L_0 = ___0_value;
-		__this->___m_ArmTwist_2 = L_0;
-		return;
-	}
-}
-IL2CPP_EXTERN_C  void HumanDescription_set_upperArmTwist_m4056390E30A30DCEB48D55D4E536F146E431E100_AdjustorThunk (RuntimeObject* __this, float ___0_value, const RuntimeMethod* method)
-{
-	HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44*>(__this + _offset);
-	HumanDescription_set_upperArmTwist_m4056390E30A30DCEB48D55D4E536F146E431E100(_thisAdjusted, ___0_value, method);
-}
-// System.Single UnityEngine.HumanDescription::get_lowerArmTwist()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float HumanDescription_get_lowerArmTwist_m8F57099DCEAC2B1D0D03F5443F500953E1E086E6 (HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* __this, const RuntimeMethod* method) 
-{
-	float V_0 = 0.0f;
-	{
-		float L_0 = __this->___m_ForeArmTwist_3;
-		V_0 = L_0;
-		goto IL_000a;
-	}
-
-IL_000a:
-	{
-		float L_1 = V_0;
-		return L_1;
-	}
-}
-IL2CPP_EXTERN_C  float HumanDescription_get_lowerArmTwist_m8F57099DCEAC2B1D0D03F5443F500953E1E086E6_AdjustorThunk (RuntimeObject* __this, const RuntimeMethod* method)
-{
-	HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44*>(__this + _offset);
-	float _returnValue;
-	_returnValue = HumanDescription_get_lowerArmTwist_m8F57099DCEAC2B1D0D03F5443F500953E1E086E6(_thisAdjusted, method);
-	return _returnValue;
-}
-// System.Void UnityEngine.HumanDescription::set_lowerArmTwist(System.Single)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanDescription_set_lowerArmTwist_mD24F728854AC5AD545E09D6E74CDD0B7AD6DF139 (HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* __this, float ___0_value, const RuntimeMethod* method) 
-{
-	{
-		float L_0 = ___0_value;
-		__this->___m_ForeArmTwist_3 = L_0;
-		return;
-	}
-}
-IL2CPP_EXTERN_C  void HumanDescription_set_lowerArmTwist_mD24F728854AC5AD545E09D6E74CDD0B7AD6DF139_AdjustorThunk (RuntimeObject* __this, float ___0_value, const RuntimeMethod* method)
-{
-	HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44*>(__this + _offset);
-	HumanDescription_set_lowerArmTwist_mD24F728854AC5AD545E09D6E74CDD0B7AD6DF139(_thisAdjusted, ___0_value, method);
-}
-// System.Single UnityEngine.HumanDescription::get_upperLegTwist()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float HumanDescription_get_upperLegTwist_mB9429634218671A47EAB4E73C4ABCB4EDC1FDCF1 (HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* __this, const RuntimeMethod* method) 
-{
-	float V_0 = 0.0f;
-	{
-		float L_0 = __this->___m_UpperLegTwist_4;
-		V_0 = L_0;
-		goto IL_000a;
-	}
-
-IL_000a:
-	{
-		float L_1 = V_0;
-		return L_1;
-	}
-}
-IL2CPP_EXTERN_C  float HumanDescription_get_upperLegTwist_mB9429634218671A47EAB4E73C4ABCB4EDC1FDCF1_AdjustorThunk (RuntimeObject* __this, const RuntimeMethod* method)
-{
-	HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44*>(__this + _offset);
-	float _returnValue;
-	_returnValue = HumanDescription_get_upperLegTwist_mB9429634218671A47EAB4E73C4ABCB4EDC1FDCF1(_thisAdjusted, method);
-	return _returnValue;
-}
-// System.Void UnityEngine.HumanDescription::set_upperLegTwist(System.Single)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanDescription_set_upperLegTwist_m0552329018CAC469A2443BFBC89B83DFB5288782 (HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* __this, float ___0_value, const RuntimeMethod* method) 
-{
-	{
-		float L_0 = ___0_value;
-		__this->___m_UpperLegTwist_4 = L_0;
-		return;
-	}
-}
-IL2CPP_EXTERN_C  void HumanDescription_set_upperLegTwist_m0552329018CAC469A2443BFBC89B83DFB5288782_AdjustorThunk (RuntimeObject* __this, float ___0_value, const RuntimeMethod* method)
-{
-	HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44*>(__this + _offset);
-	HumanDescription_set_upperLegTwist_m0552329018CAC469A2443BFBC89B83DFB5288782(_thisAdjusted, ___0_value, method);
-}
-// System.Single UnityEngine.HumanDescription::get_lowerLegTwist()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float HumanDescription_get_lowerLegTwist_m8AB325E825835D0A05A20F447191CF2FBA604B35 (HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* __this, const RuntimeMethod* method) 
-{
-	float V_0 = 0.0f;
-	{
-		float L_0 = __this->___m_LegTwist_5;
-		V_0 = L_0;
-		goto IL_000a;
-	}
-
-IL_000a:
-	{
-		float L_1 = V_0;
-		return L_1;
-	}
-}
-IL2CPP_EXTERN_C  float HumanDescription_get_lowerLegTwist_m8AB325E825835D0A05A20F447191CF2FBA604B35_AdjustorThunk (RuntimeObject* __this, const RuntimeMethod* method)
-{
-	HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44*>(__this + _offset);
-	float _returnValue;
-	_returnValue = HumanDescription_get_lowerLegTwist_m8AB325E825835D0A05A20F447191CF2FBA604B35(_thisAdjusted, method);
-	return _returnValue;
-}
-// System.Void UnityEngine.HumanDescription::set_lowerLegTwist(System.Single)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanDescription_set_lowerLegTwist_m477F6F9AEC4E7E3F8D6FA72B05BCBF05C02FFB19 (HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* __this, float ___0_value, const RuntimeMethod* method) 
-{
-	{
-		float L_0 = ___0_value;
-		__this->___m_LegTwist_5 = L_0;
-		return;
-	}
-}
-IL2CPP_EXTERN_C  void HumanDescription_set_lowerLegTwist_m477F6F9AEC4E7E3F8D6FA72B05BCBF05C02FFB19_AdjustorThunk (RuntimeObject* __this, float ___0_value, const RuntimeMethod* method)
-{
-	HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44*>(__this + _offset);
-	HumanDescription_set_lowerLegTwist_m477F6F9AEC4E7E3F8D6FA72B05BCBF05C02FFB19(_thisAdjusted, ___0_value, method);
-}
-// System.Single UnityEngine.HumanDescription::get_armStretch()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float HumanDescription_get_armStretch_m9C47D234F9BD5C1807E40DF748AE51CC4433C11B (HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* __this, const RuntimeMethod* method) 
-{
-	float V_0 = 0.0f;
-	{
-		float L_0 = __this->___m_ArmStretch_6;
-		V_0 = L_0;
-		goto IL_000a;
-	}
-
-IL_000a:
-	{
-		float L_1 = V_0;
-		return L_1;
-	}
-}
-IL2CPP_EXTERN_C  float HumanDescription_get_armStretch_m9C47D234F9BD5C1807E40DF748AE51CC4433C11B_AdjustorThunk (RuntimeObject* __this, const RuntimeMethod* method)
-{
-	HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44*>(__this + _offset);
-	float _returnValue;
-	_returnValue = HumanDescription_get_armStretch_m9C47D234F9BD5C1807E40DF748AE51CC4433C11B(_thisAdjusted, method);
-	return _returnValue;
-}
-// System.Void UnityEngine.HumanDescription::set_armStretch(System.Single)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanDescription_set_armStretch_m52A43854E332057B62C07306CB1663CEFDB01C71 (HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* __this, float ___0_value, const RuntimeMethod* method) 
-{
-	{
-		float L_0 = ___0_value;
-		__this->___m_ArmStretch_6 = L_0;
-		return;
-	}
-}
-IL2CPP_EXTERN_C  void HumanDescription_set_armStretch_m52A43854E332057B62C07306CB1663CEFDB01C71_AdjustorThunk (RuntimeObject* __this, float ___0_value, const RuntimeMethod* method)
-{
-	HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44*>(__this + _offset);
-	HumanDescription_set_armStretch_m52A43854E332057B62C07306CB1663CEFDB01C71(_thisAdjusted, ___0_value, method);
-}
-// System.Single UnityEngine.HumanDescription::get_legStretch()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float HumanDescription_get_legStretch_m568292F633E3849E7C8DAB4D738C8E6F52AB662F (HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* __this, const RuntimeMethod* method) 
-{
-	float V_0 = 0.0f;
-	{
-		float L_0 = __this->___m_LegStretch_7;
-		V_0 = L_0;
-		goto IL_000a;
-	}
-
-IL_000a:
-	{
-		float L_1 = V_0;
-		return L_1;
-	}
-}
-IL2CPP_EXTERN_C  float HumanDescription_get_legStretch_m568292F633E3849E7C8DAB4D738C8E6F52AB662F_AdjustorThunk (RuntimeObject* __this, const RuntimeMethod* method)
-{
-	HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44*>(__this + _offset);
-	float _returnValue;
-	_returnValue = HumanDescription_get_legStretch_m568292F633E3849E7C8DAB4D738C8E6F52AB662F(_thisAdjusted, method);
-	return _returnValue;
-}
-// System.Void UnityEngine.HumanDescription::set_legStretch(System.Single)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanDescription_set_legStretch_m40D8FE0E122F5EF4143253814D732AF8413578DC (HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* __this, float ___0_value, const RuntimeMethod* method) 
-{
-	{
-		float L_0 = ___0_value;
-		__this->___m_LegStretch_7 = L_0;
-		return;
-	}
-}
-IL2CPP_EXTERN_C  void HumanDescription_set_legStretch_m40D8FE0E122F5EF4143253814D732AF8413578DC_AdjustorThunk (RuntimeObject* __this, float ___0_value, const RuntimeMethod* method)
-{
-	HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44*>(__this + _offset);
-	HumanDescription_set_legStretch_m40D8FE0E122F5EF4143253814D732AF8413578DC(_thisAdjusted, ___0_value, method);
-}
-// System.Single UnityEngine.HumanDescription::get_feetSpacing()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float HumanDescription_get_feetSpacing_mF8283F0B14F35F3FD82BA3D6FF6D82609B924643 (HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* __this, const RuntimeMethod* method) 
-{
-	float V_0 = 0.0f;
-	{
-		float L_0 = __this->___m_FeetSpacing_8;
-		V_0 = L_0;
-		goto IL_000a;
-	}
-
-IL_000a:
-	{
-		float L_1 = V_0;
-		return L_1;
-	}
-}
-IL2CPP_EXTERN_C  float HumanDescription_get_feetSpacing_mF8283F0B14F35F3FD82BA3D6FF6D82609B924643_AdjustorThunk (RuntimeObject* __this, const RuntimeMethod* method)
-{
-	HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44*>(__this + _offset);
-	float _returnValue;
-	_returnValue = HumanDescription_get_feetSpacing_mF8283F0B14F35F3FD82BA3D6FF6D82609B924643(_thisAdjusted, method);
-	return _returnValue;
-}
-// System.Void UnityEngine.HumanDescription::set_feetSpacing(System.Single)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanDescription_set_feetSpacing_mC0F12305CA30ADA53D08E987E52DE1611E9511D3 (HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* __this, float ___0_value, const RuntimeMethod* method) 
-{
-	{
-		float L_0 = ___0_value;
-		__this->___m_FeetSpacing_8 = L_0;
-		return;
-	}
-}
-IL2CPP_EXTERN_C  void HumanDescription_set_feetSpacing_mC0F12305CA30ADA53D08E987E52DE1611E9511D3_AdjustorThunk (RuntimeObject* __this, float ___0_value, const RuntimeMethod* method)
-{
-	HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44*>(__this + _offset);
-	HumanDescription_set_feetSpacing_mC0F12305CA30ADA53D08E987E52DE1611E9511D3(_thisAdjusted, ___0_value, method);
-}
-// System.Boolean UnityEngine.HumanDescription::get_hasTranslationDoF()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool HumanDescription_get_hasTranslationDoF_m735B027773FA7BA045C7B1D5A129B504F7B97896 (HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* __this, const RuntimeMethod* method) 
-{
-	bool V_0 = false;
-	{
-		bool L_0 = __this->___m_HasTranslationDoF_11;
-		V_0 = L_0;
-		goto IL_000a;
-	}
-
-IL_000a:
-	{
-		bool L_1 = V_0;
-		return L_1;
-	}
-}
-IL2CPP_EXTERN_C  bool HumanDescription_get_hasTranslationDoF_m735B027773FA7BA045C7B1D5A129B504F7B97896_AdjustorThunk (RuntimeObject* __this, const RuntimeMethod* method)
-{
-	HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44*>(__this + _offset);
-	bool _returnValue;
-	_returnValue = HumanDescription_get_hasTranslationDoF_m735B027773FA7BA045C7B1D5A129B504F7B97896(_thisAdjusted, method);
-	return _returnValue;
-}
-// System.Void UnityEngine.HumanDescription::set_hasTranslationDoF(System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanDescription_set_hasTranslationDoF_mE5E5B11F3DC450708723875A5B1D7CFC340FD20E (HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* __this, bool ___0_value, const RuntimeMethod* method) 
-{
-	{
-		bool L_0 = ___0_value;
-		__this->___m_HasTranslationDoF_11 = L_0;
-		return;
-	}
-}
-IL2CPP_EXTERN_C  void HumanDescription_set_hasTranslationDoF_mE5E5B11F3DC450708723875A5B1D7CFC340FD20E_AdjustorThunk (RuntimeObject* __this, bool ___0_value, const RuntimeMethod* method)
-{
-	HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44*>(__this + _offset);
-	HumanDescription_set_hasTranslationDoF_mE5E5B11F3DC450708723875A5B1D7CFC340FD20E(_thisAdjusted, ___0_value, method);
-}
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-// UnityEngine.Avatar UnityEngine.AvatarBuilder::BuildHumanAvatar(UnityEngine.GameObject,UnityEngine.HumanDescription)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Avatar_t7861E57EEE2CF8CC61BD63C09737BA22F7ABCA0F* AvatarBuilder_BuildHumanAvatar_m4BA84E1731C8C60C700A02764C183D5FA980A411 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_go, HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44 ___1_humanDescription, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	bool V_0 = false;
-	Avatar_t7861E57EEE2CF8CC61BD63C09737BA22F7ABCA0F* V_1 = NULL;
-	{
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = ___0_go;
-		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		bool L_1;
-		L_1 = Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
-		V_0 = L_1;
-		bool L_2 = V_0;
-		if (!L_2)
-		{
-			goto IL_0012;
-		}
-	}
-	{
-		NullReferenceException_tBDE63A6D24569B964908408389070C6A9F5005BB* L_3 = (NullReferenceException_tBDE63A6D24569B964908408389070C6A9F5005BB*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NullReferenceException_tBDE63A6D24569B964908408389070C6A9F5005BB_il2cpp_TypeInfo_var)));
-		NullCheck(L_3);
-		NullReferenceException__ctor_mD26D62094A5E49C18D817817E17FDFBC1D3BD752(L_3, NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_3, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&AvatarBuilder_BuildHumanAvatar_m4BA84E1731C8C60C700A02764C183D5FA980A411_RuntimeMethod_var)));
-	}
-
-IL_0012:
-	{
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_4 = ___0_go;
-		HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44 L_5 = ___1_humanDescription;
-		Avatar_t7861E57EEE2CF8CC61BD63C09737BA22F7ABCA0F* L_6;
-		L_6 = AvatarBuilder_BuildHumanAvatarInternal_m80FBC857C0DF3E09682437DDD5CBE240D9D7B90D(L_4, L_5, NULL);
-		V_1 = L_6;
-		goto IL_001c;
-	}
-
-IL_001c:
-	{
-		Avatar_t7861E57EEE2CF8CC61BD63C09737BA22F7ABCA0F* L_7 = V_1;
-		return L_7;
-	}
-}
-// UnityEngine.Avatar UnityEngine.AvatarBuilder::BuildHumanAvatarInternal(UnityEngine.GameObject,UnityEngine.HumanDescription)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Avatar_t7861E57EEE2CF8CC61BD63C09737BA22F7ABCA0F* AvatarBuilder_BuildHumanAvatarInternal_m80FBC857C0DF3E09682437DDD5CBE240D9D7B90D (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_go, HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44 ___1_humanDescription, const RuntimeMethod* method) 
-{
-	{
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = ___0_go;
-		Avatar_t7861E57EEE2CF8CC61BD63C09737BA22F7ABCA0F* L_1;
-		L_1 = AvatarBuilder_BuildHumanAvatarInternal_Injected_m1D682F8482BFE1BD78843F10FA092203609C4E85(L_0, (&___1_humanDescription), NULL);
-		return L_1;
-	}
-}
-// UnityEngine.Avatar UnityEngine.AvatarBuilder::BuildHumanAvatarInternal_Injected(UnityEngine.GameObject,UnityEngine.HumanDescription&)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Avatar_t7861E57EEE2CF8CC61BD63C09737BA22F7ABCA0F* AvatarBuilder_BuildHumanAvatarInternal_Injected_m1D682F8482BFE1BD78843F10FA092203609C4E85 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_go, HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44* ___1_humanDescription, const RuntimeMethod* method) 
-{
-	typedef Avatar_t7861E57EEE2CF8CC61BD63C09737BA22F7ABCA0F* (*AvatarBuilder_BuildHumanAvatarInternal_Injected_m1D682F8482BFE1BD78843F10FA092203609C4E85_ftn) (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*, HumanDescription_tAEFC8398C9AA70799C171BC0AEE07C0031B0CD44*);
-	static AvatarBuilder_BuildHumanAvatarInternal_Injected_m1D682F8482BFE1BD78843F10FA092203609C4E85_ftn _il2cpp_icall_func;
-	if (!_il2cpp_icall_func)
-	_il2cpp_icall_func = (AvatarBuilder_BuildHumanAvatarInternal_Injected_m1D682F8482BFE1BD78843F10FA092203609C4E85_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.AvatarBuilder::BuildHumanAvatarInternal_Injected(UnityEngine.GameObject,UnityEngine.HumanDescription&)");
-	Avatar_t7861E57EEE2CF8CC61BD63C09737BA22F7ABCA0F* icallRetVal = _il2cpp_icall_func(___0_go, ___1_humanDescription);
-	return icallRetVal;
 }
 #ifdef __clang__
 #pragma clang diagnostic pop
@@ -3762,224 +2109,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AnimatorControllerParameter__ctor_m91C70
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// System.Void UnityEngine.Animation::set_clip(UnityEngine.AnimationClip)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animation_set_clip_m631E1DE3F46E47782725C52E444CBB747EB83119 (Animation_t6593B06C39E3B139808B19F2C719C860F3F61040* __this, AnimationClip_t00BD2F131D308A4AD2C6B0BF66644FC25FECE712* ___0_value, const RuntimeMethod* method) 
-{
-	typedef void (*Animation_set_clip_m631E1DE3F46E47782725C52E444CBB747EB83119_ftn) (Animation_t6593B06C39E3B139808B19F2C719C860F3F61040*, AnimationClip_t00BD2F131D308A4AD2C6B0BF66644FC25FECE712*);
-	static Animation_set_clip_m631E1DE3F46E47782725C52E444CBB747EB83119_ftn _il2cpp_icall_func;
-	if (!_il2cpp_icall_func)
-	_il2cpp_icall_func = (Animation_set_clip_m631E1DE3F46E47782725C52E444CBB747EB83119_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Animation::set_clip(UnityEngine.AnimationClip)");
-	_il2cpp_icall_func(__this, ___0_value);
-}
-// System.Boolean UnityEngine.Animation::Play()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Animation_Play_m717560D2F561D9E12583AB3B435E6BC996448C3E (Animation_t6593B06C39E3B139808B19F2C719C860F3F61040* __this, const RuntimeMethod* method) 
-{
-	bool V_0 = false;
-	{
-		bool L_0;
-		L_0 = Animation_Play_m5E86FA3D4C8C7F144565B6E3962FD5CF3E51F1C0(__this, 0, NULL);
-		V_0 = L_0;
-		goto IL_000b;
-	}
-
-IL_000b:
-	{
-		bool L_1 = V_0;
-		return L_1;
-	}
-}
-// System.Boolean UnityEngine.Animation::Play(UnityEngine.PlayMode)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Animation_Play_m5E86FA3D4C8C7F144565B6E3962FD5CF3E51F1C0 (Animation_t6593B06C39E3B139808B19F2C719C860F3F61040* __this, int32_t ___0_mode, const RuntimeMethod* method) 
-{
-	bool V_0 = false;
-	{
-		int32_t L_0 = ___0_mode;
-		bool L_1;
-		L_1 = Animation_PlayDefaultAnimation_mD2F0091CD4214603FE368C658A3DB28A53D6D48F(__this, L_0, NULL);
-		V_0 = L_1;
-		goto IL_000b;
-	}
-
-IL_000b:
-	{
-		bool L_2 = V_0;
-		return L_2;
-	}
-}
-// System.Boolean UnityEngine.Animation::PlayDefaultAnimation(UnityEngine.PlayMode)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Animation_PlayDefaultAnimation_mD2F0091CD4214603FE368C658A3DB28A53D6D48F (Animation_t6593B06C39E3B139808B19F2C719C860F3F61040* __this, int32_t ___0_mode, const RuntimeMethod* method) 
-{
-	typedef bool (*Animation_PlayDefaultAnimation_mD2F0091CD4214603FE368C658A3DB28A53D6D48F_ftn) (Animation_t6593B06C39E3B139808B19F2C719C860F3F61040*, int32_t);
-	static Animation_PlayDefaultAnimation_mD2F0091CD4214603FE368C658A3DB28A53D6D48F_ftn _il2cpp_icall_func;
-	if (!_il2cpp_icall_func)
-	_il2cpp_icall_func = (Animation_PlayDefaultAnimation_mD2F0091CD4214603FE368C658A3DB28A53D6D48F_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Animation::PlayDefaultAnimation(UnityEngine.PlayMode)");
-	bool icallRetVal = _il2cpp_icall_func(__this, ___0_mode);
-	return icallRetVal;
-}
-// System.Void UnityEngine.Animation::AddClip(UnityEngine.AnimationClip,System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animation_AddClip_m10EDEAA1060E0356379BFE9AB24F97C9EBBED1A3 (Animation_t6593B06C39E3B139808B19F2C719C860F3F61040* __this, AnimationClip_t00BD2F131D308A4AD2C6B0BF66644FC25FECE712* ___0_clip, String_t* ___1_newName, const RuntimeMethod* method) 
-{
-	{
-		AnimationClip_t00BD2F131D308A4AD2C6B0BF66644FC25FECE712* L_0 = ___0_clip;
-		String_t* L_1 = ___1_newName;
-		Animation_AddClip_m0DBAB71E23EA248D6A18C705B8AF0EA140D2FFDF(__this, L_0, L_1, ((int32_t)-2147483648LL), ((int32_t)2147483647LL), NULL);
-		return;
-	}
-}
-// System.Void UnityEngine.Animation::AddClip(UnityEngine.AnimationClip,System.String,System.Int32,System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animation_AddClip_m0DBAB71E23EA248D6A18C705B8AF0EA140D2FFDF (Animation_t6593B06C39E3B139808B19F2C719C860F3F61040* __this, AnimationClip_t00BD2F131D308A4AD2C6B0BF66644FC25FECE712* ___0_clip, String_t* ___1_newName, int32_t ___2_firstFrame, int32_t ___3_lastFrame, const RuntimeMethod* method) 
-{
-	{
-		AnimationClip_t00BD2F131D308A4AD2C6B0BF66644FC25FECE712* L_0 = ___0_clip;
-		String_t* L_1 = ___1_newName;
-		int32_t L_2 = ___2_firstFrame;
-		int32_t L_3 = ___3_lastFrame;
-		Animation_AddClip_m87A5BE2BFAC7F12D7C0FE5D954E657FDB8B4A7F6(__this, L_0, L_1, L_2, L_3, (bool)0, NULL);
-		return;
-	}
-}
-// System.Void UnityEngine.Animation::AddClip(UnityEngine.AnimationClip,System.String,System.Int32,System.Int32,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animation_AddClip_m87A5BE2BFAC7F12D7C0FE5D954E657FDB8B4A7F6 (Animation_t6593B06C39E3B139808B19F2C719C860F3F61040* __this, AnimationClip_t00BD2F131D308A4AD2C6B0BF66644FC25FECE712* ___0_clip, String_t* ___1_newName, int32_t ___2_firstFrame, int32_t ___3_lastFrame, bool ___4_addLoopFrame, const RuntimeMethod* method) 
-{
-	typedef void (*Animation_AddClip_m87A5BE2BFAC7F12D7C0FE5D954E657FDB8B4A7F6_ftn) (Animation_t6593B06C39E3B139808B19F2C719C860F3F61040*, AnimationClip_t00BD2F131D308A4AD2C6B0BF66644FC25FECE712*, String_t*, int32_t, int32_t, bool);
-	static Animation_AddClip_m87A5BE2BFAC7F12D7C0FE5D954E657FDB8B4A7F6_ftn _il2cpp_icall_func;
-	if (!_il2cpp_icall_func)
-	_il2cpp_icall_func = (Animation_AddClip_m87A5BE2BFAC7F12D7C0FE5D954E657FDB8B4A7F6_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Animation::AddClip(UnityEngine.AnimationClip,System.String,System.Int32,System.Int32,System.Boolean)");
-	_il2cpp_icall_func(__this, ___0_clip, ___1_newName, ___2_firstFrame, ___3_lastFrame, ___4_addLoopFrame);
-}
-// System.Collections.IEnumerator UnityEngine.Animation::GetEnumerator()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Animation_GetEnumerator_m247062F212D9C579DAE25D9BC86E4921DC5719E6 (Animation_t6593B06C39E3B139808B19F2C719C860F3F61040* __this, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Enumerator_t81434F7D5603121F3D7BD6DB916FE1C755307530_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	RuntimeObject* V_0 = NULL;
-	{
-		Enumerator_t81434F7D5603121F3D7BD6DB916FE1C755307530* L_0 = (Enumerator_t81434F7D5603121F3D7BD6DB916FE1C755307530*)il2cpp_codegen_object_new(Enumerator_t81434F7D5603121F3D7BD6DB916FE1C755307530_il2cpp_TypeInfo_var);
-		NullCheck(L_0);
-		Enumerator__ctor_mF3FB66377864673B8DAF14A36DB6D069B98A92F4(L_0, __this, NULL);
-		V_0 = L_0;
-		goto IL_000a;
-	}
-
-IL_000a:
-	{
-		RuntimeObject* L_1 = V_0;
-		return L_1;
-	}
-}
-// UnityEngine.AnimationState UnityEngine.Animation::GetStateAtIndex(System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AnimationState_tC704F25A20169025B6CFDC2F00DC84152B5B73CE* Animation_GetStateAtIndex_mA06564CBB11021A3ADA69EA0BCDCD820183E240F (Animation_t6593B06C39E3B139808B19F2C719C860F3F61040* __this, int32_t ___0_index, const RuntimeMethod* method) 
-{
-	typedef AnimationState_tC704F25A20169025B6CFDC2F00DC84152B5B73CE* (*Animation_GetStateAtIndex_mA06564CBB11021A3ADA69EA0BCDCD820183E240F_ftn) (Animation_t6593B06C39E3B139808B19F2C719C860F3F61040*, int32_t);
-	static Animation_GetStateAtIndex_mA06564CBB11021A3ADA69EA0BCDCD820183E240F_ftn _il2cpp_icall_func;
-	if (!_il2cpp_icall_func)
-	_il2cpp_icall_func = (Animation_GetStateAtIndex_mA06564CBB11021A3ADA69EA0BCDCD820183E240F_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Animation::GetStateAtIndex(System.Int32)");
-	AnimationState_tC704F25A20169025B6CFDC2F00DC84152B5B73CE* icallRetVal = _il2cpp_icall_func(__this, ___0_index);
-	return icallRetVal;
-}
-// System.Int32 UnityEngine.Animation::GetStateCount()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Animation_GetStateCount_mB779E6750180C77CE5F2E81B78C9AFEE93FCB1FE (Animation_t6593B06C39E3B139808B19F2C719C860F3F61040* __this, const RuntimeMethod* method) 
-{
-	typedef int32_t (*Animation_GetStateCount_mB779E6750180C77CE5F2E81B78C9AFEE93FCB1FE_ftn) (Animation_t6593B06C39E3B139808B19F2C719C860F3F61040*);
-	static Animation_GetStateCount_mB779E6750180C77CE5F2E81B78C9AFEE93FCB1FE_ftn _il2cpp_icall_func;
-	if (!_il2cpp_icall_func)
-	_il2cpp_icall_func = (Animation_GetStateCount_mB779E6750180C77CE5F2E81B78C9AFEE93FCB1FE_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Animation::GetStateCount()");
-	int32_t icallRetVal = _il2cpp_icall_func(__this);
-	return icallRetVal;
-}
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-// System.Void UnityEngine.Animation/Enumerator::.ctor(UnityEngine.Animation)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Enumerator__ctor_mF3FB66377864673B8DAF14A36DB6D069B98A92F4 (Enumerator_t81434F7D5603121F3D7BD6DB916FE1C755307530* __this, Animation_t6593B06C39E3B139808B19F2C719C860F3F61040* ___0_outer, const RuntimeMethod* method) 
-{
-	{
-		__this->___m_CurrentIndex_1 = (-1);
-		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
-		Animation_t6593B06C39E3B139808B19F2C719C860F3F61040* L_0 = ___0_outer;
-		__this->___m_Outer_0 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___m_Outer_0), (void*)L_0);
-		return;
-	}
-}
-// System.Object UnityEngine.Animation/Enumerator::get_Current()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Enumerator_get_Current_m4A17FE0020D4C8856EFC8EF531B99723FFB2B9DF (Enumerator_t81434F7D5603121F3D7BD6DB916FE1C755307530* __this, const RuntimeMethod* method) 
-{
-	RuntimeObject* V_0 = NULL;
-	{
-		Animation_t6593B06C39E3B139808B19F2C719C860F3F61040* L_0 = __this->___m_Outer_0;
-		int32_t L_1 = __this->___m_CurrentIndex_1;
-		NullCheck(L_0);
-		AnimationState_tC704F25A20169025B6CFDC2F00DC84152B5B73CE* L_2;
-		L_2 = Animation_GetStateAtIndex_mA06564CBB11021A3ADA69EA0BCDCD820183E240F(L_0, L_1, NULL);
-		V_0 = L_2;
-		goto IL_0015;
-	}
-
-IL_0015:
-	{
-		RuntimeObject* L_3 = V_0;
-		return L_3;
-	}
-}
-// System.Boolean UnityEngine.Animation/Enumerator::MoveNext()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Enumerator_MoveNext_m82477C155D4F7CF98317C0EEC9F5070D196AA671 (Enumerator_t81434F7D5603121F3D7BD6DB916FE1C755307530* __this, const RuntimeMethod* method) 
-{
-	int32_t V_0 = 0;
-	bool V_1 = false;
-	{
-		Animation_t6593B06C39E3B139808B19F2C719C860F3F61040* L_0 = __this->___m_Outer_0;
-		NullCheck(L_0);
-		int32_t L_1;
-		L_1 = Animation_GetStateCount_mB779E6750180C77CE5F2E81B78C9AFEE93FCB1FE(L_0, NULL);
-		V_0 = L_1;
-		int32_t L_2 = __this->___m_CurrentIndex_1;
-		__this->___m_CurrentIndex_1 = ((int32_t)il2cpp_codegen_add(L_2, 1));
-		int32_t L_3 = __this->___m_CurrentIndex_1;
-		int32_t L_4 = V_0;
-		V_1 = (bool)((((int32_t)L_3) < ((int32_t)L_4))? 1 : 0);
-		goto IL_0027;
-	}
-
-IL_0027:
-	{
-		bool L_5 = V_1;
-		return L_5;
-	}
-}
-// System.Void UnityEngine.Animation/Enumerator::Reset()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Enumerator_Reset_m687381C45ECBBD052447FAC06ECE9760FF23DA63 (Enumerator_t81434F7D5603121F3D7BD6DB916FE1C755307530* __this, const RuntimeMethod* method) 
-{
-	{
-		__this->___m_CurrentIndex_1 = (-1);
-		return;
-	}
-}
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-// System.Void UnityEngine.AnimationState::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AnimationState__ctor_mB18C82530ADA40EE3BC245AAB0673941D78B779E (AnimationState_tC704F25A20169025B6CFDC2F00DC84152B5B73CE* __this, const RuntimeMethod* method) 
-{
-	{
-		TrackedReference__ctor_m0E498FD0AD5807B7B91CB0005170E522DAE3616A(__this, NULL);
-		return;
-	}
-}
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
@@ -4057,21 +2186,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AnimationEvent__ctor_mBC954085B1D18B436D
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// System.Void UnityEngine.Motion::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Motion__ctor_mB6190858E566BFA1B80D2E94B65CD27920A49443 (Motion_tBCD49FBF5608AD21FC03B63C8182FABCEF2707AC* __this, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		Object__ctor_m2149FA40CEC8D82AC20D3508AB40C0D8EFEF68E6(__this, NULL);
-		return;
-	}
-}
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
@@ -4080,16 +2194,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Motion__ctor_mB6190858E566BFA1B80D2E94B6
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// System.Int32 UnityEngine.HumanTrait::get_MuscleCount()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t HumanTrait_get_MuscleCount_m1710B0FAD40DB860AD5C117A831F7554F5C55678 (const RuntimeMethod* method) 
-{
-	typedef int32_t (*HumanTrait_get_MuscleCount_m1710B0FAD40DB860AD5C117A831F7554F5C55678_ftn) ();
-	static HumanTrait_get_MuscleCount_m1710B0FAD40DB860AD5C117A831F7554F5C55678_ftn _il2cpp_icall_func;
-	if (!_il2cpp_icall_func)
-	_il2cpp_icall_func = (HumanTrait_get_MuscleCount_m1710B0FAD40DB860AD5C117A831F7554F5C55678_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.HumanTrait::get_MuscleCount()");
-	int32_t icallRetVal = _il2cpp_icall_func();
-	return icallRetVal;
-}
 // System.Int32 UnityEngine.HumanTrait::GetBoneIndexFromMono(System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t HumanTrait_GetBoneIndexFromMono_mDE16E21275A55D263014CFD3307BEB7353AE6925 (int32_t ___0_humanId, const RuntimeMethod* method) 
 {
@@ -4100,26 +2204,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t HumanTrait_GetBoneIndexFromMono_mDE16
 	int32_t icallRetVal = _il2cpp_icall_func(___0_humanId);
 	return icallRetVal;
 }
-// System.String[] UnityEngine.HumanTrait::get_MuscleName()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* HumanTrait_get_MuscleName_mE3E2D79AA477F03384FFCAAAFD5BCA9822992599 (const RuntimeMethod* method) 
-{
-	typedef StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* (*HumanTrait_get_MuscleName_mE3E2D79AA477F03384FFCAAAFD5BCA9822992599_ftn) ();
-	static HumanTrait_get_MuscleName_mE3E2D79AA477F03384FFCAAAFD5BCA9822992599_ftn _il2cpp_icall_func;
-	if (!_il2cpp_icall_func)
-	_il2cpp_icall_func = (HumanTrait_get_MuscleName_mE3E2D79AA477F03384FFCAAAFD5BCA9822992599_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.HumanTrait::get_MuscleName()");
-	StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* icallRetVal = _il2cpp_icall_func();
-	return icallRetVal;
-}
-// System.String[] UnityEngine.HumanTrait::get_BoneName()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* HumanTrait_get_BoneName_mE16F3C9E1E21791A44E44F414CD2AABB54C13E2C (const RuntimeMethod* method) 
-{
-	typedef StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* (*HumanTrait_get_BoneName_mE16F3C9E1E21791A44E44F414CD2AABB54C13E2C_ftn) ();
-	static HumanTrait_get_BoneName_mE16F3C9E1E21791A44E44F414CD2AABB54C13E2C_ftn _il2cpp_icall_func;
-	if (!_il2cpp_icall_func)
-	_il2cpp_icall_func = (HumanTrait_get_BoneName_mE16F3C9E1E21791A44E44F414CD2AABB54C13E2C_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.HumanTrait::get_BoneName()");
-	StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* icallRetVal = _il2cpp_icall_func();
-	return icallRetVal;
-}
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
@@ -4136,90 +2220,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// System.Boolean UnityEngine.AnimatorStateInfo::IsName(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AnimatorStateInfo_IsName_mB936F493D6BDDB9372C8E9D813CE0416B002C4D0 (AnimatorStateInfo_t1F47379289C7CE7FD588FBC3BBD79A777243B6B2* __this, String_t* ___0_name, const RuntimeMethod* method) 
-{
-	int32_t V_0 = 0;
-	bool V_1 = false;
-	int32_t G_B4_0 = 0;
-	{
-		String_t* L_0 = ___0_name;
-		int32_t L_1;
-		L_1 = Animator_StringToHash_mD67B872C411BE37641F49D7AA1DBD45B67F63E3A(L_0, NULL);
-		V_0 = L_1;
-		int32_t L_2 = V_0;
-		int32_t L_3 = __this->___m_FullPath_2;
-		if ((((int32_t)L_2) == ((int32_t)L_3)))
-		{
-			goto IL_0025;
-		}
-	}
-	{
-		int32_t L_4 = V_0;
-		int32_t L_5 = __this->___m_Name_0;
-		if ((((int32_t)L_4) == ((int32_t)L_5)))
-		{
-			goto IL_0025;
-		}
-	}
-	{
-		int32_t L_6 = V_0;
-		int32_t L_7 = __this->___m_Path_1;
-		G_B4_0 = ((((int32_t)L_6) == ((int32_t)L_7))? 1 : 0);
-		goto IL_0026;
-	}
-
-IL_0025:
-	{
-		G_B4_0 = 1;
-	}
-
-IL_0026:
-	{
-		V_1 = (bool)G_B4_0;
-		goto IL_0029;
-	}
-
-IL_0029:
-	{
-		bool L_8 = V_1;
-		return L_8;
-	}
-}
-IL2CPP_EXTERN_C  bool AnimatorStateInfo_IsName_mB936F493D6BDDB9372C8E9D813CE0416B002C4D0_AdjustorThunk (RuntimeObject* __this, String_t* ___0_name, const RuntimeMethod* method)
-{
-	AnimatorStateInfo_t1F47379289C7CE7FD588FBC3BBD79A777243B6B2* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<AnimatorStateInfo_t1F47379289C7CE7FD588FBC3BBD79A777243B6B2*>(__this + _offset);
-	bool _returnValue;
-	_returnValue = AnimatorStateInfo_IsName_mB936F493D6BDDB9372C8E9D813CE0416B002C4D0(_thisAdjusted, ___0_name, method);
-	return _returnValue;
-}
-// System.Single UnityEngine.AnimatorStateInfo::get_normalizedTime()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float AnimatorStateInfo_get_normalizedTime_m087C7E5A72122ADF18EBB4AC8391103B9119CCC6 (AnimatorStateInfo_t1F47379289C7CE7FD588FBC3BBD79A777243B6B2* __this, const RuntimeMethod* method) 
-{
-	float V_0 = 0.0f;
-	{
-		float L_0 = __this->___m_NormalizedTime_3;
-		V_0 = L_0;
-		goto IL_000a;
-	}
-
-IL_000a:
-	{
-		float L_1 = V_0;
-		return L_1;
-	}
-}
-IL2CPP_EXTERN_C  float AnimatorStateInfo_get_normalizedTime_m087C7E5A72122ADF18EBB4AC8391103B9119CCC6_AdjustorThunk (RuntimeObject* __this, const RuntimeMethod* method)
-{
-	AnimatorStateInfo_t1F47379289C7CE7FD588FBC3BBD79A777243B6B2* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<AnimatorStateInfo_t1F47379289C7CE7FD588FBC3BBD79A777243B6B2*>(__this + _offset);
-	float _returnValue;
-	_returnValue = AnimatorStateInfo_get_normalizedTime_m087C7E5A72122ADF18EBB4AC8391103B9119CCC6(_thisAdjusted, method);
-	return _returnValue;
-}
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
@@ -4332,34 +2332,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Animator_get_isInitialized_m22DA9FAA80F4
 	bool icallRetVal = _il2cpp_icall_func(__this);
 	return icallRetVal;
 }
-// System.Single UnityEngine.Animator::GetFloat(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Animator_GetFloat_m10B455A15EB343175518CCBEE2818C2497CC678A (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, String_t* ___0_name, const RuntimeMethod* method) 
-{
-	float V_0 = 0.0f;
-	{
-		String_t* L_0 = ___0_name;
-		float L_1;
-		L_1 = Animator_GetFloatString_mB1E5C90624A736A6D98D30FF5318BC1D0C494A38(__this, L_0, NULL);
-		V_0 = L_1;
-		goto IL_000b;
-	}
-
-IL_000b:
-	{
-		float L_2 = V_0;
-		return L_2;
-	}
-}
-// System.Void UnityEngine.Animator::SetFloat(System.String,System.Single)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_SetFloat_m10C78733FAFC7AFEDBDACC48B7C66D3A35A0A7FE (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, String_t* ___0_name, float ___1_value, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = ___0_name;
-		float L_1 = ___1_value;
-		Animator_SetFloatString_m1AA50083AAAE1DFFA7FB64502EA106795D3756B4(__this, L_0, L_1, NULL);
-		return;
-	}
-}
 // System.Void UnityEngine.Animator::SetBool(System.String,System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_SetBool_m6F8D4FAF0770CD4EC1F54406249785DE7391E42B (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, String_t* ___0_name, bool ___1_value, const RuntimeMethod* method) 
 {
@@ -4367,16 +2339,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_SetBool_m6F8D4FAF0770CD4EC1F544
 		String_t* L_0 = ___0_name;
 		bool L_1 = ___1_value;
 		Animator_SetBoolString_m08A0BC6717BF5FD3E43D3EFB2509E359C1196C00(__this, L_0, L_1, NULL);
-		return;
-	}
-}
-// System.Void UnityEngine.Animator::SetInteger(System.String,System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_SetInteger_m7B4BB5FD5BD8DE3F713D8E9AD2870C1AAF8E19EF (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, String_t* ___0_name, int32_t ___1_value, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = ___0_name;
-		int32_t L_1 = ___1_value;
-		Animator_SetIntegerString_m3080217346B85D69FA5A99B2ABC64BF5E4580455(__this, L_0, L_1, NULL);
 		return;
 	}
 }
@@ -4415,75 +2377,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_ResetTrigger_m2DF2C6DE87314918C
 		Animator_ResetTriggerID_mD3E0C24AC862F049622D09933E7A3A2CDE256C13(__this, L_0, NULL);
 		return;
 	}
-}
-// System.Int32 UnityEngine.Animator::GetLayerIndex(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Animator_GetLayerIndex_mE57FA9E3A7B3308B07B79307B5BCE0688AF4B38B (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, String_t* ___0_layerName, const RuntimeMethod* method) 
-{
-	typedef int32_t (*Animator_GetLayerIndex_mE57FA9E3A7B3308B07B79307B5BCE0688AF4B38B_ftn) (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883*, String_t*);
-	static Animator_GetLayerIndex_mE57FA9E3A7B3308B07B79307B5BCE0688AF4B38B_ftn _il2cpp_icall_func;
-	if (!_il2cpp_icall_func)
-	_il2cpp_icall_func = (Animator_GetLayerIndex_mE57FA9E3A7B3308B07B79307B5BCE0688AF4B38B_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Animator::GetLayerIndex(System.String)");
-	int32_t icallRetVal = _il2cpp_icall_func(__this, ___0_layerName);
-	return icallRetVal;
-}
-// System.Single UnityEngine.Animator::GetLayerWeight(System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Animator_GetLayerWeight_m24EB83CB3CFC724CB77461A26BB794E7DEE15BCA (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, int32_t ___0_layerIndex, const RuntimeMethod* method) 
-{
-	typedef float (*Animator_GetLayerWeight_m24EB83CB3CFC724CB77461A26BB794E7DEE15BCA_ftn) (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883*, int32_t);
-	static Animator_GetLayerWeight_m24EB83CB3CFC724CB77461A26BB794E7DEE15BCA_ftn _il2cpp_icall_func;
-	if (!_il2cpp_icall_func)
-	_il2cpp_icall_func = (Animator_GetLayerWeight_m24EB83CB3CFC724CB77461A26BB794E7DEE15BCA_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Animator::GetLayerWeight(System.Int32)");
-	float icallRetVal = _il2cpp_icall_func(__this, ___0_layerIndex);
-	return icallRetVal;
-}
-// System.Void UnityEngine.Animator::SetLayerWeight(System.Int32,System.Single)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_SetLayerWeight_m06ADC732F76F22B4B1424F25525E7CBB80E6230F (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, int32_t ___0_layerIndex, float ___1_weight, const RuntimeMethod* method) 
-{
-	typedef void (*Animator_SetLayerWeight_m06ADC732F76F22B4B1424F25525E7CBB80E6230F_ftn) (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883*, int32_t, float);
-	static Animator_SetLayerWeight_m06ADC732F76F22B4B1424F25525E7CBB80E6230F_ftn _il2cpp_icall_func;
-	if (!_il2cpp_icall_func)
-	_il2cpp_icall_func = (Animator_SetLayerWeight_m06ADC732F76F22B4B1424F25525E7CBB80E6230F_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Animator::SetLayerWeight(System.Int32,System.Single)");
-	_il2cpp_icall_func(__this, ___0_layerIndex, ___1_weight);
-}
-// System.Void UnityEngine.Animator::GetAnimatorStateInfo(System.Int32,UnityEngine.StateInfoIndex,UnityEngine.AnimatorStateInfo&)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_GetAnimatorStateInfo_mC6C046A539DE6E8D481E830D3DA1FBF96DFC367D (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, int32_t ___0_layerIndex, int32_t ___1_stateInfoIndex, AnimatorStateInfo_t1F47379289C7CE7FD588FBC3BBD79A777243B6B2* ___2_info, const RuntimeMethod* method) 
-{
-	typedef void (*Animator_GetAnimatorStateInfo_mC6C046A539DE6E8D481E830D3DA1FBF96DFC367D_ftn) (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883*, int32_t, int32_t, AnimatorStateInfo_t1F47379289C7CE7FD588FBC3BBD79A777243B6B2*);
-	static Animator_GetAnimatorStateInfo_mC6C046A539DE6E8D481E830D3DA1FBF96DFC367D_ftn _il2cpp_icall_func;
-	if (!_il2cpp_icall_func)
-	_il2cpp_icall_func = (Animator_GetAnimatorStateInfo_mC6C046A539DE6E8D481E830D3DA1FBF96DFC367D_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Animator::GetAnimatorStateInfo(System.Int32,UnityEngine.StateInfoIndex,UnityEngine.AnimatorStateInfo&)");
-	_il2cpp_icall_func(__this, ___0_layerIndex, ___1_stateInfoIndex, ___2_info);
-}
-// UnityEngine.AnimatorStateInfo UnityEngine.Animator::GetCurrentAnimatorStateInfo(System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AnimatorStateInfo_t1F47379289C7CE7FD588FBC3BBD79A777243B6B2 Animator_GetCurrentAnimatorStateInfo_mD5B526FA605F6CFBC31B7DE36740F6AD1E534CAD (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, int32_t ___0_layerIndex, const RuntimeMethod* method) 
-{
-	AnimatorStateInfo_t1F47379289C7CE7FD588FBC3BBD79A777243B6B2 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	AnimatorStateInfo_t1F47379289C7CE7FD588FBC3BBD79A777243B6B2 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		int32_t L_0 = ___0_layerIndex;
-		Animator_GetAnimatorStateInfo_mC6C046A539DE6E8D481E830D3DA1FBF96DFC367D(__this, L_0, 0, (&V_0), NULL);
-		AnimatorStateInfo_t1F47379289C7CE7FD588FBC3BBD79A777243B6B2 L_1 = V_0;
-		V_1 = L_1;
-		goto IL_0010;
-	}
-
-IL_0010:
-	{
-		AnimatorStateInfo_t1F47379289C7CE7FD588FBC3BBD79A777243B6B2 L_2 = V_1;
-		return L_2;
-	}
-}
-// System.Boolean UnityEngine.Animator::IsInTransition(System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Animator_IsInTransition_mC2BD2CC7B7A11BAAA5396F1A2DAFD98D00AA2830 (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, int32_t ___0_layerIndex, const RuntimeMethod* method) 
-{
-	typedef bool (*Animator_IsInTransition_mC2BD2CC7B7A11BAAA5396F1A2DAFD98D00AA2830_ftn) (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883*, int32_t);
-	static Animator_IsInTransition_mC2BD2CC7B7A11BAAA5396F1A2DAFD98D00AA2830_ftn _il2cpp_icall_func;
-	if (!_il2cpp_icall_func)
-	_il2cpp_icall_func = (Animator_IsInTransition_mC2BD2CC7B7A11BAAA5396F1A2DAFD98D00AA2830_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Animator::IsInTransition(System.Int32)");
-	bool icallRetVal = _il2cpp_icall_func(__this, ___0_layerIndex);
-	return icallRetVal;
 }
 // UnityEngine.AnimatorControllerParameter[] UnityEngine.Animator::get_parameters()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AnimatorControllerParameterU5BU5D_tAB05125F5DC0D98F59351CD7D8C9880DFFA8EA21* Animator_get_parameters_m3DE35688D8EBD3D1526346C7B71E468436A4463B (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, const RuntimeMethod* method) 
@@ -4578,80 +2471,6 @@ IL_0047:
 		return L_13;
 	}
 }
-// System.Void UnityEngine.Animator::set_speed(System.Single)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_set_speed_m933F4D6770122BC9D8A7FF82DE1CD33D514379FC (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, float ___0_value, const RuntimeMethod* method) 
-{
-	typedef void (*Animator_set_speed_m933F4D6770122BC9D8A7FF82DE1CD33D514379FC_ftn) (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883*, float);
-	static Animator_set_speed_m933F4D6770122BC9D8A7FF82DE1CD33D514379FC_ftn _il2cpp_icall_func;
-	if (!_il2cpp_icall_func)
-	_il2cpp_icall_func = (Animator_set_speed_m933F4D6770122BC9D8A7FF82DE1CD33D514379FC_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Animator::set_speed(System.Single)");
-	_il2cpp_icall_func(__this, ___0_value);
-}
-// System.Void UnityEngine.Animator::Play(System.String,System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_Play_m9B1CB1A22951C0B0758AA032F2349B6DD20E96C2 (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, String_t* ___0_stateName, int32_t ___1_layer, const RuntimeMethod* method) 
-{
-	float V_0 = 0.0f;
-	{
-		V_0 = (-std::numeric_limits<float>::infinity());
-		String_t* L_0 = ___0_stateName;
-		int32_t L_1 = ___1_layer;
-		float L_2 = V_0;
-		Animator_Play_m5565F093F0752D4DD9B451686F71C7A8F23F6744(__this, L_0, L_1, L_2, NULL);
-		return;
-	}
-}
-// System.Void UnityEngine.Animator::Play(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_Play_m0F6A9F84B2E256E644D56C34A7A9BD622CB00FF9 (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, String_t* ___0_stateName, const RuntimeMethod* method) 
-{
-	float V_0 = 0.0f;
-	int32_t V_1 = 0;
-	{
-		V_0 = (-std::numeric_limits<float>::infinity());
-		V_1 = (-1);
-		String_t* L_0 = ___0_stateName;
-		int32_t L_1 = V_1;
-		float L_2 = V_0;
-		Animator_Play_m5565F093F0752D4DD9B451686F71C7A8F23F6744(__this, L_0, L_1, L_2, NULL);
-		return;
-	}
-}
-// System.Void UnityEngine.Animator::Play(System.String,System.Int32,System.Single)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_Play_m5565F093F0752D4DD9B451686F71C7A8F23F6744 (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, String_t* ___0_stateName, int32_t ___1_layer, float ___2_normalizedTime, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = ___0_stateName;
-		int32_t L_1;
-		L_1 = Animator_StringToHash_mD67B872C411BE37641F49D7AA1DBD45B67F63E3A(L_0, NULL);
-		int32_t L_2 = ___1_layer;
-		float L_3 = ___2_normalizedTime;
-		Animator_Play_m3011727F1A3F331EE7F5D7CF9B98EFEADE547BBD(__this, L_1, L_2, L_3, NULL);
-		return;
-	}
-}
-// System.Void UnityEngine.Animator::Play(System.Int32,System.Int32,System.Single)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_Play_m3011727F1A3F331EE7F5D7CF9B98EFEADE547BBD (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, int32_t ___0_stateNameHash, int32_t ___1_layer, float ___2_normalizedTime, const RuntimeMethod* method) 
-{
-	typedef void (*Animator_Play_m3011727F1A3F331EE7F5D7CF9B98EFEADE547BBD_ftn) (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883*, int32_t, int32_t, float);
-	static Animator_Play_m3011727F1A3F331EE7F5D7CF9B98EFEADE547BBD_ftn _il2cpp_icall_func;
-	if (!_il2cpp_icall_func)
-	_il2cpp_icall_func = (Animator_Play_m3011727F1A3F331EE7F5D7CF9B98EFEADE547BBD_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Animator::Play(System.Int32,System.Int32,System.Single)");
-	_il2cpp_icall_func(__this, ___0_stateNameHash, ___1_layer, ___2_normalizedTime);
-}
-// System.Void UnityEngine.Animator::Play(System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_Play_mBA96F0D84A982A338EC976A5EAFE886956AEDDCE (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, int32_t ___0_stateNameHash, const RuntimeMethod* method) 
-{
-	float V_0 = 0.0f;
-	int32_t V_1 = 0;
-	{
-		V_0 = (-std::numeric_limits<float>::infinity());
-		V_1 = (-1);
-		int32_t L_0 = ___0_stateNameHash;
-		int32_t L_1 = V_1;
-		float L_2 = V_0;
-		Animator_Play_m3011727F1A3F331EE7F5D7CF9B98EFEADE547BBD(__this, L_0, L_1, L_2, NULL);
-		return;
-	}
-}
 // UnityEngine.Transform UnityEngine.Animator::GetBoneTransform(UnityEngine.HumanBodyBones)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* Animator_GetBoneTransform_m02042CB47C468D576C6EE436F4AA71D8C47AAF56 (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, int32_t ___0_humanBoneId, const RuntimeMethod* method) 
 {
@@ -4736,16 +2555,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Animator_get_hasBoundPlayables_mA5A6132C
 	bool icallRetVal = _il2cpp_icall_func(__this);
 	return icallRetVal;
 }
-// System.Boolean UnityEngine.Animator::HasState(System.Int32,System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Animator_HasState_m9E3BEAD260AAA9FD571CB0AFEDC20F278859B833 (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, int32_t ___0_layerIndex, int32_t ___1_stateID, const RuntimeMethod* method) 
-{
-	typedef bool (*Animator_HasState_m9E3BEAD260AAA9FD571CB0AFEDC20F278859B833_ftn) (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883*, int32_t, int32_t);
-	static Animator_HasState_m9E3BEAD260AAA9FD571CB0AFEDC20F278859B833_ftn _il2cpp_icall_func;
-	if (!_il2cpp_icall_func)
-	_il2cpp_icall_func = (Animator_HasState_m9E3BEAD260AAA9FD571CB0AFEDC20F278859B833_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Animator::HasState(System.Int32,System.Int32)");
-	bool icallRetVal = _il2cpp_icall_func(__this, ___0_layerIndex, ___1_stateID);
-	return icallRetVal;
-}
 // System.Int32 UnityEngine.Animator::StringToHash(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Animator_StringToHash_mD67B872C411BE37641F49D7AA1DBD45B67F63E3A (String_t* ___0_name, const RuntimeMethod* method) 
 {
@@ -4766,34 +2575,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Avatar_t7861E57EEE2CF8CC61BD63C09737BA22F7ABC
 	Avatar_t7861E57EEE2CF8CC61BD63C09737BA22F7ABCA0F* icallRetVal = _il2cpp_icall_func(__this);
 	return icallRetVal;
 }
-// System.Void UnityEngine.Animator::set_avatar(UnityEngine.Avatar)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_set_avatar_mF24D7962A24C1EBF3B949E712DDA24DB11B5DAC5 (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, Avatar_t7861E57EEE2CF8CC61BD63C09737BA22F7ABCA0F* ___0_value, const RuntimeMethod* method) 
-{
-	typedef void (*Animator_set_avatar_mF24D7962A24C1EBF3B949E712DDA24DB11B5DAC5_ftn) (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883*, Avatar_t7861E57EEE2CF8CC61BD63C09737BA22F7ABCA0F*);
-	static Animator_set_avatar_mF24D7962A24C1EBF3B949E712DDA24DB11B5DAC5_ftn _il2cpp_icall_func;
-	if (!_il2cpp_icall_func)
-	_il2cpp_icall_func = (Animator_set_avatar_mF24D7962A24C1EBF3B949E712DDA24DB11B5DAC5_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Animator::set_avatar(UnityEngine.Avatar)");
-	_il2cpp_icall_func(__this, ___0_value);
-}
-// System.Void UnityEngine.Animator::SetFloatString(System.String,System.Single)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_SetFloatString_m1AA50083AAAE1DFFA7FB64502EA106795D3756B4 (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, String_t* ___0_name, float ___1_value, const RuntimeMethod* method) 
-{
-	typedef void (*Animator_SetFloatString_m1AA50083AAAE1DFFA7FB64502EA106795D3756B4_ftn) (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883*, String_t*, float);
-	static Animator_SetFloatString_m1AA50083AAAE1DFFA7FB64502EA106795D3756B4_ftn _il2cpp_icall_func;
-	if (!_il2cpp_icall_func)
-	_il2cpp_icall_func = (Animator_SetFloatString_m1AA50083AAAE1DFFA7FB64502EA106795D3756B4_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Animator::SetFloatString(System.String,System.Single)");
-	_il2cpp_icall_func(__this, ___0_name, ___1_value);
-}
-// System.Single UnityEngine.Animator::GetFloatString(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Animator_GetFloatString_mB1E5C90624A736A6D98D30FF5318BC1D0C494A38 (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, String_t* ___0_name, const RuntimeMethod* method) 
-{
-	typedef float (*Animator_GetFloatString_mB1E5C90624A736A6D98D30FF5318BC1D0C494A38_ftn) (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883*, String_t*);
-	static Animator_GetFloatString_mB1E5C90624A736A6D98D30FF5318BC1D0C494A38_ftn _il2cpp_icall_func;
-	if (!_il2cpp_icall_func)
-	_il2cpp_icall_func = (Animator_GetFloatString_mB1E5C90624A736A6D98D30FF5318BC1D0C494A38_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Animator::GetFloatString(System.String)");
-	float icallRetVal = _il2cpp_icall_func(__this, ___0_name);
-	return icallRetVal;
-}
 // System.Void UnityEngine.Animator::SetBoolString(System.String,System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_SetBoolString_m08A0BC6717BF5FD3E43D3EFB2509E359C1196C00 (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, String_t* ___0_name, bool ___1_value, const RuntimeMethod* method) 
 {
@@ -4801,15 +2582,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_SetBoolString_m08A0BC6717BF5FD3
 	static Animator_SetBoolString_m08A0BC6717BF5FD3E43D3EFB2509E359C1196C00_ftn _il2cpp_icall_func;
 	if (!_il2cpp_icall_func)
 	_il2cpp_icall_func = (Animator_SetBoolString_m08A0BC6717BF5FD3E43D3EFB2509E359C1196C00_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Animator::SetBoolString(System.String,System.Boolean)");
-	_il2cpp_icall_func(__this, ___0_name, ___1_value);
-}
-// System.Void UnityEngine.Animator::SetIntegerString(System.String,System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_SetIntegerString_m3080217346B85D69FA5A99B2ABC64BF5E4580455 (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, String_t* ___0_name, int32_t ___1_value, const RuntimeMethod* method) 
-{
-	typedef void (*Animator_SetIntegerString_m3080217346B85D69FA5A99B2ABC64BF5E4580455_ftn) (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883*, String_t*, int32_t);
-	static Animator_SetIntegerString_m3080217346B85D69FA5A99B2ABC64BF5E4580455_ftn _il2cpp_icall_func;
-	if (!_il2cpp_icall_func)
-	_il2cpp_icall_func = (Animator_SetIntegerString_m3080217346B85D69FA5A99B2ABC64BF5E4580455_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Animator::SetIntegerString(System.String,System.Int32)");
 	_il2cpp_icall_func(__this, ___0_name, ___1_value);
 }
 // System.Void UnityEngine.Animator::SetTriggerString(System.String)
@@ -4848,23 +2620,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_ResetTriggerID_mD3E0C24AC862F04
 	_il2cpp_icall_func = (Animator_ResetTriggerID_mD3E0C24AC862F049622D09933E7A3A2CDE256C13_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Animator::ResetTriggerID(System.Int32)");
 	_il2cpp_icall_func(__this, ___0_id);
 }
-// System.Void UnityEngine.Animator::Rebind()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_Rebind_m853F9E50ACB0A29D4F144FFD851E92F346195F9F (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, const RuntimeMethod* method) 
-{
-	{
-		Animator_Rebind_mA8163C9B7150958C0FB3F071B7ED41850BE3A130(__this, (bool)1, NULL);
-		return;
-	}
-}
-// System.Void UnityEngine.Animator::Rebind(System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_Rebind_mA8163C9B7150958C0FB3F071B7ED41850BE3A130 (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, bool ___0_writeDefaultValues, const RuntimeMethod* method) 
-{
-	typedef void (*Animator_Rebind_mA8163C9B7150958C0FB3F071B7ED41850BE3A130_ftn) (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883*, bool);
-	static Animator_Rebind_mA8163C9B7150958C0FB3F071B7ED41850BE3A130_ftn _il2cpp_icall_func;
-	if (!_il2cpp_icall_func)
-	_il2cpp_icall_func = (Animator_Rebind_mA8163C9B7150958C0FB3F071B7ED41850BE3A130_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Animator::Rebind(System.Boolean)");
-	_il2cpp_icall_func(__this, ___0_writeDefaultValues);
-}
 // System.Void UnityEngine.Animator::set_keepAnimatorStateOnDisable(System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_set_keepAnimatorStateOnDisable_mE439995234FEE85A9DE7DB5238D301128CABB769 (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, bool ___0_value, const RuntimeMethod* method) 
 {
@@ -4882,542 +2637,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_set_keepAnimatorStateOnDisable_
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// System.Void UnityEngine.AnimationClip::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AnimationClip__ctor_m3F9B3DE671547640479DB976423EEBC689D26F79 (AnimationClip_t00BD2F131D308A4AD2C6B0BF66644FC25FECE712* __this, const RuntimeMethod* method) 
-{
-	{
-		Motion__ctor_mB6190858E566BFA1B80D2E94B65CD27920A49443(__this, NULL);
-		AnimationClip_Internal_CreateAnimationClip_m1410C35D6386CEA1F068C9314751D0F6A7D34789(__this, NULL);
-		return;
-	}
-}
-// System.Void UnityEngine.AnimationClip::Internal_CreateAnimationClip(UnityEngine.AnimationClip)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AnimationClip_Internal_CreateAnimationClip_m1410C35D6386CEA1F068C9314751D0F6A7D34789 (AnimationClip_t00BD2F131D308A4AD2C6B0BF66644FC25FECE712* ___0_self, const RuntimeMethod* method) 
-{
-	typedef void (*AnimationClip_Internal_CreateAnimationClip_m1410C35D6386CEA1F068C9314751D0F6A7D34789_ftn) (AnimationClip_t00BD2F131D308A4AD2C6B0BF66644FC25FECE712*);
-	static AnimationClip_Internal_CreateAnimationClip_m1410C35D6386CEA1F068C9314751D0F6A7D34789_ftn _il2cpp_icall_func;
-	if (!_il2cpp_icall_func)
-	_il2cpp_icall_func = (AnimationClip_Internal_CreateAnimationClip_m1410C35D6386CEA1F068C9314751D0F6A7D34789_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.AnimationClip::Internal_CreateAnimationClip(UnityEngine.AnimationClip)");
-	_il2cpp_icall_func(___0_self);
-}
-// System.Void UnityEngine.AnimationClip::SetCurve(System.String,System.Type,System.String,UnityEngine.AnimationCurve)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AnimationClip_SetCurve_mEAB88CD0C8F623EA0DEF312CF8D39DE9EB2E1555 (AnimationClip_t00BD2F131D308A4AD2C6B0BF66644FC25FECE712* __this, String_t* ___0_relativePath, Type_t* ___1_type, String_t* ___2_propertyName, AnimationCurve_tCBFFAAD05CEBB35EF8D8631BD99914BE1A6BB354* ___3_curve, const RuntimeMethod* method) 
-{
-	typedef void (*AnimationClip_SetCurve_mEAB88CD0C8F623EA0DEF312CF8D39DE9EB2E1555_ftn) (AnimationClip_t00BD2F131D308A4AD2C6B0BF66644FC25FECE712*, String_t*, Type_t*, String_t*, AnimationCurve_tCBFFAAD05CEBB35EF8D8631BD99914BE1A6BB354*);
-	static AnimationClip_SetCurve_mEAB88CD0C8F623EA0DEF312CF8D39DE9EB2E1555_ftn _il2cpp_icall_func;
-	if (!_il2cpp_icall_func)
-	_il2cpp_icall_func = (AnimationClip_SetCurve_mEAB88CD0C8F623EA0DEF312CF8D39DE9EB2E1555_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.AnimationClip::SetCurve(System.String,System.Type,System.String,UnityEngine.AnimationCurve)");
-	_il2cpp_icall_func(__this, ___0_relativePath, ___1_type, ___2_propertyName, ___3_curve);
-}
-// System.Void UnityEngine.AnimationClip::EnsureQuaternionContinuity()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AnimationClip_EnsureQuaternionContinuity_m9D02889DCA683AA8B285BD6A26A44B8FD615A5EF (AnimationClip_t00BD2F131D308A4AD2C6B0BF66644FC25FECE712* __this, const RuntimeMethod* method) 
-{
-	typedef void (*AnimationClip_EnsureQuaternionContinuity_m9D02889DCA683AA8B285BD6A26A44B8FD615A5EF_ftn) (AnimationClip_t00BD2F131D308A4AD2C6B0BF66644FC25FECE712*);
-	static AnimationClip_EnsureQuaternionContinuity_m9D02889DCA683AA8B285BD6A26A44B8FD615A5EF_ftn _il2cpp_icall_func;
-	if (!_il2cpp_icall_func)
-	_il2cpp_icall_func = (AnimationClip_EnsureQuaternionContinuity_m9D02889DCA683AA8B285BD6A26A44B8FD615A5EF_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.AnimationClip::EnsureQuaternionContinuity()");
-	_il2cpp_icall_func(__this);
-}
-// System.Void UnityEngine.AnimationClip::ClearCurves()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AnimationClip_ClearCurves_m4544088FCCDA4CA2B5B5D3336546F3893030232C (AnimationClip_t00BD2F131D308A4AD2C6B0BF66644FC25FECE712* __this, const RuntimeMethod* method) 
-{
-	typedef void (*AnimationClip_ClearCurves_m4544088FCCDA4CA2B5B5D3336546F3893030232C_ftn) (AnimationClip_t00BD2F131D308A4AD2C6B0BF66644FC25FECE712*);
-	static AnimationClip_ClearCurves_m4544088FCCDA4CA2B5B5D3336546F3893030232C_ftn _il2cpp_icall_func;
-	if (!_il2cpp_icall_func)
-	_il2cpp_icall_func = (AnimationClip_ClearCurves_m4544088FCCDA4CA2B5B5D3336546F3893030232C_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.AnimationClip::ClearCurves()");
-	_il2cpp_icall_func(__this);
-}
-// System.Void UnityEngine.AnimationClip::set_wrapMode(UnityEngine.WrapMode)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AnimationClip_set_wrapMode_mC6BA022CE7B92CE00A98FA757576847319788AD6 (AnimationClip_t00BD2F131D308A4AD2C6B0BF66644FC25FECE712* __this, int32_t ___0_value, const RuntimeMethod* method) 
-{
-	typedef void (*AnimationClip_set_wrapMode_mC6BA022CE7B92CE00A98FA757576847319788AD6_ftn) (AnimationClip_t00BD2F131D308A4AD2C6B0BF66644FC25FECE712*, int32_t);
-	static AnimationClip_set_wrapMode_mC6BA022CE7B92CE00A98FA757576847319788AD6_ftn _il2cpp_icall_func;
-	if (!_il2cpp_icall_func)
-	_il2cpp_icall_func = (AnimationClip_set_wrapMode_mC6BA022CE7B92CE00A98FA757576847319788AD6_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.AnimationClip::set_wrapMode(UnityEngine.WrapMode)");
-	_il2cpp_icall_func(__this, ___0_value);
-}
-// System.Void UnityEngine.AnimationClip::set_legacy(System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AnimationClip_set_legacy_mA24DEDCB86CB9439005B71B6916C09C751731377 (AnimationClip_t00BD2F131D308A4AD2C6B0BF66644FC25FECE712* __this, bool ___0_value, const RuntimeMethod* method) 
-{
-	typedef void (*AnimationClip_set_legacy_mA24DEDCB86CB9439005B71B6916C09C751731377_ftn) (AnimationClip_t00BD2F131D308A4AD2C6B0BF66644FC25FECE712*, bool);
-	static AnimationClip_set_legacy_mA24DEDCB86CB9439005B71B6916C09C751731377_ftn _il2cpp_icall_func;
-	if (!_il2cpp_icall_func)
-	_il2cpp_icall_func = (AnimationClip_set_legacy_mA24DEDCB86CB9439005B71B6916C09C751731377_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.AnimationClip::set_legacy(System.Boolean)");
-	_il2cpp_icall_func(__this, ___0_value);
-}
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-// Conversion methods for marshalling of: UnityEngine.HumanPose
-IL2CPP_EXTERN_C void HumanPose_t4FD3BF9D666DD3F1B7361BD77E5BFD46560DAB6A_marshal_pinvoke(const HumanPose_t4FD3BF9D666DD3F1B7361BD77E5BFD46560DAB6A& unmarshaled, HumanPose_t4FD3BF9D666DD3F1B7361BD77E5BFD46560DAB6A_marshaled_pinvoke& marshaled)
-{
-	marshaled.___bodyPosition_0 = unmarshaled.___bodyPosition_0;
-	marshaled.___bodyRotation_1 = unmarshaled.___bodyRotation_1;
-	marshaled.___muscles_2 = il2cpp_codegen_com_marshal_safe_array(IL2CPP_VT_R4, unmarshaled.___muscles_2);
-}
-IL2CPP_EXTERN_C void HumanPose_t4FD3BF9D666DD3F1B7361BD77E5BFD46560DAB6A_marshal_pinvoke_back(const HumanPose_t4FD3BF9D666DD3F1B7361BD77E5BFD46560DAB6A_marshaled_pinvoke& marshaled, HumanPose_t4FD3BF9D666DD3F1B7361BD77E5BFD46560DAB6A& unmarshaled)
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Single_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 unmarshaledbodyPosition_temp_0;
-	memset((&unmarshaledbodyPosition_temp_0), 0, sizeof(unmarshaledbodyPosition_temp_0));
-	unmarshaledbodyPosition_temp_0 = marshaled.___bodyPosition_0;
-	unmarshaled.___bodyPosition_0 = unmarshaledbodyPosition_temp_0;
-	Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 unmarshaledbodyRotation_temp_1;
-	memset((&unmarshaledbodyRotation_temp_1), 0, sizeof(unmarshaledbodyRotation_temp_1));
-	unmarshaledbodyRotation_temp_1 = marshaled.___bodyRotation_1;
-	unmarshaled.___bodyRotation_1 = unmarshaledbodyRotation_temp_1;
-	unmarshaled.___muscles_2 = (SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C*)il2cpp_codegen_com_marshal_safe_array_result(IL2CPP_VT_R4, Single_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_il2cpp_TypeInfo_var, marshaled.___muscles_2);
-	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___muscles_2), (void*)(SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C*)il2cpp_codegen_com_marshal_safe_array_result(IL2CPP_VT_R4, Single_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_il2cpp_TypeInfo_var, marshaled.___muscles_2));
-}
-// Conversion method for clean up from marshalling of: UnityEngine.HumanPose
-IL2CPP_EXTERN_C void HumanPose_t4FD3BF9D666DD3F1B7361BD77E5BFD46560DAB6A_marshal_pinvoke_cleanup(HumanPose_t4FD3BF9D666DD3F1B7361BD77E5BFD46560DAB6A_marshaled_pinvoke& marshaled)
-{
-	il2cpp_codegen_com_destroy_safe_array(marshaled.___muscles_2);
-	marshaled.___muscles_2 = NULL;
-}
-// Conversion methods for marshalling of: UnityEngine.HumanPose
-IL2CPP_EXTERN_C void HumanPose_t4FD3BF9D666DD3F1B7361BD77E5BFD46560DAB6A_marshal_com(const HumanPose_t4FD3BF9D666DD3F1B7361BD77E5BFD46560DAB6A& unmarshaled, HumanPose_t4FD3BF9D666DD3F1B7361BD77E5BFD46560DAB6A_marshaled_com& marshaled)
-{
-	marshaled.___bodyPosition_0 = unmarshaled.___bodyPosition_0;
-	marshaled.___bodyRotation_1 = unmarshaled.___bodyRotation_1;
-	marshaled.___muscles_2 = il2cpp_codegen_com_marshal_safe_array(IL2CPP_VT_R4, unmarshaled.___muscles_2);
-}
-IL2CPP_EXTERN_C void HumanPose_t4FD3BF9D666DD3F1B7361BD77E5BFD46560DAB6A_marshal_com_back(const HumanPose_t4FD3BF9D666DD3F1B7361BD77E5BFD46560DAB6A_marshaled_com& marshaled, HumanPose_t4FD3BF9D666DD3F1B7361BD77E5BFD46560DAB6A& unmarshaled)
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Single_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 unmarshaledbodyPosition_temp_0;
-	memset((&unmarshaledbodyPosition_temp_0), 0, sizeof(unmarshaledbodyPosition_temp_0));
-	unmarshaledbodyPosition_temp_0 = marshaled.___bodyPosition_0;
-	unmarshaled.___bodyPosition_0 = unmarshaledbodyPosition_temp_0;
-	Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 unmarshaledbodyRotation_temp_1;
-	memset((&unmarshaledbodyRotation_temp_1), 0, sizeof(unmarshaledbodyRotation_temp_1));
-	unmarshaledbodyRotation_temp_1 = marshaled.___bodyRotation_1;
-	unmarshaled.___bodyRotation_1 = unmarshaledbodyRotation_temp_1;
-	unmarshaled.___muscles_2 = (SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C*)il2cpp_codegen_com_marshal_safe_array_result(IL2CPP_VT_R4, Single_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_il2cpp_TypeInfo_var, marshaled.___muscles_2);
-	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___muscles_2), (void*)(SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C*)il2cpp_codegen_com_marshal_safe_array_result(IL2CPP_VT_R4, Single_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_il2cpp_TypeInfo_var, marshaled.___muscles_2));
-}
-// Conversion method for clean up from marshalling of: UnityEngine.HumanPose
-IL2CPP_EXTERN_C void HumanPose_t4FD3BF9D666DD3F1B7361BD77E5BFD46560DAB6A_marshal_com_cleanup(HumanPose_t4FD3BF9D666DD3F1B7361BD77E5BFD46560DAB6A_marshaled_com& marshaled)
-{
-	il2cpp_codegen_com_destroy_safe_array(marshaled.___muscles_2);
-	marshaled.___muscles_2 = NULL;
-}
-// System.Void UnityEngine.HumanPose::Init()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanPose_Init_m9BBDA2B4B2EB0DE3082EE7FE36A92F19870F682D (HumanPose_t4FD3BF9D666DD3F1B7361BD77E5BFD46560DAB6A* __this, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	bool V_0 = false;
-	bool V_1 = false;
-	bool V_2 = false;
-	bool V_3 = false;
-	int32_t G_B10_0 = 0;
-	{
-		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_0 = __this->___muscles_2;
-		V_0 = (bool)((!(((RuntimeObject*)(SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C*)L_0) <= ((RuntimeObject*)(RuntimeObject*)NULL)))? 1 : 0);
-		bool L_1 = V_0;
-		if (!L_1)
-		{
-			goto IL_0032;
-		}
-	}
-	{
-		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_2 = __this->___muscles_2;
-		NullCheck(L_2);
-		int32_t L_3;
-		L_3 = HumanTrait_get_MuscleCount_m1710B0FAD40DB860AD5C117A831F7554F5C55678(NULL);
-		V_1 = (bool)((((int32_t)((((int32_t)((int32_t)(((RuntimeArray*)L_2)->max_length))) == ((int32_t)L_3))? 1 : 0)) == ((int32_t)0))? 1 : 0);
-		bool L_4 = V_1;
-		if (!L_4)
-		{
-			goto IL_0031;
-		}
-	}
-	{
-		InvalidOperationException_t5DDE4D49B7405FAAB1E4576F4715A42A3FAD4BAB* L_5 = (InvalidOperationException_t5DDE4D49B7405FAAB1E4576F4715A42A3FAD4BAB*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&InvalidOperationException_t5DDE4D49B7405FAAB1E4576F4715A42A3FAD4BAB_il2cpp_TypeInfo_var)));
-		NullCheck(L_5);
-		InvalidOperationException__ctor_mE4CB6F4712AB6D99A2358FBAE2E052B3EE976162(L_5, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteral60912CD366073773BCB944DEFFD0060C2E4C6128)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_5, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&HumanPose_Init_m9BBDA2B4B2EB0DE3082EE7FE36A92F19870F682D_RuntimeMethod_var)));
-	}
-
-IL_0031:
-	{
-	}
-
-IL_0032:
-	{
-		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_6 = __this->___muscles_2;
-		V_2 = (bool)((((RuntimeObject*)(SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C*)L_6) == ((RuntimeObject*)(RuntimeObject*)NULL))? 1 : 0);
-		bool L_7 = V_2;
-		if (!L_7)
-		{
-			goto IL_00b2;
-		}
-	}
-	{
-		int32_t L_8;
-		L_8 = HumanTrait_get_MuscleCount_m1710B0FAD40DB860AD5C117A831F7554F5C55678(NULL);
-		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_9 = (SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C*)(SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C*)SZArrayNew(SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C_il2cpp_TypeInfo_var, (uint32_t)L_8);
-		__this->___muscles_2 = L_9;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___muscles_2), (void*)L_9);
-		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974* L_10 = (&__this->___bodyRotation_1);
-		float L_11 = L_10->___x_0;
-		if ((!(((float)L_11) == ((float)(0.0f)))))
-		{
-			goto IL_009a;
-		}
-	}
-	{
-		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974* L_12 = (&__this->___bodyRotation_1);
-		float L_13 = L_12->___y_1;
-		if ((!(((float)L_13) == ((float)(0.0f)))))
-		{
-			goto IL_009a;
-		}
-	}
-	{
-		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974* L_14 = (&__this->___bodyRotation_1);
-		float L_15 = L_14->___z_2;
-		if ((!(((float)L_15) == ((float)(0.0f)))))
-		{
-			goto IL_009a;
-		}
-	}
-	{
-		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974* L_16 = (&__this->___bodyRotation_1);
-		float L_17 = L_16->___w_3;
-		G_B10_0 = ((((float)L_17) == ((float)(0.0f)))? 1 : 0);
-		goto IL_009b;
-	}
-
-IL_009a:
-	{
-		G_B10_0 = 0;
-	}
-
-IL_009b:
-	{
-		V_3 = (bool)G_B10_0;
-		bool L_18 = V_3;
-		if (!L_18)
-		{
-			goto IL_00b1;
-		}
-	}
-	{
-		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974* L_19 = (&__this->___bodyRotation_1);
-		L_19->___w_3 = (1.0f);
-	}
-
-IL_00b1:
-	{
-	}
-
-IL_00b2:
-	{
-		return;
-	}
-}
-IL2CPP_EXTERN_C  void HumanPose_Init_m9BBDA2B4B2EB0DE3082EE7FE36A92F19870F682D_AdjustorThunk (RuntimeObject* __this, const RuntimeMethod* method)
-{
-	HumanPose_t4FD3BF9D666DD3F1B7361BD77E5BFD46560DAB6A* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<HumanPose_t4FD3BF9D666DD3F1B7361BD77E5BFD46560DAB6A*>(__this + _offset);
-	HumanPose_Init_m9BBDA2B4B2EB0DE3082EE7FE36A92F19870F682D(_thisAdjusted, method);
-}
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-// System.IntPtr UnityEngine.HumanPoseHandler::Internal_CreateFromRoot(UnityEngine.Avatar,UnityEngine.Transform)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t HumanPoseHandler_Internal_CreateFromRoot_m93990E1FEE4C5FD08663157192B112CCF251BCEA (Avatar_t7861E57EEE2CF8CC61BD63C09737BA22F7ABCA0F* ___0_avatar, Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___1_root, const RuntimeMethod* method) 
-{
-	typedef intptr_t (*HumanPoseHandler_Internal_CreateFromRoot_m93990E1FEE4C5FD08663157192B112CCF251BCEA_ftn) (Avatar_t7861E57EEE2CF8CC61BD63C09737BA22F7ABCA0F*, Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1*);
-	static HumanPoseHandler_Internal_CreateFromRoot_m93990E1FEE4C5FD08663157192B112CCF251BCEA_ftn _il2cpp_icall_func;
-	if (!_il2cpp_icall_func)
-	_il2cpp_icall_func = (HumanPoseHandler_Internal_CreateFromRoot_m93990E1FEE4C5FD08663157192B112CCF251BCEA_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.HumanPoseHandler::Internal_CreateFromRoot(UnityEngine.Avatar,UnityEngine.Transform)");
-	intptr_t icallRetVal = _il2cpp_icall_func(___0_avatar, ___1_root);
-	return icallRetVal;
-}
-// System.Void UnityEngine.HumanPoseHandler::Internal_Destroy(System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanPoseHandler_Internal_Destroy_m824560DD4448B327FFF1227E260F6A92F42F0940 (intptr_t ___0_ptr, const RuntimeMethod* method) 
-{
-	typedef void (*HumanPoseHandler_Internal_Destroy_m824560DD4448B327FFF1227E260F6A92F42F0940_ftn) (intptr_t);
-	static HumanPoseHandler_Internal_Destroy_m824560DD4448B327FFF1227E260F6A92F42F0940_ftn _il2cpp_icall_func;
-	if (!_il2cpp_icall_func)
-	_il2cpp_icall_func = (HumanPoseHandler_Internal_Destroy_m824560DD4448B327FFF1227E260F6A92F42F0940_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.HumanPoseHandler::Internal_Destroy(System.IntPtr)");
-	_il2cpp_icall_func(___0_ptr);
-}
-// System.Void UnityEngine.HumanPoseHandler::GetHumanPose(UnityEngine.Vector3&,UnityEngine.Quaternion&,System.Single[])
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanPoseHandler_GetHumanPose_m7F8C4612504D3197D42D6DA82F8D27B1C808AAF0 (HumanPoseHandler_t57D245FE7D20329F34675018C4142944EE3B3992* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___0_bodyPosition, Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974* ___1_bodyRotation, SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* ___2_muscles, const RuntimeMethod* method) 
-{
-	typedef void (*HumanPoseHandler_GetHumanPose_m7F8C4612504D3197D42D6DA82F8D27B1C808AAF0_ftn) (HumanPoseHandler_t57D245FE7D20329F34675018C4142944EE3B3992*, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2*, Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974*, SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C*);
-	static HumanPoseHandler_GetHumanPose_m7F8C4612504D3197D42D6DA82F8D27B1C808AAF0_ftn _il2cpp_icall_func;
-	if (!_il2cpp_icall_func)
-	_il2cpp_icall_func = (HumanPoseHandler_GetHumanPose_m7F8C4612504D3197D42D6DA82F8D27B1C808AAF0_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.HumanPoseHandler::GetHumanPose(UnityEngine.Vector3&,UnityEngine.Quaternion&,System.Single[])");
-	_il2cpp_icall_func(__this, ___0_bodyPosition, ___1_bodyRotation, ___2_muscles);
-}
-// System.Void UnityEngine.HumanPoseHandler::SetHumanPose(UnityEngine.Vector3&,UnityEngine.Quaternion&,System.Single[])
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanPoseHandler_SetHumanPose_mA5E4639B077C37CF5CB269D1EA59C42847BC2C87 (HumanPoseHandler_t57D245FE7D20329F34675018C4142944EE3B3992* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___0_bodyPosition, Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974* ___1_bodyRotation, SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* ___2_muscles, const RuntimeMethod* method) 
-{
-	typedef void (*HumanPoseHandler_SetHumanPose_mA5E4639B077C37CF5CB269D1EA59C42847BC2C87_ftn) (HumanPoseHandler_t57D245FE7D20329F34675018C4142944EE3B3992*, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2*, Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974*, SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C*);
-	static HumanPoseHandler_SetHumanPose_mA5E4639B077C37CF5CB269D1EA59C42847BC2C87_ftn _il2cpp_icall_func;
-	if (!_il2cpp_icall_func)
-	_il2cpp_icall_func = (HumanPoseHandler_SetHumanPose_mA5E4639B077C37CF5CB269D1EA59C42847BC2C87_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.HumanPoseHandler::SetHumanPose(UnityEngine.Vector3&,UnityEngine.Quaternion&,System.Single[])");
-	_il2cpp_icall_func(__this, ___0_bodyPosition, ___1_bodyRotation, ___2_muscles);
-}
-// System.Void UnityEngine.HumanPoseHandler::Dispose()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanPoseHandler_Dispose_m642803C0CB9C24C89F3A427D160AFCC72F9F4380 (HumanPoseHandler_t57D245FE7D20329F34675018C4142944EE3B3992* __this, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&GC_t920F9CF6EBB7C787E5010A4352E1B587F356DC58_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IntPtr_t_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	bool V_0 = false;
-	{
-		intptr_t L_0 = __this->___m_Ptr_0;
-		intptr_t L_1 = ((IntPtr_t_StaticFields*)il2cpp_codegen_static_fields_for(IntPtr_t_il2cpp_TypeInfo_var))->___Zero_1;
-		bool L_2;
-		L_2 = IntPtr_op_Inequality_m90EFC9C4CAD9A33E309F2DDF98EE4E1DD253637B(L_0, L_1, NULL);
-		V_0 = L_2;
-		bool L_3 = V_0;
-		if (!L_3)
-		{
-			goto IL_002e;
-		}
-	}
-	{
-		intptr_t L_4 = __this->___m_Ptr_0;
-		HumanPoseHandler_Internal_Destroy_m824560DD4448B327FFF1227E260F6A92F42F0940(L_4, NULL);
-		intptr_t L_5 = ((IntPtr_t_StaticFields*)il2cpp_codegen_static_fields_for(IntPtr_t_il2cpp_TypeInfo_var))->___Zero_1;
-		__this->___m_Ptr_0 = L_5;
-	}
-
-IL_002e:
-	{
-		il2cpp_codegen_runtime_class_init_inline(GC_t920F9CF6EBB7C787E5010A4352E1B587F356DC58_il2cpp_TypeInfo_var);
-		GC_SuppressFinalize_m71815DBD5A0CD2EA1BE43317B08B7A14949EDC65(__this, NULL);
-		return;
-	}
-}
-// System.Void UnityEngine.HumanPoseHandler::.ctor(UnityEngine.Avatar,UnityEngine.Transform)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanPoseHandler__ctor_mF51EEC25B7A32ED62AC281B22D12C4B58E10B1F9 (HumanPoseHandler_t57D245FE7D20329F34675018C4142944EE3B3992* __this, Avatar_t7861E57EEE2CF8CC61BD63C09737BA22F7ABCA0F* ___0_avatar, Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___1_root, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IntPtr_t_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	bool V_0 = false;
-	bool V_1 = false;
-	bool V_2 = false;
-	bool V_3 = false;
-	{
-		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
-		intptr_t L_0 = ((IntPtr_t_StaticFields*)il2cpp_codegen_static_fields_for(IntPtr_t_il2cpp_TypeInfo_var))->___Zero_1;
-		__this->___m_Ptr_0 = L_0;
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_1 = ___1_root;
-		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		bool L_2;
-		L_2 = Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605(L_1, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
-		V_0 = L_2;
-		bool L_3 = V_0;
-		if (!L_3)
-		{
-			goto IL_0029;
-		}
-	}
-	{
-		ArgumentNullException_t327031E412FAB2351B0022DD5DAD47E67E597129* L_4 = (ArgumentNullException_t327031E412FAB2351B0022DD5DAD47E67E597129*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&ArgumentNullException_t327031E412FAB2351B0022DD5DAD47E67E597129_il2cpp_TypeInfo_var)));
-		NullCheck(L_4);
-		ArgumentNullException__ctor_m444AE141157E333844FC1A9500224C2F9FD24F4B(L_4, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteral1B02D2B7BBCCE456AE8279172AB09AD9661B9C9F)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_4, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&HumanPoseHandler__ctor_mF51EEC25B7A32ED62AC281B22D12C4B58E10B1F9_RuntimeMethod_var)));
-	}
-
-IL_0029:
-	{
-		Avatar_t7861E57EEE2CF8CC61BD63C09737BA22F7ABCA0F* L_5 = ___0_avatar;
-		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		bool L_6;
-		L_6 = Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605(L_5, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
-		V_1 = L_6;
-		bool L_7 = V_1;
-		if (!L_7)
-		{
-			goto IL_003f;
-		}
-	}
-	{
-		ArgumentNullException_t327031E412FAB2351B0022DD5DAD47E67E597129* L_8 = (ArgumentNullException_t327031E412FAB2351B0022DD5DAD47E67E597129*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&ArgumentNullException_t327031E412FAB2351B0022DD5DAD47E67E597129_il2cpp_TypeInfo_var)));
-		NullCheck(L_8);
-		ArgumentNullException__ctor_m444AE141157E333844FC1A9500224C2F9FD24F4B(L_8, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteral5A26837B342D49978F4BCEE0E05772F011F8722C)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_8, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&HumanPoseHandler__ctor_mF51EEC25B7A32ED62AC281B22D12C4B58E10B1F9_RuntimeMethod_var)));
-	}
-
-IL_003f:
-	{
-		Avatar_t7861E57EEE2CF8CC61BD63C09737BA22F7ABCA0F* L_9 = ___0_avatar;
-		NullCheck(L_9);
-		bool L_10;
-		L_10 = Avatar_get_isValid_m89626D009C80028727A9C6F8F8F477C23934B94C(L_9, NULL);
-		V_2 = (bool)((((int32_t)L_10) == ((int32_t)0))? 1 : 0);
-		bool L_11 = V_2;
-		if (!L_11)
-		{
-			goto IL_0057;
-		}
-	}
-	{
-		ArgumentException_tAD90411542A20A9C72D5CDA3A84181D8B947A263* L_12 = (ArgumentException_tAD90411542A20A9C72D5CDA3A84181D8B947A263*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&ArgumentException_tAD90411542A20A9C72D5CDA3A84181D8B947A263_il2cpp_TypeInfo_var)));
-		NullCheck(L_12);
-		ArgumentException__ctor_m026938A67AF9D36BB7ED27F80425D7194B514465(L_12, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteral27372C9083CBD735FA3B68818A3BDEBC42320FC6)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_12, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&HumanPoseHandler__ctor_mF51EEC25B7A32ED62AC281B22D12C4B58E10B1F9_RuntimeMethod_var)));
-	}
-
-IL_0057:
-	{
-		Avatar_t7861E57EEE2CF8CC61BD63C09737BA22F7ABCA0F* L_13 = ___0_avatar;
-		NullCheck(L_13);
-		bool L_14;
-		L_14 = Avatar_get_isHuman_m1CDE3C2BCB2A683AB72088B26C9824E0FCF00FBE(L_13, NULL);
-		V_3 = (bool)((((int32_t)L_14) == ((int32_t)0))? 1 : 0);
-		bool L_15 = V_3;
-		if (!L_15)
-		{
-			goto IL_006f;
-		}
-	}
-	{
-		ArgumentException_tAD90411542A20A9C72D5CDA3A84181D8B947A263* L_16 = (ArgumentException_tAD90411542A20A9C72D5CDA3A84181D8B947A263*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&ArgumentException_tAD90411542A20A9C72D5CDA3A84181D8B947A263_il2cpp_TypeInfo_var)));
-		NullCheck(L_16);
-		ArgumentException__ctor_m026938A67AF9D36BB7ED27F80425D7194B514465(L_16, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteral48598D3A8AD17D70B80304BF1FBF4143B7204154)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_16, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&HumanPoseHandler__ctor_mF51EEC25B7A32ED62AC281B22D12C4B58E10B1F9_RuntimeMethod_var)));
-	}
-
-IL_006f:
-	{
-		Avatar_t7861E57EEE2CF8CC61BD63C09737BA22F7ABCA0F* L_17 = ___0_avatar;
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_18 = ___1_root;
-		intptr_t L_19;
-		L_19 = HumanPoseHandler_Internal_CreateFromRoot_m93990E1FEE4C5FD08663157192B112CCF251BCEA(L_17, L_18, NULL);
-		__this->___m_Ptr_0 = L_19;
-		return;
-	}
-}
-// System.Void UnityEngine.HumanPoseHandler::GetHumanPose(UnityEngine.HumanPose&)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanPoseHandler_GetHumanPose_m9323A5049D8A755FDE0E3DC21701A4788D4A7B00 (HumanPoseHandler_t57D245FE7D20329F34675018C4142944EE3B3992* __this, HumanPose_t4FD3BF9D666DD3F1B7361BD77E5BFD46560DAB6A* ___0_humanPose, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IntPtr_t_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	bool V_0 = false;
-	{
-		intptr_t L_0 = __this->___m_Ptr_0;
-		intptr_t L_1 = ((IntPtr_t_StaticFields*)il2cpp_codegen_static_fields_for(IntPtr_t_il2cpp_TypeInfo_var))->___Zero_1;
-		bool L_2;
-		L_2 = IntPtr_op_Equality_m7D9CDCDE9DC2A0C2C614633F4921E90187FAB271(L_0, L_1, NULL);
-		V_0 = L_2;
-		bool L_3 = V_0;
-		if (!L_3)
-		{
-			goto IL_0020;
-		}
-	}
-	{
-		NullReferenceException_tBDE63A6D24569B964908408389070C6A9F5005BB* L_4 = (NullReferenceException_tBDE63A6D24569B964908408389070C6A9F5005BB*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NullReferenceException_tBDE63A6D24569B964908408389070C6A9F5005BB_il2cpp_TypeInfo_var)));
-		NullCheck(L_4);
-		NullReferenceException__ctor_mA41317A57F5C1C0E3F59C7EB25ABD484564B23D4(L_4, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteral6F9CF104B806E6C21D14BBE0B4FADAE908B21197)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_4, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&HumanPoseHandler_GetHumanPose_m9323A5049D8A755FDE0E3DC21701A4788D4A7B00_RuntimeMethod_var)));
-	}
-
-IL_0020:
-	{
-		HumanPose_t4FD3BF9D666DD3F1B7361BD77E5BFD46560DAB6A* L_5 = ___0_humanPose;
-		HumanPose_Init_m9BBDA2B4B2EB0DE3082EE7FE36A92F19870F682D(L_5, NULL);
-		HumanPose_t4FD3BF9D666DD3F1B7361BD77E5BFD46560DAB6A* L_6 = ___0_humanPose;
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* L_7 = (&L_6->___bodyPosition_0);
-		HumanPose_t4FD3BF9D666DD3F1B7361BD77E5BFD46560DAB6A* L_8 = ___0_humanPose;
-		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974* L_9 = (&L_8->___bodyRotation_1);
-		HumanPose_t4FD3BF9D666DD3F1B7361BD77E5BFD46560DAB6A* L_10 = ___0_humanPose;
-		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_11 = L_10->___muscles_2;
-		HumanPoseHandler_GetHumanPose_m7F8C4612504D3197D42D6DA82F8D27B1C808AAF0(__this, L_7, L_9, L_11, NULL);
-		return;
-	}
-}
-// System.Void UnityEngine.HumanPoseHandler::SetHumanPose(UnityEngine.HumanPose&)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanPoseHandler_SetHumanPose_mA7FD443D9B103114E4872FBC5B0A827E1D721562 (HumanPoseHandler_t57D245FE7D20329F34675018C4142944EE3B3992* __this, HumanPose_t4FD3BF9D666DD3F1B7361BD77E5BFD46560DAB6A* ___0_humanPose, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IntPtr_t_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	bool V_0 = false;
-	{
-		intptr_t L_0 = __this->___m_Ptr_0;
-		intptr_t L_1 = ((IntPtr_t_StaticFields*)il2cpp_codegen_static_fields_for(IntPtr_t_il2cpp_TypeInfo_var))->___Zero_1;
-		bool L_2;
-		L_2 = IntPtr_op_Equality_m7D9CDCDE9DC2A0C2C614633F4921E90187FAB271(L_0, L_1, NULL);
-		V_0 = L_2;
-		bool L_3 = V_0;
-		if (!L_3)
-		{
-			goto IL_0020;
-		}
-	}
-	{
-		NullReferenceException_tBDE63A6D24569B964908408389070C6A9F5005BB* L_4 = (NullReferenceException_tBDE63A6D24569B964908408389070C6A9F5005BB*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NullReferenceException_tBDE63A6D24569B964908408389070C6A9F5005BB_il2cpp_TypeInfo_var)));
-		NullCheck(L_4);
-		NullReferenceException__ctor_mA41317A57F5C1C0E3F59C7EB25ABD484564B23D4(L_4, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteral6F9CF104B806E6C21D14BBE0B4FADAE908B21197)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_4, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&HumanPoseHandler_SetHumanPose_mA7FD443D9B103114E4872FBC5B0A827E1D721562_RuntimeMethod_var)));
-	}
-
-IL_0020:
-	{
-		HumanPose_t4FD3BF9D666DD3F1B7361BD77E5BFD46560DAB6A* L_5 = ___0_humanPose;
-		HumanPose_Init_m9BBDA2B4B2EB0DE3082EE7FE36A92F19870F682D(L_5, NULL);
-		HumanPose_t4FD3BF9D666DD3F1B7361BD77E5BFD46560DAB6A* L_6 = ___0_humanPose;
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* L_7 = (&L_6->___bodyPosition_0);
-		HumanPose_t4FD3BF9D666DD3F1B7361BD77E5BFD46560DAB6A* L_8 = ___0_humanPose;
-		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974* L_9 = (&L_8->___bodyRotation_1);
-		HumanPose_t4FD3BF9D666DD3F1B7361BD77E5BFD46560DAB6A* L_10 = ___0_humanPose;
-		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_11 = L_10->___muscles_2;
-		HumanPoseHandler_SetHumanPose_mA5E4639B077C37CF5CB269D1EA59C42847BC2C87(__this, L_7, L_9, L_11, NULL);
-		return;
-	}
-}
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif

@@ -12559,7 +12559,7 @@ IL_0095:
 		IndexedTable_2_t16088F8BAC2820B7B3CC290F0AD89E0569CD717E* L_27 = L_26->___m_buttonProcessedFrame_20;
 		int32_t L_28 = V_3;
 		NullCheck(L_27);
-		VirtualActionInvoker1< int32_t >::Invoke(31 /* System.Void HTC.UnityPlugin.Utility.IndexedTable`2<HTC.UnityPlugin.ColliderEvent.ColliderButtonEventData,HTC.UnityPlugin.Vive.StickyGrabbable/ButtonProcessedState>::RemoveAt(System.Int32) */, L_27, L_28);
+		VirtualActionInvoker1< int32_t >::Invoke(28 /* System.Void HTC.UnityPlugin.Utility.IndexedTable`2<HTC.UnityPlugin.ColliderEvent.ColliderButtonEventData,HTC.UnityPlugin.Vive.StickyGrabbable/ButtonProcessedState>::RemoveAt(System.Int32) */, L_27, L_28);
 		goto IL_010b;
 	}
 
