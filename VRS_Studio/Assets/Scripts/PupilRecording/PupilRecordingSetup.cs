@@ -39,22 +39,8 @@ namespace VRS.PupilRecording
 
         private void SetupStimulus()
         {
-            // 1. Ensure Event Logger exists
-            if (FindObjectOfType<StimulusEventLogger>() == null)
-            {
-                GameObject loggerObj = new GameObject("StimulusEventLogger");
-                loggerObj.AddComponent<StimulusEventLogger>();
-            }
-
-            // 2. Setup Visual Controller
-            // Ideally attached to the camera or a standalone object. 
-            // We'll attach it to a new GameObject "VisualStimulus"
-            if (FindObjectOfType<VisualStimulusController>() == null)
-            {
-                GameObject stimObj = new GameObject("VisualStimulusController");
-                stimObj.AddComponent<VisualStimulusController>();
-                Debug.Log("[PupilRecordingSetup] Created VisualStimulusController");
-            }
+            // Removed: We are using the integrated paradigm inside PupilDataRecorder directly.
+            // visual stimulus controller and logger are obsolete.
         }
 
         private void SetupEyeManager()
@@ -83,40 +69,9 @@ namespace VRS.PupilRecording
 
         private void SetupEyeVisuals()
         {
-            if (!createEyeVisualsIfMissing) return;
-
-            if (FindObjectOfType<EyeVisualization>() != null) return;
-
-            // Create parent container
-            GameObject eyeContainer = new GameObject("EyeVisualization");
-            eyeContainer.transform.position = Camera.main.transform.position + Camera.main.transform.forward * eyeDistance;
-            
-            EyeVisualization eyeVis = eyeContainer.AddComponent<EyeVisualization>();
-            eyeVis.mirrorDistance = eyeDistance;
-
-            // Create left eye
-            GameObject leftEyeObj = CreateEyeSphere("LeftEye", new Vector3(-eyeSeparation / 2f, 0, 0));
-            leftEyeObj.transform.SetParent(eyeContainer.transform, false);
-            eyeVis.leftEye = leftEyeObj.transform;
-
-            // Create left pupil (positioned in front of iris)
-            GameObject leftPupilObj = CreatePupilDisc("LeftPupil");
-            leftPupilObj.transform.SetParent(leftEyeObj.transform, false);
-            leftPupilObj.transform.localPosition = new Vector3(0, 0, 0.46f); // In front of iris
-            eyeVis.leftPupil = leftPupilObj.transform;
-
-            // Create right eye
-            GameObject rightEyeObj = CreateEyeSphere("RightEye", new Vector3(eyeSeparation / 2f, 0, 0));
-            rightEyeObj.transform.SetParent(eyeContainer.transform, false);
-            eyeVis.rightEye = rightEyeObj.transform;
-
-            // Create right pupil
-            GameObject rightPupilObj = CreatePupilDisc("RightPupil");
-            rightPupilObj.transform.SetParent(rightEyeObj.transform, false);
-            rightPupilObj.transform.localPosition = new Vector3(0, 0, 0.46f);
-            eyeVis.rightPupil = rightPupilObj.transform;
-
-            Debug.Log("[PupilRecordingSetup] Created Eye Visualization");
+            // Disabled the mirrored eyes based on user request. 
+            // The EyeVisualization script and spheres will no longer be instantiated.
+            return;
         }
 
         private GameObject CreateEyeSphere(string name, Vector3 localPos)

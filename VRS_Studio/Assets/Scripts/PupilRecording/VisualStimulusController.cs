@@ -17,8 +17,6 @@ namespace VRS.PupilRecording
         private Image fixationCross;
         private Image stimulusPanel;
 
-        private bool isRunning = false;
-
         void Awake()
         {
             // Define positions: Center, Left, Right, Up, Down
