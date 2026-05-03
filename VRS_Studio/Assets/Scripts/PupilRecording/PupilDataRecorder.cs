@@ -21,14 +21,18 @@ namespace VRS.PupilRecording
         public float duration;
         public float interval;
         public float samplingWindow;
+        public Color baseColor; // Pure hue (e.g. (1,0,0)); brightness is multiplied at trial time.
+        public UnityEngine.UI.Image image;
 
-        public StimulusType(string name, GameObject sphere, float duration, float interval, float samplingWindow)
+        public StimulusType(string name, GameObject sphere, float duration, float interval, float samplingWindow, Color baseColor, UnityEngine.UI.Image image)
         {
             this.name = name;
             this.sphere = sphere;
             this.duration = duration;
             this.interval = interval;
             this.samplingWindow = samplingWindow;
+            this.baseColor = baseColor;
+            this.image = image;
         }
     }
 
@@ -36,11 +40,13 @@ namespace VRS.PupilRecording
     {
         public int id;
         public Vector3 position;
+        public float brightness; // Pinned at enqueue so retries reuse the same condition.
 
-        public TestCase(int id, Vector3 pos)
+        public TestCase(int id, Vector3 pos, float brightness)
         {
             this.id = id;
             this.position = pos;
+            this.brightness = brightness;
         }
     }
 
@@ -100,7 +106,7 @@ namespace VRS.PupilRecording
         public float shortRedLuminance = 0.3f;
         public float longBlueLuminance = 6000.0f;
         public float longRedLuminance = 6000.0f;
-        public float fixationLightSize = 0.005f; // reduced from 0.09f
+        public float fixationLightSize = 0.02f; // Small but visible dot
         public float fixationLightLuminance = 0.5f;
 
         [Space(10)]
@@ -120,6 +126,13 @@ namespace VRS.PupilRecording
         [InspectorName("Short Blue")] public bool includeShortBlue = true;
         [InspectorName("Long Red")] public bool includeLongRed = true;
         [InspectorName("Long Blue")] public bool includeLongBlue = true;
+
+        [Space(10)]
+        [Header("Brightness Randomization")]
+        [Tooltip("Per stim type, pick brightnesses evenly spaced across [min, max] (one per position) and shuffle the order. Overrides the per-stimulus luminance fields above. When off, brightness stays at 1.0.")]
+        public bool randomizeBrightness = true;
+        [Range(0f, 1f)] public float minBrightness = 0.1f;
+        [Range(0f, 1f)] public float maxBrightness = 1.0f;
 
         [Space(10)]
         [Header("Other Options")]
@@ -152,10 +165,16 @@ namespace VRS.PupilRecording
         // Instantaneous Event Storage (written to CSV then cleared)
         private string currentEventString = "";
 
+        // Brightness held across stim-on + sampling window for analysis; 0 between trials.
+        private float currentStimulusBrightness = 0f;
+
         private void Start()
         {
             // Try to find head transform (Main Camera is standard in VR setups)
-            headTransform = Camera.main != null ? Camera.main.transform : transform;
+            Camera cam = Camera.main;
+            if (cam == null) cam = FindObjectOfType<Camera>();
+            headTransform = cam != null ? cam.transform : transform;
+            Debug.Log($"[PupilDataRecorder] headTransform resolved to: {headTransform.name} pos={headTransform.position}");
 
             // Generate unique session filename and open file immediately
             string fileName = $"pupil_session_{DateTime.Now:yyyyMMdd_HHmmss}.csv";
@@ -179,7 +198,7 @@ namespace VRS.PupilRecording
                 fileWriter.AutoFlush = true; // Ensures data is written immediately
                 
                 // Write header
-                fileWriter.WriteLine("timestamp_sec,left_pupil_mm,right_pupil_mm,left_blink,right_blink,left_gaze_x,left_gaze_y,left_gaze_z,right_gaze_x,right_gaze_y,right_gaze_z,combined_gaze_x,combined_gaze_y,combined_gaze_z,origin_x,origin_y,origin_z,light_condition,event_name,stimulus_event");
+                fileWriter.WriteLine("timestamp_sec,left_pupil_mm,right_pupil_mm,left_blink,right_blink,left_gaze_x,left_gaze_y,left_gaze_z,right_gaze_x,right_gaze_y,right_gaze_z,combined_gaze_x,combined_gaze_y,combined_gaze_z,origin_x,origin_y,origin_z,light_condition,stimulus_brightness,event_name,stimulus_event");
                 
                 Debug.Log($"[PupilDataRecorder] Session started. Streaming data to: {sessionFilePath}");
             }
@@ -254,7 +273,7 @@ namespace VRS.PupilRecording
             {
                 StimulusType stim = stimArray[i];
 
-                EnqueuePositions();
+                EnqueuePositions(stim.name);
                 currentSphere = stim.sphere;
                 failedPositions = new Dictionary<int, FailedPosition>();
 
@@ -266,14 +285,19 @@ namespace VRS.PupilRecording
 
                     yield return new WaitForSeconds(preStimulusWindow);
 
+                    float trialBrightness = testCase.brightness;
+                    ApplyBrightness(stim, trialBrightness);
+                    currentStimulusBrightness = trialBrightness;
+
                     currentSphere.SetActive(true);
                     StartCoroutine(UpdateSpherePosition(currentSphere, offsetPosition));
-                    LogEvent("Start", $"Start {stim.name} sphere for {stim.duration} seconds in {offsetPosition} test_case_id={testCase.id}");
+                    LogEvent("Start", $"Start {stim.name} sphere for {stim.duration} seconds in {offsetPosition} test_case_id={testCase.id} brightness={trialBrightness:F2}");
+                    Debug.Log($"[PupilDataRecorder] Sphere {stim.name} ACTIVATED at {offsetPosition}, brightness={trialBrightness:F2}, color={stim.image.color}, activeInHierarchy={currentSphere.activeInHierarchy}");
 
                     yield return new WaitForSeconds(stim.duration);
 
                     currentSphere.SetActive(false);
-                    LogEvent("Stop", $"Stop {stim.name} sphere in {offsetPosition} test_case_id={testCase.id}");
+                    LogEvent("Stop", $"Stop {stim.name} sphere in {offsetPosition} test_case_id={testCase.id} brightness={trialBrightness:F2}");
 
                     yield return new WaitForSeconds(stim.samplingWindow);
 
@@ -298,6 +322,7 @@ namespace VRS.PupilRecording
                     }
 
                     currentTrial = null;
+                    currentStimulusBrightness = 0f;
                     yield return new WaitForSeconds(Mathf.Max(0f, stim.interval - stim.samplingWindow));
                 }
 
@@ -332,42 +357,62 @@ namespace VRS.PupilRecording
 
         IEnumerator UpdateSpherePosition(GameObject sphere, Vector3 offsetPosition)
         {
-            while (sphere.activeSelf)
+            // Position the UI element on the canvas using RectTransform
+            // offsetPosition.x and .y are in meters; canvas scale is 0.001 so multiply by 1000 to get canvas units
+            RectTransform rt = sphere.GetComponent<RectTransform>();
+            if (rt != null)
             {
-                float fixedZ = offsetPosition.z;
-                Vector3 targetPosition = headTransform.position
-                                    + headTransform.right * offsetPosition.x
-                                    + headTransform.up * offsetPosition.y
-                                    + headTransform.forward * fixedZ;
-
-                sphere.transform.position = targetPosition;
-                yield return null;
+                rt.anchoredPosition = new Vector2(offsetPosition.x * 1000f, offsetPosition.y * 1000f);
             }
+            // No continuous update needed since the canvas is head-locked in Update()
+            yield break;
         }
 
-        void EnqueuePositions() {
+        void EnqueuePositions(string stimName)
+        {
             testCasesQueue = new Queue<TestCase>();
-            foreach (Vector3 pos in vectorPositions) {
-                testCasesQueue.Enqueue(new TestCase(testCaseId, pos));
+            int n = vectorPositions.Length;
+
+            // Build a balanced brightness schedule: n levels evenly spanning [min, max], then shuffle the order.
+            List<float> brightnesses = new List<float>(n);
+            if (randomizeBrightness && n > 0)
+            {
+                float lo = Mathf.Min(minBrightness, maxBrightness);
+                float hi = Mathf.Max(minBrightness, maxBrightness);
+                for (int i = 0; i < n; i++)
+                {
+                    float t = (n == 1) ? 1f : (float)i / (n - 1);
+                    brightnesses.Add(Mathf.Lerp(lo, hi, t));
+                }
+                // Fisher-Yates shuffle
+                for (int i = n - 1; i > 0; i--)
+                {
+                    int j = UnityEngine.Random.Range(0, i + 1);
+                    float tmp = brightnesses[i];
+                    brightnesses[i] = brightnesses[j];
+                    brightnesses[j] = tmp;
+                }
+            }
+            else
+            {
+                for (int i = 0; i < n; i++) brightnesses.Add(1f);
+            }
+
+            Debug.Log($"[PupilDataRecorder] {stimName} brightness schedule: [{string.Join(", ", brightnesses.ConvertAll(b => b.ToString("F2")))}]");
+
+            for (int i = 0; i < n; i++)
+            {
+                testCasesQueue.Enqueue(new TestCase(testCaseId, vectorPositions[i], brightnesses[i]));
                 testCaseId++;
             }
         }
 
         void UpdateHeadLockedVisuals()
         {
-            if (headTransform != null)
+            if (headTransform != null && canvas != null)
             {
-                if (fixationLight != null && fixationLight.activeSelf)
-                {
-                    // Placed at 1.95m so it sits just slightly in front of the 2.0m stimulus spheres
-                    fixationLight.transform.position = headTransform.position + headTransform.forward * 1.95f;
-                }
-
-                if (canvas != null)
-                {
-                    canvas.transform.position = headTransform.position + headTransform.forward * 2.0f;
-                    canvas.transform.rotation = headTransform.rotation;
-                }
+                canvas.transform.position = headTransform.position + headTransform.forward * 2.0f;
+                canvas.transform.rotation = headTransform.rotation;
             }
         }
 
@@ -402,12 +447,17 @@ namespace VRS.PupilRecording
 
         public void CreateFixationLight()
         {
-            fixationLight = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-            fixationLight.name = "FixationLight";
-            fixationLight.transform.SetParent(transform, false);
-            fixationLight.layer = LayerMask.NameToLayer("Default");
-            fixationLight.transform.localScale = Vector3.one * fixationLightSize;
-            AdjustMaterial(fixationLight, Color.white, fixationLightLuminance);
+            // Create fixation dot as a UI Image on the canvas (guaranteed to render)
+            GameObject fixObj = new GameObject("FixationDot");
+            fixObj.transform.SetParent(canvas.transform, false);
+            UnityEngine.UI.Image fixImage = fixObj.AddComponent<UnityEngine.UI.Image>();
+            fixImage.color = Color.white;
+            // Size in canvas units: fixationLightSize in meters * 1000 (canvas scale is 0.001)
+            float dotSizeUnits = fixationLightSize * 1000f;
+            fixImage.rectTransform.sizeDelta = new Vector2(dotSizeUnits, dotSizeUnits);
+            fixImage.rectTransform.anchoredPosition = Vector2.zero; // Center of canvas
+            fixationLight = fixObj;
+            Debug.Log($"[PupilDataRecorder] Fixation dot created as UI Image, size={dotSizeUnits} canvas units");
         }
 
         void CreateStimuli()
@@ -417,44 +467,43 @@ namespace VRS.PupilRecording
             if (includeShortBlue) AddStimulus("Short Blue", Color.blue, blueCircleSize, shortBlueLuminance, shortStimDuration, shortInterval, shortSamplingWindow);
             if (includeLongRed) AddStimulus("Long Red", Color.red, redCircleSize, longRedLuminance, longStimDuration, longInterval, longSamplingWindow);
             if (includeLongBlue) AddStimulus("Long Blue", Color.blue, blueCircleSize, longBlueLuminance, longStimDuration, longInterval, longSamplingWindow);
+            Debug.Log($"[PupilDataRecorder] Created {stimArray.Count} stimulus types");
         }
 
         void AddStimulus(string name, Color color, float size, float luminance, float duration, float interval, float samplingWindow)
         {
-            GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-            sphere.name = name;
-            sphere.transform.SetParent(transform, false);
-            sphere.transform.localScale = Vector3.one * size;
-            sphere.SetActive(false);
-            AdjustMaterial(sphere, color, luminance);
-            StimulusType stimu = new StimulusType(name, sphere, duration, interval, samplingWindow);
+            // Create stimulus as a UI Image on the canvas
+            GameObject stimObj = new GameObject(name);
+            stimObj.transform.SetParent(canvas.transform, false);
+            UnityEngine.UI.Image stimImage = stimObj.AddComponent<UnityEngine.UI.Image>();
+
+            // baseColor is the pure hue at full intensity — runtime brightness multiplies this.
+            Color baseColor = new Color(Mathf.Clamp01(color.r), Mathf.Clamp01(color.g), Mathf.Clamp01(color.b), 1f);
+
+            // Initial color applies the legacy luminance field; gets overridden each trial when randomization is on.
+            Color finalColor = baseColor * Mathf.Max(luminance, 1f);
+            finalColor.a = 1f;
+            finalColor = new Color(Mathf.Clamp01(finalColor.r), Mathf.Clamp01(finalColor.g), Mathf.Clamp01(finalColor.b), 1f);
+            stimImage.color = finalColor;
+
+            // Size in canvas units: size in meters * 1000
+            float sizeUnits = size * 1000f;
+            stimImage.rectTransform.sizeDelta = new Vector2(sizeUnits, sizeUnits);
+            stimImage.rectTransform.anchoredPosition = Vector2.zero;
+
+            stimObj.SetActive(false); // Hidden until needed
+
+            StimulusType stimu = new StimulusType(name, stimObj, duration, interval, samplingWindow, baseColor, stimImage);
             stimArray.Add(stimu);
+            Debug.Log($"[PupilDataRecorder] Created UI stimulus: {name} baseColor={baseColor} size={sizeUnits}");
         }
 
-        void AdjustMaterial(GameObject sphere, Color color, float luminance)
+        private void ApplyBrightness(StimulusType stim, float brightness)
         {
-            Renderer renderer = sphere.GetComponent<Renderer>();
-            Shader unlitShader = Shader.Find("Unlit/Color");
-            
-            Material mat;
-            if (unlitShader != null)
-            {
-                mat = new Material(unlitShader);
-            }
-            else
-            {
-                // Fallback to the default material from CreatePrimitive
-                mat = renderer.material; 
-            }
-
-            mat.color = color;
-            mat.EnableKeyword("_EMISSION");
-            mat.SetColor("_EmissionColor", color * luminance);
-
-            if (unlitShader != null)
-            {
-                renderer.material = mat;
-            }
+            if (stim?.image == null) return;
+            Color c = stim.baseColor * Mathf.Clamp01(brightness);
+            c.a = 1f;
+            stim.image.color = new Color(Mathf.Clamp01(c.r), Mathf.Clamp01(c.g), Mathf.Clamp01(c.b), 1f);
         }
 
         void EndRun()
@@ -538,7 +587,7 @@ namespace VRS.PupilRecording
                                     $"{rightGaze.x:F4},{rightGaze.y:F4},{rightGaze.z:F4}," +
                                     $"{combinedGaze.x:F4},{combinedGaze.y:F4},{combinedGaze.z:F4}," +
                                     $"{origin.x:F4},{origin.y:F4},{origin.z:F4}," +
-                                    $"{lightCondition},{eventData}");
+                                    $"{lightCondition},{currentStimulusBrightness:F2},{eventData}");
                 dataPointCount++;
             }
             catch (Exception e)

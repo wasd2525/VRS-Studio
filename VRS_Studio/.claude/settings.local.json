@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ADB='C:\\\\\\\\Users\\\\\\\\benha\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Unity\\\\\\\\cache\\\\\\\\packages\\\\\\\\npm-registry.vive.com\\\\\\\\com.htc.upm.wave.xrsdk@5.6.0-r.10.2\\\\\\\\Runtime\\\\\\\\DirectPreview\\\\\\\\Binary\\\\\\\\RRServer\\\\\\\\Tools\\\\\\\\ADB\\\\\\\\adb.exe')",
+      "Bash(cmd.exe /c \"\"\"$ADB\"\" shell \"\"ls /sdcard/Android/data/\"\"\")"
+    ]
+  }
+}
