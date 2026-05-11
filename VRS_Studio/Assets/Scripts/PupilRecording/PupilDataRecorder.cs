@@ -106,7 +106,7 @@ namespace VRS.PupilRecording
         public float shortRedLuminance = 0.3f;
         public float longBlueLuminance = 6000.0f;
         public float longRedLuminance = 6000.0f;
-        public float fixationLightSize = 0.02f; // Small but visible dot
+        public float fixationLightSize = 0.015f; // 0.015 m at 2 m canvas distance ≈ 0.43° visual angle
         public float fixationLightLuminance = 0.5f;
 
         [Space(10)]
@@ -133,6 +133,12 @@ namespace VRS.PupilRecording
         public bool randomizeBrightness = true;
         [Range(0f, 1f)] public float minBrightness = 0.1f;
         [Range(0f, 1f)] public float maxBrightness = 1.0f;
+
+        [Space(10)]
+        [Header("Gaze Fixation")]
+        [Tooltip("Fail the trial if gaze deviates more than maxGazeDeviationDeg from the head-forward direction.")]
+        public bool enforceGazeFixation = true;
+        [Range(0f, 10f)] public float maxGazeDeviationDeg = 1f;
 
         [Space(10)]
         [Header("Other Options")]
@@ -305,11 +311,13 @@ namespace VRS.PupilRecording
                     {
                         int repeat = HandleFail(testCase);
                         LogEvent("FAIL", $"FAIL stimulus={stim.name} position={offsetPosition} test_case_id={testCase.id} reason={currentTrial.failedReason} repeat_number={repeat}");
-                        
-                        if (messageText != null) 
+
+                        if (messageText != null)
                         {
                             messageText.color = Color.red;
-                            messageText.text = "Blink Detected. Repeating...";
+                            messageText.text = currentTrial.failedReason == "gaze_deviation"
+                                ? "Gaze Off Target. Repeating..."
+                                : "Blink Detected. Repeating...";
                         }
 
                         // Give them a moment to read the message before continuing the interval
@@ -561,6 +569,18 @@ namespace VRS.PupilRecording
             eyeManager.GetRightEyeDirectionNormalized(out rightGaze);
             eyeManager.GetCombindedEyeDirectionNormalized(out combinedGaze);
             eyeManager.GetCombinedEyeOrigin(out origin);
+
+            // Gaze fixation tolerance: fail trial if combined gaze deviates beyond threshold from head-forward.
+            // Skip when eye data is invalid (already counted as blink) or magnitude near zero.
+            if (enforceGazeFixation && !isBlinking && currentTrial != null && combinedGaze.sqrMagnitude > 0.01f)
+            {
+                float dot = Vector3.Dot(combinedGaze.normalized, headTransform.forward);
+                float deviationDeg = Mathf.Acos(Mathf.Clamp(dot, -1f, 1f)) * Mathf.Rad2Deg;
+                if (deviationDeg > maxGazeDeviationDeg)
+                {
+                    currentTrial.Failed("gaze_deviation");
+                }
+            }
 
             // Get light condition if available
             string lightCondition = "Unknown";
