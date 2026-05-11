@@ -2,7 +2,11 @@
   "permissions": {
     "allow": [
       "Bash(ADB='C:\\\\\\\\Users\\\\\\\\benha\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Unity\\\\\\\\cache\\\\\\\\packages\\\\\\\\npm-registry.vive.com\\\\\\\\com.htc.upm.wave.xrsdk@5.6.0-r.10.2\\\\\\\\Runtime\\\\\\\\DirectPreview\\\\\\\\Binary\\\\\\\\RRServer\\\\\\\\Tools\\\\\\\\ADB\\\\\\\\adb.exe')",
-      "Bash(cmd.exe /c \"\"\"$ADB\"\" shell \"\"ls /sdcard/Android/data/\"\"\")"
+      "Bash(cmd.exe /c \"\"\"$ADB\"\" shell \"\"ls /sdcard/Android/data/\"\"\")",
+      "Bash($ADB devices *)",
+      "Bash($ADB shell *)",
+      "Bash(MSYS_NO_PATHCONV=1 $ADB shell *)",
+      "Bash(MSYS_NO_PATHCONV=1 /c/Users/benha/AppData/Local/Unity/cache/packages/npm-registry.vive.com/com.htc.upm.wave.xrsdk@5.6.0-r.10.2/Runtime/DirectPreview/Binary/RRServer/Tools/ADB/adb.exe pull /sdcard/Android/data/com.htc.vrs.vrsstudio.dev/files/PupilData/pupil_session_20260511_234052.csv C:/Users/benha/Documents/Prj/VRS-Studio/VRS_Studio/PupilData/pupil_session_20260511_234052.csv)"
     ]
   }
 }
