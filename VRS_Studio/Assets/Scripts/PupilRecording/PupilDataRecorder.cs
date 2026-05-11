@@ -135,12 +135,6 @@ namespace VRS.PupilRecording
         [Range(0f, 1f)] public float maxBrightness = 1.0f;
 
         [Space(10)]
-        [Header("Gaze Fixation")]
-        [Tooltip("Fail the trial if gaze deviates more than maxGazeDeviationDeg from the head-forward direction.")]
-        public bool enforceGazeFixation = true;
-        [Range(0f, 10f)] public float maxGazeDeviationDeg = 1f;
-
-        [Space(10)]
         [Header("Other Options")]
         public float waitBeforeStart = 30f;
         public float delayBetweenTypes = 8f;
@@ -315,9 +309,7 @@ namespace VRS.PupilRecording
                         if (messageText != null)
                         {
                             messageText.color = Color.red;
-                            messageText.text = currentTrial.failedReason == "gaze_deviation"
-                                ? "Gaze Off Target. Repeating..."
-                                : "Blink Detected. Repeating...";
+                            messageText.text = "Blink Detected. Repeating...";
                         }
 
                         // Give them a moment to read the message before continuing the interval
@@ -569,18 +561,6 @@ namespace VRS.PupilRecording
             eyeManager.GetRightEyeDirectionNormalized(out rightGaze);
             eyeManager.GetCombindedEyeDirectionNormalized(out combinedGaze);
             eyeManager.GetCombinedEyeOrigin(out origin);
-
-            // Gaze fixation tolerance: fail trial if combined gaze deviates beyond threshold from head-forward.
-            // Skip when eye data is invalid (already counted as blink) or magnitude near zero.
-            if (enforceGazeFixation && !isBlinking && currentTrial != null && combinedGaze.sqrMagnitude > 0.01f)
-            {
-                float dot = Vector3.Dot(combinedGaze.normalized, headTransform.forward);
-                float deviationDeg = Mathf.Acos(Mathf.Clamp(dot, -1f, 1f)) * Mathf.Rad2Deg;
-                if (deviationDeg > maxGazeDeviationDeg)
-                {
-                    currentTrial.Failed("gaze_deviation");
-                }
-            }
 
             // Get light condition if available
             string lightCondition = "Unknown";

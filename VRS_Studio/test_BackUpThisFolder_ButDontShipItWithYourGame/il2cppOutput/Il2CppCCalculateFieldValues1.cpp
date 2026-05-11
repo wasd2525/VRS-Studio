@@ -15733,39 +15733,39 @@ struct U3CU3Ec__DisplayClass8_0_t6145C4A1A817F6510AB01CF31F9DBAF4F42452EE  : pub
 	Guid_t ___messageId_0;
 };
 
-// VRS.PupilRecording.PupilDataRecorder/<ShowStimuliSequence>d__48
-struct U3CShowStimuliSequenceU3Ed__48_t2FF2E76E826E68F8C23352B1D2C89B3EB7075443  : public RuntimeObject
+// VRS.PupilRecording.PupilDataRecorder/<ShowStimuliSequence>d__50
+struct U3CShowStimuliSequenceU3Ed__50_tC74EC8634CF7951CB5B4E27B33D5DFD4BFBA4012  : public RuntimeObject
 {
-	// System.Int32 VRS.PupilRecording.PupilDataRecorder/<ShowStimuliSequence>d__48::<>1__state
+	// System.Int32 VRS.PupilRecording.PupilDataRecorder/<ShowStimuliSequence>d__50::<>1__state
 	int32_t ___U3CU3E1__state_0;
-	// System.Object VRS.PupilRecording.PupilDataRecorder/<ShowStimuliSequence>d__48::<>2__current
+	// System.Object VRS.PupilRecording.PupilDataRecorder/<ShowStimuliSequence>d__50::<>2__current
 	RuntimeObject* ___U3CU3E2__current_1;
-	// VRS.PupilRecording.PupilDataRecorder VRS.PupilRecording.PupilDataRecorder/<ShowStimuliSequence>d__48::<>4__this
+	// VRS.PupilRecording.PupilDataRecorder VRS.PupilRecording.PupilDataRecorder/<ShowStimuliSequence>d__50::<>4__this
 	PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD* ___U3CU3E4__this_2;
-	// System.Single VRS.PupilRecording.PupilDataRecorder/<ShowStimuliSequence>d__48::<waitTimer>5__2
+	// System.Single VRS.PupilRecording.PupilDataRecorder/<ShowStimuliSequence>d__50::<waitTimer>5__2
 	float ___U3CwaitTimerU3E5__2_3;
-	// System.Int32 VRS.PupilRecording.PupilDataRecorder/<ShowStimuliSequence>d__48::<i>5__3
+	// System.Int32 VRS.PupilRecording.PupilDataRecorder/<ShowStimuliSequence>d__50::<i>5__3
 	int32_t ___U3CiU3E5__3_4;
-	// VRS.PupilRecording.StimulusType VRS.PupilRecording.PupilDataRecorder/<ShowStimuliSequence>d__48::<stim>5__4
+	// VRS.PupilRecording.StimulusType VRS.PupilRecording.PupilDataRecorder/<ShowStimuliSequence>d__50::<stim>5__4
 	StimulusType_t52DFC1954C22A5A90ACB4583AD122D69F09C48A0* ___U3CstimU3E5__4_5;
-	// VRS.PupilRecording.TestCase VRS.PupilRecording.PupilDataRecorder/<ShowStimuliSequence>d__48::<testCase>5__5
+	// VRS.PupilRecording.TestCase VRS.PupilRecording.PupilDataRecorder/<ShowStimuliSequence>d__50::<testCase>5__5
 	TestCase_t316BB0A3058D243718DAE7BD00444C56F521E9C2* ___U3CtestCaseU3E5__5_6;
-	// UnityEngine.Vector3 VRS.PupilRecording.PupilDataRecorder/<ShowStimuliSequence>d__48::<offsetPosition>5__6
+	// UnityEngine.Vector3 VRS.PupilRecording.PupilDataRecorder/<ShowStimuliSequence>d__50::<offsetPosition>5__6
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___U3CoffsetPositionU3E5__6_7;
-	// System.Single VRS.PupilRecording.PupilDataRecorder/<ShowStimuliSequence>d__48::<trialBrightness>5__7
+	// System.Single VRS.PupilRecording.PupilDataRecorder/<ShowStimuliSequence>d__50::<trialBrightness>5__7
 	float ___U3CtrialBrightnessU3E5__7_8;
 };
 
-// VRS.PupilRecording.PupilDataRecorder/<UpdateSpherePosition>d__50
-struct U3CUpdateSpherePositionU3Ed__50_tCF564C3E4BA914F21CCEB33AB0FA26DF035A7234  : public RuntimeObject
+// VRS.PupilRecording.PupilDataRecorder/<UpdateSpherePosition>d__52
+struct U3CUpdateSpherePositionU3Ed__52_t396AD659153DFB32D6B8F4E3E0B6DEAF3F7383DC  : public RuntimeObject
 {
-	// System.Int32 VRS.PupilRecording.PupilDataRecorder/<UpdateSpherePosition>d__50::<>1__state
+	// System.Int32 VRS.PupilRecording.PupilDataRecorder/<UpdateSpherePosition>d__52::<>1__state
 	int32_t ___U3CU3E1__state_0;
-	// System.Object VRS.PupilRecording.PupilDataRecorder/<UpdateSpherePosition>d__50::<>2__current
+	// System.Object VRS.PupilRecording.PupilDataRecorder/<UpdateSpherePosition>d__52::<>2__current
 	RuntimeObject* ___U3CU3E2__current_1;
-	// UnityEngine.GameObject VRS.PupilRecording.PupilDataRecorder/<UpdateSpherePosition>d__50::sphere
+	// UnityEngine.GameObject VRS.PupilRecording.PupilDataRecorder/<UpdateSpherePosition>d__52::sphere
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___sphere_2;
-	// UnityEngine.Vector3 VRS.PupilRecording.PupilDataRecorder/<UpdateSpherePosition>d__50::offsetPosition
+	// UnityEngine.Vector3 VRS.PupilRecording.PupilDataRecorder/<UpdateSpherePosition>d__52::offsetPosition
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___offsetPosition_3;
 };
 
@@ -24230,48 +24230,52 @@ struct PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD  : public Mon
 	float ___minBrightness_27;
 	// System.Single VRS.PupilRecording.PupilDataRecorder::maxBrightness
 	float ___maxBrightness_28;
+	// System.Boolean VRS.PupilRecording.PupilDataRecorder::enforceGazeFixation
+	bool ___enforceGazeFixation_29;
+	// System.Single VRS.PupilRecording.PupilDataRecorder::maxGazeDeviationDeg
+	float ___maxGazeDeviationDeg_30;
 	// System.Single VRS.PupilRecording.PupilDataRecorder::waitBeforeStart
-	float ___waitBeforeStart_29;
+	float ___waitBeforeStart_31;
 	// System.Single VRS.PupilRecording.PupilDataRecorder::delayBetweenTypes
-	float ___delayBetweenTypes_30;
+	float ___delayBetweenTypes_32;
 	// System.Single VRS.PupilRecording.PupilDataRecorder::maxRetests
-	float ___maxRetests_31;
+	float ___maxRetests_33;
 	// System.IO.StreamWriter VRS.PupilRecording.PupilDataRecorder::fileWriter
-	StreamWriter_t6E7DF7D524AA3C018A65F62EE80779873ED4D1E4* ___fileWriter_32;
+	StreamWriter_t6E7DF7D524AA3C018A65F62EE80779873ED4D1E4* ___fileWriter_34;
 	// System.Single VRS.PupilRecording.PupilDataRecorder::sessionStartTime
-	float ___sessionStartTime_33;
+	float ___sessionStartTime_35;
 	// System.String VRS.PupilRecording.PupilDataRecorder::sessionFilePath
-	String_t* ___sessionFilePath_34;
+	String_t* ___sessionFilePath_36;
 	// System.Boolean VRS.PupilRecording.PupilDataRecorder::isRecording
-	bool ___isRecording_35;
+	bool ___isRecording_37;
 	// System.Int32 VRS.PupilRecording.PupilDataRecorder::dataPointCount
-	int32_t ___dataPointCount_36;
+	int32_t ___dataPointCount_38;
 	// Wave.Essence.Eye.EyeManager VRS.PupilRecording.PupilDataRecorder::eyeManager
-	EyeManager_t571F993FE31D7991E561A87B07B4582E9EA46C0C* ___eyeManager_37;
+	EyeManager_t571F993FE31D7991E561A87B07B4582E9EA46C0C* ___eyeManager_39;
 	// UnityEngine.Transform VRS.PupilRecording.PupilDataRecorder::headTransform
-	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___headTransform_38;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___headTransform_40;
 	// UnityEngine.GameObject VRS.PupilRecording.PupilDataRecorder::canvas
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___canvas_39;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___canvas_41;
 	// UnityEngine.UI.Text VRS.PupilRecording.PupilDataRecorder::messageText
-	Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* ___messageText_40;
+	Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* ___messageText_42;
 	// UnityEngine.GameObject VRS.PupilRecording.PupilDataRecorder::fixationLight
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___fixationLight_41;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___fixationLight_43;
 	// System.Collections.Generic.List`1<VRS.PupilRecording.StimulusType> VRS.PupilRecording.PupilDataRecorder::stimArray
-	List_1_t47E7B956C8FA80994C084920991BB3B43C49DB98* ___stimArray_42;
+	List_1_t47E7B956C8FA80994C084920991BB3B43C49DB98* ___stimArray_44;
 	// System.Int32 VRS.PupilRecording.PupilDataRecorder::testCaseId
-	int32_t ___testCaseId_43;
+	int32_t ___testCaseId_45;
 	// System.Collections.Generic.Queue`1<VRS.PupilRecording.TestCase> VRS.PupilRecording.PupilDataRecorder::testCasesQueue
-	Queue_1_t9AB1A2B080454D5BB9C3124BF0503028A568E40E* ___testCasesQueue_44;
+	Queue_1_t9AB1A2B080454D5BB9C3124BF0503028A568E40E* ___testCasesQueue_46;
 	// VRS.PupilRecording.TrialState VRS.PupilRecording.PupilDataRecorder::currentTrial
-	TrialState_t51083C39FEC68F4FE0423B25091FDE0676BF25D8* ___currentTrial_45;
+	TrialState_t51083C39FEC68F4FE0423B25091FDE0676BF25D8* ___currentTrial_47;
 	// UnityEngine.GameObject VRS.PupilRecording.PupilDataRecorder::currentSphere
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___currentSphere_46;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___currentSphere_48;
 	// System.Collections.Generic.Dictionary`2<System.Int32,VRS.PupilRecording.FailedPosition> VRS.PupilRecording.PupilDataRecorder::failedPositions
-	Dictionary_2_t60B44555F3104C0A6156C58D43CC9A3C2951A369* ___failedPositions_47;
+	Dictionary_2_t60B44555F3104C0A6156C58D43CC9A3C2951A369* ___failedPositions_49;
 	// System.String VRS.PupilRecording.PupilDataRecorder::currentEventString
-	String_t* ___currentEventString_48;
+	String_t* ___currentEventString_50;
 	// System.Single VRS.PupilRecording.PupilDataRecorder::currentStimulusBrightness
-	float ___currentStimulusBrightness_49;
+	float ___currentStimulusBrightness_51;
 };
 
 // VRS.PupilRecording.PupilRecordingSetup
@@ -30225,8 +30229,8 @@ struct U3CU3Ec_t1BC03EF67425142C3669C1907C4E72E10934B8C3_StaticFields
 {
 	// VRS.PupilRecording.PupilDataRecorder/<>c VRS.PupilRecording.PupilDataRecorder/<>c::<>9
 	U3CU3Ec_t1BC03EF67425142C3669C1907C4E72E10934B8C3* ___U3CU3E9_0;
-	// System.Converter`2<System.Single,System.String> VRS.PupilRecording.PupilDataRecorder/<>c::<>9__51_0
-	Converter_2_t5FFDF23171FB1CBB1E49194EA8E7298E80ADF1D1* ___U3CU3E9__51_0_1;
+	// System.Converter`2<System.Single,System.String> VRS.PupilRecording.PupilDataRecorder/<>c::<>9__53_0
+	Converter_2_t5FFDF23171FB1CBB1E49194EA8E7298E80ADF1D1* ___U3CU3E9__53_0_1;
 };
 
 // VRS.PupilRecording.PupilDataRecorder/<>c
@@ -33693,13 +33697,13 @@ struct YogaConfig_tE8B56F99460C291C1F7F46DBD8BAC9F0B653A345_StaticFields
 
 // UnityEngine.Networking.PlayerConnection.PlayerEditorConnectionEvents/<>c__DisplayClass8_0
 
-// VRS.PupilRecording.PupilDataRecorder/<ShowStimuliSequence>d__48
+// VRS.PupilRecording.PupilDataRecorder/<ShowStimuliSequence>d__50
 
-// VRS.PupilRecording.PupilDataRecorder/<ShowStimuliSequence>d__48
+// VRS.PupilRecording.PupilDataRecorder/<ShowStimuliSequence>d__50
 
-// VRS.PupilRecording.PupilDataRecorder/<UpdateSpherePosition>d__50
+// VRS.PupilRecording.PupilDataRecorder/<UpdateSpherePosition>d__52
 
-// VRS.PupilRecording.PupilDataRecorder/<UpdateSpherePosition>d__50
+// VRS.PupilRecording.PupilDataRecorder/<UpdateSpherePosition>d__52
 
 // Wave.Essence.InputModule.RaycastResultProvider/RaycastResultStorage
 
@@ -39375,16 +39379,16 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4535[2] =
 	static_cast<int32_t>(offsetof(FailedPosition_t25B79F311DC750849C87E7141D24BBAAE9F31789, ___repeat_0)),static_cast<int32_t>(offsetof(FailedPosition_t25B79F311DC750849C87E7141D24BBAAE9F31789, ___history_1)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4536[9] = 
 {
-	static_cast<int32_t>(offsetof(U3CShowStimuliSequenceU3Ed__48_t2FF2E76E826E68F8C23352B1D2C89B3EB7075443, ___U3CU3E1__state_0)),static_cast<int32_t>(offsetof(U3CShowStimuliSequenceU3Ed__48_t2FF2E76E826E68F8C23352B1D2C89B3EB7075443, ___U3CU3E2__current_1)),static_cast<int32_t>(offsetof(U3CShowStimuliSequenceU3Ed__48_t2FF2E76E826E68F8C23352B1D2C89B3EB7075443, ___U3CU3E4__this_2)),static_cast<int32_t>(offsetof(U3CShowStimuliSequenceU3Ed__48_t2FF2E76E826E68F8C23352B1D2C89B3EB7075443, ___U3CwaitTimerU3E5__2_3)),static_cast<int32_t>(offsetof(U3CShowStimuliSequenceU3Ed__48_t2FF2E76E826E68F8C23352B1D2C89B3EB7075443, ___U3CiU3E5__3_4)),static_cast<int32_t>(offsetof(U3CShowStimuliSequenceU3Ed__48_t2FF2E76E826E68F8C23352B1D2C89B3EB7075443, ___U3CstimU3E5__4_5)),static_cast<int32_t>(offsetof(U3CShowStimuliSequenceU3Ed__48_t2FF2E76E826E68F8C23352B1D2C89B3EB7075443, ___U3CtestCaseU3E5__5_6)),static_cast<int32_t>(offsetof(U3CShowStimuliSequenceU3Ed__48_t2FF2E76E826E68F8C23352B1D2C89B3EB7075443, ___U3CoffsetPositionU3E5__6_7)),static_cast<int32_t>(offsetof(U3CShowStimuliSequenceU3Ed__48_t2FF2E76E826E68F8C23352B1D2C89B3EB7075443, ___U3CtrialBrightnessU3E5__7_8)),};
+	static_cast<int32_t>(offsetof(U3CShowStimuliSequenceU3Ed__50_tC74EC8634CF7951CB5B4E27B33D5DFD4BFBA4012, ___U3CU3E1__state_0)),static_cast<int32_t>(offsetof(U3CShowStimuliSequenceU3Ed__50_tC74EC8634CF7951CB5B4E27B33D5DFD4BFBA4012, ___U3CU3E2__current_1)),static_cast<int32_t>(offsetof(U3CShowStimuliSequenceU3Ed__50_tC74EC8634CF7951CB5B4E27B33D5DFD4BFBA4012, ___U3CU3E4__this_2)),static_cast<int32_t>(offsetof(U3CShowStimuliSequenceU3Ed__50_tC74EC8634CF7951CB5B4E27B33D5DFD4BFBA4012, ___U3CwaitTimerU3E5__2_3)),static_cast<int32_t>(offsetof(U3CShowStimuliSequenceU3Ed__50_tC74EC8634CF7951CB5B4E27B33D5DFD4BFBA4012, ___U3CiU3E5__3_4)),static_cast<int32_t>(offsetof(U3CShowStimuliSequenceU3Ed__50_tC74EC8634CF7951CB5B4E27B33D5DFD4BFBA4012, ___U3CstimU3E5__4_5)),static_cast<int32_t>(offsetof(U3CShowStimuliSequenceU3Ed__50_tC74EC8634CF7951CB5B4E27B33D5DFD4BFBA4012, ___U3CtestCaseU3E5__5_6)),static_cast<int32_t>(offsetof(U3CShowStimuliSequenceU3Ed__50_tC74EC8634CF7951CB5B4E27B33D5DFD4BFBA4012, ___U3CoffsetPositionU3E5__6_7)),static_cast<int32_t>(offsetof(U3CShowStimuliSequenceU3Ed__50_tC74EC8634CF7951CB5B4E27B33D5DFD4BFBA4012, ___U3CtrialBrightnessU3E5__7_8)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4537[4] = 
 {
-	static_cast<int32_t>(offsetof(U3CUpdateSpherePositionU3Ed__50_tCF564C3E4BA914F21CCEB33AB0FA26DF035A7234, ___U3CU3E1__state_0)),static_cast<int32_t>(offsetof(U3CUpdateSpherePositionU3Ed__50_tCF564C3E4BA914F21CCEB33AB0FA26DF035A7234, ___U3CU3E2__current_1)),static_cast<int32_t>(offsetof(U3CUpdateSpherePositionU3Ed__50_tCF564C3E4BA914F21CCEB33AB0FA26DF035A7234, ___sphere_2)),static_cast<int32_t>(offsetof(U3CUpdateSpherePositionU3Ed__50_tCF564C3E4BA914F21CCEB33AB0FA26DF035A7234, ___offsetPosition_3)),};
+	static_cast<int32_t>(offsetof(U3CUpdateSpherePositionU3Ed__52_t396AD659153DFB32D6B8F4E3E0B6DEAF3F7383DC, ___U3CU3E1__state_0)),static_cast<int32_t>(offsetof(U3CUpdateSpherePositionU3Ed__52_t396AD659153DFB32D6B8F4E3E0B6DEAF3F7383DC, ___U3CU3E2__current_1)),static_cast<int32_t>(offsetof(U3CUpdateSpherePositionU3Ed__52_t396AD659153DFB32D6B8F4E3E0B6DEAF3F7383DC, ___sphere_2)),static_cast<int32_t>(offsetof(U3CUpdateSpherePositionU3Ed__52_t396AD659153DFB32D6B8F4E3E0B6DEAF3F7383DC, ___offsetPosition_3)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4538[2] = 
 {
-	static_cast<int32_t>(offsetof(U3CU3Ec_t1BC03EF67425142C3669C1907C4E72E10934B8C3_StaticFields, ___U3CU3E9_0)),static_cast<int32_t>(offsetof(U3CU3Ec_t1BC03EF67425142C3669C1907C4E72E10934B8C3_StaticFields, ___U3CU3E9__51_0_1)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4539[46] = 
+	static_cast<int32_t>(offsetof(U3CU3Ec_t1BC03EF67425142C3669C1907C4E72E10934B8C3_StaticFields, ___U3CU3E9_0)),static_cast<int32_t>(offsetof(U3CU3Ec_t1BC03EF67425142C3669C1907C4E72E10934B8C3_StaticFields, ___U3CU3E9__53_0_1)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4539[48] = 
 {
-	static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___enableRecording_4)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___currentVersion_5)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___shortStimDuration_6)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___longStimDuration_7)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___shortInterval_8)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___longInterval_9)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___preStimulusWindow_10)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___shortSamplingWindow_11)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___longSamplingWindow_12)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___blueCircleSize_13)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___redCircleSize_14)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___shortBlueLuminance_15)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___shortRedLuminance_16)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___longBlueLuminance_17)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___longRedLuminance_18)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___fixationLightSize_19)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___fixationLightLuminance_20)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___vectorPositions_21)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___includeShortRed_22)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___includeShortBlue_23)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___includeLongRed_24)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___includeLongBlue_25)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___randomizeBrightness_26)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___minBrightness_27)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___maxBrightness_28)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___waitBeforeStart_29)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___delayBetweenTypes_30)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___maxRetests_31)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___fileWriter_32)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___sessionStartTime_33)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___sessionFilePath_34)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___isRecording_35)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___dataPointCount_36)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___eyeManager_37)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___headTransform_38)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___canvas_39)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___messageText_40)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___fixationLight_41)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___stimArray_42)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___testCaseId_43)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___testCasesQueue_44)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___currentTrial_45)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___currentSphere_46)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___failedPositions_47)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___currentEventString_48)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___currentStimulusBrightness_49)),};
+	static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___enableRecording_4)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___currentVersion_5)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___shortStimDuration_6)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___longStimDuration_7)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___shortInterval_8)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___longInterval_9)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___preStimulusWindow_10)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___shortSamplingWindow_11)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___longSamplingWindow_12)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___blueCircleSize_13)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___redCircleSize_14)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___shortBlueLuminance_15)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___shortRedLuminance_16)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___longBlueLuminance_17)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___longRedLuminance_18)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___fixationLightSize_19)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___fixationLightLuminance_20)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___vectorPositions_21)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___includeShortRed_22)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___includeShortBlue_23)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___includeLongRed_24)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___includeLongBlue_25)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___randomizeBrightness_26)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___minBrightness_27)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___maxBrightness_28)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___enforceGazeFixation_29)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___maxGazeDeviationDeg_30)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___waitBeforeStart_31)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___delayBetweenTypes_32)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___maxRetests_33)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___fileWriter_34)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___sessionStartTime_35)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___sessionFilePath_36)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___isRecording_37)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___dataPointCount_38)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___eyeManager_39)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___headTransform_40)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___canvas_41)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___messageText_42)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___fixationLight_43)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___stimArray_44)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___testCaseId_45)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___testCasesQueue_46)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___currentTrial_47)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___currentSphere_48)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___failedPositions_49)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___currentEventString_50)),static_cast<int32_t>(offsetof(PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD, ___currentStimulusBrightness_51)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4540[9] = 
 {
 	static_cast<int32_t>(offsetof(PupilRecordingSetup_t30618B50F7F3E984F62D69985C4E18CD2D3B9747, ___createEyeManagerIfMissing_4)),static_cast<int32_t>(offsetof(PupilRecordingSetup_t30618B50F7F3E984F62D69985C4E18CD2D3B9747, ___createRecorderIfMissing_5)),static_cast<int32_t>(offsetof(PupilRecordingSetup_t30618B50F7F3E984F62D69985C4E18CD2D3B9747, ___createEyeVisualsIfMissing_6)),static_cast<int32_t>(offsetof(PupilRecordingSetup_t30618B50F7F3E984F62D69985C4E18CD2D3B9747, ___createLightControllerIfMissing_7)),static_cast<int32_t>(offsetof(PupilRecordingSetup_t30618B50F7F3E984F62D69985C4E18CD2D3B9747, ___eyeballMaterial_8)),static_cast<int32_t>(offsetof(PupilRecordingSetup_t30618B50F7F3E984F62D69985C4E18CD2D3B9747, ___pupilMaterial_9)),static_cast<int32_t>(offsetof(PupilRecordingSetup_t30618B50F7F3E984F62D69985C4E18CD2D3B9747, ___eyeDistance_10)),static_cast<int32_t>(offsetof(PupilRecordingSetup_t30618B50F7F3E984F62D69985C4E18CD2D3B9747, ___eyeSeparation_11)),static_cast<int32_t>(offsetof(PupilRecordingSetup_t30618B50F7F3E984F62D69985C4E18CD2D3B9747, ___startInDarkMode_12)),};
