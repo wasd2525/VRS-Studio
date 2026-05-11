@@ -42395,39 +42395,39 @@ struct AutoScope_tFB983697E28885CB10FFDB92D7EFD0615AEF3139
 	intptr_t ___m_Ptr_0;
 };
 
-// VRS.PupilRecording.PupilDataRecorder/<ShowStimuliSequence>d__50
-struct U3CShowStimuliSequenceU3Ed__50_tC74EC8634CF7951CB5B4E27B33D5DFD4BFBA4012  : public RuntimeObject
+// VRS.PupilRecording.PupilDataRecorder/<ShowStimuliSequence>d__48
+struct U3CShowStimuliSequenceU3Ed__48_t2FF2E76E826E68F8C23352B1D2C89B3EB7075443  : public RuntimeObject
 {
-	// System.Int32 VRS.PupilRecording.PupilDataRecorder/<ShowStimuliSequence>d__50::<>1__state
+	// System.Int32 VRS.PupilRecording.PupilDataRecorder/<ShowStimuliSequence>d__48::<>1__state
 	int32_t ___U3CU3E1__state_0;
-	// System.Object VRS.PupilRecording.PupilDataRecorder/<ShowStimuliSequence>d__50::<>2__current
+	// System.Object VRS.PupilRecording.PupilDataRecorder/<ShowStimuliSequence>d__48::<>2__current
 	RuntimeObject* ___U3CU3E2__current_1;
-	// VRS.PupilRecording.PupilDataRecorder VRS.PupilRecording.PupilDataRecorder/<ShowStimuliSequence>d__50::<>4__this
+	// VRS.PupilRecording.PupilDataRecorder VRS.PupilRecording.PupilDataRecorder/<ShowStimuliSequence>d__48::<>4__this
 	PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD* ___U3CU3E4__this_2;
-	// System.Single VRS.PupilRecording.PupilDataRecorder/<ShowStimuliSequence>d__50::<waitTimer>5__2
+	// System.Single VRS.PupilRecording.PupilDataRecorder/<ShowStimuliSequence>d__48::<waitTimer>5__2
 	float ___U3CwaitTimerU3E5__2_3;
-	// System.Int32 VRS.PupilRecording.PupilDataRecorder/<ShowStimuliSequence>d__50::<i>5__3
+	// System.Int32 VRS.PupilRecording.PupilDataRecorder/<ShowStimuliSequence>d__48::<i>5__3
 	int32_t ___U3CiU3E5__3_4;
-	// VRS.PupilRecording.StimulusType VRS.PupilRecording.PupilDataRecorder/<ShowStimuliSequence>d__50::<stim>5__4
+	// VRS.PupilRecording.StimulusType VRS.PupilRecording.PupilDataRecorder/<ShowStimuliSequence>d__48::<stim>5__4
 	StimulusType_t52DFC1954C22A5A90ACB4583AD122D69F09C48A0* ___U3CstimU3E5__4_5;
-	// VRS.PupilRecording.TestCase VRS.PupilRecording.PupilDataRecorder/<ShowStimuliSequence>d__50::<testCase>5__5
+	// VRS.PupilRecording.TestCase VRS.PupilRecording.PupilDataRecorder/<ShowStimuliSequence>d__48::<testCase>5__5
 	TestCase_t316BB0A3058D243718DAE7BD00444C56F521E9C2* ___U3CtestCaseU3E5__5_6;
-	// UnityEngine.Vector3 VRS.PupilRecording.PupilDataRecorder/<ShowStimuliSequence>d__50::<offsetPosition>5__6
+	// UnityEngine.Vector3 VRS.PupilRecording.PupilDataRecorder/<ShowStimuliSequence>d__48::<offsetPosition>5__6
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___U3CoffsetPositionU3E5__6_7;
-	// System.Single VRS.PupilRecording.PupilDataRecorder/<ShowStimuliSequence>d__50::<trialBrightness>5__7
+	// System.Single VRS.PupilRecording.PupilDataRecorder/<ShowStimuliSequence>d__48::<trialBrightness>5__7
 	float ___U3CtrialBrightnessU3E5__7_8;
 };
 
-// VRS.PupilRecording.PupilDataRecorder/<UpdateSpherePosition>d__52
-struct U3CUpdateSpherePositionU3Ed__52_t396AD659153DFB32D6B8F4E3E0B6DEAF3F7383DC  : public RuntimeObject
+// VRS.PupilRecording.PupilDataRecorder/<UpdateSpherePosition>d__50
+struct U3CUpdateSpherePositionU3Ed__50_tCF564C3E4BA914F21CCEB33AB0FA26DF035A7234  : public RuntimeObject
 {
-	// System.Int32 VRS.PupilRecording.PupilDataRecorder/<UpdateSpherePosition>d__52::<>1__state
+	// System.Int32 VRS.PupilRecording.PupilDataRecorder/<UpdateSpherePosition>d__50::<>1__state
 	int32_t ___U3CU3E1__state_0;
-	// System.Object VRS.PupilRecording.PupilDataRecorder/<UpdateSpherePosition>d__52::<>2__current
+	// System.Object VRS.PupilRecording.PupilDataRecorder/<UpdateSpherePosition>d__50::<>2__current
 	RuntimeObject* ___U3CU3E2__current_1;
-	// UnityEngine.GameObject VRS.PupilRecording.PupilDataRecorder/<UpdateSpherePosition>d__52::sphere
+	// UnityEngine.GameObject VRS.PupilRecording.PupilDataRecorder/<UpdateSpherePosition>d__50::sphere
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___sphere_2;
-	// UnityEngine.Vector3 VRS.PupilRecording.PupilDataRecorder/<UpdateSpherePosition>d__52::offsetPosition
+	// UnityEngine.Vector3 VRS.PupilRecording.PupilDataRecorder/<UpdateSpherePosition>d__50::offsetPosition
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___offsetPosition_3;
 };
 
@@ -60988,52 +60988,48 @@ struct PupilDataRecorder_tE9498A7B70C30EF98DE2F53B0876DDC441B470AD  : public Mon
 	float ___minBrightness_27;
 	// System.Single VRS.PupilRecording.PupilDataRecorder::maxBrightness
 	float ___maxBrightness_28;
-	// System.Boolean VRS.PupilRecording.PupilDataRecorder::enforceGazeFixation
-	bool ___enforceGazeFixation_29;
-	// System.Single VRS.PupilRecording.PupilDataRecorder::maxGazeDeviationDeg
-	float ___maxGazeDeviationDeg_30;
 	// System.Single VRS.PupilRecording.PupilDataRecorder::waitBeforeStart
-	float ___waitBeforeStart_31;
+	float ___waitBeforeStart_29;
 	// System.Single VRS.PupilRecording.PupilDataRecorder::delayBetweenTypes
-	float ___delayBetweenTypes_32;
+	float ___delayBetweenTypes_30;
 	// System.Single VRS.PupilRecording.PupilDataRecorder::maxRetests
-	float ___maxRetests_33;
+	float ___maxRetests_31;
 	// System.IO.StreamWriter VRS.PupilRecording.PupilDataRecorder::fileWriter
-	StreamWriter_t6E7DF7D524AA3C018A65F62EE80779873ED4D1E4* ___fileWriter_34;
+	StreamWriter_t6E7DF7D524AA3C018A65F62EE80779873ED4D1E4* ___fileWriter_32;
 	// System.Single VRS.PupilRecording.PupilDataRecorder::sessionStartTime
-	float ___sessionStartTime_35;
+	float ___sessionStartTime_33;
 	// System.String VRS.PupilRecording.PupilDataRecorder::sessionFilePath
-	String_t* ___sessionFilePath_36;
+	String_t* ___sessionFilePath_34;
 	// System.Boolean VRS.PupilRecording.PupilDataRecorder::isRecording
-	bool ___isRecording_37;
+	bool ___isRecording_35;
 	// System.Int32 VRS.PupilRecording.PupilDataRecorder::dataPointCount
-	int32_t ___dataPointCount_38;
+	int32_t ___dataPointCount_36;
 	// Wave.Essence.Eye.EyeManager VRS.PupilRecording.PupilDataRecorder::eyeManager
-	EyeManager_t571F993FE31D7991E561A87B07B4582E9EA46C0C* ___eyeManager_39;
+	EyeManager_t571F993FE31D7991E561A87B07B4582E9EA46C0C* ___eyeManager_37;
 	// UnityEngine.Transform VRS.PupilRecording.PupilDataRecorder::headTransform
-	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___headTransform_40;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___headTransform_38;
 	// UnityEngine.GameObject VRS.PupilRecording.PupilDataRecorder::canvas
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___canvas_41;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___canvas_39;
 	// UnityEngine.UI.Text VRS.PupilRecording.PupilDataRecorder::messageText
-	Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* ___messageText_42;
+	Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* ___messageText_40;
 	// UnityEngine.GameObject VRS.PupilRecording.PupilDataRecorder::fixationLight
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___fixationLight_43;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___fixationLight_41;
 	// System.Collections.Generic.List`1<VRS.PupilRecording.StimulusType> VRS.PupilRecording.PupilDataRecorder::stimArray
-	List_1_t47E7B956C8FA80994C084920991BB3B43C49DB98* ___stimArray_44;
+	List_1_t47E7B956C8FA80994C084920991BB3B43C49DB98* ___stimArray_42;
 	// System.Int32 VRS.PupilRecording.PupilDataRecorder::testCaseId
-	int32_t ___testCaseId_45;
+	int32_t ___testCaseId_43;
 	// System.Collections.Generic.Queue`1<VRS.PupilRecording.TestCase> VRS.PupilRecording.PupilDataRecorder::testCasesQueue
-	Queue_1_t9AB1A2B080454D5BB9C3124BF0503028A568E40E* ___testCasesQueue_46;
+	Queue_1_t9AB1A2B080454D5BB9C3124BF0503028A568E40E* ___testCasesQueue_44;
 	// VRS.PupilRecording.TrialState VRS.PupilRecording.PupilDataRecorder::currentTrial
-	TrialState_t51083C39FEC68F4FE0423B25091FDE0676BF25D8* ___currentTrial_47;
+	TrialState_t51083C39FEC68F4FE0423B25091FDE0676BF25D8* ___currentTrial_45;
 	// UnityEngine.GameObject VRS.PupilRecording.PupilDataRecorder::currentSphere
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___currentSphere_48;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___currentSphere_46;
 	// System.Collections.Generic.Dictionary`2<System.Int32,VRS.PupilRecording.FailedPosition> VRS.PupilRecording.PupilDataRecorder::failedPositions
-	Dictionary_2_t60B44555F3104C0A6156C58D43CC9A3C2951A369* ___failedPositions_49;
+	Dictionary_2_t60B44555F3104C0A6156C58D43CC9A3C2951A369* ___failedPositions_47;
 	// System.String VRS.PupilRecording.PupilDataRecorder::currentEventString
-	String_t* ___currentEventString_50;
+	String_t* ___currentEventString_48;
 	// System.Single VRS.PupilRecording.PupilDataRecorder::currentStimulusBrightness
-	float ___currentStimulusBrightness_51;
+	float ___currentStimulusBrightness_49;
 };
 
 // VRS.PupilRecording.PupilRecordingSetup
@@ -74400,8 +74396,8 @@ struct U3CU3Ec_t1BC03EF67425142C3669C1907C4E72E10934B8C3_StaticFields
 {
 	// VRS.PupilRecording.PupilDataRecorder/<>c VRS.PupilRecording.PupilDataRecorder/<>c::<>9
 	U3CU3Ec_t1BC03EF67425142C3669C1907C4E72E10934B8C3* ___U3CU3E9_0;
-	// System.Converter`2<System.Single,System.String> VRS.PupilRecording.PupilDataRecorder/<>c::<>9__53_0
-	Converter_2_t5FFDF23171FB1CBB1E49194EA8E7298E80ADF1D1* ___U3CU3E9__53_0_1;
+	// System.Converter`2<System.Single,System.String> VRS.PupilRecording.PupilDataRecorder/<>c::<>9__51_0
+	Converter_2_t5FFDF23171FB1CBB1E49194EA8E7298E80ADF1D1* ___U3CU3E9__51_0_1;
 };
 
 // VRS.PupilRecording.PupilDataRecorder/<>c
@@ -84330,13 +84326,13 @@ struct Row_t5CAF04F94A4359C08ADDBA867B0817101F351999_StaticFields
 
 // Unity.Profiling.ProfilerMarker/AutoScope
 
-// VRS.PupilRecording.PupilDataRecorder/<ShowStimuliSequence>d__50
+// VRS.PupilRecording.PupilDataRecorder/<ShowStimuliSequence>d__48
 
-// VRS.PupilRecording.PupilDataRecorder/<ShowStimuliSequence>d__50
+// VRS.PupilRecording.PupilDataRecorder/<ShowStimuliSequence>d__48
 
-// VRS.PupilRecording.PupilDataRecorder/<UpdateSpherePosition>d__52
+// VRS.PupilRecording.PupilDataRecorder/<UpdateSpherePosition>d__50
 
-// VRS.PupilRecording.PupilDataRecorder/<UpdateSpherePosition>d__52
+// VRS.PupilRecording.PupilDataRecorder/<UpdateSpherePosition>d__50
 
 // Wave.Essence.InputModule.RaycastResultProvider/RaycastResultStorage
 
@@ -101871,9 +101867,9 @@ const Il2CppTypeDefinitionSizes g_typeDefinitionSize4534 = { sizeof(TrialState_t
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize4535;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize4535 = { sizeof(FailedPosition_t25B79F311DC750849C87E7141D24BBAAE9F31789), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize4536;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize4536 = { sizeof(U3CShowStimuliSequenceU3Ed__50_tC74EC8634CF7951CB5B4E27B33D5DFD4BFBA4012), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize4536 = { sizeof(U3CShowStimuliSequenceU3Ed__48_t2FF2E76E826E68F8C23352B1D2C89B3EB7075443), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize4537;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize4537 = { sizeof(U3CUpdateSpherePositionU3Ed__52_t396AD659153DFB32D6B8F4E3E0B6DEAF3F7383DC), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize4537 = { sizeof(U3CUpdateSpherePositionU3Ed__50_tCF564C3E4BA914F21CCEB33AB0FA26DF035A7234), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize4538;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize4538 = { sizeof(U3CU3Ec_t1BC03EF67425142C3669C1907C4E72E10934B8C3), -1, sizeof(U3CU3Ec_t1BC03EF67425142C3669C1907C4E72E10934B8C3_StaticFields), 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize4539;
