@@ -1,0 +1,14 @@
+<!--
+  IL2CPP managed-code stripping preserve list.
+
+  This project builds Android/IL2CPP with managedStrippingLevel: High. OperatorStatusServer
+  uses System.Net.Sockets directly, and the networking stack pulls in types via paths the
+  static analyser does not always follow — stripping them yields a build that compiles but
+  throws TypeLoadException the moment the server thread starts, which is painful to diagnose
+  on-device. Preserving these two assemblies costs a small amount of APK size and removes
+  that entire failure mode.
+-->
+<linker>
+  <assembly fullname="System" preserve="all" />
+  <assembly fullname="System.Core" preserve="all" />
+</linker>

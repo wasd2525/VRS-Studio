@@ -5,7 +5,21 @@ namespace VRS.PupilRecording
     public class LightConditionController : MonoBehaviour
     {
         public enum LightCondition { Dark, Bright }
+
+        /// <summary>Written to the CSV when no controller is present, so the column vocabulary stays closed.</summary>
+        public const string UnknownCondition = "Unknown";
+
         public LightCondition currentCondition = LightCondition.Dark;
+
+        [Tooltip("Allow the Space key to toggle the condition. Desktop testing convenience; harmless on device.")]
+        public bool allowKeyboardToggle = true;
+
+        [Tooltip("Allow a click/trigger to toggle the condition. OFF by default: on a headset this fires from a " +
+                 "controller trigger and silently changes the logged light condition mid-session.")]
+        public bool allowClickToggle = false;
+
+        /// <summary>Raised on every toggle so the recorder can log it into the event stream.</summary>
+        public event System.Action<LightCondition> ConditionChanged;
 
         private Camera mainCamera;
         private Light sceneLight;
@@ -30,17 +44,16 @@ namespace VRS.PupilRecording
 
         private void Update()
         {
-            // Input to Toggle
-            // Keyboard Space
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (allowKeyboardToggle && Input.GetKeyDown(KeyCode.Space))
             {
                 ToggleCondition();
             }
 
-            // VR Controller Input (Generic Unity XR or Mouse Click as fallback)
-            if (Input.GetMouseButtonDown(0))
+            // Deliberately opt-in: a controller trigger registers as mouse button 0 on this platform,
+            // so leaving this on meant a stray trigger pull could flip the recorded light condition
+            // in the middle of a session with no indication in the data.
+            if (allowClickToggle && Input.GetMouseButtonDown(0))
             {
-                // Simple Click/Trigger
                 ToggleCondition();
             }
         }
@@ -50,6 +63,7 @@ namespace VRS.PupilRecording
             currentCondition = (currentCondition == LightCondition.Dark) ? LightCondition.Bright : LightCondition.Dark;
             ApplyCondition();
             Debug.Log($"[LightCondition] Switched to {currentCondition}");
+            ConditionChanged?.Invoke(currentCondition);
         }
 
         public void ApplyCondition()

@@ -43,6 +43,7 @@ namespace VRS.PupilRecording
 
         private EyeManager eyeManager;
         private VideoPlayer videoPlayer;
+        private LightConditionController lightController; // cached; may legitimately be absent in the video scene
 
         // -------------------------------------------------------
         // Lifecycle
@@ -50,6 +51,7 @@ namespace VRS.PupilRecording
 
         private void Start()
         {
+            lightController = FindObjectOfType<LightConditionController>();
             OpenCSVFile();
             SetupVideoScreen();
             PlayVideo();
@@ -100,15 +102,10 @@ namespace VRS.PupilRecording
 
                 fileWriter = new StreamWriter(sessionFilePath, false);
                 fileWriter.AutoFlush = true;
-                fileWriter.WriteLine(
-                    "timestamp_sec,left_pupil_mm,right_pupil_mm,left_blink,right_blink," +
-                    "left_gaze_x,left_gaze_y,left_gaze_z," +
-                    "right_gaze_x,right_gaze_y,right_gaze_z," +
-                    "combined_gaze_x,combined_gaze_y,combined_gaze_z," +
-                    "origin_x,origin_y,origin_z," +
-                    "light_condition,stimulus_brightness,event_name,stimulus_event");
+                // Header shared with PupilDataRecorder — see SessionCsvSchema
+                fileWriter.WriteLine(SessionCsvSchema.Header);
 
-                Debug.Log($"[VideoSessionRecorder] CSV opened: {sessionFilePath}");
+                Debug.Log($"[VideoSessionRecorder] CSV opened: {sessionFilePath} (schema v{SessionCsvSchema.SchemaVersion})");
             }
             catch (Exception e)
             {
@@ -186,9 +183,7 @@ namespace VRS.PupilRecording
 
         private void LogEvent(string eventName, string details)
         {
-            string safeName    = eventName.Replace("\"", "\"\"");
-            string safeDetails = details.Replace("\"", "\"\"");
-            currentEventString = $"\"{safeName}\",\"{safeDetails}\"";
+            currentEventString = SessionCsvSchema.FormatEvent(eventName, details);
             Debug.Log($"[VideoSessionRecorder] Event: {eventName} – {details}");
         }
 
@@ -196,9 +191,12 @@ namespace VRS.PupilRecording
         {
             float timestamp = Time.time - sessionStartTime;
 
+            // Every one of these getters reports validity and writes Vector3.zero / 0 when invalid.
+            // The return values used to be discarded here, so dropouts were indistinguishable from
+            // genuine zeros in the recorded data.
             float leftDiameter = 0f, rightDiameter = 0f;
-            eyeManager.GetLeftEyePupilDiameter(out leftDiameter);
-            eyeManager.GetRightEyePupilDiameter(out rightDiameter);
+            bool leftValid  = eyeManager.GetLeftEyePupilDiameter(out leftDiameter);
+            bool rightValid = eyeManager.GetRightEyePupilDiameter(out rightDiameter);
 
             float leftBlink = 0f, rightBlink = 0f;
             if (Wave.OpenXR.InputDeviceEye.IsEyeExpressionAvailable())
@@ -210,24 +208,47 @@ namespace VRS.PupilRecording
             Vector3 leftGaze, rightGaze, combinedGaze, origin;
             eyeManager.GetLeftEyeDirectionNormalized(out leftGaze);
             eyeManager.GetRightEyeDirectionNormalized(out rightGaze);
-            eyeManager.GetCombindedEyeDirectionNormalized(out combinedGaze);
+            bool combinedGazeValid = eyeManager.GetCombindedEyeDirectionNormalized(out combinedGaze);
             eyeManager.GetCombinedEyeOrigin(out origin);
 
+            bool expressionBlink = leftBlink > 0.5f || rightBlink > 0.5f;
+            bool trackingLost    = !leftValid || !rightValid;
+            SampleQuality quality = expressionBlink ? SampleQuality.Blink
+                                  : trackingLost   ? SampleQuality.TrackingLost
+                                                   : SampleQuality.Ok;
+
             string eventData = currentEventString;
-            if (string.IsNullOrEmpty(eventData))
-                eventData = ",\"\"";
             currentEventString = "";
 
             try
             {
-                fileWriter.WriteLine(
-                    $"{timestamp:F4},{leftDiameter:F4},{rightDiameter:F4}," +
-                    $"{leftBlink:F4},{rightBlink:F4}," +
-                    $"{leftGaze.x:F4},{leftGaze.y:F4},{leftGaze.z:F4}," +
-                    $"{rightGaze.x:F4},{rightGaze.y:F4},{rightGaze.z:F4}," +
-                    $"{combinedGaze.x:F4},{combinedGaze.y:F4},{combinedGaze.z:F4}," +
-                    $"{origin.x:F4},{origin.y:F4},{origin.z:F4}," +
-                    $"Normal,0.00,{eventData}");
+                // Video playback has no fixation target, so the gaze-deviation columns are N/A (-1).
+                SampleRow row = new SampleRow
+                {
+                    timestampSec = timestamp,
+                    leftPupilMm = leftDiameter,
+                    rightPupilMm = rightDiameter,
+                    leftPupilValid = leftValid,
+                    rightPupilValid = rightValid,
+                    leftBlink = leftBlink,
+                    rightBlink = rightBlink,
+                    leftGaze = leftGaze,
+                    rightGaze = rightGaze,
+                    combinedGaze = combinedGaze,
+                    combinedGazeValid = combinedGazeValid,
+                    origin = origin,
+                    lightCondition = lightController != null
+                        ? lightController.GetConditionString()
+                        : LightConditionController.UnknownCondition,
+                    stimulusBrightness = 0f,
+                    gazeDeviationDeg = -1f,
+                    gazeDeviationRawDeg = -1f,
+                    gazeBiasDeg = 0f,
+                    gazeOffTarget = false,
+                    quality = quality,
+                    eventData = eventData
+                };
+                fileWriter.WriteLine(SessionCsvSchema.FormatRow(row));
                 dataPointCount++;
             }
             catch (Exception e)
