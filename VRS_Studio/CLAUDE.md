@@ -41,10 +41,37 @@ Recording only starts after `eyeManager.IsEyeTrackingAvailable()` flips true; `s
 The stimulus paradigm (timing, luminance, retest-on-blink, position rotation) is **integrated directly into `PupilDataRecorder.cs`**, driven by `ShowStimuliSequence()` coroutine. It is a Unity port of the Fove-based `Popilometer-VR-main/StimuTest.cs` (kept in-tree for reference; do not modify, it doesn't compile here — references `Fove.Unity` and `LSL`).
 
 Stimulus presentation:
-- 4 toggleable types: Short Red, Short Blue, Long Red, Long Blue (short = 0.5 s low-luminance, long = 8 s high-luminance)
-- 5 fixed positions per type (Center, Nasal, Temporal, Superior, Inferior at ~20° eccentricity, hardcoded as `vectorPositions`)
-- Stimuli render as `UnityEngine.UI.Image` on a head-locked World-Space Canvas (scale `0.001` so 1000 canvas units = 1 m; `UpdateHeadLockedVisuals()` repositions every frame to `headTransform + forward * 2.0`)
+- **All defaults live in `PConfig.cs`**, mirroring the reference project's file of the same name. Anything under "Shared with the reference rig" must stay byte-identical to theirs or the two datasets stop being comparable. Note Unity serialises component values into the scene, so editing a default only reaches components created at runtime — use the **Reset to PConfig defaults** button on the recorder's inspector otherwise.
+- 4 toggleable types: Short Red, Short Blue, Long Red, Long Blue (short = 0.5 s at luminance 0.5, long = 5 s at 1.0; red and blue always equal). `randomizeBrightness` is **off** by default and should stay off — it assigns one brightness per position, confounding brightness with eccentricity at ~1 trial per level. The reference protocol holds luminance fixed per session and steps it across sessions.
+- 8 default positions on the **Humphrey 30-2** grid (±15° and ±3° diagonals), from `PConfig.VectorPositions`
+- Stimuli render as **circular** `UnityEngine.UI.Image` (procedural sprite from `CircleSprite()`) on a head-locked World-Space Canvas (scale `0.001` so 1000 canvas units = 1 m; `UpdateHeadLockedVisuals()` repositions every frame to `headTransform + forward * 2.0`). A bare Image is a square quad — 27% more emitting area than a disc of the same nominal size — which is why the sprite is not optional.
+- **Sampling windows are measured from stimulus ONSET**, matching the reference rig: a short trial holds fixation 1.5 s past onset though the light is out at 0.5 s; a long trial releases at 4 s while the 5 s light is still on. `PostWindowSettleSeconds` and `IntervalWait()` reproduce their spacing exactly (verified: onset-to-onset 5.25 s short / 13.25 s long).
+- Trial waits are **unconditional** — a failed trial runs its full timeline so it delivers the same light dose and recovery time as a clean one. Immediate feedback is the error tone, not an early exit.
 - Blink during a trial → `currentTrial.Failed("blink")` → trial re-enqueued up to `maxRetests` times
+- `AudioInstructions` plays `start` once at the trial sequence, a beep 0.25 s before each trial arms, a double beep when the measured window closes, and `error1` the instant a trial fails. Cues are audio, not on-screen text, because this rig measures pupil response to light and a visual instruction is a luminance step inside the measurement. Clips live in `Assets/Resources/`; a missing clip warns once then stays silent.
+
+### Operator control (`OperatorStatusServer`)
+
+Serves a control page over WiFi from the headset (`http://<headset-ip>:8080/`, URL logged at startup and shown in-headset). Two hard constraints, both load-bearing:
+
+- **Hand-rolled HTTP over `TcpListener`, not `HttpListener`** — this project builds IL2CPP with `managedStrippingLevel 4`, which breaks HttpListener's reflection-heavy internals.
+- **No Unity API on the server thread.** The main thread renders a JSON snapshot and parks the string; the server thread only hands it out. Commands go the other way through a bounded queue (`Enqueue` from the socket thread, `DrainCommands()` on the main thread every frame).
+
+Endpoints: `GET /` (page), `GET /status.json`, `POST /api/start`, `POST /api/config?short_red=…&short_blue=…&long_red=…&long_blue=…&eye=…`. **Parameters ride in the query string, not a request body** — that keeps the socket server from having to parse headers, content-length and chunked encoding.
+
+Session flow: the participant types their ID in-headset → the session parks at "waiting for operator" (`requireOperatorStart`) → the operator sets stimulus luminance and the eye under test on the page → presses Start. Config then **locks** (`ConfigLocked`) so the protocol cannot change mid-run, and the sidecar written immediately after describes the session that actually ran. If the server is not running the gate is skipped with a warning — a failed server must never strand a participant in a headset.
+
+`Assets/Plugins/Android/AndroidManifest.xml` must keep `android.permission.INTERNET`.
+
+**Testing it offline:** the scratchpad harness compiles the real `OperatorStatusServer.cs` against a ~60-line UnityEngine shim plus a stub recorder, invokes the private `Start`/`Update`/`OnDestroy` by reflection, and drives it with a real `HttpClient` — 34 tests over live sockets covering routing, query parsing/decoding, the command hand-off, queue bounding and Content-Length byte correctness.
+
+### Monocular testing (`eyeUnderTest`)
+
+The reference protocol tests **one eye at a time with the fellow eye physically patched**. `EyeUnderTest.Auto` counts valid pupil frames per eye for 5 s and picks the open one — a covered eye returns none. If *both* eyes report valid data the patch is missing, so it stays binocular (OU) and warns loudly rather than mislabelling a binocular exposure as monocular (the reference rig picks one anyway; ours does not).
+
+Everything trial-gating must then follow the tested eye, and this is the part that breaks silently if forgotten: `trackingLost` and `expressionBlink` are computed only over the measured eye(s) — the old `!leftValid || !rightValid` would fail *every* trial with one eye patched — and the fixation gate, calibration and drift baseline all read gaze via `TryGetGateGaze()` rather than combined gaze. The CSV still logs both eyes' columns; which one is the signal is recorded in the sidecar (`eye`, `eye_mode`) and in the filename (`pupil_<id>_<OD|OS|OU>_<protocol>_<datetime>.csv`).
+
+`occludeFellowEyeInSoftware` additionally restricts `Camera.stereoTargetEye`. It is **off by default and unverified on the Focus Vision** — it changes the XR render path; the physical patch is the protocol.
 
 Events are logged through `LogEvent(name, details)` which stashes a string into `currentEventString`; the next `SamplePupilAndWriteDataPoint()` call writes it to that frame's CSV row and clears it (so an event appears on **exactly one row**, not duplicated). Don't change this single-frame-flush invariant without updating downstream parsers.
 
@@ -71,7 +98,13 @@ Don't extend these; either delete them or change behaviour through `PupilDataRec
 
 `Assets/Editor/` contains workflow helpers, not part of runtime: `HierarchyTools` (search/select/replace in Hierarchy window), `GrepCSharpInFolder` (regex grep across .cs files via `Assets/Wave/Grep c# in folder` context-menu), `MeshSaveEditor`.
 
+`VisualFieldMapWindow` (`Window → Pupilometer → Visual Field Map`) is the exception that touches experiment config: it draws the clinical 76-point **Humphrey 30-2** perimetry grid, overlays the `PupilDataRecorder`'s configured `vectorPositions` at true angular size, flags any position that is off-grid, and writes edits back through `SerializedObject` (undoable). The paradigm's default ~20° cross is *not* on the Humphrey grid; the reference project's recorded sessions used grid points at ±15° and ±3°. Positions only mean something clinically if they sit on the grid — that is what makes a pupil-derived field map comparable point-for-point with a Humphrey printout.
+
+**Compile-checking editor scripts offline:** same Roslyn setup as runtime scripts, plus `-r:Editor/Data/Managed/UnityEditor.dll` and a reference to the compiled runtime assembly.
+
 ## Sibling directories
 
 - `Popilometer-VR-main/` — original Fove+LSL Unity project this paradigm was ported from. Reference only, **not compiled** (excluded by being outside `Assets/`). Includes `otherScripts/resultCalculator.py` for analyzing `.xdf` recordings — useful prior art if asked to write CSV analysis.
+- `test from fove with oled/` — five FOVE-OLED sessions in LabRecorder `.xdf` form, plus `converted_csv/` (pupil / events / merged CSVs per session). The pupil stream is **one channel of radius in mm** (`-1` = invalid), so diameter = 2 × value. Used for the Aug 2026 OLED-vs-LCD dark-adaptation comparison.
+- A **newer upstream** of the reference project lives outside the repo at `~/Downloads/pupilometer-unity-master/`. It is ahead of `Popilometer-VR-main/`: monocular eye auto-detection, per-block background adaptation, audio cues, the Humphrey grid editor window. Consult it before re-deriving paradigm behaviour; several differences are deliberate on our side (gaze drift correction, CSV instead of LSL, blink vs tracking-loss split).
 - `PupilData/`, `pupil_session_*.csv`, `*.apk` at the repo root are session artifacts/builds pulled from devices; do not commit new ones (`*.apk` is gitignored).

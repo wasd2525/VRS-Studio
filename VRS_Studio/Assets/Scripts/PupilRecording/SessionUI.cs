@@ -152,6 +152,19 @@ namespace VRS.PupilRecording
             SetText($"Participant {participantId}", body, MessageTone.Good);
         }
 
+        /// <summary>
+        /// Held while the operator sets up and presses Start. The participant sees only that
+        /// everything is fine and nothing is required of them yet; the URL is for whoever is
+        /// helping them into the headset.
+        /// </summary>
+        public void ShowWaitingForOperator(string participantId, string monitorUrl)
+        {
+            string body = string.IsNullOrEmpty(monitorUrl)
+                ? "The experimenter will start the session shortly."
+                : $"The experimenter will start the session shortly.\n{monitorUrl}";
+            SetText($"Ready — {participantId}", body, MessageTone.Neutral);
+        }
+
         public void ShowInstructions()
         {
             SetText("Please keep your eyes on the small dot",

@@ -173,6 +173,13 @@ namespace VRS.PupilRecording
             sb.Append("  \"schema_version\": ").Append(SessionCsvSchema.SchemaVersion).Append(",\n");
             Str(sb, "  ", "paradigm_version", r.currentVersion, true);
             Str(sb, "  ", "participant_id", participantId, true);
+            // Which eye the session measured. Everything downstream — which pupil column is the
+            // signal, whether the gaze columns describe one eye or both — depends on this.
+            Str(sb, "  ", "eye", r.ResolvedEyeCode, true);
+            Str(sb, "  ", "eye_mode", r.ResolvedEye.ToString(), true);
+            Str(sb, "  ", "protocol", r.protocol, true);
+            Str(sb, "  ", "subject_group", r.subjectGroup.ToString(), true);
+            Str(sb, "  ", "note", r.note, true);
             Str(sb, "  ", "csv_file", Path.GetFileName(csvPath), true);
             Str(sb, "  ", "started_utc", DateTime.UtcNow.ToString("o", Inv), true);
             Str(sb, "  ", "started_local", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss", Inv), true);
@@ -198,8 +205,15 @@ namespace VRS.PupilRecording
             sb.Append("  },\n");
 
             sb.Append("  \"stimulus\": {\n");
-            Num(sb, "    ", "blue_circle_size_m", r.blueCircleSize, true);
-            Num(sb, "    ", "red_circle_size_m", r.redCircleSize, true);
+            Str(sb, "    ", "shape", "circle", true);
+            Num(sb, "    ", "short_red_circle_size_m", r.shortRedCircleSize, true);
+            Num(sb, "    ", "short_blue_circle_size_m", r.shortBlueCircleSize, true);
+            Num(sb, "    ", "long_red_circle_size_m", r.longRedCircleSize, true);
+            Num(sb, "    ", "long_blue_circle_size_m", r.longBlueCircleSize, true);
+            Num(sb, "    ", "short_red_luminance", r.shortRedLuminance, true);
+            Num(sb, "    ", "short_blue_luminance", r.shortBlueLuminance, true);
+            Num(sb, "    ", "long_red_luminance", r.longRedLuminance, true);
+            Num(sb, "    ", "long_blue_luminance", r.longBlueLuminance, true);
             Num(sb, "    ", "fixation_dot_size_m", r.fixationLightSize, true);
             Num(sb, "    ", "fixation_dot_luminance", r.fixationLightLuminance, true);
             Bool(sb, "    ", "randomize_brightness", r.randomizeBrightness, true);

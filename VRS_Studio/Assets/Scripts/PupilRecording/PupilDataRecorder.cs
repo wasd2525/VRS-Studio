@@ -4,6 +4,7 @@
 // Uses streaming to prevent data loss if app is force-killed
 
 using System;
+using System.Globalization;
 using System.IO;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,25 +14,36 @@ using Wave.Essence.InputModule; // For InputDeviceEye if needed; using Wave.Open
 
 namespace VRS.PupilRecording
 {
+    /// <summary>
+    /// Stable identity for the four stimulus types. Used to push operator-set luminance back
+    /// onto the right stimulus — matching on the display name would break the moment someone
+    /// renames one.
+    /// </summary>
+    public enum StimulusKind { ShortRed, ShortBlue, LongRed, LongBlue }
+
     // --- Data structures for the experiment ---
     public class StimulusType
     {
         public string name;
+        public StimulusKind kind;
         public GameObject sphere;
         public float duration;
         public float interval;
         public float samplingWindow;
         public Color baseColor; // Pure hue (e.g. (1,0,0)); brightness is multiplied at trial time.
+        public float baseLuminance; // Inspector luminance for this type, used when randomization is off.
         public UnityEngine.UI.Image image;
 
-        public StimulusType(string name, GameObject sphere, float duration, float interval, float samplingWindow, Color baseColor, UnityEngine.UI.Image image)
+        public StimulusType(string name, StimulusKind kind, GameObject sphere, float duration, float interval, float samplingWindow, Color baseColor, float baseLuminance, UnityEngine.UI.Image image)
         {
             this.name = name;
+            this.kind = kind;
             this.sphere = sphere;
             this.duration = duration;
             this.interval = interval;
             this.samplingWindow = samplingWindow;
             this.baseColor = baseColor;
+            this.baseLuminance = baseLuminance;
             this.image = image;
         }
     }
@@ -52,11 +64,22 @@ namespace VRS.PupilRecording
 
     public class TrialState
     {
+        /// <summary>
+        /// True while the participant is required to hold fixation. Goes false when the
+        /// measured window closes, which for a long stimulus happens BEFORE the stimulus
+        /// goes out — the reference rig releases the subject at the sampling window and
+        /// leaves the light on for the remainder.
+        /// </summary>
+        public bool active = true;
+
         public bool failed = false;
         public string failedReason = "";
 
         public void Failed(string reason)
         {
+            // Keep the FIRST reason: a blink that then drags gaze off target should be
+            // recorded as a blink, not relabelled by whatever happened next.
+            if (failed) return;
             failed = true;
             failedReason = reason;
         }
@@ -97,65 +120,99 @@ namespace VRS.PupilRecording
         public bool askForParticipantId = true;
         [Tooltip("Used when ID entry is skipped, times out, is left empty, or the IME is unavailable (e.g. in the Editor).")]
         public string participantIdFallback = "anon";
+        [Tooltip("Short protocol code (the reference rig uses 4 letters). Goes into the filename and sidecar.")]
+        public string protocol = "";
+        [Tooltip("Recorded in the sidecar so control and patient sessions can be separated in analysis.")]
+        public SubjectGroup subjectGroup = SubjectGroup.Control;
+        [Tooltip("Free-text note attached to the session metadata.")]
+        public string note = "";
         [Tooltip("How long to wait for the operator to finish typing before falling back.")]
         public float participantPromptTimeoutSeconds = 120f;
 
         [Space(10)]
+        [Header("Operator Control")]
+        [Tooltip("Hold the session at a ready screen after the participant ID is entered, until the " +
+                 "operator presses Start on the web monitor. Ignored (and logged) if the server is not " +
+                 "running, so a failed server can never strand a session.")]
+        public bool requireOperatorStart = true;
+        [Tooltip("Give up waiting and start anyway after this long. 0 = wait indefinitely, which is the " +
+                 "safe default for a lab: an unattended auto-start is worse than a session that waits.")]
+        public float operatorStartTimeoutSeconds = 0f;
+
+        [Space(10)]
+        [Header("Eye Under Test")]
+        [Tooltip("Which eye this session measures. The fellow eye is expected to be physically patched. " +
+                 "Auto picks whichever eye still returns valid pupil data — a covered eye returns none.")]
+        public EyeUnderTest eyeUnderTest = PConfig.DefaultEyeUnderTest;
+        [Tooltip("How long Auto spends counting valid pupil frames per eye before deciding.")]
+        [Range(1f, 15f)] public float eyeDetectionSeconds = PConfig.EyeDetectionSeconds;
+        [Tooltip("Also blank the fellow eye's display via Camera.stereoTargetEye, so it sees black even " +
+                 "without a patch. OFF by default: this changes the XR render path and has NOT been " +
+                 "verified on the Focus Vision. The physical patch is the protocol; this is belt-and-braces.")]
+        public bool occludeFellowEyeInSoftware = false;
+
+        [Space(10)]
         [Header("Stimulus Timing")]
-        public float shortStimDuration = 0.5f;
-        public float longStimDuration = 8f;
-        public float shortInterval = 3.0f;
-        public float longInterval = 8f;
-        public float preStimulusWindow = 0.5f;
-        public float shortSamplingWindow = 0.5f;
-        public float longSamplingWindow = 3.5f;
+        [Tooltip("Sampling windows are measured from stimulus ONSET, matching the reference rig. A short " +
+                 "trial holds fixation 1.5 s past onset though the light is out at 0.5 s; a long trial " +
+                 "releases at 4 s while the 5 s light is still on.")]
+        public float shortStimDuration = PConfig.ShortStimDuration;
+        public float longStimDuration = PConfig.LongStimDuration;
+        public float shortInterval = PConfig.ShortInterval;
+        public float longInterval = PConfig.LongInterval;
+        public float preStimulusWindow = PConfig.PreStimulusWindow;
+        public float shortSamplingWindow = PConfig.ShortSamplingWindow;
+        public float longSamplingWindow = PConfig.LongSamplingWindow;
 
         [Space(10)]
         [Header("Luminance Settings")]
-        // Stimulus diameter in metres at the 2 m canvas. 0.03 m → 2*atan(0.015/2.0) ≈ 0.86° visual angle,
-        // matching the FOVE rig (0.03 m sphere). Angular size is device-independent, so this syncs directly.
-        public float blueCircleSize = 0.03f;
-        public float redCircleSize = 0.03f;
-        public float shortBlueLuminance = 0.3f;
-        public float shortRedLuminance = 0.3f;
-        public float longBlueLuminance = 6000.0f;
-        public float longRedLuminance = 6000.0f;
-        public float fixationLightSize = 0.008f; // 0.008 m at 2 m canvas distance ≈ 0.23° visual angle (~5 px on Focus Vision)
-        public float fixationLightLuminance = 0.5f;
+        // Stimulus DIAMETER in metres on the 2 m plane. 0.03 m → 2*atan(0.015/2.0) ≈ 0.86° visual angle,
+        // matching the reference rig's 0.03 m sphere. Angular size is device-independent, so this syncs
+        // directly. Stimuli render as filled circles (see CircleSprite) — they were square quads before,
+        // which is 27% more emitting area than a disc of the same nominal size.
+        public float shortRedCircleSize = PConfig.ShortRedCircleSize;
+        public float shortBlueCircleSize = PConfig.ShortBlueCircleSize;
+        public float longRedCircleSize = PConfig.LongRedCircleSize;
+        public float longBlueCircleSize = PConfig.LongBlueCircleSize;
+        public float shortBlueLuminance = PConfig.ShortBlueLuminance;
+        public float shortRedLuminance = PConfig.ShortRedLuminance;
+        public float longBlueLuminance = PConfig.LongBlueLuminance;
+        public float longRedLuminance = PConfig.LongRedLuminance;
+        public float fixationLightSize = PConfig.FixationLightSize;
+        public float fixationLightLuminance = PConfig.FixationLightLuminance;
 
         [Space(10)]
         [Header("Vectors")]
-        public Vector3[] vectorPositions = new Vector3[]
-        {
-            new Vector3(0, 0, 2.0f),     // Center
-            new Vector3(-0.73f, 0, 2.0f), // Nasal (Left)
-            new Vector3(0.73f, 0, 2.0f),  // Temporal (Right)
-            new Vector3(0, 0.73f, 2.0f),  // Superior (Up)
-            new Vector3(0, -0.73f, 2.0f)  // Inferior (Down)
-        };
+        [Tooltip("Humphrey 30-2 grid points. Edit visually with Window ▸ Pupilometer ▸ Visual Field Map.")]
+        public Vector3[] vectorPositions = (Vector3[])PConfig.VectorPositions.Clone();
 
         [Space(10)]
         [Header("Include Stimulus Types")]
-        [InspectorName("Short Red")] public bool includeShortRed = true;
-        [InspectorName("Short Blue")] public bool includeShortBlue = true;
-        [InspectorName("Long Red")] public bool includeLongRed = true;
-        [InspectorName("Long Blue")] public bool includeLongBlue = true;
+        [InspectorName("Short Red")] public bool includeShortRed = PConfig.IncludeShortRed;
+        [InspectorName("Short Blue")] public bool includeShortBlue = PConfig.IncludeShortBlue;
+        [InspectorName("Long Red")] public bool includeLongRed = PConfig.IncludeLongRed;
+        [InspectorName("Long Blue")] public bool includeLongBlue = PConfig.IncludeLongBlue;
 
         [Space(10)]
         [Header("Brightness Randomization")]
-        [Tooltip("Per stim type, pick brightnesses evenly spaced across [min, max] (one per position) and shuffle the order. Overrides the per-stimulus luminance fields above. When off, brightness stays at 1.0.")]
-        public bool randomizeBrightness = true;
-        [Range(0f, 1f)] public float minBrightness = 0.1f;
-        [Range(0f, 1f)] public float maxBrightness = 1.0f;
+        [Tooltip("Per stim type, pick brightnesses evenly spaced across [min, max] (one per position) and " +
+                 "shuffle the order. Overrides the per-stimulus luminance fields above.\n\n" +
+                 "OFF by default and it should stay off: this assigns ONE brightness per position, so " +
+                 "brightness is perfectly confounded with eccentricity and a session yields ~1 trial per " +
+                 "level. The reference protocol instead holds luminance fixed for a whole session and steps " +
+                 "it across sessions, which is what produced their clean dose-response curve.")]
+        public bool randomizeBrightness = PConfig.RandomizeBrightness;
+        [Range(0f, 1f)] public float minBrightness = PConfig.MinBrightness;
+        [Range(0f, 1f)] public float maxBrightness = PConfig.MaxBrightness;
 
         [Space(10)]
         [Header("Gaze Fixation")]
         [Tooltip("Fail/repeat a trial if combined gaze leaves a cone around the fixation point for longer than the debounce. Auto-disables if calibration can't capture or drift tracking stalls.")]
         public bool enforceGazeFixation = true;
         [Tooltip("Half-angle of the on-target cone. The FOVE reference rig used ~3.4° (atan(0.5/8.5)). This was widened to 8° only to paper over baseline drift; with rolling re-baselining on, bring it back down once a clean session confirms the corrected deviation stays low.")]
-        [Range(0.5f, 15f)] public float gazeToleranceDeg = 5f;
+        [Range(0.5f, 15f)] public float gazeToleranceDeg = PConfig.GazeToleranceDeg;
         [Tooltip("Gaze must be continuously off-target this long (seconds) before the trial fails. Filters momentary saccades/jitter; the systematic offset is handled by re-baselining, not this.")]
-        [Range(0f, 0.5f)] public float gazeDebounceSeconds = 0.2f;
+        [Range(0f, 0.5f)] public float gazeDebounceSeconds = PConfig.GazeDebounceSeconds;
         [Tooltip("After baseline, average gaze while the subject fixates center and use it as the initial fixation reference. The rig shows a ~10° eye-tracker offset, so this seed is required for the gate to work at all.")]
         public bool useCenterBiasCorrection = true;
 
@@ -166,25 +223,25 @@ namespace VRS.PupilRecording
                  "median lags the true bias by about (window/2) * drift_rate, and that lag becomes permanent residual " +
                  "deviation: simulated at the measured 0.29 deg/s, 20 s leaves 3.15 deg residual and 8 s leaves 1.47 deg. " +
                  "Shorter reacts faster but buffers fewer samples.")]
-        [Range(3f, 60f)] public float reBaselineWindowSeconds = 8f;
+        [Range(3f, 60f)] public float reBaselineWindowSeconds = PConfig.ReBaselineWindowSeconds;
         [Tooltip("Between-trial gaze further than this from the current reference is rejected as a look-away rather than absorbed into the baseline. " +
                  "Must be tight: at 15 deg a ~10 deg between-trial wander was absorbed, stranding the reference and causing false 'looking_away' " +
                  "failures once the subject returned to the dot (2026-07-29 session).")]
-        [Range(3f, 30f)] public float reBaselineInlierDeg = 8f;
+        [Range(3f, 30f)] public float reBaselineInlierDeg = PConfig.ReBaselineInlierDeg;
         [Tooltip("Maximum speed the reference may move — bounds the damage from a wander just under the inlier band. " +
                  "Too fast lets false positives through (1.2 deg/s -> 5.5 deg); too slow stops tracking real drift (0.5 deg/s can't follow 0.5 deg/s drift).")]
-        [Range(0.1f, 5f)] public float reBaselineMaxRateDegPerSec = 0.8f;
+        [Range(0.1f, 5f)] public float reBaselineMaxRateDegPerSec = PConfig.ReBaselineMaxRateDegPerSec;
         [Tooltip("Safety bound: if the reference wanders further than this from the initial calibration, disarm the gate and log it rather than failing trials against a reference that has run away.\n\n" +
                  "NOTE the interaction with Gaze Tolerance: a reference stranded X deg from truth can produce up to X deg of false deviation, so false failures become possible once this exceeds the tolerance. " +
                  "At 8 deg with a 5 deg tolerance there is a window where false failures can still occur before the guard trips. Set this at or below the tolerance to close that window, " +
                  "at the cost of disarming more often on sessions with genuine drift.")]
-        [Range(2f, 60f)] public float maxTotalDriftDeg = 8f;
+        [Range(2f, 60f)] public float maxTotalDriftDeg = PConfig.MaxTotalDriftDeg;
         [Tooltip("Safety bound: if no drift update lands for this long, disarm the gate and log it.")]
-        [Range(10f, 300f)] public float reBaselineStallTimeoutSeconds = 60f;
+        [Range(10f, 300f)] public float reBaselineStallTimeoutSeconds = PConfig.ReBaselineStallTimeoutSeconds;
         [Tooltip("Once disarmed, re-arm the gate if the reference returns below this fraction of the drift bound and stays there. Prevents one excursion from disabling the gate for the rest of the session.")]
-        [Range(0.1f, 1f)] public float gateRearmFraction = 0.6f;
+        [Range(0.1f, 1f)] public float gateRearmFraction = PConfig.GateRearmFraction;
         [Tooltip("How long the reference must stay healthy before the gate re-arms.")]
-        [Range(0f, 30f)] public float gateRearmHoldSeconds = 3f;
+        [Range(0f, 30f)] public float gateRearmHoldSeconds = PConfig.GateRearmHoldSeconds;
 
         [Space(6)]
         [Tooltip("Show a live deviation readout + gaze reticle in-headset and draw the gaze ray in Scene view. Setup/validation only — turn OFF for real sessions.")]
@@ -193,22 +250,32 @@ namespace VRS.PupilRecording
         public bool gazeValidationMode = false;
 
         [Space(10)]
+        [Header("Audio Cues")]
+        [Tooltip("Beep before each trial and double-beep when the measured window closes, so the " +
+                 "participant knows when they must hold fixation and when they may blink again. " +
+                 "Ported from the reference FOVE rig; needs Assets/Resources/beep2.mp3.")]
+        public bool enableAudioCues = true;
+        [Tooltip("Gap between the warning beep and the moment the trial arms. Long enough to react, " +
+                 "short enough that the cue still reads as 'this trial', not 'some trial'.")]
+        [Range(0f, 2f)] public float cueLeadSeconds = PConfig.CueLeadSeconds;
+
+        [Space(10)]
         [Header("Participant Screens")]
         [Tooltip("How long the instruction screen is shown before dark adaptation begins.")]
-        public float instructionsSeconds = 6f;
+        public float instructionsSeconds = PConfig.InstructionsSeconds;
         [Tooltip("Hide the baseline countdown for this many seconds before the first trial. The screen is the " +
                  "only light source here, so a countdown running to the last second is light shining into the " +
                  "dark-adaptation period being measured.")]
-        [Range(0f, 30f)] public float baselineQuietTailSeconds = 5f;
+        [Range(0f, 30f)] public float baselineQuietTailSeconds = PConfig.BaselineQuietTailSeconds;
         [Tooltip("How long the closing screen is held before the app exits.")]
-        public float finishScreenSeconds = 5f;
+        public float finishScreenSeconds = PConfig.FinishScreenSeconds;
 
         [Space(10)]
         [Header("Other Options")]
-        public float waitBeforeStart = 30f;
-        public float delayBetweenTypes = 8f;
+        public float waitBeforeStart = PConfig.WaitBeforeStart;
+        public float delayBetweenTypes = PConfig.DelayBetweenTypes;
         [Tooltip("How many times a failed trial may be re-presented before it is abandoned and logged as TrialAbandoned.")]
-        public int maxRetests = 3;
+        public int maxRetests = PConfig.MaxRetests;
         [Tooltip("Fail a trial if the subject blinks during the pre-stimulus window, before the stimulus appears. This was previously always on but only implicitly, because the trial state was created before the wait.")]
         public bool failOnPreStimulusBlink = true;
         [Tooltip("Log per-trial and per-object detail. Leave OFF for real sessions — session milestones, " +
@@ -227,8 +294,180 @@ namespace VRS.PupilRecording
         private EyeManager eyeManager;
         private Transform headTransform; // Used to track head rotation for vectors
 
+        // Eye under test, resolved once at session start. Never EyeUnderTest.Auto after that.
+        private EyeUnderTest activeEye = EyeUnderTest.Both;
+        private bool MeasuringLeft => activeEye == EyeUnderTest.Left || activeEye == EyeUnderTest.Both;
+        private bool MeasuringRight => activeEye == EyeUnderTest.Right || activeEye == EyeUnderTest.Both;
+
+        // ------------------------------
+        // Operator control (driven from the web monitor; all calls arrive on the main thread)
+        // ------------------------------
+
+        private bool operatorStartRequested;
+        private bool awaitingOperatorStart;
+
+        /// <summary>True while the session is parked waiting for the operator to press Start.</summary>
+        public bool AwaitingOperatorStart => awaitingOperatorStart;
+
+        /// <summary>
+        /// Config is frozen once the trial sequence begins. Changing stimulus luminance mid-session
+        /// would silently split the data into two protocols, which is not something a UI should
+        /// allow by accident.
+        /// </summary>
+        public bool ConfigLocked { get; private set; }
+
+        /// <summary>Operator pressed Start. Ignored once the session is already running.</summary>
+        public void RequestOperatorStart()
+        {
+            if (!awaitingOperatorStart)
+            {
+                Debug.LogWarning("[PupilDataRecorder] Start requested but the session is not waiting for it.");
+                return;
+            }
+            operatorStartRequested = true;
+            Debug.Log("[PupilDataRecorder] Operator pressed Start.");
+        }
+
+        /// <summary>
+        /// Apply operator-set values. Only keys present are touched, so the page can send one field
+        /// at a time. Returns a human-readable summary for the log; refuses once config is locked.
+        /// </summary>
+        public string ApplyOperatorConfig(Dictionary<string, string> args)
+        {
+            if (args == null || args.Count == 0) return "no values";
+            if (ConfigLocked) return "rejected: session already running";
+
+            List<string> changed = new List<string>();
+
+            if (TryLuminance(args, "short_red", ref shortRedLuminance)) changed.Add($"short_red={shortRedLuminance:F2}");
+            if (TryLuminance(args, "short_blue", ref shortBlueLuminance)) changed.Add($"short_blue={shortBlueLuminance:F2}");
+            if (TryLuminance(args, "long_red", ref longRedLuminance)) changed.Add($"long_red={longRedLuminance:F2}");
+            if (TryLuminance(args, "long_blue", ref longBlueLuminance)) changed.Add($"long_blue={longBlueLuminance:F2}");
+
+            if (args.TryGetValue("eye", out string eyeRaw))
+            {
+                foreach (EyeUnderTest candidate in (EyeUnderTest[])Enum.GetValues(typeof(EyeUnderTest)))
+                {
+                    if (string.Equals(candidate.ToString(), eyeRaw, StringComparison.OrdinalIgnoreCase))
+                    {
+                        eyeUnderTest = candidate;
+                        changed.Add($"eye={candidate}");
+                        break;
+                    }
+                }
+            }
+
+            if (changed.Count == 0) return "no recognised values";
+
+            SyncStimulusLuminance();
+            string summary = string.Join(" ", changed.ToArray());
+            Debug.Log($"[PupilDataRecorder] Operator config: {summary}");
+            LogEvent("OperatorConfig", summary);
+            return summary;
+        }
+
+        private static bool TryLuminance(Dictionary<string, string> args, string key, ref float target)
+        {
+            if (!args.TryGetValue(key, out string raw)) return false;
+            if (!float.TryParse(raw, NumberStyles.Float, CultureInfo.InvariantCulture, out float value)) return false;
+            target = Mathf.Clamp01(value);
+            return true;
+        }
+
+        /// <summary>
+        /// Push the current luminance fields onto the built stimuli. Needed because StimulusType
+        /// caches its luminance at creation time, which happens in Start() — long before the
+        /// operator has had a chance to set anything.
+        /// </summary>
+        private void SyncStimulusLuminance()
+        {
+            if (stimArray == null) return;
+            foreach (StimulusType s in stimArray)
+            {
+                switch (s.kind)
+                {
+                    case StimulusKind.ShortRed: s.baseLuminance = shortRedLuminance; break;
+                    case StimulusKind.ShortBlue: s.baseLuminance = shortBlueLuminance; break;
+                    case StimulusKind.LongRed: s.baseLuminance = longRedLuminance; break;
+                    case StimulusKind.LongBlue: s.baseLuminance = longBlueLuminance; break;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Park until the operator presses Start on the web monitor. Skipped when the server is not
+        /// actually serving — otherwise a server that failed to bind would leave the participant
+        /// sitting in a headset forever with no way to proceed.
+        /// </summary>
+        private IEnumerator WaitForOperatorStart(OperatorStatusServer server)
+        {
+            if (!requireOperatorStart) yield break;
+
+            if (server == null || !server.IsRunning)
+            {
+                Debug.LogWarning("[PupilDataRecorder] requireOperatorStart is on but the operator server is not running — starting without it.");
+                yield break;
+            }
+
+            awaitingOperatorStart = true;
+            currentPhase = "waiting for operator";
+            ui.ShowWaitingForOperator(participantId, server.Url);
+            Debug.Log($"[PupilDataRecorder] Waiting for operator to press Start at {server.Url}");
+
+            float waited = 0f;
+            while (!operatorStartRequested)
+            {
+                if (operatorStartTimeoutSeconds > 0f && waited >= operatorStartTimeoutSeconds)
+                {
+                    Debug.LogWarning($"[PupilDataRecorder] No operator Start within {operatorStartTimeoutSeconds:F0}s — starting anyway.");
+                    break;
+                }
+                waited += Time.deltaTime;
+                yield return null;
+            }
+
+            awaitingOperatorStart = false;
+            ui.Clear();
+        }
+
+        /// <summary>Eye actually being measured, after Auto has resolved. Valid from session start.</summary>
+        public EyeUnderTest ResolvedEye => activeEye;
+
+        /// <summary>Ophthalmic code for the resolved eye: OD / OS / OU.</summary>
+        public string ResolvedEyeCode => EyeCode();
+
+        /// <summary>Ophthalmic code for the eye under test: OD right, OS left, OU both.</summary>
+        private string EyeCode()
+        {
+            switch (activeEye)
+            {
+                case EyeUnderTest.Left: return "OS";
+                case EyeUnderTest.Right: return "OD";
+                default: return "OU";
+            }
+        }
+
+        /// <summary>
+        /// Gaze direction used for the fixation gate. In monocular mode the fellow eye is
+        /// patched, so combined gaze is either invalid or pulled toward a non-seeing eye —
+        /// the gate has to follow the eye actually doing the looking.
+        /// </summary>
+        private bool TryGetGateGaze(out Vector3 dir)
+        {
+            dir = Vector3.forward;
+            if (eyeManager == null) return false;
+
+            switch (activeEye)
+            {
+                case EyeUnderTest.Left: return eyeManager.GetLeftEyeDirectionNormalized(out dir);
+                case EyeUnderTest.Right: return eyeManager.GetRightEyeDirectionNormalized(out dir);
+                default: return eyeManager.GetCombindedEyeDirectionNormalized(out dir);
+            }
+        }
+
         // Paradigm States
         private SessionUI ui; // participant-facing canvas, copy and fixation dot
+        private AudioInstructions audioCues; // trial start / trial end tones; null when disabled
         private List<StimulusType> stimArray;
         private int testCaseId = 1;
         private Queue<TestCase> testCasesQueue;
@@ -296,6 +535,16 @@ namespace VRS.PupilRecording
             return trialStimulusHasAppeared || failOnPreStimulusBlink;
         }
 
+        /// <summary>
+        /// True when a failure right now should invalidate the current trial. `active` goes false
+        /// once the measured window closes — which for a long stimulus is before the light goes
+        /// out, so a blink during that tail is not a failure.
+        /// </summary>
+        private bool TrialArmed()
+        {
+            return currentTrial != null && currentTrial.active && TrialFailuresArmed();
+        }
+
         private void Start()
         {
             // Try to find head transform (Main Camera is standard in VR setups)
@@ -313,6 +562,14 @@ namespace VRS.PupilRecording
             ui = GetComponent<SessionUI>();
             if (ui == null) ui = gameObject.AddComponent<SessionUI>();
             ui.Build(headTransform, fixationLightSize, fixationLightLuminance);
+
+            // Audio, not text: on a rig that measures pupil response to light, an on-screen
+            // "hold still" would be a luminance step change inside the measurement.
+            if (enableAudioCues)
+            {
+                audioCues = GetComponent<AudioInstructions>();
+                if (audioCues == null) audioCues = gameObject.AddComponent<AudioInstructions>();
+            }
 
             CreateStimuli();
             if (showGazeDebug) CreateGazeDebugVisuals();
@@ -342,25 +599,45 @@ namespace VRS.PupilRecording
             currentPhase = "participant id";
             yield return StartCoroutine(ResolveParticipantId());
 
+            // Resolved before the gate so the waiting screen can show the operator where to go.
+            OperatorStatusServer server = FindObjectOfType<OperatorStatusServer>();
+            if (server != null && server.IsRunning)
+                Debug.Log($"[PupilDataRecorder] Operator monitor: {server.Url}");
+
+            // The participant is now identified and seated; the operator sets stimulus levels and
+            // presses Start from the web monitor.
+            bool gated = requireOperatorStart && server != null && server.IsRunning;
+            yield return StartCoroutine(WaitForOperatorStart(server));
+
+            // Everything the operator can change is frozen here, before the sidecar is written —
+            // the metadata has to describe the session that actually runs.
+            ConfigLocked = true;
+            SyncStimulusLuminance();
+
+            if (!gated)
+            {
+                ui.ShowIdConfirmed(participantId, server != null && server.IsRunning ? server.Url : null);
+                yield return new WaitForSeconds(3.0f);
+                ui.Clear();
+            }
+
+            // Before the file is opened — the eye code is part of the filename.
+            currentPhase = "eye detection";
+            yield return StartCoroutine(ResolveEyeUnderTest());
+
             if (!OpenSessionFile()) yield break;
 
             SessionMetadata.Write(sessionFilePath, participantId, this);
 
-            // Tell the operator where the live monitor is, in-headset and in the log, so the URL
-            // doesn't have to be hunted for.
-            OperatorStatusServer server = FindObjectOfType<OperatorStatusServer>();
-            if (server != null && server.IsRunning)
-            {
-                Debug.Log($"[PupilDataRecorder] Operator monitor: {server.Url}");
-                LogEvent("OperatorMonitor", $"url={server.Url}");
-
-                ui.ShowIdConfirmed(participantId, server.Url);
-                yield return new WaitForSeconds(4.0f);
-                ui.Clear();
-            }
+            if (server != null && server.IsRunning) LogEvent("OperatorMonitor", $"url={server.Url}");
 
             LogEvent("SessionConfig",
                 $"participant={participantId} version={currentVersion} schema_version={SessionCsvSchema.SchemaVersion} " +
+                $"eye={EyeCode()} eye_mode={activeEye} protocol={protocol} group={subjectGroup} " +
+                $"lum_short_red={shortRedLuminance:F2} lum_short_blue={shortBlueLuminance:F2} " +
+                $"lum_long_red={longRedLuminance:F2} lum_long_blue={longBlueLuminance:F2} " +
+                $"operator_start={gated} randomize_brightness={randomizeBrightness} " +
+                $"audio_cues={(audioCues != null)} cue_lead_s={cueLeadSeconds:F2} " +
                 $"sidecar={Path.GetFileName(SessionMetadata.SidecarPathFor(sessionFilePath))}");
 
             if (gazeValidationMode) yield return StartCoroutine(RunGazeValidationSequence());
@@ -405,9 +682,114 @@ namespace VRS.PupilRecording
             ui.Clear();
         }
 
+        /// <summary>
+        /// Decide which eye this session measures. Auto counts valid pupil frames per eye for a
+        /// few seconds and picks the eye that is actually open — a patched eye returns none.
+        ///
+        /// If BOTH eyes report valid data the patch is missing, so this stays binocular and says
+        /// so loudly rather than silently labelling a binocular exposure as monocular. The
+        /// reference rig picks one anyway and only warns; a mislabelled session is worse than an
+        /// honestly-binocular one.
+        /// </summary>
+        private IEnumerator ResolveEyeUnderTest()
+        {
+            if (eyeUnderTest != EyeUnderTest.Auto)
+            {
+                activeEye = eyeUnderTest;
+                Debug.Log($"[PupilDataRecorder] Eye under test set explicitly: {activeEye} ({EyeCode()}).");
+                ApplySoftwareOcclusion();
+                yield break;
+            }
+
+            activeEye = EyeUnderTest.Both; // safe default if detection cannot run
+
+            // Update() has not acquired the EyeManager yet (it waits on fileWriter, which waits on
+            // this), so acquire it here.
+            float guard = 0f;
+            while (guard < 10f)
+            {
+                if (eyeManager == null) eyeManager = EyeManager.Instance;
+                if (eyeManager != null && eyeManager.IsEyeTrackingAvailable()) break;
+                guard += Time.deltaTime;
+                yield return null;
+            }
+
+            if (eyeManager == null || !eyeManager.IsEyeTrackingAvailable())
+            {
+                Debug.LogWarning("[PupilDataRecorder] Eye detection skipped: eye tracking unavailable. Recording binocular (OU).");
+                yield break;
+            }
+
+            int leftValid = 0, rightValid = 0, frames = 0;
+            float t = 0f;
+            while (t < eyeDetectionSeconds)
+            {
+                if (eyeManager.GetLeftEyePupilDiameter(out float ld) && ld > 0f) leftValid++;
+                if (eyeManager.GetRightEyePupilDiameter(out float rd) && rd > 0f) rightValid++;
+                frames++;
+                t += Time.deltaTime;
+                yield return null;
+            }
+
+            int threshold = Mathf.Max(1, Mathf.RoundToInt(frames * PConfig.EyeOpenFrameFraction));
+            bool leftOpen = leftValid >= threshold;
+            bool rightOpen = rightValid >= threshold;
+
+            if (leftOpen && rightOpen)
+            {
+                activeEye = EyeUnderTest.Both;
+                Debug.LogWarning($"[PupilDataRecorder] Both eyes returned valid pupil data " +
+                                 $"(L {leftValid}/{frames}, R {rightValid}/{frames}). No patch detected — " +
+                                 $"recording BINOCULAR (OU). Patch the fellow eye, or set Eye Under Test explicitly.");
+            }
+            else if (leftOpen) activeEye = EyeUnderTest.Left;
+            else if (rightOpen) activeEye = EyeUnderTest.Right;
+            else
+            {
+                activeEye = EyeUnderTest.Both;
+                Debug.LogWarning($"[PupilDataRecorder] Neither eye returned usable pupil data " +
+                                 $"(L {leftValid}/{frames}, R {rightValid}/{frames}). Check headset fit. Recording binocular (OU).");
+            }
+
+            Debug.Log($"[PupilDataRecorder] Eye under test: {activeEye} ({EyeCode()}) — " +
+                      $"valid frames L {leftValid}/{frames}, R {rightValid}/{frames}.");
+            ApplySoftwareOcclusion();
+        }
+
+        /// <summary>
+        /// Optionally blank the fellow eye by restricting the camera to one eye. OFF by default:
+        /// it changes the XR render path and is unverified on this headset, and with a physical
+        /// patch it is redundant anyway.
+        /// </summary>
+        private void ApplySoftwareOcclusion()
+        {
+            if (!occludeFellowEyeInSoftware) return;
+            if (activeEye == EyeUnderTest.Both) return;
+
+            Camera cam = headTransform != null ? headTransform.GetComponent<Camera>() : null;
+            if (cam == null) cam = Camera.main;
+            if (cam == null)
+            {
+                Debug.LogWarning("[PupilDataRecorder] Software occlusion requested but no camera found.");
+                return;
+            }
+
+            cam.stereoTargetEye = activeEye == EyeUnderTest.Left
+                ? StereoTargetEyeMask.Left
+                : StereoTargetEyeMask.Right;
+            Debug.LogWarning($"[PupilDataRecorder] Software occlusion ON: camera restricted to {cam.stereoTargetEye}. " +
+                             "Verify on device that the fellow eye is black and the tested eye still renders.");
+        }
+
         private bool OpenSessionFile()
         {
-            sessionFilePath = GetFilePath($"pupil_{participantId}_{DateTime.Now:yyyyMMdd_HHmmss}.csv");
+            // subject_eye_protocol_datetime — the naming the reference team asked for, so a file
+            // says which eye it measured without opening it. Protocol is omitted when unset.
+            string protocolPart = string.IsNullOrEmpty(ParticipantIdPrompt.Sanitize(protocol, ""))
+                ? ""
+                : ParticipantIdPrompt.Sanitize(protocol, "") + "_";
+            sessionFilePath = GetFilePath(
+                $"pupil_{participantId}_{EyeCode()}_{protocolPart}{DateTime.Now:yyyyMMdd_HHmmss}.csv");
 
             try
             {
@@ -501,13 +883,18 @@ namespace VRS.PupilRecording
             yield return StartCoroutine(CalibrateCenterReference());
 
             ui.ShowTrialsRunning(); // trials run with nothing on screen but the fixation dot
+
+            // One tone to mark the transition out of dark adaptation into the trial sequence.
+            if (audioCues != null) audioCues.PlayStart();
+            LogEvent("TrialsStart", $"eye={EyeCode()} blocks={stimArray.Count} positions={vectorPositions.Length}");
+
             yield return new WaitForSeconds(2.0f);
 
             for (int i = 0; i < stimArray.Count; i++)
             {
                 StimulusType stim = stimArray[i];
 
-                EnqueuePositions(stim.name);
+                EnqueuePositions(stim);
                 currentSphere = stim.sphere;
                 currentStimulusName = stim.name;
                 currentPhase = $"block {i + 1}/{stimArray.Count}: {stim.name}";
@@ -519,6 +906,12 @@ namespace VRS.PupilRecording
                     Vector3 offsetPosition = testCase.position;
                     currentTestCaseId = testCase.id;
                     currentPositionLabel = $"({offsetPosition.x:F2}, {offsetPosition.y:F2})";
+
+                    // Warn before the no-blink window opens, then arm the trial — the participant
+                    // cannot comply with a fixation requirement they were never told about.
+                    if (audioCues != null) audioCues.PlayBeep();
+                    if (cueLeadSeconds > 0f) yield return new WaitForSeconds(cueLeadSeconds);
+
                     currentTrial = new TrialState();
                     trialStimulusHasAppeared = false;
                     if (gazeMonitor != null) gazeMonitor.Reset(); // fresh debounce per trial
@@ -535,15 +928,43 @@ namespace VRS.PupilRecording
                     LogEvent("Start", $"Start {stim.name} sphere for {stim.duration} seconds in {offsetPosition} test_case_id={testCase.id} brightness={trialBrightness:F2}");
                     LogVerbose($"[PupilDataRecorder] Sphere {stim.name} ACTIVATED at {offsetPosition}, brightness={trialBrightness:F2}, color={stim.image.color}, activeInHierarchy={currentSphere.activeInHierarchy}");
 
-                    // Abort the instant the trial fails (blink/gaze) so feedback is immediate — otherwise a blink
-                    // early in an 8 s trial wouldn't surface until ~11 s later, which reads as "no warning".
-                    yield return WaitForTrialOrFail(stim.duration);
+                    // Sampling windows run from ONSET, matching the reference rig. A short trial's
+                    // light is out well before the window closes; a long trial's window closes
+                    // while the light is still on, and the subject is released at that point.
+                    // Waits are UNCONDITIONAL, even once the trial has failed. A failed trial that
+                    // ended early would deliver less light and less recovery time than a clean one,
+                    // and the retest would start from a different adaptation state. Immediate
+                    // feedback comes from the error tone, which fires the moment the failure is
+                    // detected — the timeline does not need to change to deliver it.
+                    bool isShort = stim.duration < stim.samplingWindow;
 
-                    currentSphere.SetActive(false);
-                    LogEvent("Stop", $"Stop {stim.name} sphere in {offsetPosition} test_case_id={testCase.id} brightness={trialBrightness:F2}");
+                    if (isShort)
+                    {
+                        yield return new WaitForSeconds(stim.duration);
 
-                    if (!currentTrial.failed)
-                        yield return WaitForTrialOrFail(stim.samplingWindow);
+                        currentSphere.SetActive(false);
+                        currentStimulusBrightness = 0f;
+                        LogEvent("Stop", $"Stop {stim.name} sphere in {offsetPosition} test_case_id={testCase.id} brightness={trialBrightness:F2}");
+
+                        yield return new WaitForSeconds(Mathf.Max(0f, stim.samplingWindow - stim.duration));
+
+                        CloseMeasuredWindow();
+                        yield return new WaitForSeconds(PostWindowSettleSeconds);
+                    }
+                    else
+                    {
+                        yield return new WaitForSeconds(stim.samplingWindow);
+
+                        // Released here: the remaining seconds of a long stimulus are not measured,
+                        // and holding a blink for the whole 5 s is not something a subject can do.
+                        CloseMeasuredWindow();
+
+                        yield return new WaitForSeconds(Mathf.Max(0f, stim.duration - stim.samplingWindow));
+
+                        currentSphere.SetActive(false);
+                        currentStimulusBrightness = 0f;
+                        LogEvent("Stop", $"Stop {stim.name} sphere in {offsetPosition} test_case_id={testCase.id} brightness={trialBrightness:F2}");
+                    }
 
                     if (currentTrial.failed)
                     {
@@ -575,7 +996,7 @@ namespace VRS.PupilRecording
 
                     currentTrial = null;
                     currentStimulusBrightness = 0f;
-                    yield return new WaitForSeconds(Mathf.Max(0f, stim.interval - stim.samplingWindow));
+                    yield return new WaitForSeconds(IntervalWait(stim));
                 }
 
                 if (i < stimArray.Count - 1)
@@ -638,20 +1059,38 @@ namespace VRS.PupilRecording
             yield break;
         }
 
-        // Waits up to `seconds`, but returns the instant the current trial fails (blink/gaze break),
-        // so the "Repeating..." warning appears immediately instead of at the end of the trial.
-        IEnumerator WaitForTrialOrFail(float seconds)
+        /// <summary>
+        /// Ends the measured window: the participant is no longer required to hold fixation, and
+        /// the double beep tells them so. Separated out because a long stimulus reaches this point
+        /// while its light is still on.
+        /// </summary>
+        private void CloseMeasuredWindow()
         {
-            float t = 0f;
-            while (t < seconds)
-            {
-                if (currentTrial == null || currentTrial.failed) yield break;
-                t += Time.deltaTime;
-                yield return null;
-            }
+            if (currentTrial != null) currentTrial.active = false;
+            if (audioCues != null) audioCues.PlayDoubleBeep();
         }
 
-        void EnqueuePositions(string stimName)
+        /// <summary>
+        /// Gap between the end of one trial's measured window and the next trial's cue. The
+        /// pre-stimulus window is subtracted because the next trial adds it back, so `interval`
+        /// remains the onset-to-onset spacing the operator configured. Mirrors the reference
+        /// rig's GetIntervalWait.
+        /// </summary>
+        private float IntervalWait(StimulusType stim)
+        {
+            float wait = stim.duration < stim.samplingWindow
+                ? stim.interval - preStimulusWindow - (stim.samplingWindow - stim.duration)
+                : stim.interval - preStimulusWindow;
+            return Mathf.Max(0f, wait);
+        }
+
+        /// <summary>
+        /// Pause after the double beep before the interval proper starts, so the release cue does
+        /// not land on top of the next trial's warning cue. Matches the reference rig's fixed 0.5 s.
+        /// </summary>
+        private const float PostWindowSettleSeconds = 0.5f;
+
+        void EnqueuePositions(StimulusType stim)
         {
             testCasesQueue = new Queue<TestCase>();
             int n = vectorPositions.Length;
@@ -678,10 +1117,14 @@ namespace VRS.PupilRecording
             }
             else
             {
-                for (int i = 0; i < n; i++) brightnesses.Add(1f);
+                // Without randomization every trial runs at this stimulus type's configured
+                // luminance. It previously ran at 1.0 instead, which made the four luminance
+                // fields inert in every code path — nothing on the rig could be dimmed.
+                float lum = Mathf.Clamp01(stim.baseLuminance);
+                for (int i = 0; i < n; i++) brightnesses.Add(lum);
             }
 
-            LogVerbose($"[PupilDataRecorder] {stimName} brightness schedule: [{string.Join(", ", brightnesses.ConvertAll(b => b.ToString("F2")))}]");
+            LogVerbose($"[PupilDataRecorder] {stim.name} brightness schedule: [{string.Join(", ", brightnesses.ConvertAll(b => b.ToString("F2")))}]");
 
             for (int i = 0; i < n; i++)
             {
@@ -703,27 +1146,36 @@ namespace VRS.PupilRecording
         void CreateStimuli()
         {
             stimArray = new List<StimulusType>();
-            if (includeShortRed) AddStimulus("Short Red", Color.red, redCircleSize, shortRedLuminance, shortStimDuration, shortInterval, shortSamplingWindow);
-            if (includeShortBlue) AddStimulus("Short Blue", Color.blue, blueCircleSize, shortBlueLuminance, shortStimDuration, shortInterval, shortSamplingWindow);
-            if (includeLongRed) AddStimulus("Long Red", Color.red, redCircleSize, longRedLuminance, longStimDuration, longInterval, longSamplingWindow);
-            if (includeLongBlue) AddStimulus("Long Blue", Color.blue, blueCircleSize, longBlueLuminance, longStimDuration, longInterval, longSamplingWindow);
+            if (includeShortRed) AddStimulus("Short Red", StimulusKind.ShortRed, Color.red, shortRedCircleSize, shortRedLuminance, shortStimDuration, shortInterval, shortSamplingWindow);
+            if (includeShortBlue) AddStimulus("Short Blue", StimulusKind.ShortBlue, Color.blue, shortBlueCircleSize, shortBlueLuminance, shortStimDuration, shortInterval, shortSamplingWindow);
+            if (includeLongRed) AddStimulus("Long Red", StimulusKind.LongRed, Color.red, longRedCircleSize, longRedLuminance, longStimDuration, longInterval, longSamplingWindow);
+            if (includeLongBlue) AddStimulus("Long Blue", StimulusKind.LongBlue, Color.blue, longBlueCircleSize, longBlueLuminance, longStimDuration, longInterval, longSamplingWindow);
             LogVerbose($"[PupilDataRecorder] Created {stimArray.Count} stimulus types");
         }
 
-        void AddStimulus(string name, Color color, float size, float luminance, float duration, float interval, float samplingWindow)
+        void AddStimulus(string name, StimulusKind kind, Color color, float size, float luminance, float duration, float interval, float samplingWindow)
         {
             // Create stimulus as a UI Image on the canvas
             GameObject stimObj = new GameObject(name);
             stimObj.transform.SetParent(ui.CanvasTransform, false);
             UnityEngine.UI.Image stimImage = stimObj.AddComponent<UnityEngine.UI.Image>();
 
+            // A bare Image draws a SQUARE quad. The reference rig presents a sphere, which reads
+            // as a disc, and perimetry stimuli are circular by definition — a square of side d has
+            // 4/pi (27%) more emitting area than a disc of diameter d.
+            stimImage.sprite = CircleSprite();
+            stimImage.type = UnityEngine.UI.Image.Type.Simple;
+            stimImage.preserveAspect = true;
+
             // baseColor is the pure hue at full intensity — runtime brightness multiplies this.
             Color baseColor = new Color(Mathf.Clamp01(color.r), Mathf.Clamp01(color.g), Mathf.Clamp01(color.b), 1f);
 
-            // Initial color applies the legacy luminance field; gets overridden each trial when randomization is on.
-            Color finalColor = baseColor * Mathf.Max(luminance, 1f);
+            // Apply the inspector luminance, matching the reference rig (`color * luminance`,
+            // clamped at 1). This used to be `Mathf.Max(luminance, 1f)`, which forced every
+            // stimulus to full brightness and silently discarded the "short = low luminance"
+            // distinction the field exists to express.
+            Color finalColor = baseColor * Mathf.Clamp01(luminance);
             finalColor.a = 1f;
-            finalColor = new Color(Mathf.Clamp01(finalColor.r), Mathf.Clamp01(finalColor.g), Mathf.Clamp01(finalColor.b), 1f);
             stimImage.color = finalColor;
 
             // Size in canvas units: size in meters * 1000
@@ -733,9 +1185,45 @@ namespace VRS.PupilRecording
 
             stimObj.SetActive(false); // Hidden until needed
 
-            StimulusType stimu = new StimulusType(name, stimObj, duration, interval, samplingWindow, baseColor, stimImage);
+            StimulusType stimu = new StimulusType(name, kind, stimObj, duration, interval, samplingWindow, baseColor, luminance, stimImage);
             stimArray.Add(stimu);
             LogVerbose($"[PupilDataRecorder] Created UI stimulus: {name} baseColor={baseColor} size={sizeUnits}");
+        }
+
+        // Generated once and shared. Built in code rather than shipped as an asset so the paradigm
+        // still runs from a near-empty scene, which is the whole point of the auto-setup pattern.
+        private static Sprite circleSprite;
+
+        private static Sprite CircleSprite()
+        {
+            if (circleSprite != null) return circleSprite;
+
+            const int res = 128;
+            const float radius = res * 0.5f;
+            Texture2D tex = new Texture2D(res, res, TextureFormat.RGBA32, false)
+            {
+                wrapMode = TextureWrapMode.Clamp,
+                filterMode = FilterMode.Bilinear
+            };
+
+            Color[] pixels = new Color[res * res];
+            for (int y = 0; y < res; y++)
+            {
+                for (int x = 0; x < res; x++)
+                {
+                    float dx = x + 0.5f - radius;
+                    float dy = y + 0.5f - radius;
+                    // One-pixel alpha feather; without it the rim aliases into a visible polygon.
+                    float alpha = Mathf.Clamp01(radius - Mathf.Sqrt(dx * dx + dy * dy));
+                    pixels[y * res + x] = new Color(1f, 1f, 1f, alpha);
+                }
+            }
+            tex.SetPixels(pixels);
+            tex.Apply();
+
+            circleSprite = Sprite.Create(tex, new Rect(0f, 0f, res, res), new Vector2(0.5f, 0.5f));
+            circleSprite.name = "StimulusCircle";
+            return circleSprite;
         }
 
         private void ApplyBrightness(StimulusType stim, float brightness)
@@ -770,8 +1258,7 @@ namespace VRS.PupilRecording
             float guard = 0f;
             while (guard < 5f)
             {
-                if (eyeManager != null &&
-                    eyeManager.GetCombindedEyeDirectionNormalized(out Vector3 probe) && probe.sqrMagnitude > 1e-6f)
+                if (TryGetGateGaze(out Vector3 probe) && probe.sqrMagnitude > 1e-6f)
                     break;
                 guard += Time.deltaTime;
                 yield return null;
@@ -783,8 +1270,7 @@ namespace VRS.PupilRecording
             float t = 0f;
             while (t < 3f && samples < 90)
             {
-                if (eyeManager != null &&
-                    eyeManager.GetCombindedEyeDirectionNormalized(out Vector3 g) && g.sqrMagnitude > 1e-6f)
+                if (TryGetGateGaze(out Vector3 g) && g.sqrMagnitude > 1e-6f)
                 {
                     Vector3 local = Quaternion.Inverse(headTransform.rotation) * g.normalized; // world -> head-local
                     if (local.z > 0.1f) { sum += local; samples++; }
@@ -1095,6 +1581,15 @@ namespace VRS.PupilRecording
                 trialsAbandoned = trialsAbandoned,
                 trialsRemaining = testCasesQueue != null ? testCasesQueue.Count : 0,
 
+                awaitingOperatorStart = awaitingOperatorStart,
+                configLocked = ConfigLocked,
+                eyeMode = eyeUnderTest.ToString(),
+                eyeCode = EyeCode(),
+                shortRedLuminance = shortRedLuminance,
+                shortBlueLuminance = shortBlueLuminance,
+                longRedLuminance = longRedLuminance,
+                longBlueLuminance = longBlueLuminance,
+
                 gazeDeviationDeg = currentGazeDeviationDeg,
                 gazeBiasDeg = currentGazeBiasDeg,
                 gazeOffTarget = currentGazeOffTarget,
@@ -1133,8 +1628,11 @@ namespace VRS.PupilRecording
             // Separate a genuine blink from eye-tracking loss. These used to be folded together
             // (`|| !leftValid || !rightValid`), so sustained dropouts were recorded as "blink" and
             // were indistinguishable from real blinks in analysis.
-            bool expressionBlink = leftBlink > 0.5f || rightBlink > 0.5f;
-            bool trackingLost = !leftValid || !rightValid;
+            // Only the eye(s) under test may invalidate a sample. In monocular mode the fellow eye
+            // is patched, so its pupil is permanently invalid and its blink expression is whatever
+            // the tracker makes of a covered eye — folding either in would fail every single trial.
+            bool expressionBlink = (MeasuringLeft && leftBlink > 0.5f) || (MeasuringRight && rightBlink > 0.5f);
+            bool trackingLost = (MeasuringLeft && !leftValid) || (MeasuringRight && !rightValid);
 
             if (expressionBlink) { currentSampleQuality = SampleQuality.Blink; samplesBlink++; }
             else if (trackingLost) { currentSampleQuality = SampleQuality.TrackingLost; samplesTrackingLost++; }
@@ -1142,9 +1640,11 @@ namespace VRS.PupilRecording
 
             // Both still invalidate the trial, but they are now attributed correctly.
             bool eyesUnusable = expressionBlink || trackingLost;
-            if (eyesUnusable && currentTrial != null && TrialFailuresArmed())
+            if (eyesUnusable && TrialArmed())
             {
+                bool wasAlreadyFailed = currentTrial.failed;
                 currentTrial.Failed(expressionBlink ? "blink" : "tracking_lost");
+                if (!wasAlreadyFailed && audioCues != null) audioCues.PlayError();
             }
 
             // Get gaze directions (honor the validity bools — the SDK writes Vector3.zero when invalid,
@@ -1155,7 +1655,9 @@ namespace VRS.PupilRecording
             bool combinedGazeValid = eyeManager.GetCombindedEyeDirectionNormalized(out combinedGaze);
             eyeManager.GetCombinedEyeOrigin(out origin);
 
-            bool gazeValid = combinedGazeValid && !eyesUnusable; // eye loss already fails the trial separately
+            // The gate follows the eye under test; all three gaze vectors are still logged.
+            bool gateGazeValid = TryGetGateGaze(out Vector3 gateGaze);
+            bool gazeValid = gateGazeValid && !eyesUnusable; // eye loss already fails the trial separately
 
             // --- Rolling fixation reference (drift correction) ---
             // A one-shot calibration only holds for ~15 s before the tracker's ~10° bias drifts back
@@ -1167,7 +1669,7 @@ namespace VRS.PupilRecording
             {
                 if (gazeValid)
                 {
-                    Vector3 gazeLocal = Quaternion.Inverse(headTransform.rotation) * combinedGaze.normalized;
+                    Vector3 gazeLocal = Quaternion.Inverse(headTransform.rotation) * gateGaze.normalized;
                     baselineTracker.AddSample(gazeLocal, Time.time);
                 }
 
@@ -1185,8 +1687,8 @@ namespace VRS.PupilRecording
             Vector3 fixationDirWorld = headTransform.rotation * centerReferenceLocal;
             Vector3 headForwardWorld = headTransform.rotation * Vector3.forward;
 
-            currentGazeDeviationDeg = gazeValid ? GazeFixationMonitor.DeviationDeg(combinedGaze, fixationDirWorld) : -1f;
-            currentGazeDeviationRawDeg = gazeValid ? GazeFixationMonitor.DeviationDeg(combinedGaze, headForwardWorld) : -1f;
+            currentGazeDeviationDeg = gazeValid ? GazeFixationMonitor.DeviationDeg(gateGaze, fixationDirWorld) : -1f;
+            currentGazeDeviationRawDeg = gazeValid ? GazeFixationMonitor.DeviationDeg(gateGaze, headForwardWorld) : -1f;
             currentGazeBiasDeg = baselineTracker != null ? baselineTracker.BiasDeg
                                                          : Vector3.Angle(centerReferenceLocal, Vector3.forward);
 
@@ -1197,20 +1699,24 @@ namespace VRS.PupilRecording
                                  && !gazeGateDisarmed
                                  && (gazeCalibrated || !useCenterBiasCorrection);
 
-            if (gazeGateArmed && currentTrial != null && TrialFailuresArmed())
+            if (gazeGateArmed && TrialArmed())
             {
                 gazeMonitor.toleranceDeg = gazeToleranceDeg;     // live-tunable from the Inspector
                 gazeMonitor.debounceSeconds = gazeDebounceSeconds;
-                bool broke = gazeMonitor.Evaluate(combinedGaze, fixationDirWorld, gazeValid, Time.deltaTime);
+                bool broke = gazeMonitor.Evaluate(gateGaze, fixationDirWorld, gazeValid, Time.deltaTime);
                 currentGazeOffTarget = gazeMonitor.IsOffTarget;
-                if (broke && !currentTrial.failed) currentTrial.Failed("looking_away");
+                if (broke && !currentTrial.failed)
+                {
+                    currentTrial.Failed("looking_away");
+                    if (audioCues != null) audioCues.PlayError();
+                }
             }
             else
             {
                 currentGazeOffTarget = false;
             }
 
-            if (showGazeDebug) UpdateGazeDebugVisuals(combinedGaze, gazeValid);
+            if (showGazeDebug) UpdateGazeDebugVisuals(gateGaze, gazeValid);
 
             // Light condition (controller cached in Start — this was a per-frame scene scan)
             string lightCondition = lightController != null

@@ -30,6 +30,19 @@ namespace VRS.PupilRecording
         public float elapsedSeconds;
         public bool recording;
 
+        /// <summary>Session is parked at the ready screen waiting for the operator to press Start.</summary>
+        public bool awaitingOperatorStart;
+        /// <summary>Stimulus levels are frozen — the trial sequence has begun.</summary>
+        public bool configLocked;
+
+        public string eyeMode;   // requested: Auto / Left / Right / Both
+        public string eyeCode;   // resolved:  OD / OS / OU
+
+        public float shortRedLuminance;
+        public float shortBlueLuminance;
+        public float longRedLuminance;
+        public float longBlueLuminance;
+
         public string stimulusName;
         public string stimulusPosition;
         public float stimulusBrightness;
@@ -75,6 +88,13 @@ namespace VRS.PupilRecording
         private readonly object payloadLock = new object();
         private string statusJson = "{}";
 
+        // Commands arrive on the SERVER thread and are applied on the MAIN thread. Nothing here
+        // may touch a Unity API — that is the whole reason for the hand-off.
+        private readonly object commandLock = new object();
+        private readonly Queue<KeyValuePair<string, Dictionary<string, string>>> commands =
+            new Queue<KeyValuePair<string, Dictionary<string, string>>>();
+        private const int MaxQueuedCommands = 32;
+
         private float nextUpdateTime;
         private static readonly CultureInfo Inv = CultureInfo.InvariantCulture;
 
@@ -95,12 +115,63 @@ namespace VRS.PupilRecording
         private void Update()
         {
             if (!running || recorder == null) return;
+
+            // Commands are drained every frame, not at the snapshot rate — a Start press should
+            // not sit in a queue for a fifth of a second.
+            DrainCommands();
+
             if (Time.unscaledTime < nextUpdateTime) return;
             nextUpdateTime = Time.unscaledTime + 1f / Mathf.Max(1f, updatesPerSecond);
 
             // Rendered on the MAIN thread — the server thread must never touch Unity API.
             string json = BuildJson(recorder.GetStatus());
             lock (payloadLock) { statusJson = json; }
+        }
+
+        /// <summary>Applies queued operator commands. Main thread only.</summary>
+        private void DrainCommands()
+        {
+            while (true)
+            {
+                KeyValuePair<string, Dictionary<string, string>> cmd;
+                lock (commandLock)
+                {
+                    if (commands.Count == 0) return;
+                    cmd = commands.Dequeue();
+                }
+
+                try
+                {
+                    switch (cmd.Key)
+                    {
+                        case "start":
+                            recorder.RequestOperatorStart();
+                            break;
+                        case "config":
+                            recorder.ApplyOperatorConfig(cmd.Value);
+                            break;
+                        default:
+                            Debug.LogWarning($"[OperatorStatusServer] Unknown command '{cmd.Key}'.");
+                            break;
+                    }
+                }
+                catch (Exception e)
+                {
+                    // A bad command must never take down the server thread's producer or the run.
+                    Debug.LogError($"[OperatorStatusServer] Command '{cmd.Key}' failed: {e.Message}");
+                }
+            }
+        }
+
+        /// <summary>Queues a command from the server thread. Bounded so a stuck main thread cannot grow it forever.</summary>
+        private bool Enqueue(string name, Dictionary<string, string> args)
+        {
+            lock (commandLock)
+            {
+                if (commands.Count >= MaxQueuedCommands) return false;
+                commands.Enqueue(new KeyValuePair<string, Dictionary<string, string>>(name, args));
+                return true;
+            }
         }
 
         private void OnDestroy() => StopServer();
@@ -190,6 +261,20 @@ namespace VRS.PupilRecording
                     lock (payloadLock) { body = statusJson; }
                     WriteResponse(stream, "200 OK", "application/json; charset=utf-8", body);
                 }
+                else if (path == "/api/start" || path == "/api/config")
+                {
+                    // Parameters ride in the query string rather than a request body: this is a
+                    // hand-rolled socket server, and not having to parse headers, chunked encoding
+                    // and content-length is a meaningful reduction in what can go wrong.
+                    string command = path == "/api/start" ? "start" : "config";
+                    Dictionary<string, string> args = ParseQuery(requestLine);
+
+                    bool queued = Enqueue(command, args);
+                    WriteResponse(stream,
+                        queued ? "202 Accepted" : "503 Service Unavailable",
+                        "application/json; charset=utf-8",
+                        queued ? "{\"queued\":true}" : "{\"queued\":false,\"error\":\"busy\"}");
+                }
                 else if (path == "/" || path == "/index.html")
                 {
                     WriteResponse(stream, "200 OK", "text/html; charset=utf-8", Page);
@@ -229,6 +314,52 @@ namespace VRS.PupilRecording
             string path = parts[1];
             int q = path.IndexOf('?');
             return q >= 0 ? path.Substring(0, q) : path;
+        }
+
+        /// <summary>
+        /// Pulls `?a=1&amp;b=2` out of the request line into a dictionary. Percent-decoding is
+        /// hand-rolled rather than using WWW/UnityWebRequest helpers, which are Unity API and
+        /// therefore off-limits on this thread.
+        /// </summary>
+        private static Dictionary<string, string> ParseQuery(string requestLine)
+        {
+            Dictionary<string, string> result = new Dictionary<string, string>();
+            if (string.IsNullOrEmpty(requestLine)) return result;
+
+            string[] parts = requestLine.Split(' ');
+            if (parts.Length < 2) return result;
+
+            int q = parts[1].IndexOf('?');
+            if (q < 0 || q == parts[1].Length - 1) return result;
+
+            foreach (string pair in parts[1].Substring(q + 1).Split('&'))
+            {
+                if (pair.Length == 0) continue;
+                int eq = pair.IndexOf('=');
+                string key = eq < 0 ? pair : pair.Substring(0, eq);
+                string value = eq < 0 ? "" : pair.Substring(eq + 1);
+                result[UrlDecode(key)] = UrlDecode(value);
+            }
+            return result;
+        }
+
+        private static string UrlDecode(string s)
+        {
+            if (string.IsNullOrEmpty(s) || (s.IndexOf('%') < 0 && s.IndexOf('+') < 0)) return s;
+
+            StringBuilder sb = new StringBuilder(s.Length);
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (s[i] == '+') { sb.Append(' '); }
+                else if (s[i] == '%' && i + 2 < s.Length &&
+                         int.TryParse(s.Substring(i + 1, 2), NumberStyles.HexNumber, Inv, out int code))
+                {
+                    sb.Append((char)code);
+                    i += 2;
+                }
+                else sb.Append(s[i]);
+            }
+            return sb.ToString();
         }
 
         private static void WriteResponse(NetworkStream stream, string status, string contentType, string body)
@@ -290,6 +421,15 @@ namespace VRS.PupilRecording
             S(sb, "phase", s.phase); sb.Append(',');
             N(sb, "elapsed", s.elapsedSeconds); sb.Append(',');
             B(sb, "recording", s.recording); sb.Append(',');
+
+            B(sb, "awaiting_start", s.awaitingOperatorStart); sb.Append(',');
+            B(sb, "config_locked", s.configLocked); sb.Append(',');
+            S(sb, "eye_mode", s.eyeMode); sb.Append(',');
+            S(sb, "eye_code", s.eyeCode); sb.Append(',');
+            N(sb, "lum_short_red", s.shortRedLuminance); sb.Append(',');
+            N(sb, "lum_short_blue", s.shortBlueLuminance); sb.Append(',');
+            N(sb, "lum_long_red", s.longRedLuminance); sb.Append(',');
+            N(sb, "lum_long_blue", s.longBlueLuminance); sb.Append(',');
 
             S(sb, "stimulus", s.stimulusName); sb.Append(',');
             S(sb, "position", s.stimulusPosition); sb.Append(',');
@@ -389,9 +529,51 @@ td:first-child{color:#8b93a7;white-space:nowrap;width:1%;font-variant-numeric:ta
 .off{opacity:.45}
 #dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#4ade80;margin-right:6px;vertical-align:middle}
 #dot.stale{background:#f87171}
+
+/* operator control panel */
+.panel{background:#1a1d26;border:1px solid #2f3547;border-radius:12px;padding:14px;margin-bottom:14px}
+.panel.armed{border-color:#4ade80;box-shadow:0 0 0 1px rgba(74,222,128,.25)}
+.ph{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.ph .who{font-size:19px;font-weight:600}
+.ph .who small{display:block;font-size:11px;font-weight:500;color:#8b93a7;text-transform:uppercase;letter-spacing:.06em}
+button{font:inherit;font-weight:600;padding:11px 22px;border-radius:9px;border:1px solid #2f3547;
+       background:#232838;color:#e8eaf0;cursor:pointer;min-height:44px}
+button.go{background:#16a34a;border-color:#16a34a;color:#fff}
+button.go:hover:not(:disabled){background:#15803d}
+button:disabled{opacity:.4;cursor:not-allowed}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:10px}
+.fields label{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#8b93a7}
+.fields input,.fields select{width:100%;margin-top:5px;font:inherit;font-variant-numeric:tabular-nums;
+       background:#12141a;color:#e8eaf0;border:1px solid #2f3547;border-radius:8px;padding:9px 10px;min-height:42px}
+.fields input:disabled,.fields select:disabled{opacity:.45}
+.fields input:focus,.fields select:focus{outline:2px solid #3b82f6;outline-offset:1px}
+.note{margin-top:10px;font-size:12px;color:#8b93a7}
+.note.hot{color:#fbbf24}
 </style></head><body>
-<h1><span id=""dot""></span>VRS Studio — Session Monitor</h1>
+<h1><span id=""dot""></span>VRS Studio — Session Control</h1>
 <div class=""sub"" id=""hdr"">connecting…</div>
+
+<div class=""panel"" id=""ctl"">
+  <div class=""ph"">
+    <div class=""who"" id=""pname"">—<small>participant</small></div>
+    <button id=""startBtn"" class=""go"" disabled>Start session</button>
+  </div>
+  <div class=""fields"">
+    <label>Eye under test
+      <select id=""eye"">
+        <option value=""Auto"">Auto (detect patch)</option>
+        <option value=""Right"">Right — OD</option>
+        <option value=""Left"">Left — OS</option>
+        <option value=""Both"">Both — OU</option>
+      </select>
+    </label>
+    <label>Short red<input type=""number"" id=""lum_short_red"" min=""0"" max=""1"" step=""0.05""></label>
+    <label>Short blue<input type=""number"" id=""lum_short_blue"" min=""0"" max=""1"" step=""0.05""></label>
+    <label>Long red<input type=""number"" id=""lum_long_red"" min=""0"" max=""1"" step=""0.05""></label>
+    <label>Long blue<input type=""number"" id=""lum_long_blue"" min=""0"" max=""1"" step=""0.05""></label>
+  </div>
+  <div class=""note"" id=""ctlnote"">waiting for the participant to enter their ID…</div>
+</div>
 
 <div class=""grid"">
   <div class=""card""><div class=""k"">Phase</div><div class=""v sm"" id=""phase"">—</div></div>
@@ -416,12 +598,80 @@ td:first-child{color:#8b93a7;white-space:nowrap;width:1%;font-variant-numeric:ta
 
 <script>
 var stale=0;
+var LUMS=['lum_short_red','lum_short_blue','lum_long_red','lum_long_blue'];
+// After sending a change, ignore incoming values briefly. Without this the 2 Hz poll races the
+// operator's typing and yanks the field back to the old number mid-edit.
+var holdUntil=0;
+
 function f(n,d){return (n===undefined||n===null)?'—':Number(n).toFixed(d===undefined?1:d)}
+function post(url){return fetch(url,{method:'POST',cache:'no-store'}).catch(function(){})}
+
+function send(key,value){
+  holdUntil=Date.now()+1500;
+  post('/api/config?'+key+'='+encodeURIComponent(value));
+}
+
+LUMS.forEach(function(id){
+  var el=document.getElementById(id);
+  el.addEventListener('change',function(){
+    var v=Math.max(0,Math.min(1,Number(el.value)));
+    el.value=v.toFixed(2);
+    send(id.replace('lum_',''),v);
+  });
+});
+document.getElementById('eye').addEventListener('change',function(){
+  send('eye',this.value);
+});
+document.getElementById('startBtn').addEventListener('click',function(){
+  this.disabled=true;
+  this.textContent='starting…';
+  post('/api/start');
+});
+
+function syncControls(s){
+  var armed=!!s.awaiting_start, locked=!!s.config_locked;
+  var panel=document.getElementById('ctl');
+  panel.className='panel'+(armed?' armed':'');
+
+  document.getElementById('pname').innerHTML =
+    (s.participant||'—')+'<small>participant'+(s.eye_code?' · '+s.eye_code:'')+'</small>';
+
+  var btn=document.getElementById('startBtn');
+  btn.disabled=!armed;
+  if(armed) btn.textContent='Start session';
+  else if(locked) btn.textContent='Session running';
+  else btn.textContent='Start session';
+
+  var quiet=Date.now()<holdUntil;
+  LUMS.forEach(function(id){
+    var el=document.getElementById(id);
+    el.disabled=!armed;
+    if(!quiet && el!==document.activeElement && s[id]!==undefined) el.value=Number(s[id]).toFixed(2);
+  });
+  var eye=document.getElementById('eye');
+  eye.disabled=!armed;
+  if(!quiet && eye!==document.activeElement && s.eye_mode) eye.value=s.eye_mode;
+
+  var note=document.getElementById('ctlnote');
+  if(armed){
+    note.textContent='Set the levels, then press Start. Values lock when the session begins.';
+    note.className='note';
+  } else if(locked){
+    note.textContent='Session running — stimulus levels are locked so the protocol cannot change mid-run.';
+    note.className='note hot';
+  } else {
+    note.textContent='Waiting for the participant to enter their ID in the headset…';
+    note.className='note';
+  }
+}
+
 function tick(){
   fetch('/status.json',{cache:'no-store'}).then(function(r){return r.json()}).then(function(s){
     stale=0; document.getElementById('dot').classList.remove('stale');
+    syncControls(s);
     document.getElementById('hdr').textContent =
-      'participant ' + (s.participant||'—') + '  ·  ' + (s.csv||'no file yet') + (s.recording?'  ·  recording':'  ·  idle');
+      (s.csv||'no file yet') + (s.recording?'  ·  recording':'  ·  idle') +
+      (s.eye_code?'  ·  '+s.eye_code:'');
     document.getElementById('phase').textContent = s.phase||'—';
     var e=Math.max(0,s.elapsed||0);
     document.getElementById('elapsed').textContent =
