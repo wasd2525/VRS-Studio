@@ -1,0 +1,1071 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VRS Studio — Session Monitor</title>
+<!--
+  Operator page, served by OperatorStatusServer from the headset.
+
+  Self-contained by design: no CDN scripts, fonts or styles — the lab network may have no
+  internet. Served as-is from Resources/OperatorPage.html; the C# server only fills in nothing.
+
+  Data contract (keep in sync with OperatorStatusServer.BuildLiveJson):
+    GET /status.json  ~2 Hz   session state, trials, quality, events
+    GET /live.json    ~4 Hz   { now, tracking, recording, eye_code, meas_l, meas_r, stim,
+                                samples:[[t, lValid,lMm,lBlink,lGazeValid,lYaw,lPitch,
+                                             rValid,rMm,rBlink,rGazeValid,rYaw,rPitch], ...] }
+                              "l" = wearer's LEFT eye = OS; "r" = RIGHT = OD.
+                              Yaw/pitch are head-local degrees, positive = wearer's right / up.
+
+  The eye view faces the participant (clinical convention): OD drawn on screen-left,
+  OS on screen-right, and yaw is mirrored so "patient looks left" moves both irises
+  toward the viewer's right.
+
+  Extras: ?demo=1 (or opening via file://) runs on synthetic data with no headset.
+  Dropping a session CSV (schema v3) onto the eyes panel replays it.
+-->
+<style>
+:root{
+  color-scheme:dark;
+  /* series colors validated (dataviz six-checks) on surface #1a1d26: CVD dE 26.8, contrast >=3:1 */
+  --od:#3987e5;   /* right eye  */
+  --os:#d95926;   /* left eye   */
+  --bg:#12141a; --card:#1a1d26; --line:#262a36; --ink:#e8eaf0; --mut:#8b93a7;
+}
+*{box-sizing:border-box}
+body{margin:0;padding:16px;font:15px/1.45 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+     background:var(--bg);color:var(--ink)}
+h1{font-size:15px;margin:0 0 2px;font-weight:600;letter-spacing:.02em}
+.sub{color:var(--mut);font-size:12px;margin-bottom:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.k{color:var(--mut);font-size:11px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px}
+.v{font-size:21px;font-weight:600;font-variant-numeric:tabular-nums;line-height:1.15}
+.v.sm{font-size:15px;font-weight:500}
+.ok{color:#4ade80}.warn{color:#fbbf24}.bad{color:#f87171}.dim{color:var(--mut)}
+.bar{height:5px;background:var(--line);border-radius:3px;overflow:hidden;margin-top:7px}
+.bar>i{display:block;height:100%;background:#4ade80;transition:width .3s}
+table{width:100%;border-collapse:collapse;font-size:12px}
+td{padding:5px 8px;border-bottom:1px solid #21252f;vertical-align:top}
+td:first-child{color:var(--mut);white-space:nowrap;width:1%;font-variant-numeric:tabular-nums}
+.wrap{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:6px 4px;overflow-x:auto}
+#dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#4ade80;margin-right:6px;vertical-align:middle}
+#dot.stale{background:#f87171}
+
+/* operator control panel */
+.panel{background:var(--card);border:1px solid #2f3547;border-radius:12px;padding:14px;margin-bottom:14px}
+.panel.armed{border-color:#4ade80;box-shadow:0 0 0 1px rgba(74,222,128,.25)}
+.ph{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.ph .who{font-size:19px;font-weight:600}
+.ph .who small{display:block;font-size:11px;font-weight:500;color:var(--mut);text-transform:uppercase;letter-spacing:.06em}
+button{font:inherit;font-weight:600;padding:11px 22px;border-radius:9px;border:1px solid #2f3547;
+       background:#232838;color:var(--ink);cursor:pointer;min-height:44px}
+button.go{background:#16a34a;border-color:#16a34a;color:#fff}
+button.go:hover:not(:disabled){background:#15803d}
+button:disabled{opacity:.4;cursor:not-allowed}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:10px}
+.fields label{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--mut)}
+.fields input,.fields select{width:100%;margin-top:5px;font:inherit;font-variant-numeric:tabular-nums;
+       background:var(--bg);color:var(--ink);border:1px solid #2f3547;border-radius:8px;padding:9px 10px;min-height:42px}
+.fields input:disabled,.fields select:disabled{opacity:.45}
+.fields input:focus,.fields select:focus{outline:2px solid #3b82f6;outline-offset:1px}
+.note{margin-top:10px;font-size:12px;color:var(--mut)}
+.note.hot{color:#fbbf24}
+
+/* live eyes panel */
+.eyehdr{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.eyehdr .k{margin:0}
+.eyestate{font-size:12px;color:var(--mut)}
+.eyestate .rpl{color:#fbbf24;font-weight:600;letter-spacing:.05em}
+.stimchip{display:none;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;
+          padding:3px 9px;border-radius:20px;border:1px solid var(--line);color:var(--ink)}
+.stimchip.on{display:inline-block}
+.stage{position:relative;width:100%}
+.stage canvas{display:block;width:100%;border-radius:10px}
+#ovl{position:absolute;inset:0;pointer-events:none}
+.eyestats{display:flex;gap:10px;margin-top:10px}
+.eyestats .es{flex:1;background:var(--bg);border:1px solid var(--line);border-radius:9px;padding:8px 12px;text-align:center}
+.es .lab{font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.06em}
+.es .lab i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.es .mm{font-size:22px;font-weight:600;font-variant-numeric:tabular-nums;margin-top:2px}
+.es .st{font-size:11px;color:var(--mut);margin-top:1px;min-height:14px}
+/* sparkline */
+.sparkhdr{display:flex;align-items:baseline;justify-content:space-between;margin:14px 0 6px}
+.legend{font-size:11px;color:var(--mut)}
+.legend i{display:inline-block;width:14px;height:3px;border-radius:2px;margin:0 5px 2px 12px;vertical-align:middle}
+#spark{display:block;width:100%;touch-action:none}
+#sparkTip{position:absolute;display:none;background:#232838;border:1px solid #2f3547;border-radius:7px;
+          padding:5px 9px;font-size:11px;pointer-events:none;white-space:nowrap;z-index:5;
+          font-variant-numeric:tabular-nums;color:var(--ink)}
+#sparkTip i{display:inline-block;width:9px;height:3px;border-radius:2px;margin-right:4px;vertical-align:2px}
+/* replay */
+.rplbar{display:none;align-items:center;gap:9px;margin-top:10px;flex-wrap:wrap}
+.rplbar.on{display:flex}
+.rplbar button{min-height:34px;padding:5px 14px;font-size:13px}
+.rplbar select{background:var(--bg);color:var(--ink);border:1px solid #2f3547;border-radius:7px;padding:5px 7px;font:inherit;font-size:13px}
+.rplbar input[type=range]{flex:1;min-width:120px;accent-color:#3b82f6}
+.rplbar .t{font-size:12px;color:var(--mut);font-variant-numeric:tabular-nums}
+.drop{outline:2px dashed #3b82f6;outline-offset:-6px}
+.tinybtn{min-height:30px;padding:3px 10px;font-size:12px;font-weight:500;color:var(--mut)}
+
+/* stimulus geometry / timing / positions */
+.grouphdr{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;margin:16px 0 8px;
+       font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--mut)}
+.grouphdr .hint{text-transform:none;letter-spacing:0;font-size:11px;color:#6b7386;font-variant-numeric:tabular-nums}
+.grouphdr .hint.bad{color:#f87171}
+.posrow{display:grid;grid-template-columns:minmax(170px,1fr) minmax(170px,1fr);gap:10px;align-items:start}
+@media(max-width:620px){.posrow{grid-template-columns:1fr}}
+/* tall enough that the default 8-point grid needs no scrolling */
+.posrow textarea{width:100%;min-height:176px;resize:vertical;padding:9px 10px;border-radius:8px;
+       font:12px/1.55 ui-monospace,SFMono-Regular,Consolas,monospace;font-variant-numeric:tabular-nums;
+       background:var(--bg);color:var(--ink);border:1px solid #2f3547}
+.posrow textarea:disabled{opacity:.45}
+.posrow textarea:focus{outline:2px solid #3b82f6;outline-offset:1px}
+.posside{display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+.poshelp{font-size:11px;line-height:1.6;color:var(--mut)}
+.poshelp b{color:var(--ink);font-weight:600}
+.posmsg{font-size:11px;min-height:15px;color:var(--mut)}
+.posmsg.ok{color:#34d399}
+.posmsg.bad{color:#f87171}
+</style></head><body>
+<h1><span id="dot"></span>VRS Studio — Session Control</h1>
+<div class="sub" id="hdr">connecting…</div>
+
+<div class="panel" id="ctl">
+  <div class="ph">
+    <div class="who" id="pname">—<small>participant</small></div>
+    <button id="startBtn" class="go" disabled>Start session</button>
+  </div>
+  <div class="fields">
+    <label>Eye under test
+      <select id="eye">
+        <option value="Auto">Auto (detect patch)</option>
+        <option value="Right">Right — OD</option>
+        <option value="Left">Left — OS</option>
+        <option value="Both">Both — OU</option>
+      </select>
+    </label>
+    <label>Short red<input type="number" id="lum_short_red" min="0" max="1" step="0.05"></label>
+    <label>Short blue<input type="number" id="lum_short_blue" min="0" max="1" step="0.05"></label>
+    <label>Long red<input type="number" id="lum_long_red" min="0" max="1" step="0.05"></label>
+    <label>Long blue<input type="number" id="lum_long_blue" min="0" max="1" step="0.05"></label>
+  </div>
+
+  <div class="grouphdr">Duration &amp; size <span class="hint">seconds · stimulus diameter in metres on the fixation plane</span></div>
+  <div class="fields">
+    <label>Short duration<input type="number" id="dur_short" min="0.02" max="120" step="0.1"></label>
+    <label>Long duration<input type="number" id="dur_long" min="0.02" max="120" step="0.5"></label>
+    <label>Short red size<input type="number" id="size_short_red" min="0.001" max="1" step="0.005"></label>
+    <label>Short blue size<input type="number" id="size_short_blue" min="0.001" max="1" step="0.005"></label>
+    <label>Long red size<input type="number" id="size_long_red" min="0.001" max="1" step="0.005"></label>
+    <label>Long blue size<input type="number" id="size_long_blue" min="0.001" max="1" step="0.005"></label>
+  </div>
+
+  <div class="grouphdr">Positions <span class="hint" id="posdeg">—</span></div>
+  <div class="posrow">
+    <textarea id="pos" spellcheck="false" autocapitalize="off" autocorrect="off"></textarea>
+    <div class="posside">
+      <button id="posApply" class="tinybtn">Apply positions</button>
+      <button id="posReset" class="tinybtn">Revert</button>
+      <div class="poshelp">One <b>x, y, z</b> per line, in metres.<br>
+        <b>z</b> is the distance in front of the eye — 2.0 is the fixation plane.<br>
+        Eccentricity per axis is atan(x/z); the default grid is ±15° and ±3°.</div>
+      <div class="posmsg" id="posmsg"></div>
+    </div>
+  </div>
+
+  <div class="note" id="ctlnote">waiting for the participant to enter their ID…</div>
+</div>
+
+<div class="panel" id="eyesPanel">
+  <div class="eyehdr">
+    <div class="k">Live eyes — facing the participant</div>
+    <span class="stimchip" id="stimchip">● stimulus</span>
+    <div class="eyestate" id="eyestate">waiting for eye tracking…</div>
+  </div>
+  <div class="stage" id="stage">
+    <canvas id="glc"></canvas>
+    <canvas id="ovl"></canvas>
+  </div>
+  <div class="eyestats">
+    <div class="es"><div class="lab"><i style="background:var(--od)"></i>OD — right eye</div>
+      <div class="mm" id="mm_od">—</div><div class="st" id="st_od"></div></div>
+    <div class="es"><div class="lab"><i style="background:var(--os)"></i>OS — left eye</div>
+      <div class="mm" id="mm_os">—</div><div class="st" id="st_os"></div></div>
+  </div>
+
+  <div class="sparkhdr">
+    <div class="k" style="margin:0">Pupil diameter — last 60 s</div>
+    <div class="legend"><i style="background:var(--od)"></i>OD right<i style="background:var(--os)"></i>OS left</div>
+  </div>
+  <div style="position:relative">
+    <canvas id="spark" height="150"></canvas>
+    <div id="sparkTip"></div>
+  </div>
+
+  <div class="rplbar" id="rplbar">
+    <button id="rplPlay">Pause</button>
+    <select id="rplSpeed"><option>0.5</option><option selected>1</option><option>2</option><option>5</option></select>
+    <input type="range" id="rplSeek" min="0" max="1000" value="0">
+    <span class="t" id="rplTime">0:00 / 0:00</span>
+    <button id="rplExit" class="tinybtn">exit replay</button>
+  </div>
+  <div class="note" id="eyenote">Drop a session CSV here to replay it. Live view runs ~0.5 s behind the headset.</div>
+  <input type="file" id="rplFile" accept=".csv" style="display:none">
+</div>
+
+<div class="grid">
+  <div class="card"><div class="k">Phase</div><div class="v sm" id="phase">—</div></div>
+  <div class="card"><div class="k">Elapsed</div><div class="v" id="elapsed">—</div></div>
+  <div class="card"><div class="k">Stimulus</div><div class="v sm" id="stim">—</div></div>
+  <div class="card"><div class="k">Gaze deviation</div><div class="v" id="dev">—</div></div>
+  <div class="card"><div class="k">Tracked bias</div><div class="v" id="bias">—</div></div>
+  <div class="card"><div class="k">Gate</div><div class="v sm" id="gate">—</div></div>
+</div>
+
+<div class="grid">
+  <div class="card"><div class="k">Completed</div><div class="v ok" id="done">—</div></div>
+  <div class="card"><div class="k">Failed</div><div class="v warn" id="fail">—</div></div>
+  <div class="card"><div class="k">Abandoned</div><div class="v bad" id="aband">—</div></div>
+  <div class="card"><div class="k">Remaining</div><div class="v dim" id="rem">—</div></div>
+  <div class="card"><div class="k">Signal quality</div><div class="v" id="qual">—</div>
+    <div class="bar"><i id="qbar" style="width:0%"></i></div></div>
+  <div class="card"><div class="k">Rows written</div><div class="v" id="rows">—</div></div>
+</div>
+
+<div class="wrap"><table id="ev"></table></div>
+
+<script>
+'use strict';
+// ============================== config / shared ==============================
+var DEMO = /[?&]demo=1/.test(location.search) || location.protocol === 'file:';
+var COL = { od:'#3987e5', os:'#d95926', card:'#1a1d26', bg:'#12141a', line:'#262a36',
+            grid:'#232734', ink:'#e8eaf0', mut:'#8b93a7' };
+var PLAYBACK_DELAY = 0.45;      // s behind newest live sample — absorbs WiFi jitter
+var IRIS_MM = 12;               // nominal iris diameter for pupil scaling
+// /live.json sample tuple indices ("l" = wearer's left = OS, "r" = OD)
+var IX = { t:0,
+           os:{ v:1,  mm:2,  b:3,  gv:4,  yaw:5,  pit:6  },
+           od:{ v:7,  mm:8,  b:9,  gv:10, yaw:11, pit:12 } };
+
+function $(id){ return document.getElementById(id); }
+function clamp(x,a,b){ return x<a?a:(x>b?b:x); }
+function lerp(a,b,k){ return a+(b-a)*k; }
+function f(n,d){ return (n===undefined||n===null)?'—':Number(n).toFixed(d===undefined?1:d); }
+function fmtClock(s){ s=Math.max(0,s|0); return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); }
+
+// ============================== control panel (ported) ==============================
+var stale=0;
+var LUMS=['lum_short_red','lum_short_blue','lum_long_red','lum_long_blue'];
+// After sending a change, ignore incoming values briefly. Without this the 2 Hz poll races the
+// operator's typing and yanks the field back to the old number mid-edit.
+var holdUntil=0;
+var lastStimName='';
+
+function post(url){ return fetch(url,{method:'POST',cache:'no-store'}).catch(function(){}); }
+function send(key,value){
+  holdUntil=Date.now()+1500;
+  post('/api/config?'+key+'='+encodeURIComponent(value));
+}
+LUMS.forEach(function(id){
+  var el=$(id);
+  el.addEventListener('change',function(){
+    var v=Math.max(0,Math.min(1,Number(el.value)));
+    el.value=v.toFixed(2);
+    send(id.replace('lum_',''),v);
+  });
+});
+// Duration and size. Ids match the /api/config keys exactly, so no name mapping is needed.
+// Bounds mirror the recorder's; it clamps too, but echoing the clamped value back into the field
+// is what stops the operator believing a rejected number took.
+var NUMF=[
+  {id:'dur_short',      dp:2, lo:0.02,  hi:120},
+  {id:'dur_long',       dp:2, lo:0.02,  hi:120},
+  {id:'size_short_red', dp:3, lo:0.001, hi:1},
+  {id:'size_short_blue',dp:3, lo:0.001, hi:1},
+  {id:'size_long_red',  dp:3, lo:0.001, hi:1},
+  {id:'size_long_blue', dp:3, lo:0.001, hi:1}
+];
+NUMF.forEach(function(f){
+  var el=$(f.id);
+  el.addEventListener('change',function(){
+    var v=Number(el.value);
+    if(!isFinite(v)) v=f.lo;
+    v=Math.max(f.lo,Math.min(f.hi,v));
+    el.value=v.toFixed(f.dp);
+    send(f.id,v.toFixed(f.dp));
+  });
+});
+
+// ---- positions ----------------------------------------------------------------
+// Free text so a grid can be pasted in whole. The recorder rejects a malformed list outright
+// rather than applying part of it, so validating here is what turns that silence into a reason.
+var MAXPOS=64, lastPositions=null;
+
+function parsePositions(text){
+  var lines=String(text).split(/[\n;]/), out=[], i, ln, p, v;
+  for(i=0;i<lines.length;i++){
+    ln=lines[i].trim();
+    if(!ln||ln.charAt(0)==='#') continue;
+    p=ln.replace(/[()\[\]]/g,'').split(/[,\s]+/).filter(function(s){return s.length;});
+    if(p.length!==3) return {err:'line '+(i+1)+': needs x, y, z'};
+    v=p.map(Number);
+    if(!v.every(function(n){return isFinite(n);})) return {err:'line '+(i+1)+': not a number'};
+    if(v.some(function(n){return Math.abs(n)>100;})) return {err:'line '+(i+1)+': out of range (±100 m)'};
+    if(v[2]<0.05) return {err:'line '+(i+1)+': z must be at least 0.05 m'};
+    out.push(v);
+  }
+  if(!out.length) return {err:'no positions'};
+  if(out.length>MAXPOS) return {err:out.length+' positions — '+MAXPOS+' max'};
+  return {pos:out};
+}
+// Radial eccentricity, matching the recorder's Vector3.Angle(pos, forward).
+function eccDeg(p){ return Math.atan2(Math.sqrt(p[0]*p[0]+p[1]*p[1]),p[2])*180/Math.PI; }
+function posText(list){
+  return list.map(function(p){
+    return p.map(function(n){return Number(n).toFixed(4);}).join(', ');
+  }).join('\n');
+}
+function describePositions(r){
+  var h=$('posdeg');
+  if(r.err){ h.textContent=r.err; h.className='hint bad'; return; }
+  var e=r.pos.map(eccDeg), lo=Math.min.apply(null,e), hi=Math.max.apply(null,e);
+  h.textContent=r.pos.length+' point'+(r.pos.length===1?'':'s')+' · ecc '+
+    (Math.abs(hi-lo)<0.05 ? lo.toFixed(1)+'°' : lo.toFixed(1)+'°–'+hi.toFixed(1)+'°');
+  h.className='hint';
+}
+function setPosMsg(text,kind){ var m=$('posmsg'); m.textContent=text; m.className='posmsg'+(kind?' '+kind:''); }
+
+$('pos').addEventListener('input',function(){ describePositions(parsePositions(this.value)); });
+$('posApply').addEventListener('click',function(){
+  var r=parsePositions($('pos').value);
+  if(r.err){ setPosMsg(r.err,'bad'); return; }
+  send('pos', r.pos.map(function(p){
+    return p.map(function(n){return Number(n).toFixed(4);}).join(',');
+  }).join(';'));
+  setPosMsg('sent '+r.pos.length+' position'+(r.pos.length===1?'':'s'),'ok');
+});
+$('posReset').addEventListener('click',function(){
+  if(!lastPositions){ setPosMsg('no values from the headset yet'); return; }
+  $('pos').value=posText(lastPositions);
+  describePositions({pos:lastPositions});
+  setPosMsg('reverted to the headset’s values');
+});
+
+$('eye').addEventListener('change',function(){ send('eye',this.value); });
+$('startBtn').addEventListener('click',function(){
+  this.disabled=true; this.textContent='starting…';
+  post('/api/start');
+});
+
+function syncControls(s){
+  var armed=!!s.awaiting_start, locked=!!s.config_locked;
+  $('ctl').className='panel'+(armed?' armed':'');
+  $('pname').innerHTML=(s.participant||'—')+'<small>participant'+(s.eye_code?' · '+s.eye_code:'')+'</small>';
+  var btn=$('startBtn');
+  btn.disabled=!armed;
+  btn.textContent = armed ? 'Start session' : (locked ? 'Session running' : 'Start session');
+  var quiet=Date.now()<holdUntil;
+  LUMS.forEach(function(id){
+    var el=$(id);
+    el.disabled=!armed;
+    if(!quiet && el!==document.activeElement && s[id]!==undefined) el.value=Number(s[id]).toFixed(2);
+  });
+  NUMF.forEach(function(f){
+    var el=$(f.id);
+    el.disabled=!armed;
+    if(!quiet && el!==document.activeElement && s[f.id]!==undefined) el.value=Number(s[f.id]).toFixed(f.dp);
+  });
+  var pos=$('pos');
+  pos.disabled=!armed; $('posApply').disabled=!armed; $('posReset').disabled=!armed;
+  if(Array.isArray(s.positions) && s.positions.length){
+    lastPositions=s.positions;
+    // Only overwrite when the text actually differs, so the caret does not jump on every poll.
+    if(!quiet && pos!==document.activeElement){
+      var t=posText(s.positions);
+      if(pos.value!==t){ pos.value=t; describePositions({pos:s.positions}); }
+    }
+  }
+  var eye=$('eye');
+  eye.disabled=!armed;
+  if(!quiet && eye!==document.activeElement && s.eye_mode) eye.value=s.eye_mode;
+  var note=$('ctlnote');
+  if(armed){ note.textContent='Set the stimulus values, then press Start. They lock when the session begins.'; note.className='note'; }
+  else if(locked){ note.textContent='Session running — stimulus settings are locked so the protocol cannot change mid-run.'; note.className='note hot'; }
+  else { note.textContent='Waiting for the participant to enter their ID in the headset…'; note.className='note'; }
+}
+
+function tick(){
+  fetch('/status.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(s){
+    stale=0; $('dot').classList.remove('stale');
+    syncControls(s);
+    lastStimName=s.stimulus||'';
+    $('hdr').textContent=(s.csv||'no file yet')+(s.recording?'  ·  recording':'  ·  idle')+(s.eye_code?'  ·  '+s.eye_code:'');
+    $('phase').textContent=s.phase||'—';
+    var e=Math.max(0,s.elapsed||0);
+    $('elapsed').textContent=String(Math.floor(e/60)).padStart(2,'0')+':'+String(Math.floor(e%60)).padStart(2,'0');
+    $('stim').textContent=s.stimulus?(s.stimulus+(s.position?' '+s.position:'')):'—';
+    var dev=$('dev');
+    dev.textContent=(s.deviation>=0? f(s.deviation)+'°':'no gaze');
+    dev.className='v '+(s.deviation<0?'dim':(s.off_target?'bad':(s.deviation>3?'warn':'ok')));
+    $('bias').textContent=f(s.bias)+'°';
+    var g=$('gate');
+    g.textContent=!s.calibrated?'uncalibrated':(s.gate_armed?'armed':'DISARMED');
+    g.className='v sm '+(!s.calibrated?'dim':(s.gate_armed?'ok':'bad'));
+    $('done').textContent=s.completed; $('fail').textContent=s.failed;
+    $('aband').textContent=s.abandoned; $('rem').textContent=s.remaining;
+    $('rows').textContent=s.rows;
+    var q=$('qual');
+    q.textContent=f(s.q_ok)+'%';
+    q.className='v '+(s.q_ok>95?'ok':(s.q_ok>85?'warn':'bad'));
+    $('qbar').style.width=Math.max(0,Math.min(100,s.q_ok))+'%';
+    var t=$('ev'); t.innerHTML='';
+    (s.events||[]).slice().reverse().forEach(function(x){
+      var i=x.indexOf('|');
+      var r=t.insertRow();
+      r.insertCell().textContent=i>0?x.slice(0,i):'';
+      r.insertCell().textContent=i>0?x.slice(i+1):x;
+    });
+  }).catch(function(){
+    if(++stale>2){
+      $('dot').classList.add('stale');
+      $('hdr').textContent='lost connection to headset — retrying…';
+    }
+  });
+}
+
+// ============================== live feed ==============================
+// Samples accumulate in `buf` (short playback window) and `hist` (60 s sparkline window).
+// The renderer plays `buf` back PLAYBACK_DELAY behind the newest sample, interpolating
+// between real 75–90 Hz samples, so WiFi delivery jitter never shows on screen.
+var buf=[];                 // sample tuples, t ascending
+var hist=[];                // same tuples, pruned to 60 s
+var lastT=-Infinity;        // newest merged sample time
+var meta={tracking:false, eye_code:'OU', meas_l:1, meas_r:1, stim:0, recording:false};
+var lastLiveOk=0;           // performance.now() of last good poll
+var liveMissing=false;      // /live.json 404 (older APK)
+var stimBands=[];           // [{on,off}] built from meta.stim transitions (sparkline shading)
+var stimOnAt=null;
+var pollBusy=false;
+
+function mergeLive(j){
+  meta=j;
+  var arr=j.samples||[];
+  for(var i=0;i<arr.length;i++){
+    if(arr[i][IX.t]>lastT){ lastT=arr[i][IX.t]; buf.push(arr[i]); hist.push(arr[i]); }
+  }
+  while(buf.length && buf[0][IX.t]<lastT-4) buf.shift();
+  while(hist.length && hist[0][IX.t]<lastT-62) hist.shift();
+  if(j.stim>0 && stimOnAt===null) stimOnAt=lastT;
+  if(j.stim<=0 && stimOnAt!==null){ stimBands.push({on:stimOnAt,off:lastT}); stimOnAt=null;
+    while(stimBands.length && stimBands[0].off<lastT-62) stimBands.shift(); }
+}
+function pollLive(){
+  if(replay.active || pollBusy) return;
+  pollBusy=true;
+  var ac=('AbortController' in window)?new AbortController():null;
+  var to=ac?setTimeout(function(){ac.abort();},1800):0;
+  function done(){ clearTimeout(to); pollBusy=false; }
+  fetch('/live.json',{cache:'no-store',signal:ac?ac.signal:undefined}).then(function(r){
+    if(!r.ok){ liveMissing=(r.status===404); throw 0; }
+    return r.json();
+  }).then(function(j){
+    liveMissing=false; lastLiveOk=performance.now();
+    mergeLive(j);
+    done();
+  },function(){ done(); });
+}
+
+// Interpolated view of one eye at playback time rT. Steps (not lerps) across gaps > 250 ms.
+function sampleAt(arr,rT,ix){
+  if(!arr.length) return null;
+  var lo=0,hi=arr.length-1;
+  if(rT<=arr[0][IX.t]) hi=0;
+  else if(rT>=arr[hi][IX.t]) lo=hi;
+  else{
+    while(hi-lo>1){ var mid=(lo+hi)>>1; if(arr[mid][IX.t]<=rT) lo=mid; else hi=mid; }
+  }
+  var a=arr[lo],b=arr[Math.min(hi,arr.length-1)];
+  var span=b[IX.t]-a[IX.t];
+  var k=(span>0.0001&&span<0.25)?clamp((rT-a[IX.t])/span,0,1):0;
+  function pick(fld){ return lerp(a[ix[fld]],b[ix[fld]],k); }
+  return { mm:pick('mm'), blink:pick('b'), yaw:pick('yaw'), pit:pick('pit'),
+           valid:a[ix.v]>0, gvalid:a[ix.gv]>0 };
+}
+
+// ============================== WebGL eye render ==============================
+// One ray-traced sphere per eye, drawn into two square viewports of a single canvas.
+// No mesh, no library: the fragment shader intersects the unit sphere analytically,
+// rotates the surface normal by the gaze direction, and paints pupil/iris/sclera by
+// angle from the optical axis. Pupil radius is a uniform — dilation is free.
+var glc=$('glc'), ovl=$('ovl'), stage=$('stage');
+var gl=glc.getContext('webgl',{antialias:true}) || glc.getContext('experimental-webgl');
+var glOK=!!gl, prog=null, uni={};
+var VSH='attribute vec2 aP;varying vec2 vP;void main(){vP=aP*1.02;gl_Position=vec4(aP,0.,1.);}';
+var FSH=
+'precision mediump float;varying vec2 vP;\n'+
+'uniform mat3 uRotT;uniform float uPupil;uniform float uDim;uniform vec3 uBg;uniform float uAA;\n'+
+'const float IRIS=0.5236;\n'+  // 30 deg half-angle: a 12 mm iris on a 24 mm globe
+'void main(){\n'+
+' float r2=dot(vP,vP);\n'+
+' if(r2>1.06){gl_FragColor=vec4(uBg,1.);return;}\n'+
+' vec3 n=vec3(vP,sqrt(max(0.,1.-min(r2,1.))));\n'+
+' vec3 m=uRotT*n;\n'+
+' float theta=acos(clamp(m.z,-1.,1.));\n'+
+' float phi=atan(m.y,m.x);\n'+
+' float pupilR=IRIS*clamp(uPupil,0.06,0.94);\n'+
+' float aa=uAA*1.6+0.004;\n'+
+' vec3 col=vec3(0.93,0.90,0.86);\n'+                       // sclera
+' col*=0.72+0.28*n.z;\n'+
+' col=mix(col,vec3(0.84,0.76,0.72),smoothstep(0.55,1.35,theta)*0.35);\n'+
+' float stri=0.5+0.5*sin(phi*46.0+sin(theta*57.0)*2.2);\n'+ // iris striations
+' float radial=smoothstep(pupilR,IRIS,theta);\n'+
+' vec3 iris=mix(vec3(0.34,0.49,0.60),vec3(0.10,0.22,0.33),radial);\n'+
+' iris*=0.82+0.18*stri;\n'+
+' iris*=1.0-0.55*smoothstep(IRIS-0.075,IRIS,theta);\n'+     // limbal ring
+' iris+=vec3(0.10,0.08,0.05)*smoothstep(pupilR+0.10,pupilR,theta);\n'+ // collarette
+' col=mix(col,iris,1.0-smoothstep(IRIS-aa,IRIS+aa,theta));\n'+
+' col=mix(col,vec3(0.012,0.015,0.022),1.0-smoothstep(pupilR-aa,pupilR+aa,theta));\n'+
+' vec3 L=normalize(vec3(-0.45,0.55,0.75));\n'+
+' col*=0.55+0.45*max(dot(n,L),0.);\n'+
+' vec3 H=normalize(L+vec3(0.,0.,1.));\n'+
+' col+=vec3(1.)*pow(max(dot(n,H),0.),120.)*0.85;\n'+        // catchlight
+' col+=vec3(0.35)*pow(max(dot(n,normalize(vec3(0.5,-0.4,0.8))),0.),40.)*0.12;\n'+
+' float g=dot(col,vec3(0.299,0.587,0.114));\n'+
+' col=mix(col,vec3(g)*0.45,uDim);\n'+                       // no-signal desaturate
+' float rim=1.0-smoothstep(0.985,1.005,sqrt(r2));\n'+
+' gl_FragColor=vec4(mix(uBg,col,rim),1.);\n'+
+'}';
+function glInit(){
+  if(!glOK) return;
+  function sh(type,src){
+    var s=gl.createShader(type); gl.shaderSource(s,src); gl.compileShader(s);
+    if(!gl.getShaderParameter(s,gl.COMPILE_STATUS)){ glOK=false; }
+    return s;
+  }
+  prog=gl.createProgram();
+  gl.attachShader(prog,sh(gl.VERTEX_SHADER,VSH));
+  gl.attachShader(prog,sh(gl.FRAGMENT_SHADER,FSH));
+  gl.linkProgram(prog);
+  if(!gl.getProgramParameter(prog,gl.LINK_STATUS)) glOK=false;
+  if(!glOK) return;
+  gl.useProgram(prog);
+  var bufq=gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER,bufq);
+  gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1, 1,-1, -1,1, 1,1]),gl.STATIC_DRAW);
+  var aP=gl.getAttribLocation(prog,'aP');
+  gl.enableVertexAttribArray(aP);
+  gl.vertexAttribPointer(aP,2,gl.FLOAT,false,0,0);
+  ['uRotT','uPupil','uDim','uBg','uAA'].forEach(function(n){ uni[n]=gl.getUniformLocation(prog,n); });
+  var c=hex3(COL.card);
+  gl.clearColor(c[0],c[1],c[2],1);
+}
+function hex3(h){ return [parseInt(h.slice(1,3),16)/255,parseInt(h.slice(3,5),16)/255,parseInt(h.slice(5,7),16)/255]; }
+// R^T columns = rows of R, R = Ry(yawScreen)·Rx(-pitch). Column-major for uniformMatrix3fv.
+function rotT(yawDeg,pitDeg){
+  var b=yawDeg*Math.PI/180, p=pitDeg*Math.PI/180;
+  var cb=Math.cos(b),sb=Math.sin(b),cp=Math.cos(p),sp=Math.sin(p);
+  return new Float32Array([ cb,-sb*sp,sb*cp,  0,cp,sp,  -sb,-cb*sp,cb*cp ]);
+}
+
+// Layout: two square viewports centred in the canvas halves. Shared by GL + overlay.
+var geo={w:0,h:0,dpr:1,eyes:[{cx:0,cy:0,r:0},{cx:0,cy:0,r:0}]};  // [0]=OD (screen left), [1]=OS
+function layout(){
+  var w=stage.clientWidth;
+  var s=Math.min(230,(w-24)/2);
+  var h=Math.round(s+16);
+  var dpr=Math.min(2,window.devicePixelRatio||1);
+  geo.w=w; geo.h=h; geo.dpr=dpr;
+  [glc,ovl].forEach(function(c){ c.width=Math.round(w*dpr); c.height=Math.round(h*dpr); c.style.height=h+'px'; });
+  var r=s/2, cy=h/2;
+  geo.eyes[0]={cx:w/2-8-r, cy:cy, r:r};
+  geo.eyes[1]={cx:w/2+8+r, cy:cy, r:r};
+  var sp=$('spark');
+  sp.width=Math.round(sp.clientWidth*dpr); sp.height=Math.round(150*dpr);
+  sp.style.height='150px';
+  sparkDirty=true;
+}
+
+function drawEyeGL(slot,view){ // slot 0/1 in geo.eyes; view {mm,blink,yaw,pit,dim}
+  var e=geo.eyes[slot], d=geo.dpr;
+  var px=Math.round((e.cx-e.r)*d), py=Math.round((geo.h-(e.cy+e.r))*d), s=Math.round(e.r*2*d);
+  gl.viewport(px,py,s,s);
+  // facing the participant: mirror yaw so "patient looks left" moves toward viewer-right
+  gl.uniformMatrix3fv(uni.uRotT,false,rotT(-view.yaw,view.pit));
+  gl.uniform1f(uni.uPupil,clamp(view.mm/IRIS_MM,0.06,0.94));
+  gl.uniform1f(uni.uDim,view.dim);
+  var c=hex3(COL.card);
+  gl.uniform3f(uni.uBg,c[0],c[1],c[2]);
+  gl.uniform1f(uni.uAA,2.2/s);
+  gl.drawArrays(gl.TRIANGLE_STRIP,0,4);
+}
+
+// 2D overlay: eyelids, patched / no-signal states, labels.
+var octx=ovl.getContext('2d');
+function drawOverlay(views){ // views[0]=OD, views[1]=OS
+  var d=geo.dpr;
+  octx.setTransform(d,0,0,d,0,0);
+  octx.clearRect(0,0,geo.w,geo.h);
+  for(var i=0;i<2;i++){
+    var e=geo.eyes[i], v=views[i];
+    octx.save();
+    octx.beginPath(); octx.arc(e.cx,e.cy,e.r+1,0,7); octx.clip();
+    if(v.patched){
+      octx.fillStyle='rgba(26,29,38,0.93)'; octx.fillRect(e.cx-e.r,e.cy-e.r,e.r*2,e.r*2);
+      octx.strokeStyle='rgba(139,147,167,0.28)'; octx.lineWidth=5;
+      for(var x=-e.r*2;x<e.r*2;x+=14){
+        octx.beginPath();
+        octx.moveTo(e.cx+x,e.cy+e.r+8); octx.lineTo(e.cx+x+e.r*2,e.cy-e.r-8);
+        octx.stroke();
+      }
+      octx.fillStyle=COL.mut; octx.font='600 12px system-ui,sans-serif';
+      octx.textAlign='center'; octx.fillText('patched',e.cx,e.cy+4);
+    } else {
+      var b=clamp(v.blink,0,1);
+      if(b>0.02){ // eyelids: upper does most of the travel, as real lids do
+        var top=e.cy-e.r, span=e.r*2;
+        var upper=top+span*0.62*b, lower=e.cy+e.r-span*0.22*b;
+        octx.fillStyle='#20242f';
+        octx.beginPath();
+        octx.moveTo(e.cx-e.r,top-2); octx.lineTo(e.cx-e.r,upper);
+        octx.quadraticCurveTo(e.cx,upper+e.r*0.22,e.cx+e.r,upper);
+        octx.lineTo(e.cx+e.r,top-2); octx.closePath(); octx.fill();
+        octx.strokeStyle='rgba(0,0,0,0.4)'; octx.lineWidth=1.5;
+        octx.beginPath();
+        octx.moveTo(e.cx-e.r,upper);
+        octx.quadraticCurveTo(e.cx,upper+e.r*0.22,e.cx+e.r,upper);
+        octx.stroke();
+        octx.fillStyle='#20242f';
+        octx.beginPath();
+        octx.moveTo(e.cx-e.r,e.cy+e.r+2); octx.lineTo(e.cx-e.r,lower);
+        octx.quadraticCurveTo(e.cx,lower-e.r*0.14,e.cx+e.r,lower);
+        octx.lineTo(e.cx+e.r,e.cy+e.r+2); octx.closePath(); octx.fill();
+      }
+      if(v.noSignal){
+        octx.fillStyle='rgba(18,20,26,0.45)'; octx.fillRect(e.cx-e.r,e.cy-e.r,e.r*2,e.r*2);
+        octx.fillStyle='#f87171'; octx.font='600 11px system-ui,sans-serif';
+        octx.textAlign='center'; octx.fillText('no signal',e.cx,e.cy-e.r+16);
+      }
+    }
+    octx.restore();
+  }
+}
+
+// ============================== render loop ==============================
+var disp={ od:{mm:5,yaw:0,pit:0,blink:0,invalidSince:null},
+           os:{mm:5,yaw:0,pit:0,blink:0,invalidSince:null} };  // smoothed display state
+var rT=null, lastRaf=0;
+function smooth(cur,target,dt,tau){ return lerp(target,cur,Math.exp(-dt/tau)); }
+
+function raf(ts){
+  requestAnimationFrame(raf);
+  var dt=Math.min(0.1,(ts-lastRaf)/1000||0.016); lastRaf=ts;
+  var srcBuf=replay.active?replay.buf:buf;
+  var m=replay.active?replay.meta:meta;
+  var stalled=!replay.active && (performance.now()-lastLiveOk>1600 || !meta.tracking);
+  var have=srcBuf.length>0;
+
+  if(have){
+    if(replay.active){
+      if(replay.playing){
+        replay.rT=Math.min(replay.rT+dt*replay.speed,replay.end);
+        if(replay.rT>=replay.end) replay.playing=false;
+      }
+      rT=replay.rT;
+      replayUiTick();
+    } else {
+      var target=lastT-PLAYBACK_DELAY;
+      if(rT===null||Math.abs(target-rT)>1.5) rT=target;
+      else rT+=dt*(1+clamp((target-rT)*0.6,-0.35,0.35));   // gentle rate adaptation
+    }
+  }
+
+  var views=[];
+  var eyesDef=[{k:'od',ix:IX.od,meas:m.meas_r,mmEl:'mm_od',stEl:'st_od'},
+               {k:'os',ix:IX.os,meas:m.meas_l,mmEl:'mm_os',stEl:'st_os'}];
+  for(var i=0;i<2;i++){
+    var ed=eyesDef[i], d0=disp[ed.k];
+    var s0=have?sampleAt(srcBuf,rT,ed.ix):null;
+    var valid=!!(s0&&s0.valid);
+    if(s0){
+      if(valid) d0.mm=smooth(d0.mm,s0.mm,dt,0.08);
+      if(s0.gvalid){ d0.yaw=smooth(d0.yaw,s0.yaw,dt,0.045); d0.pit=smooth(d0.pit,s0.pit,dt,0.045); }
+      d0.blink=smooth(d0.blink,s0.blink,dt,0.045);
+    }
+    if(valid) d0.invalidSince=null;
+    else if(d0.invalidSince===null) d0.invalidSince=ts;
+    // A blink also reads as "invalid" upstream — the lids already show it, so the
+    // no-signal veil only appears for a sustained loss with the eye open.
+    var noSig=have&&ed.meas&&!valid&&d0.blink<0.5&&(ts-d0.invalidSince>350);
+    views.push({ mm:d0.mm, yaw:d0.yaw, pit:d0.pit, blink:d0.blink,
+                 patched:!ed.meas, noSignal:noSig,
+                 dim:(!have||!valid||stalled)?0.55:0 });
+    var mmEl=$(ed.mmEl), stEl=$(ed.stEl);
+    if(!have){ mmEl.textContent='—'; mmEl.className='mm dim'; stEl.textContent=''; }
+    else if(!ed.meas){ mmEl.textContent='—'; mmEl.className='mm dim'; stEl.textContent='patched'; }
+    else if(!valid){ mmEl.textContent=f(d0.mm,2)+' mm'; mmEl.className='mm dim'; stEl.textContent=d0.blink>0.5?'blink':'no signal'; }
+    else { mmEl.textContent=f(s0.mm,2)+' mm'; mmEl.className='mm'; stEl.textContent=d0.blink>0.5?'blink':''; }
+  }
+
+  if(glOK){
+    gl.clear(gl.COLOR_BUFFER_BIT);
+    drawEyeGL(0,views[0]); drawEyeGL(1,views[1]);
+    drawOverlay(views);
+  }
+  updateEyeState(stalled);
+  if(sparkDirty||ts-lastSparkDraw>200){ drawSpark(); lastSparkDraw=ts; sparkDirty=false; }
+}
+function updateEyeState(stalled){
+  var el=$('eyestate'), chip=$('stimchip');
+  if(replay.active){ el.innerHTML='<span class="rpl">REPLAY</span>'; el.appendChild(document.createTextNode(' · '+replay.name)); }
+  else if(!glOK){ el.textContent='WebGL unavailable — eye view disabled'; }
+  else if(liveMissing){ el.textContent='live feed not in this build — update the APK'; }
+  else if(!buf.length){ el.textContent='waiting for eye tracking…'; }
+  else if(stalled){ el.textContent='feed stalled — holding last pose'; }
+  else { el.textContent='live · '+meta.eye_code+' · ~'+PLAYBACK_DELAY.toFixed(1).replace('.0','')+' s behind'; }
+  var stimOn=replay.active?replay.stimNow>0:meta.stim>0;
+  chip.className='stimchip'+(stimOn?' on':'');
+  if(stimOn){
+    var red=/red/i.test(lastStimName), blue=/blue/i.test(lastStimName);
+    chip.style.borderColor=red?'#b91c1c':(blue?'#1d4ed8':'#2f3547');
+    chip.textContent='● stimulus'+(lastStimName?' — '+lastStimName:'');
+  }
+}
+
+// ============================== sparkline ==============================
+// Two series (OD/OS), trailing 60 s, gaps where the pupil is invalid, faint bands
+// while a stimulus is lit. Redraws at ~5 Hz; crosshair tooltip on hover/touch.
+var sparkDirty=true, lastSparkDraw=0, sparkHover=null;
+var spark=$('spark'), sctx=spark.getContext('2d');
+function drawSpark(){
+  var d=geo.dpr, w=spark.clientWidth, h=150;
+  sctx.setTransform(d,0,0,d,0,0);
+  sctx.clearRect(0,0,w,h);
+  var src=replay.active?replay:{hist:hist,newest:lastT,bands:stimBands};
+  var H=src.hist;
+  var padL=8,padR=34,padT=8,padB=18;
+  var iw=w-padL-padR, ih=h-padT-padB;
+  var tEnd=replay.active?replay.rT:src.newest, t0=tEnd-60;
+  // y-range over visible valid samples
+  var lo=Infinity,hi=-Infinity;
+  for(var i=H.length-1;i>=0;i--){ var s=H[i]; if(s[IX.t]<t0) break;
+    if(s[IX.od.v]>0){ lo=Math.min(lo,s[IX.od.mm]); hi=Math.max(hi,s[IX.od.mm]); }
+    if(s[IX.os.v]>0){ lo=Math.min(lo,s[IX.os.mm]); hi=Math.max(hi,s[IX.os.mm]); } }
+  if(!isFinite(lo)){ lo=3; hi=7; }
+  lo=Math.max(0.5,Math.floor((lo-0.4)*2)/2); hi=Math.min(10,Math.ceil((hi+0.4)*2)/2);
+  if(hi-lo<1.5){ var c0=(hi+lo)/2; lo=c0-0.75; hi=c0+0.75; }
+  function X(t){ return padL+iw*(t-t0)/60; }
+  function Y(v){ return padT+ih*(1-(v-lo)/(hi-lo)); }
+  // stimulus bands
+  (src.bands||[]).forEach(function(bd){
+    var x1=Math.max(padL,X(bd.on)), x2=Math.min(w-padR,X(bd.off===null?tEnd:bd.off));
+    if(x2>padL&&x1<w-padR){ sctx.fillStyle='rgba(255,255,255,0.045)'; sctx.fillRect(x1,padT,Math.max(1.5,x2-x1),ih); }
+  });
+  if(stimOnAt!==null&&!replay.active){ var xo=Math.max(padL,X(stimOnAt));
+    sctx.fillStyle='rgba(255,255,255,0.045)'; sctx.fillRect(xo,padT,Math.max(1.5,w-padR-xo),ih); }
+  // grid: integer mm, recessive; labels inside-left so the right margin stays free
+  // for the series end-labels
+  sctx.font='10px system-ui,sans-serif';
+  for(var mm=Math.ceil(lo);mm<=Math.floor(hi);mm++){
+    var y=Y(mm);
+    sctx.strokeStyle=COL.grid; sctx.lineWidth=1;
+    sctx.beginPath(); sctx.moveTo(padL,y); sctx.lineTo(w-padR,y); sctx.stroke();
+    if(y>=16){   // topmost gridline can sit against the chart edge — drop its label, keep the line
+      sctx.fillStyle=COL.mut; sctx.textAlign='left'; sctx.textBaseline='bottom';
+      sctx.fillText(mm+' mm',padL+2,y-2);
+    }
+  }
+  // x ticks every 15 s
+  sctx.textAlign='center'; sctx.textBaseline='top';
+  for(var k=0;k<=4;k++){
+    var tt=t0+k*15, x=X(tt);
+    sctx.fillStyle=COL.mut;
+    sctx.fillText(k===4?'now':('-'+(60-k*15)+'s'),x,h-padB+4);
+  }
+  // series
+  var lastYs={};
+  [['od',COL.od],['os',COL.os]].forEach(function(sr){
+    var ix=IX[sr[0]];
+    sctx.strokeStyle=sr[1]; sctx.lineWidth=2; sctx.lineJoin='round'; sctx.lineCap='round';
+    sctx.beginPath();
+    var pen=false, prevT=0, n=H.length, stride=Math.max(1,Math.floor(n/(iw*1.5)));
+    for(var q=0;q<n;q+=stride){
+      var sm=H[q], t=sm[IX.t];
+      if(t<t0) continue;
+      if(sm[ix.v]<=0||(pen&&t-prevT>0.3)){ pen=false; if(sm[ix.v]<=0){ prevT=t; continue; } }
+      var x=X(t), y=Y(sm[ix.mm]);
+      if(!pen){ sctx.moveTo(x,y); pen=true; } else sctx.lineTo(x,y);
+      prevT=t;
+      lastYs[sr[0]]=y;
+    }
+    sctx.stroke();
+  });
+  // direct labels at line ends (ink text; the color chip carries the hue)
+  sctx.font='600 10px system-ui,sans-serif'; sctx.textAlign='left'; sctx.textBaseline='middle';
+  var yOD=lastYs.od, yOS=lastYs.os;
+  if(yOD!==undefined&&yOS!==undefined&&Math.abs(yOD-yOS)<11){
+    var mid=(yOD+yOS)/2, odUp=yOD<=yOS;
+    yOD=mid+(odUp?-6:6); yOS=mid+(odUp?6:-6);
+  }
+  if(yOD!==undefined){ sctx.fillStyle=COL.od; sctx.fillRect(w-padR+3,yOD-1,9,2);
+    sctx.fillStyle=COL.ink; sctx.fillText('OD',w-padR+15,yOD+1); }
+  if(yOS!==undefined){ sctx.fillStyle=COL.os; sctx.fillRect(w-padR+3,yOS-1,9,2);
+    sctx.fillStyle=COL.ink; sctx.fillText('OS',w-padR+15,yOS+1); }
+  // crosshair
+  if(sparkHover!==null&&sparkHover>padL&&sparkHover<w-padR){
+    var th=t0+(sparkHover-padL)/iw*60;
+    var sh=sampleNear(H,th);
+    sctx.strokeStyle='rgba(139,147,167,0.5)'; sctx.lineWidth=1;
+    sctx.beginPath(); sctx.moveTo(sparkHover,padT); sctx.lineTo(sparkHover,padT+ih); sctx.stroke();
+    var tip=$('sparkTip');
+    if(sh){
+      tip.style.display='block';
+      tip.innerHTML=(tEnd-th).toFixed(1)+' s ago &nbsp; '+
+        '<i style="background:'+COL.od+'"></i>'+(sh[IX.od.v]>0?Number(sh[IX.od.mm]).toFixed(2):'—')+' &nbsp; '+
+        '<i style="background:'+COL.os+'"></i>'+(sh[IX.os.v]>0?Number(sh[IX.os.mm]).toFixed(2):'—');
+      var tw=tip.offsetWidth;
+      tip.style.left=Math.min(w-tw-4,Math.max(0,sparkHover-tw/2))+'px';
+      tip.style.top='6px';
+    }
+  } else $('sparkTip').style.display='none';
+}
+function sampleNear(H,t){
+  if(!H.length) return null;
+  var lo=0,hi=H.length-1;
+  while(hi-lo>1){ var mid=(lo+hi)>>1; if(H[mid][IX.t]<=t) lo=mid; else hi=mid; }
+  return (Math.abs(H[lo][IX.t]-t)<Math.abs(H[hi][IX.t]-t))?H[lo]:H[hi];
+}
+spark.addEventListener('pointermove',function(ev){
+  var r=spark.getBoundingClientRect(); sparkHover=ev.clientX-r.left; sparkDirty=true; });
+spark.addEventListener('pointerleave',function(){ sparkHover=null; sparkDirty=true; });
+
+// ============================== CSV replay ==============================
+// Schema v3 has world-space gaze but no head pose, so replay gaze is shown relative to a
+// slow rolling reference (the fixation direction dominates between trials). Pupil and
+// blink replay exactly as recorded.
+var replay={ active:false, playing:false, speed:1, rT:0, start:0, end:0, name:'',
+             buf:[], hist:[], bands:[], events:[], stimNow:0,
+             meta:{meas_l:1,meas_r:1,eye_code:'OU',tracking:true} };
+function parseCsv(text){
+  var lines=text.split(/\r?\n/);
+  if(!lines.length) throw 'empty file';
+  var head=parseCsvLine(lines[0]);
+  var col={};
+  head.forEach(function(hd,i){ col[hd.trim()]=i; });
+  ['timestamp_sec','left_pupil_mm','right_pupil_mm'].forEach(function(req){
+    if(col[req]===undefined) throw 'not a session CSV (missing '+req+')'; });
+  function num(rw,name){ var i=col[name]; return i===undefined?NaN:parseFloat(rw[i]); }
+  function boolv(rw,name){ var i=col[name]; return i===undefined?true:/^t/i.test(rw[i]); }
+  var out=[], bands=[], events=[], stimOn=null;
+  // rolling gaze reference (see note above)
+  var ref=[0,0,1], seeded=false, prevT=0;
+  function angles(gx,gy,gz){
+    var m2=gx*gx+gy*gy+gz*gz;
+    if(!isFinite(m2)||m2<1e-6) return null;   // NaN-safe: a malformed row must read as "no gaze"
+    var im=1/Math.sqrt(m2); gx*=im; gy*=im; gz*=im;
+    var fw=ref, up=[0,1,0];
+    var rx=[up[1]*fw[2]-up[2]*fw[1],up[2]*fw[0]-up[0]*fw[2],up[0]*fw[1]-up[1]*fw[0]];
+    var rl=Math.hypot(rx[0],rx[1],rx[2])||1; rx=[rx[0]/rl,rx[1]/rl,rx[2]/rl];
+    var ry=[fw[1]*rx[2]-fw[2]*rx[1],fw[2]*rx[0]-fw[0]*rx[2],fw[0]*rx[1]-fw[1]*rx[0]];
+    var df=gx*fw[0]+gy*fw[1]+gz*fw[2];
+    var dr=gx*rx[0]+gy*rx[1]+gz*rx[2];
+    var du=gx*ry[0]+gy*ry[1]+gz*ry[2];
+    if(!(df>1e-6)) return null;               // NaN-safe (catches df=NaN as well as behind-head)
+    return [Math.atan2(dr,df)*180/Math.PI, Math.atan2(du,Math.hypot(dr,df))*180/Math.PI];
+  }
+  for(var li=1;li<lines.length;li++){
+    if(!lines[li]) continue;
+    var rw=parseCsvLine(lines[li]);
+    var t=num(rw,'timestamp_sec');
+    if(!isFinite(t)) continue;
+    var cg=[num(rw,'combined_gaze_x'),num(rw,'combined_gaze_y'),num(rw,'combined_gaze_z')];
+    var cgm=Math.hypot(cg[0],cg[1],cg[2]);
+    if(cgm>1e-3&&boolv(rw,'combined_gaze_valid')){
+      cg=[cg[0]/cgm,cg[1]/cgm,cg[2]/cgm];
+      if(!seeded){ ref=cg; seeded=true; }
+      else{
+        var a=1-Math.exp(-Math.max(0.001,t-prevT)/8);   // ~8 s time constant
+        ref=[lerp(ref[0],cg[0],a),lerp(ref[1],cg[1],a),lerp(ref[2],cg[2],a)];
+        var rm=Math.hypot(ref[0],ref[1],ref[2])||1; ref=[ref[0]/rm,ref[1]/rm,ref[2]/rm];
+      }
+    }
+    prevT=t;
+    var la=angles(num(rw,'left_gaze_x'),num(rw,'left_gaze_y'),num(rw,'left_gaze_z'));
+    var ra=angles(num(rw,'right_gaze_x'),num(rw,'right_gaze_y'),num(rw,'right_gaze_z'));
+    // Pre-v3 files have no validity columns (boolv defaults true), and dropouts were
+    // recorded as 0 mm — a physically impossible pupil, so treat <=0.5 mm as invalid.
+    var lmm=num(rw,'left_pupil_mm')||0, rmm=num(rw,'right_pupil_mm')||0;
+    out.push([t,
+      (boolv(rw,'left_pupil_valid')&&lmm>0.5)?1:0, lmm, num(rw,'left_blink')||0,
+      la?1:0, la?la[0]:0, la?la[1]:0,
+      (boolv(rw,'right_pupil_valid')&&rmm>0.5)?1:0, rmm, num(rw,'right_blink')||0,
+      ra?1:0, ra?ra[0]:0, ra?ra[1]:0]);
+    var sb=num(rw,'stimulus_brightness');
+    if(sb>0&&stimOn===null) stimOn=t;
+    if(!(sb>0)&&stimOn!==null){ bands.push({on:stimOn,off:t}); stimOn=null; }
+    var evI=col['event_name'];
+    if(evI!==undefined&&rw[evI]) events.push({t:t,name:rw[evI],details:rw[col['stimulus_event']]||''});
+  }
+  if(stimOn!==null) bands.push({on:stimOn,off:prevT});
+  if(!out.length) throw 'no data rows';
+  return {samples:out,bands:bands,events:events};
+}
+function parseCsvLine(line){
+  var out=[],cur='',q=false;
+  for(var i=0;i<line.length;i++){
+    var ch=line[i];
+    if(q){ if(ch==='"'){ if(line[i+1]==='"'){cur+='"';i++;} else q=false; } else cur+=ch; }
+    else { if(ch==='"') q=true; else if(ch===','){ out.push(cur); cur=''; } else cur+=ch; }
+  }
+  out.push(cur);
+  return out;
+}
+function startReplay(name,text){
+  var p;
+  try{ p=parseCsv(text); }
+  catch(err){ $('eyenote').textContent='Could not replay: '+err; return; }
+  replay.active=true; replay.playing=true; replay.speed=Number($('rplSpeed').value)||1;
+  replay.buf=p.samples; replay.hist=p.samples; replay.bands=p.bands; replay.events=p.events;
+  replay.start=p.samples[0][0]; replay.end=p.samples[p.samples.length-1][0]; replay.rT=replay.start;
+  replay.name=name;
+  var em=/_(OD|OS|OU)_/.exec(name)||[];
+  replay.meta={ meas_l:em[1]==='OD'?0:1, meas_r:em[1]==='OS'?0:1, eye_code:em[1]||'OU', tracking:true };
+  $('rplbar').classList.add('on');
+  $('rplPlay').textContent='Pause';
+  $('eyenote').textContent='Replay gaze is relative to the session median direction (head motion is not in the CSV). '
+    +p.samples.length+' samples · '+p.events.length+' events.';
+  sparkDirty=true;
+}
+function exitReplay(){
+  replay.active=false; replay.playing=false;
+  $('rplbar').classList.remove('on');
+  $('eyenote').textContent='Drop a session CSV here to replay it. Live view runs ~0.5 s behind the headset.';
+  rT=null; sparkDirty=true;
+}
+var seekHeld=false;
+function replayUiTick(){
+  replay.stimNow=0;
+  for(var i=0;i<replay.bands.length;i++){
+    if(replay.rT>=replay.bands[i].on&&replay.rT<=replay.bands[i].off){ replay.stimNow=1; break; } }
+  if(!seekHeld) $('rplSeek').value=Math.round(1000*(replay.rT-replay.start)/Math.max(0.001,replay.end-replay.start));
+  $('rplTime').textContent=fmtClock(replay.rT-replay.start)+' / '+fmtClock(replay.end-replay.start);
+  $('rplPlay').textContent=replay.playing?'Pause':'Play';
+  sparkDirty=true;
+}
+$('rplPlay').addEventListener('click',function(){
+  if(replay.rT>=replay.end) replay.rT=replay.start;
+  replay.playing=!replay.playing;
+});
+$('rplSpeed').addEventListener('change',function(){ replay.speed=Number(this.value)||1; });
+$('rplSeek').addEventListener('input',function(){
+  seekHeld=true;
+  replay.rT=replay.start+(replay.end-replay.start)*this.value/1000;
+});
+$('rplSeek').addEventListener('change',function(){ seekHeld=false; });
+$('rplExit').addEventListener('click',exitReplay);
+var eyesPanel=$('eyesPanel');
+eyesPanel.addEventListener('dragover',function(ev){ ev.preventDefault(); eyesPanel.classList.add('drop'); });
+eyesPanel.addEventListener('dragleave',function(){ eyesPanel.classList.remove('drop'); });
+eyesPanel.addEventListener('drop',function(ev){
+  ev.preventDefault(); eyesPanel.classList.remove('drop');
+  var fl=ev.dataTransfer.files;
+  if(fl&&fl.length){
+    var fr=new FileReader();
+    fr.onload=function(){ startReplay(fl[0].name,fr.result); };
+    fr.readAsText(fl[0]);
+  }
+});
+$('eyenote').addEventListener('click',function(){ if(!replay.active) $('rplFile').click(); });
+$('rplFile').addEventListener('change',function(){
+  if(this.files.length){
+    var fr=new FileReader(), nm=this.files[0].name;
+    fr.onload=function(){ startReplay(nm,fr.result); };
+    fr.readAsText(this.files[0]);
+    this.value='';   // allow re-selecting the same file
+  }
+});
+
+// ============================== demo mode ==============================
+// Synthetic but physiologically shaped data, so the page can be developed and previewed
+// with no headset: slow hippus, stimulus constrictions every ~14 s, saccades, blinks,
+// and an occasional one-eye dropout.
+if(DEMO)(function(){
+  var t0=performance.now()/1000, lastGen=0, phase='armed', started=8, trials=0;
+  function pupil(t,eye){
+    var p=5.1+0.5*Math.sin(t/9+(eye?0.4:0))+0.12*Math.sin(t/1.7+eye);
+    var sc=t%14;                       // stimulus every 14 s at t%14==6
+    if(sc>6.3&&sc<12){ var q=sc-6.3; p-=1.7*Math.exp(-q*q/1.1)*(1-Math.exp(-q*4)); }
+    return p;
+  }
+  function gaze(t){
+    var sac=Math.floor(t/3.5), ph=t%3.5;
+    var rng=Math.sin(sac*127.1)*43758.55; rng-=Math.floor(rng);
+    var rng2=Math.sin(sac*311.7)*23421.63; rng2-=Math.floor(rng2);
+    var tx=rng*16-8, ty=rng2*10-5;
+    var k=ph<0.9?Math.min(1,ph/0.12):Math.max(0,1-(ph-0.9)/0.12);   // in fast, out fast
+    return [tx*k+0.5*Math.sin(t*2.1), ty*k+0.4*Math.cos(t*1.7)];
+  }
+  function blink(t){
+    var b=Math.floor(t/4.6), ph=t-b*4.6;
+    var rng=Math.sin(b*269.5)*38274.34; rng-=Math.floor(rng);
+    var at=3.2+rng*1.2;
+    if(ph>at&&ph<at+0.24){ var q=(ph-at)/0.24; return Math.sin(q*Math.PI); }
+    return 0;
+  }
+  function mkLive(){
+    var now=performance.now()/1000-t0;
+    var out=[], from=Math.max(lastGen,now-1.4);
+    for(var t=from+1/90;t<=now;t+=1/90){
+      var g=gaze(t), bl=blink(t);
+      var dropR=(t%37)>35.4;               // right-eye dropout window
+      out.push([+t.toFixed(3),
+        1,+pupil(t,0).toFixed(2),+bl.toFixed(2),1,+g[0].toFixed(1),+g[1].toFixed(1),
+        dropR?0:1,+pupil(t,1).toFixed(2),+bl.toFixed(2),dropR?0:1,+(g[0]*0.96).toFixed(1),+(g[1]*1.03).toFixed(1)]);
+    }
+    lastGen=now;
+    var sc=now%14, stim=(sc>6&&sc<6.5)?0.8:0;
+    return { now:+now.toFixed(3), tracking:true, recording:phase==='run', eye_code:'OU',
+             meas_l:1, meas_r:1, stim:stim, samples:out };
+  }
+  function mkStatus(){
+    var now=performance.now()/1000-t0;
+    if(phase==='armed'&&now>started) phase='run';
+    trials=Math.max(0,Math.floor((now-started)/13));
+    var sc=now%14, stimOn=sc>6&&sc<6.5;
+    if(stimOn) lastStimName='Short Blue';
+    return { participant:'demo', phase:phase==='armed'?'WaitingForOperator':'Trials',
+      elapsed:Math.max(0,now-started), recording:phase==='run',
+      awaiting_start:phase==='armed', config_locked:phase==='run',
+      eye_mode:'Auto', eye_code:'OU',
+      lum_short_red:0.5,lum_short_blue:0.5,lum_long_red:1,lum_long_blue:1,
+      dur_short:0.5, dur_long:5,
+      size_short_red:0.030, size_short_blue:0.030, size_long_red:0.050, size_long_blue:0.050,
+      positions:[[-0.5359,0.5359,2],[-0.1048,0.1048,2],[0.5359,0.5359,2],[0.1048,0.1048,2],
+                 [0.5359,-0.5359,2],[0.1048,-0.1048,2],[-0.5359,-0.5359,2],[-0.1048,-0.1048,2]],
+      stimulus:stimOn?'Short Blue':'', position:stimOn?'(15,3)':'',
+      completed:trials, failed:Math.floor(trials/6), abandoned:0, remaining:Math.max(0,32-trials),
+      deviation:1.2+Math.sin(now)*0.8, bias:4.2, off_target:false, gate_armed:phase==='run', calibrated:true,
+      q_ok:96.5, q_blink:2.3, q_lost:1.2, csv:'pupil_demo_OU_demo.csv', rows:Math.floor(Math.max(0,now-started)*75),
+      events:['   12.3s|Stimulus: ShortBlue (15,3)','   25.6s|Stimulus: ShortBlue (-15,3)','   38.9s|TrialComplete: ok'] };
+  }
+  window.fetch=function(url,opts){
+    var body=null;
+    if(/live\.json/.test(url)) body=mkLive();
+    else if(/status\.json/.test(url)) body=mkStatus();
+    else if(/api\/start/.test(url)){ phase='run'; started=performance.now()/1000-t0; body={queued:true}; }
+    else body={queued:true};
+    return Promise.resolve({ ok:true, status:200, json:function(){ return Promise.resolve(body); } });
+  };
+  document.title+=' (demo)';
+})();
+
+// ============================== boot ==============================
+layout();
+if('ResizeObserver' in window) new ResizeObserver(layout).observe(stage);
+window.addEventListener('resize',layout);
+glInit();
+if(!glOK){ glc.style.display='none'; ovl.style.display='none'; }
+tick(); setInterval(tick,500);
+pollLive(); setInterval(pollLive,250);
+requestAnimationFrame(raf);
+</script></body></html>

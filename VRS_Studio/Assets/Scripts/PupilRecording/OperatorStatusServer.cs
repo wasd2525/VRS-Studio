@@ -43,6 +43,18 @@ namespace VRS.PupilRecording
         public float longRedLuminance;
         public float longBlueLuminance;
 
+        public float shortStimDuration;
+        public float longStimDuration;
+        public float shortRedCircleSize;
+        public float shortBlueCircleSize;
+        public float longRedCircleSize;
+        public float longBlueCircleSize;
+
+        /// <summary>Stimulus positions in metres, flattened to x,y,z triples. Floats rather than
+        /// Vector3 so this struct carries no Unity math types — the offline harness compiles the
+        /// real server against a shim that deliberately has none.</summary>
+        public List<float> positionsXyz;
+
         public string stimulusName;
         public string stimulusPosition;
         public float stimulusBrightness;
@@ -68,6 +80,63 @@ namespace VRS.PupilRecording
         public List<string> recentEvents;
     }
 
+    /// <summary>One frame of the live eye feed. Angles are head-local degrees, positive = wearer's right / up.</summary>
+    public struct LiveEyeSample
+    {
+        public float t;                        // Time.unscaledTime at capture
+        public float leftMm, rightMm;          // pupil diameter
+        public bool leftValid, rightValid;     // pupil validity per the SDK
+        public float leftBlink, rightBlink;    // 0 open .. 1 closed
+        public bool leftGazeValid, rightGazeValid;
+        public float leftYawDeg, leftPitchDeg;
+        public float rightYawDeg, rightPitchDeg;
+    }
+
+    /// <summary>Session-level context published alongside the live samples.</summary>
+    public struct LiveFeedStatus
+    {
+        public bool trackingAvailable;
+        public bool measuringLeft, measuringRight;
+        public string eyeCode;                 // OD / OS / OU
+        public bool recording;
+        public float stimulusBrightness;       // 0 while no stimulus is lit
+        public float now;                      // Time.unscaledTime when the snapshot was taken
+    }
+
+    /// <summary>
+    /// Fixed-capacity ring of recent eye samples. Main thread only — the server serialises it
+    /// into a parked string during Update(); the socket thread never touches it.
+    /// </summary>
+    public class LiveSampleRing
+    {
+        private readonly LiveEyeSample[] items;
+        private int start, count;
+
+        public LiveSampleRing(int capacity) { items = new LiveEyeSample[Mathf.Max(8, capacity)]; }
+
+        public int Count => count;
+        public int Capacity => items.Length;
+
+        public void Push(in LiveEyeSample s)
+        {
+            if (count < items.Length)
+            {
+                items[(start + count) % items.Length] = s;
+                count++;
+            }
+            else
+            {
+                items[start] = s;
+                start = (start + 1) % items.Length;
+            }
+        }
+
+        /// <summary>Index 0 = oldest, Count-1 = newest.</summary>
+        public LiveEyeSample Get(int index) => items[(start + index) % items.Length];
+
+        public void Clear() { start = 0; count = 0; }
+    }
+
     public class OperatorStatusServer : MonoBehaviour
     {
         [Header("Operator Web View")]
@@ -77,6 +146,12 @@ namespace VRS.PupilRecording
         public int port = 8080;
         [Tooltip("How often the main thread re-renders the JSON snapshot. The page polls at roughly this rate.")]
         [Range(1f, 30f)] public float updatesPerSecond = 5f;
+        [Tooltip("How often the live eye feed (/live.json) is re-rendered. The page polls it at ~4 Hz and " +
+                 "plays the buffered samples back smoothly, so this mainly bounds feed latency.")]
+        [Range(1f, 30f)] public float liveUpdatesPerSecond = 10f;
+        [Tooltip("TextAsset in Resources holding the operator page (without extension). A minimal built-in " +
+                 "page is served if the asset is missing, so a broken import can never take down the API.")]
+        public string pageResourceName = "OperatorPage";
 
         /// <summary>Set by the recorder so the server can poll it. Found automatically if left null.</summary>
         public PupilDataRecorder recorder;
@@ -87,6 +162,18 @@ namespace VRS.PupilRecording
 
         private readonly object payloadLock = new object();
         private string statusJson = "{}";
+        private string liveJson = "{}";
+
+        // Live feed scratch. Main thread only; reused so the 10 Hz rebuild doesn't churn the GC.
+        private readonly StringBuilder liveSb = new StringBuilder(12 * 1024);
+        private float nextLiveUpdateTime;
+        // Only samples newer than this ride in /live.json. Must comfortably exceed the page's poll
+        // interval (~250 ms) plus a WiFi hiccup, so the client never sees a gap between polls.
+        private const float LiveWindowSeconds = 1.5f;
+
+        // Loaded from Resources before the socket thread starts; immutable afterwards, so the
+        // thread-start ordering is the only synchronisation needed.
+        private string pageHtml = FallbackPage;
 
         // Commands arrive on the SERVER thread and are applied on the MAIN thread. Nothing here
         // may touch a Unity API — that is the whole reason for the hand-off.
@@ -94,6 +181,9 @@ namespace VRS.PupilRecording
         private readonly Queue<KeyValuePair<string, Dictionary<string, string>>> commands =
             new Queue<KeyValuePair<string, Dictionary<string, string>>>();
         private const int MaxQueuedCommands = 32;
+        /// <summary>Cap on the HTTP request line. Sized for a full config query — 64 positions plus
+        /// luminance, size and duration fields — with plenty of headroom.</summary>
+        private const int RequestLineLimit = 8192;
 
         private float nextUpdateTime;
         private static readonly CultureInfo Inv = CultureInfo.InvariantCulture;
@@ -109,7 +199,21 @@ namespace VRS.PupilRecording
             if (recorder == null) recorder = FindObjectOfType<PupilDataRecorder>();
 
             LocalAddress = ResolveLocalAddress();
+            LoadPageAsset();
             StartServer();
+        }
+
+        /// <summary>
+        /// Pulls the operator page out of Resources. Must run before StartServer(): pageHtml is
+        /// read by the socket thread and is only safe because it never changes after the thread starts.
+        /// </summary>
+        private void LoadPageAsset()
+        {
+            TextAsset asset = Resources.Load<TextAsset>(pageResourceName);
+            if (asset != null && !string.IsNullOrEmpty(asset.text))
+                pageHtml = asset.text;
+            else
+                Debug.LogWarning($"[OperatorStatusServer] Resources/{pageResourceName} not found — serving the built-in fallback page.");
         }
 
         private void Update()
@@ -120,12 +224,21 @@ namespace VRS.PupilRecording
             // not sit in a queue for a fifth of a second.
             DrainCommands();
 
-            if (Time.unscaledTime < nextUpdateTime) return;
-            nextUpdateTime = Time.unscaledTime + 1f / Mathf.Max(1f, updatesPerSecond);
-
             // Rendered on the MAIN thread — the server thread must never touch Unity API.
-            string json = BuildJson(recorder.GetStatus());
-            lock (payloadLock) { statusJson = json; }
+            if (Time.unscaledTime >= nextUpdateTime)
+            {
+                nextUpdateTime = Time.unscaledTime + 1f / Mathf.Max(1f, updatesPerSecond);
+                string json = BuildJson(recorder.GetStatus());
+                lock (payloadLock) { statusJson = json; }
+            }
+
+            // The live eye feed runs on its own, faster clock.
+            if (Time.unscaledTime >= nextLiveUpdateTime)
+            {
+                nextLiveUpdateTime = Time.unscaledTime + 1f / Mathf.Max(1f, liveUpdatesPerSecond);
+                string json = BuildLiveJson(recorder);
+                lock (payloadLock) { liveJson = json; }
+            }
         }
 
         /// <summary>Applies queued operator commands. Main thread only.</summary>
@@ -261,6 +374,12 @@ namespace VRS.PupilRecording
                     lock (payloadLock) { body = statusJson; }
                     WriteResponse(stream, "200 OK", "application/json; charset=utf-8", body);
                 }
+                else if (path == "/live.json")
+                {
+                    string body;
+                    lock (payloadLock) { body = liveJson; }
+                    WriteResponse(stream, "200 OK", "application/json; charset=utf-8", body);
+                }
                 else if (path == "/api/start" || path == "/api/config")
                 {
                     // Parameters ride in the query string rather than a request body: this is a
@@ -277,7 +396,7 @@ namespace VRS.PupilRecording
                 }
                 else if (path == "/" || path == "/index.html")
                 {
-                    WriteResponse(stream, "200 OK", "text/html; charset=utf-8", Page);
+                    WriteResponse(stream, "200 OK", "text/html; charset=utf-8", pageHtml);
                 }
                 else
                 {
@@ -286,23 +405,35 @@ namespace VRS.PupilRecording
             }
         }
 
+        /// <summary>
+        /// Read the HTTP request line. Bounded so a malformed request can't hang us — but generous,
+        /// because config now rides in the query string and a full position list is long: 64 points
+        /// at "x,y,z;" is well over the 1 KB this used to allow.
+        /// </summary>
         private static string ReadRequestLine(NetworkStream stream)
         {
-            // Only the first line matters; read a bounded amount so a malformed request can't hang us.
-            byte[] buffer = new byte[1024];
+            byte[] buffer = new byte[RequestLineLimit];
             int read = 0;
+            int scanned = 0;
             while (read < buffer.Length)
             {
                 int n = stream.Read(buffer, read, buffer.Length - read);
                 if (n <= 0) break;
                 read += n;
 
-                for (int i = 0; i < read - 1; i++)
+                // Resume scanning where the last pass stopped instead of re-walking from zero.
+                for (int i = Math.Max(0, scanned - 1); i < read - 1; i++)
                     if (buffer[i] == (byte)'\r' && buffer[i + 1] == (byte)'\n')
                         return Encoding.UTF8.GetString(buffer, 0, i);
+                scanned = read;
 
                 if (!stream.DataAvailable) break;
             }
+
+            // No terminator inside the limit means the line was truncated. Returning the fragment
+            // would hand ParseQuery a half-read config and silently apply part of it, so drop it —
+            // an empty line routes to the page, which is harmless.
+            if (read >= buffer.Length) return string.Empty;
             return read > 0 ? Encoding.UTF8.GetString(buffer, 0, read) : string.Empty;
         }
 
@@ -431,6 +562,16 @@ namespace VRS.PupilRecording
             N(sb, "lum_long_red", s.longRedLuminance); sb.Append(',');
             N(sb, "lum_long_blue", s.longBlueLuminance); sb.Append(',');
 
+            // Sizes carry three decimals: the default 0.03 m stimulus rounds to 0.03 at F2, but the
+            // 0.001 m floor would render as 0.00 and the page would echo a zero-size stimulus back.
+            N(sb, "dur_short", s.shortStimDuration); sb.Append(',');
+            N(sb, "dur_long", s.longStimDuration); sb.Append(',');
+            N(sb, "size_short_red", s.shortRedCircleSize, "F3"); sb.Append(',');
+            N(sb, "size_short_blue", s.shortBlueCircleSize, "F3"); sb.Append(',');
+            N(sb, "size_long_red", s.longRedCircleSize, "F3"); sb.Append(',');
+            N(sb, "size_long_blue", s.longBlueCircleSize, "F3"); sb.Append(',');
+            Positions(sb, "positions", s.positionsXyz); sb.Append(',');
+
             S(sb, "stimulus", s.stimulusName); sb.Append(',');
             S(sb, "position", s.stimulusPosition); sb.Append(',');
             N(sb, "brightness", s.stimulusBrightness); sb.Append(',');
@@ -467,10 +608,83 @@ namespace VRS.PupilRecording
             return sb.ToString();
         }
 
+        /// <summary>
+        /// Compact live eye feed: session context plus the newest ~1.5 s of samples, oldest first.
+        /// Sample layout (13 values, positional — OperatorPage.html indexes these, keep in sync):
+        ///   [t, lValid, lMm, lBlink, lGazeValid, lYawDeg, lPitchDeg,
+        ///       rValid, rMm, rBlink, rGazeValid, rYawDeg, rPitchDeg]
+        /// Bools ride as 0/1 to keep the payload small at 75-90 samples/s.
+        /// Main thread only (reads the recorder and reuses liveSb).
+        /// </summary>
+        private string BuildLiveJson(PupilDataRecorder r)
+        {
+            LiveFeedStatus meta = r.GetLiveFeedStatus();
+            LiveSampleRing ring = r.LiveSamples;
+
+            StringBuilder sb = liveSb;
+            sb.Length = 0;
+
+            sb.Append("{\"now\":").Append(meta.now.ToString("F3", Inv));
+            sb.Append(",\"tracking\":").Append(meta.trackingAvailable ? "true" : "false");
+            sb.Append(",\"recording\":").Append(meta.recording ? "true" : "false");
+            sb.Append(",\"eye_code\":\"").Append(Esc(meta.eyeCode)).Append('"');
+            sb.Append(",\"meas_l\":").Append(meta.measuringLeft ? '1' : '0');
+            sb.Append(",\"meas_r\":").Append(meta.measuringRight ? '1' : '0');
+            sb.Append(",\"stim\":").Append(meta.stimulusBrightness.ToString("F2", Inv));
+            sb.Append(",\"samples\":[");
+
+            float cutoff = meta.now - LiveWindowSeconds;
+            bool first = true;
+            for (int i = 0; i < ring.Count; i++)
+            {
+                LiveEyeSample s = ring.Get(i);
+                if (s.t < cutoff) continue;
+                if (!first) sb.Append(',');
+                first = false;
+
+                sb.Append('[').Append(s.t.ToString("F3", Inv));
+                sb.Append(',').Append(s.leftValid ? '1' : '0');
+                sb.Append(',').Append(s.leftMm.ToString("F2", Inv));
+                sb.Append(',').Append(s.leftBlink.ToString("F2", Inv));
+                sb.Append(',').Append(s.leftGazeValid ? '1' : '0');
+                sb.Append(',').Append(s.leftYawDeg.ToString("F1", Inv));
+                sb.Append(',').Append(s.leftPitchDeg.ToString("F1", Inv));
+                sb.Append(',').Append(s.rightValid ? '1' : '0');
+                sb.Append(',').Append(s.rightMm.ToString("F2", Inv));
+                sb.Append(',').Append(s.rightBlink.ToString("F2", Inv));
+                sb.Append(',').Append(s.rightGazeValid ? '1' : '0');
+                sb.Append(',').Append(s.rightYawDeg.ToString("F1", Inv));
+                sb.Append(',').Append(s.rightPitchDeg.ToString("F1", Inv));
+                sb.Append(']');
+            }
+            sb.Append("]}");
+            return sb.ToString();
+        }
+
         private static void S(StringBuilder sb, string k, string v) =>
             sb.Append('"').Append(k).Append("\":\"").Append(Esc(v)).Append('"');
         private static void N(StringBuilder sb, string k, float v) =>
             sb.Append('"').Append(k).Append("\":").Append(v.ToString("F2", Inv));
+        private static void N(StringBuilder sb, string k, float v, string fmt) =>
+            sb.Append('"').Append(k).Append("\":").Append(v.ToString(fmt, Inv));
+
+        /// <summary>Emit flattened x,y,z triples as [[x,y,z],…]. A trailing partial triple is
+        /// dropped rather than padded — better to serve one position fewer than a garbage one.</summary>
+        private static void Positions(StringBuilder sb, string k, List<float> xyz)
+        {
+            sb.Append('"').Append(k).Append("\":[");
+            if (xyz != null)
+            {
+                for (int i = 0; i + 2 < xyz.Count; i += 3)
+                {
+                    if (i > 0) sb.Append(',');
+                    sb.Append('[').Append(xyz[i].ToString("F4", Inv))
+                      .Append(',').Append(xyz[i + 1].ToString("F4", Inv))
+                      .Append(',').Append(xyz[i + 2].ToString("F4", Inv)).Append(']');
+                }
+            }
+            sb.Append(']');
+        }
         private static void I(StringBuilder sb, string k, int v) =>
             sb.Append('"').Append(k).Append("\":").Append(v.ToString(Inv));
         private static void B(StringBuilder sb, string k, bool v) =>
@@ -499,222 +713,21 @@ namespace VRS.PupilRecording
         }
 
         // -------------------------------------------------------
-        // The page. Self-contained: no external fonts, scripts or styles.
+        // Fallback page. The real operator page lives in Assets/Resources/OperatorPage.html
+        // (loaded in LoadPageAsset); this minimal one is served only if that asset went missing,
+        // so a broken import can never take the API down with it.
         // -------------------------------------------------------
 
-        private const string Page = @"<!doctype html>
-<html lang=""en""><head>
-<meta charset=""utf-8"">
+        private const string FallbackPage = @"<!doctype html>
+<html lang=""en""><head><meta charset=""utf-8"">
 <meta name=""viewport"" content=""width=device-width,initial-scale=1"">
-<title>VRS Studio — Session Monitor</title>
-<style>
-:root{color-scheme:dark light}
-*{box-sizing:border-box}
-body{margin:0;padding:16px;font:15px/1.45 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
-     background:#12141a;color:#e8eaf0}
-h1{font-size:15px;margin:0 0 2px;font-weight:600;letter-spacing:.02em}
-.sub{color:#8b93a7;font-size:12px;margin-bottom:14px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:14px}
-.card{background:#1a1d26;border:1px solid #262a36;border-radius:10px;padding:11px 13px}
-.k{color:#8b93a7;font-size:11px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px}
-.v{font-size:21px;font-weight:600;font-variant-numeric:tabular-nums;line-height:1.15}
-.v.sm{font-size:15px;font-weight:500}
-.ok{color:#4ade80}.warn{color:#fbbf24}.bad{color:#f87171}.dim{color:#8b93a7}
-.bar{height:5px;background:#262a36;border-radius:3px;overflow:hidden;margin-top:7px}
-.bar>i{display:block;height:100%;background:#4ade80;transition:width .3s}
-table{width:100%;border-collapse:collapse;font-size:12px}
-td{padding:5px 8px;border-bottom:1px solid #21252f;vertical-align:top}
-td:first-child{color:#8b93a7;white-space:nowrap;width:1%;font-variant-numeric:tabular-nums}
-.wrap{background:#1a1d26;border:1px solid #262a36;border-radius:10px;padding:6px 4px;overflow-x:auto}
-.off{opacity:.45}
-#dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#4ade80;margin-right:6px;vertical-align:middle}
-#dot.stale{background:#f87171}
-
-/* operator control panel */
-.panel{background:#1a1d26;border:1px solid #2f3547;border-radius:12px;padding:14px;margin-bottom:14px}
-.panel.armed{border-color:#4ade80;box-shadow:0 0 0 1px rgba(74,222,128,.25)}
-.ph{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:12px}
-.ph .who{font-size:19px;font-weight:600}
-.ph .who small{display:block;font-size:11px;font-weight:500;color:#8b93a7;text-transform:uppercase;letter-spacing:.06em}
-button{font:inherit;font-weight:600;padding:11px 22px;border-radius:9px;border:1px solid #2f3547;
-       background:#232838;color:#e8eaf0;cursor:pointer;min-height:44px}
-button.go{background:#16a34a;border-color:#16a34a;color:#fff}
-button.go:hover:not(:disabled){background:#15803d}
-button:disabled{opacity:.4;cursor:not-allowed}
-.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:10px}
-.fields label{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#8b93a7}
-.fields input,.fields select{width:100%;margin-top:5px;font:inherit;font-variant-numeric:tabular-nums;
-       background:#12141a;color:#e8eaf0;border:1px solid #2f3547;border-radius:8px;padding:9px 10px;min-height:42px}
-.fields input:disabled,.fields select:disabled{opacity:.45}
-.fields input:focus,.fields select:focus{outline:2px solid #3b82f6;outline-offset:1px}
-.note{margin-top:10px;font-size:12px;color:#8b93a7}
-.note.hot{color:#fbbf24}
-</style></head><body>
-<h1><span id=""dot""></span>VRS Studio — Session Control</h1>
-<div class=""sub"" id=""hdr"">connecting…</div>
-
-<div class=""panel"" id=""ctl"">
-  <div class=""ph"">
-    <div class=""who"" id=""pname"">—<small>participant</small></div>
-    <button id=""startBtn"" class=""go"" disabled>Start session</button>
-  </div>
-  <div class=""fields"">
-    <label>Eye under test
-      <select id=""eye"">
-        <option value=""Auto"">Auto (detect patch)</option>
-        <option value=""Right"">Right — OD</option>
-        <option value=""Left"">Left — OS</option>
-        <option value=""Both"">Both — OU</option>
-      </select>
-    </label>
-    <label>Short red<input type=""number"" id=""lum_short_red"" min=""0"" max=""1"" step=""0.05""></label>
-    <label>Short blue<input type=""number"" id=""lum_short_blue"" min=""0"" max=""1"" step=""0.05""></label>
-    <label>Long red<input type=""number"" id=""lum_long_red"" min=""0"" max=""1"" step=""0.05""></label>
-    <label>Long blue<input type=""number"" id=""lum_long_blue"" min=""0"" max=""1"" step=""0.05""></label>
-  </div>
-  <div class=""note"" id=""ctlnote"">waiting for the participant to enter their ID…</div>
-</div>
-
-<div class=""grid"">
-  <div class=""card""><div class=""k"">Phase</div><div class=""v sm"" id=""phase"">—</div></div>
-  <div class=""card""><div class=""k"">Elapsed</div><div class=""v"" id=""elapsed"">—</div></div>
-  <div class=""card""><div class=""k"">Stimulus</div><div class=""v sm"" id=""stim"">—</div></div>
-  <div class=""card""><div class=""k"">Gaze deviation</div><div class=""v"" id=""dev"">—</div></div>
-  <div class=""card""><div class=""k"">Tracked bias</div><div class=""v"" id=""bias"">—</div></div>
-  <div class=""card""><div class=""k"">Gate</div><div class=""v sm"" id=""gate"">—</div></div>
-</div>
-
-<div class=""grid"">
-  <div class=""card""><div class=""k"">Completed</div><div class=""v ok"" id=""done"">—</div></div>
-  <div class=""card""><div class=""k"">Failed</div><div class=""v warn"" id=""fail"">—</div></div>
-  <div class=""card""><div class=""k"">Abandoned</div><div class=""v bad"" id=""aband"">—</div></div>
-  <div class=""card""><div class=""k"">Remaining</div><div class=""v dim"" id=""rem"">—</div></div>
-  <div class=""card""><div class=""k"">Signal quality</div><div class=""v"" id=""qual"">—</div>
-    <div class=""bar""><i id=""qbar"" style=""width:0%""></i></div></div>
-  <div class=""card""><div class=""k"">Rows written</div><div class=""v"" id=""rows"">—</div></div>
-</div>
-
-<div class=""wrap""><table id=""ev""></table></div>
-
-<script>
-var stale=0;
-var LUMS=['lum_short_red','lum_short_blue','lum_long_red','lum_long_blue'];
-// After sending a change, ignore incoming values briefly. Without this the 2 Hz poll races the
-// operator's typing and yanks the field back to the old number mid-edit.
-var holdUntil=0;
-
-function f(n,d){return (n===undefined||n===null)?'—':Number(n).toFixed(d===undefined?1:d)}
-function post(url){return fetch(url,{method:'POST',cache:'no-store'}).catch(function(){})}
-
-function send(key,value){
-  holdUntil=Date.now()+1500;
-  post('/api/config?'+key+'='+encodeURIComponent(value));
-}
-
-LUMS.forEach(function(id){
-  var el=document.getElementById(id);
-  el.addEventListener('change',function(){
-    var v=Math.max(0,Math.min(1,Number(el.value)));
-    el.value=v.toFixed(2);
-    send(id.replace('lum_',''),v);
-  });
-});
-document.getElementById('eye').addEventListener('change',function(){
-  send('eye',this.value);
-});
-document.getElementById('startBtn').addEventListener('click',function(){
-  this.disabled=true;
-  this.textContent='starting…';
-  post('/api/start');
-});
-
-function syncControls(s){
-  var armed=!!s.awaiting_start, locked=!!s.config_locked;
-  var panel=document.getElementById('ctl');
-  panel.className='panel'+(armed?' armed':'');
-
-  document.getElementById('pname').innerHTML =
-    (s.participant||'—')+'<small>participant'+(s.eye_code?' · '+s.eye_code:'')+'</small>';
-
-  var btn=document.getElementById('startBtn');
-  btn.disabled=!armed;
-  if(armed) btn.textContent='Start session';
-  else if(locked) btn.textContent='Session running';
-  else btn.textContent='Start session';
-
-  var quiet=Date.now()<holdUntil;
-  LUMS.forEach(function(id){
-    var el=document.getElementById(id);
-    el.disabled=!armed;
-    if(!quiet && el!==document.activeElement && s[id]!==undefined) el.value=Number(s[id]).toFixed(2);
-  });
-  var eye=document.getElementById('eye');
-  eye.disabled=!armed;
-  if(!quiet && eye!==document.activeElement && s.eye_mode) eye.value=s.eye_mode;
-
-  var note=document.getElementById('ctlnote');
-  if(armed){
-    note.textContent='Set the levels, then press Start. Values lock when the session begins.';
-    note.className='note';
-  } else if(locked){
-    note.textContent='Session running — stimulus levels are locked so the protocol cannot change mid-run.';
-    note.className='note hot';
-  } else {
-    note.textContent='Waiting for the participant to enter their ID in the headset…';
-    note.className='note';
-  }
-}
-
-function tick(){
-  fetch('/status.json',{cache:'no-store'}).then(function(r){return r.json()}).then(function(s){
-    stale=0; document.getElementById('dot').classList.remove('stale');
-    syncControls(s);
-    document.getElementById('hdr').textContent =
-      (s.csv||'no file yet') + (s.recording?'  ·  recording':'  ·  idle') +
-      (s.eye_code?'  ·  '+s.eye_code:'');
-    document.getElementById('phase').textContent = s.phase||'—';
-    var e=Math.max(0,s.elapsed||0);
-    document.getElementById('elapsed').textContent =
-      String(Math.floor(e/60)).padStart(2,'0')+':'+String(Math.floor(e%60)).padStart(2,'0');
-    document.getElementById('stim').textContent =
-      s.stimulus ? (s.stimulus + (s.position? ' ' + s.position : '')) : '—';
-
-    var dev=document.getElementById('dev');
-    dev.textContent = (s.deviation>=0? f(s.deviation)+'°' : 'no gaze');
-    dev.className = 'v ' + (s.deviation<0?'dim':(s.off_target?'bad':(s.deviation>3?'warn':'ok')));
-
-    document.getElementById('bias').textContent = f(s.bias)+'°';
-
-    var g=document.getElementById('gate');
-    g.textContent = !s.calibrated ? 'uncalibrated' : (s.gate_armed? 'armed':'DISARMED');
-    g.className = 'v sm ' + (!s.calibrated?'dim':(s.gate_armed?'ok':'bad'));
-
-    document.getElementById('done').textContent  = s.completed;
-    document.getElementById('fail').textContent  = s.failed;
-    document.getElementById('aband').textContent = s.abandoned;
-    document.getElementById('rem').textContent   = s.remaining;
-    document.getElementById('rows').textContent  = s.rows;
-
-    var q=document.getElementById('qual');
-    q.textContent=f(s.q_ok)+'%';
-    q.className='v '+(s.q_ok>95?'ok':(s.q_ok>85?'warn':'bad'));
-    document.getElementById('qbar').style.width=Math.max(0,Math.min(100,s.q_ok))+'%';
-
-    var t=document.getElementById('ev'); t.innerHTML='';
-    (s.events||[]).slice().reverse().forEach(function(x){
-      var i=x.indexOf('|');
-      var r=t.insertRow();
-      r.insertCell().textContent = i>0? x.slice(0,i) : '';
-      r.insertCell().textContent = i>0? x.slice(i+1) : x;
-    });
-  }).catch(function(){
-    if(++stale>2){
-      document.getElementById('dot').classList.add('stale');
-      document.getElementById('hdr').textContent='lost connection to headset — retrying…';
-    }
-  });
-}
-tick(); setInterval(tick,500);
-</script></body></html>";
+<title>VRS Studio — Session Monitor</title></head>
+<body style=""font:15px/1.5 sans-serif;background:#12141a;color:#e8eaf0;padding:24px"">
+<h2 style=""font-size:17px"">VRS Studio — operator page asset missing</h2>
+<p>Resources/OperatorPage.html was not found in this build, so only the raw endpoints are available:</p>
+<p><a style=""color:#8ab4f8"" href=""/status.json"">/status.json</a> ·
+<a style=""color:#8ab4f8"" href=""/live.json"">/live.json</a></p>
+<p>POST /api/start and /api/config?short_red=…&amp;eye=… still work.</p>
+</body></html>";
     }
 }

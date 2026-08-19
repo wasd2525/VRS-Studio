@@ -138,6 +138,10 @@ namespace VRS.PupilRecording
         [Tooltip("Give up waiting and start anyway after this long. 0 = wait indefinitely, which is the " +
                  "safe default for a lab: an unattended auto-start is worse than a session that waits.")]
         public float operatorStartTimeoutSeconds = 0f;
+        [Tooltip("Capture a per-frame eye feed (pupil, blink, head-local gaze) for the operator monitor's " +
+                 "live eye view. Runs even while the session is parked, so the operator can watch the " +
+                 "patched eye go invalid before pressing Start. Never affects the CSV or the paradigm.")]
+        public bool enableLiveFeed = true;
 
         [Space(10)]
         [Header("Eye Under Test")]
@@ -294,6 +298,12 @@ namespace VRS.PupilRecording
         private EyeManager eyeManager;
         private Transform headTransform; // Used to track head rotation for vectors
 
+        // Live operator feed (main thread only). Deliberately independent of the recording path:
+        // it must keep working while the session is parked and must never influence the CSV.
+        private readonly LiveSampleRing liveSamples = new LiveSampleRing(192); // ~2.5 s at 75 Hz
+        private bool liveTrackingAvailable;
+        public LiveSampleRing LiveSamples => liveSamples;
+
         // Eye under test, resolved once at session start. Never EyeUnderTest.Auto after that.
         private EyeUnderTest activeEye = EyeUnderTest.Both;
         private bool MeasuringLeft => activeEye == EyeUnderTest.Left || activeEye == EyeUnderTest.Both;
@@ -344,6 +354,20 @@ namespace VRS.PupilRecording
             if (TryLuminance(args, "long_red", ref longRedLuminance)) changed.Add($"long_red={longRedLuminance:F2}");
             if (TryLuminance(args, "long_blue", ref longBlueLuminance)) changed.Add($"long_blue={longBlueLuminance:F2}");
 
+            // Stimulus duration, seconds. The floor is roughly one frame at 75 Hz — a light shorter
+            // than a refresh is a light the headset cannot actually present, so accepting it would
+            // record a duration the participant never saw.
+            if (TryRange(args, "dur_short", MinStimDuration, MaxStimDuration, ref shortStimDuration)) changed.Add($"dur_short={shortStimDuration:F2}");
+            if (TryRange(args, "dur_long", MinStimDuration, MaxStimDuration, ref longStimDuration)) changed.Add($"dur_long={longStimDuration:F2}");
+
+            // Stimulus DIAMETER in metres on the fixation plane — see the circle-size field comments.
+            if (TryRange(args, "size_short_red", MinStimSize, MaxStimSize, ref shortRedCircleSize)) changed.Add($"size_short_red={shortRedCircleSize:F3}");
+            if (TryRange(args, "size_short_blue", MinStimSize, MaxStimSize, ref shortBlueCircleSize)) changed.Add($"size_short_blue={shortBlueCircleSize:F3}");
+            if (TryRange(args, "size_long_red", MinStimSize, MaxStimSize, ref longRedCircleSize)) changed.Add($"size_long_red={longRedCircleSize:F3}");
+            if (TryRange(args, "size_long_blue", MinStimSize, MaxStimSize, ref longBlueCircleSize)) changed.Add($"size_long_blue={longBlueCircleSize:F3}");
+
+            if (TryPositions(args, "pos", ref vectorPositions, out string posSummary)) changed.Add(posSummary);
+
             if (args.TryGetValue("eye", out string eyeRaw))
             {
                 foreach (EyeUnderTest candidate in (EyeUnderTest[])Enum.GetValues(typeof(EyeUnderTest)))
@@ -359,12 +383,23 @@ namespace VRS.PupilRecording
 
             if (changed.Count == 0) return "no recognised values";
 
-            SyncStimulusLuminance();
+            SyncStimulusSettings();
             string summary = string.Join(" ", changed.ToArray());
             Debug.Log($"[PupilDataRecorder] Operator config: {summary}");
             LogEvent("OperatorConfig", summary);
             return summary;
         }
+
+        // Operator-settable bounds. Deliberately wide — this rig exists to explore stimulus
+        // parameters, so these reject nonsense (negative, NaN, a stimulus shorter than a frame)
+        // rather than enforce a protocol.
+        private const float MinStimDuration = 0.02f;
+        private const float MaxStimDuration = 120f;
+        private const float MinStimSize = 0.001f;
+        private const float MaxStimSize = 1f;
+        /// <summary>Upper bound on operator-supplied positions. A query string is not a place to
+        /// accept an unbounded list, and a session of 500 points is a mistake, not a protocol.</summary>
+        private const int MaxOperatorPositions = 64;
 
         private static bool TryLuminance(Dictionary<string, string> args, string key, ref float target)
         {
@@ -374,24 +409,101 @@ namespace VRS.PupilRecording
             return true;
         }
 
+        /// <summary>Parse one clamped float. Rejects NaN/Infinity outright — clamping those yields
+        /// NaN, which would silently poison a duration or size for the whole session.</summary>
+        private static bool TryRange(Dictionary<string, string> args, string key, float lo, float hi, ref float target)
+        {
+            if (!args.TryGetValue(key, out string raw)) return false;
+            if (!float.TryParse(raw, NumberStyles.Float, CultureInfo.InvariantCulture, out float value)) return false;
+            if (float.IsNaN(value) || float.IsInfinity(value)) return false;
+            target = Mathf.Clamp(value, lo, hi);
+            return true;
+        }
+
         /// <summary>
-        /// Push the current luminance fields onto the built stimuli. Needed because StimulusType
-        /// caches its luminance at creation time, which happens in Start() — long before the
-        /// operator has had a chance to set anything.
+        /// Parse "x,y,z;x,y,z;…" (metres) into the stimulus position list. All-or-nothing: a
+        /// malformed entry rejects the whole list rather than applying a partial one, because a
+        /// half-applied position set is a session that quietly tested different points than the
+        /// operator asked for — and the sidecar would faithfully record the wrong intent.
         /// </summary>
-        private void SyncStimulusLuminance()
+        private static bool TryPositions(Dictionary<string, string> args, string key, ref Vector3[] target, out string summary)
+        {
+            summary = null;
+            if (!args.TryGetValue(key, out string raw) || string.IsNullOrEmpty(raw)) return false;
+
+            string[] items = raw.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
+            if (items.Length == 0 || items.Length > MaxOperatorPositions) return false;
+
+            Vector3[] parsed = new Vector3[items.Length];
+            for (int i = 0; i < items.Length; i++)
+            {
+                string[] parts = items[i].Split(',');
+                if (parts.Length != 3) return false;
+                if (!TryCoord(parts[0], out float x)) return false;
+                if (!TryCoord(parts[1], out float y)) return false;
+                if (!TryCoord(parts[2], out float z)) return false;
+
+                // z is the fixation-plane distance in front of the eye. At or behind zero the
+                // eccentricity maths (atan(r/z)) is meaningless and the stimulus is unviewable.
+                if (z < 0.05f || z > 100f) return false;
+                parsed[i] = new Vector3(x, y, z);
+            }
+
+            target = parsed;
+            summary = $"positions={parsed.Length}";
+            return true;
+        }
+
+        private static bool TryCoord(string raw, out float value)
+        {
+            if (!float.TryParse(raw, NumberStyles.Float, CultureInfo.InvariantCulture, out value)) return false;
+            if (float.IsNaN(value) || float.IsInfinity(value)) return false;
+            return Mathf.Abs(value) <= 100f;
+        }
+
+        /// <summary>
+        /// Push the current luminance, size and duration fields onto the built stimuli. Needed
+        /// because StimulusType caches all three at creation time, which happens in Start() — long
+        /// before the operator has had a chance to set anything.
+        /// </summary>
+        private void SyncStimulusSettings()
         {
             if (stimArray == null) return;
             foreach (StimulusType s in stimArray)
             {
                 switch (s.kind)
                 {
-                    case StimulusKind.ShortRed: s.baseLuminance = shortRedLuminance; break;
-                    case StimulusKind.ShortBlue: s.baseLuminance = shortBlueLuminance; break;
-                    case StimulusKind.LongRed: s.baseLuminance = longRedLuminance; break;
-                    case StimulusKind.LongBlue: s.baseLuminance = longBlueLuminance; break;
+                    case StimulusKind.ShortRed:
+                        s.baseLuminance = shortRedLuminance;
+                        s.duration = shortStimDuration;
+                        ApplyStimulusSize(s, shortRedCircleSize);
+                        break;
+                    case StimulusKind.ShortBlue:
+                        s.baseLuminance = shortBlueLuminance;
+                        s.duration = shortStimDuration;
+                        ApplyStimulusSize(s, shortBlueCircleSize);
+                        break;
+                    case StimulusKind.LongRed:
+                        s.baseLuminance = longRedLuminance;
+                        s.duration = longStimDuration;
+                        ApplyStimulusSize(s, longRedCircleSize);
+                        break;
+                    case StimulusKind.LongBlue:
+                        s.baseLuminance = longBlueLuminance;
+                        s.duration = longStimDuration;
+                        ApplyStimulusSize(s, longBlueCircleSize);
+                        break;
                 }
             }
+        }
+
+        /// <summary>Resize a built stimulus. Canvas scale is 0.001, so 1 m of stimulus diameter is
+        /// 1000 canvas units — the same conversion AddStimulus does at creation.</summary>
+        private static void ApplyStimulusSize(StimulusType s, float sizeMeters)
+        {
+            if (s.image == null) return;
+            float units = sizeMeters * 1000f;
+            s.image.rectTransform.sizeDelta = new Vector2(units, units);
         }
 
         /// <summary>
@@ -612,7 +724,7 @@ namespace VRS.PupilRecording
             // Everything the operator can change is frozen here, before the sidecar is written —
             // the metadata has to describe the session that actually runs.
             ConfigLocked = true;
-            SyncStimulusLuminance();
+            SyncStimulusSettings();
 
             if (!gated)
             {
@@ -820,6 +932,10 @@ namespace VRS.PupilRecording
         private void Update()
         {
             UpdateHeadLockedVisuals();
+
+            // Live feed first: it must run even while the recording gate below is closed
+            // (pre-session patch verification is the whole point).
+            CaptureLiveSample();
 
             if (!enableRecording || fileWriter == null) return;
 
@@ -1559,6 +1675,16 @@ namespace VRS.PupilRecording
         /// Snapshot for the operator web view. Called on the main thread only; the server
         /// serialises it and hands the resulting string to its own socket thread.
         /// </summary>
+        /// <summary>Flatten positions to x,y,z triples. SessionStatus stays free of Unity math
+        /// types so the offline server harness can build it against a plain shim.</summary>
+        private static List<float> FlattenPositions(Vector3[] positions)
+        {
+            if (positions == null) return null;
+            List<float> flat = new List<float>(positions.Length * 3);
+            foreach (Vector3 p in positions) { flat.Add(p.x); flat.Add(p.y); flat.Add(p.z); }
+            return flat;
+        }
+
         public SessionStatus GetStatus()
         {
             int totalSamples = samplesOk + samplesBlink + samplesTrackingLost;
@@ -1590,6 +1716,14 @@ namespace VRS.PupilRecording
                 longRedLuminance = longRedLuminance,
                 longBlueLuminance = longBlueLuminance,
 
+                shortStimDuration = shortStimDuration,
+                longStimDuration = longStimDuration,
+                shortRedCircleSize = shortRedCircleSize,
+                shortBlueCircleSize = shortBlueCircleSize,
+                longRedCircleSize = longRedCircleSize,
+                longBlueCircleSize = longBlueCircleSize,
+                positionsXyz = FlattenPositions(vectorPositions),
+
                 gazeDeviationDeg = currentGazeDeviationDeg,
                 gazeBiasDeg = currentGazeBiasDeg,
                 gazeOffTarget = currentGazeOffTarget,
@@ -1604,6 +1738,87 @@ namespace VRS.PupilRecording
                 dataPoints = dataPointCount,
                 recentEvents = recentEvents
             };
+        }
+
+        /// <summary>Context for the operator's live eye view. Main thread only.</summary>
+        public LiveFeedStatus GetLiveFeedStatus()
+        {
+            return new LiveFeedStatus
+            {
+                trackingAvailable = liveTrackingAvailable,
+                measuringLeft = MeasuringLeft,
+                measuringRight = MeasuringRight,
+                eyeCode = EyeCode(),
+                recording = isRecording && fileWriter != null,
+                stimulusBrightness = currentStimulusBrightness,
+                now = Time.unscaledTime
+            };
+        }
+
+        /// <summary>
+        /// Feeds the operator's live eye view. Reads the same SDK state as the recording path but is
+        /// deliberately independent of it: it runs every frame from the first Update — before the
+        /// participant ID, before the file opens — and must never affect the CSV or the paradigm.
+        /// Main thread only.
+        /// </summary>
+        private void CaptureLiveSample()
+        {
+            if (!enableLiveFeed) return;
+
+            if (eyeManager == null)
+            {
+                eyeManager = EyeManager.Instance;
+                if (eyeManager == null) { liveTrackingAvailable = false; return; }
+            }
+
+            // Same pin as the recording path (flag-guarded, so whichever runs first does it):
+            // head-local conversion below assumes world-space gaze.
+            if (!locationSpacePinned)
+            {
+                eyeManager.LocationSpace = EyeManager.EyeSpace.World;
+                locationSpacePinned = true;
+                LogVerbose($"[PupilDataRecorder] EyeManager.LocationSpace pinned to {eyeManager.LocationSpace}, NormalizeZ={eyeManager.NormalizeZ}");
+            }
+
+            liveTrackingAvailable = eyeManager.IsEyeTrackingAvailable();
+            if (!liveTrackingAvailable) return;
+
+            LiveEyeSample s = new LiveEyeSample { t = Time.unscaledTime };
+
+            s.leftValid = eyeManager.GetLeftEyePupilDiameter(out s.leftMm);
+            s.rightValid = eyeManager.GetRightEyePupilDiameter(out s.rightMm);
+
+            if (Wave.OpenXR.InputDeviceEye.IsEyeExpressionAvailable())
+            {
+                s.leftBlink = Wave.OpenXR.InputDeviceEye.GetEyeExpressionValue(Wave.OpenXR.InputDeviceEye.Expressions.LEFT_BLINK);
+                s.rightBlink = Wave.OpenXR.InputDeviceEye.GetEyeExpressionValue(Wave.OpenXR.InputDeviceEye.Expressions.RIGHT_BLINK);
+            }
+
+            Quaternion worldToHead = headTransform != null
+                ? Quaternion.Inverse(headTransform.rotation)
+                : Quaternion.identity;
+
+            s.leftGazeValid = eyeManager.GetLeftEyeDirectionNormalized(out Vector3 leftGazeWorld)
+                              && TryHeadLocalAngles(worldToHead, leftGazeWorld, out s.leftYawDeg, out s.leftPitchDeg);
+            s.rightGazeValid = eyeManager.GetRightEyeDirectionNormalized(out Vector3 rightGazeWorld)
+                               && TryHeadLocalAngles(worldToHead, rightGazeWorld, out s.rightYawDeg, out s.rightPitchDeg);
+
+            liveSamples.Push(in s);
+        }
+
+        /// <summary>World gaze → head-local yaw/pitch in degrees (positive = wearer's right / up).</summary>
+        private static bool TryHeadLocalAngles(Quaternion worldToHead, Vector3 worldDir, out float yawDeg, out float pitchDeg)
+        {
+            yawDeg = 0f;
+            pitchDeg = 0f;
+            if (worldDir.sqrMagnitude < 1e-6f) return false;   // SDK writes Vector3.zero when invalid
+
+            Vector3 local = worldToHead * worldDir.normalized;
+            if (local.z <= 0f) return false;                    // behind the head — tracker junk
+
+            yawDeg = Mathf.Atan2(local.x, local.z) * Mathf.Rad2Deg;
+            pitchDeg = Mathf.Atan2(local.y, Mathf.Sqrt(local.x * local.x + local.z * local.z)) * Mathf.Rad2Deg;
+            return true;
         }
 
         private void SamplePupilAndWriteDataPoint()
