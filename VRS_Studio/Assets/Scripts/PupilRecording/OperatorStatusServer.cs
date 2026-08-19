@@ -34,6 +34,8 @@ namespace VRS.PupilRecording
         public bool awaitingOperatorStart;
         /// <summary>Stimulus levels are frozen — the trial sequence has begun.</summary>
         public bool configLocked;
+        /// <summary>There is a session worth ending, so the operator's End button is live.</summary>
+        public bool sessionActive;
 
         public string eyeMode;   // requested: Auto / Left / Right / Both
         public string eyeCode;   // resolved:  OD / OS / OU
@@ -263,6 +265,12 @@ namespace VRS.PupilRecording
                         case "config":
                             recorder.ApplyOperatorConfig(cmd.Value);
                             break;
+                        case "end":
+                            // Safe here and nowhere else: EndSession stops every paradigm coroutine,
+                            // and this drain runs on the main thread from Update(), not inside one.
+                            cmd.Value.TryGetValue("reason", out string endReason);
+                            recorder.EndSession(endReason);
+                            break;
                         default:
                             Debug.LogWarning($"[OperatorStatusServer] Unknown command '{cmd.Key}'.");
                             break;
@@ -380,12 +388,12 @@ namespace VRS.PupilRecording
                     lock (payloadLock) { body = liveJson; }
                     WriteResponse(stream, "200 OK", "application/json; charset=utf-8", body);
                 }
-                else if (path == "/api/start" || path == "/api/config")
+                else if (path == "/api/start" || path == "/api/config" || path == "/api/end")
                 {
                     // Parameters ride in the query string rather than a request body: this is a
                     // hand-rolled socket server, and not having to parse headers, chunked encoding
                     // and content-length is a meaningful reduction in what can go wrong.
-                    string command = path == "/api/start" ? "start" : "config";
+                    string command = path == "/api/start" ? "start" : path == "/api/end" ? "end" : "config";
                     Dictionary<string, string> args = ParseQuery(requestLine);
 
                     bool queued = Enqueue(command, args);
@@ -555,6 +563,7 @@ namespace VRS.PupilRecording
 
             B(sb, "awaiting_start", s.awaitingOperatorStart); sb.Append(',');
             B(sb, "config_locked", s.configLocked); sb.Append(',');
+            B(sb, "session_active", s.sessionActive); sb.Append(',');
             S(sb, "eye_mode", s.eyeMode); sb.Append(',');
             S(sb, "eye_code", s.eyeCode); sb.Append(',');
             N(sb, "lum_short_red", s.shortRedLuminance); sb.Append(',');
@@ -727,7 +736,7 @@ namespace VRS.PupilRecording
 <p>Resources/OperatorPage.html was not found in this build, so only the raw endpoints are available:</p>
 <p><a style=""color:#8ab4f8"" href=""/status.json"">/status.json</a> ·
 <a style=""color:#8ab4f8"" href=""/live.json"">/live.json</a></p>
-<p>POST /api/start and /api/config?short_red=…&amp;eye=… still work.</p>
+<p>POST /api/start, /api/config?short_red=…&amp;eye=… and /api/end still work.</p>
 </body></html>";
     }
 }

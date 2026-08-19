@@ -326,6 +326,164 @@ namespace VRS.PupilRecording
         /// </summary>
         public bool ConfigLocked { get; private set; }
 
+        /// <summary>Guards against a double End press opening two sessions at once.</summary>
+        private bool sessionEnding;
+
+        /// <summary>
+        /// True while there is a session worth ending — i.e. anything past the ID prompt. The
+        /// operator page uses this to enable its End button.
+        /// </summary>
+        public bool SessionActive => awaitingOperatorStart || ConfigLocked || isRecording || fileWriter != null;
+
+        /// <summary>
+        /// End the session in progress and return to the participant prompt, ready for the next
+        /// person. Used to abandon a spoiled run and to hand the headset over without restarting
+        /// the app.
+        ///
+        /// MAIN THREAD ONLY, and never from a coroutine: this calls StopAllCoroutines, so a
+        /// coroutine calling it would kill itself mid-statement. The operator command queue drains
+        /// from Update(), which is the intended caller.
+        /// </summary>
+        public string EndSession(string reason)
+        {
+            if (sessionEnding) return "already ending";
+            if (!SessionActive) return "no session to end";
+
+            sessionEnding = true;
+            if (string.IsNullOrEmpty(reason)) reason = "operator";
+
+            try
+            {
+                // Record the end BEFORE the file closes, or the CSV just stops with no explanation
+                // and a truncated session is indistinguishable from a crash downstream.
+                LogEvent("SessionEnded",
+                    $"reason={reason} participant={participantId} eye={EyeCode()} " +
+                    $"completed={trialsCompleted} failed={trialsFailed} abandoned={trialsAbandoned} " +
+                    $"remaining={(testCasesQueue != null ? testCasesQueue.Count : 0)} rows={dataPointCount}");
+
+                if (fileWriter != null)
+                {
+                    // Preferred: attach the event to a real sample. That only works while eye
+                    // tracking is up, so fall back to a marker row rather than lose the event.
+                    SamplePupilAndWriteDataPoint();
+                    if (!string.IsNullOrEmpty(currentEventString)) WriteEventMarkerRow();
+                }
+
+                CloseFile();
+
+                // Order matters: stop the paradigm before touching the state it reads.
+                StopAllCoroutines();
+                if (audioCues != null) audioCues.StopAllCoroutines();
+
+                if (stimArray != null)
+                    foreach (StimulusType s in stimArray)
+                        if (s.sphere != null) s.sphere.SetActive(false);
+                currentSphere = null;
+                if (ui != null) ui.Clear();
+
+                ResetSessionState();
+
+                Debug.Log($"[PupilDataRecorder] Session ended ({reason}). Returning to the participant prompt.");
+                StartCoroutine(RunSession());
+                return $"ended: {reason}";
+            }
+            finally
+            {
+                sessionEnding = false;
+            }
+        }
+
+        /// <summary>
+        /// Write a row carrying only the pending event. Used when the session ends with eye tracking
+        /// unavailable, so the normal sample path would not fire and the event would be lost. The
+        /// validity flags are false, which is the honest reading: this is a marker, not a measurement.
+        /// </summary>
+        private void WriteEventMarkerRow()
+        {
+            if (fileWriter == null || string.IsNullOrEmpty(currentEventString)) return;
+
+            try
+            {
+                SampleRow row = new SampleRow
+                {
+                    timestampSec = isRecording ? Time.time - sessionStartTime : 0f,
+                    leftPupilValid = false,
+                    rightPupilValid = false,
+                    combinedGazeValid = false,
+                    lightCondition = lightController != null ? lightController.GetConditionString() : "Unknown",
+                    gazeDeviationDeg = -1f,
+                    gazeDeviationRawDeg = -1f,
+                    quality = SampleQuality.TrackingLost,
+                    eventData = currentEventString
+                };
+                fileWriter.WriteLine(SessionCsvSchema.FormatRow(row));
+                dataPointCount++;
+                currentEventString = "";
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"[PupilDataRecorder] Failed to write the session-end marker: {e.Message}");
+            }
+        }
+
+        /// <summary>
+        /// Clear everything that belongs to one participant's run.
+        ///
+        /// Stimulus configuration is deliberately KEPT: luminance, sizes, durations, positions and
+        /// the requested eye mode all survive, because handing the headset to the next participant
+        /// normally means running the same protocol on a new person. Only <see cref="activeEye"/>
+        /// resets, since it is a per-participant detection result rather than a setting.
+        /// </summary>
+        private void ResetSessionState()
+        {
+            isRecording = false;
+            sessionStartTime = 0f;
+            sessionFilePath = null;
+            dataPointCount = 0;
+
+            trialsCompleted = 0;
+            trialsFailed = 0;
+            trialsAbandoned = 0;
+            samplesOk = 0;
+            samplesBlink = 0;
+            samplesTrackingLost = 0;
+
+            testCasesQueue = null;
+            currentTrial = null;
+            testCaseId = 1;
+            trialStimulusHasAppeared = false;
+
+            currentPhase = "starting";
+            currentStimulusName = "";
+            currentPositionLabel = "";
+            currentTestCaseId = 0;
+            currentStimulusBrightness = 0f;
+            currentEventString = "";
+            recentEvents.Clear();
+
+            ConfigLocked = false;
+            awaitingOperatorStart = false;
+            operatorStartRequested = false;
+            activeEye = EyeUnderTest.Both;
+
+            // Gaze correction is per-seating: the next participant gets a fresh calibration.
+            gazeCalibrated = false;
+            gazeGateDisarmed = false;
+            centerReferenceLocal = Vector3.forward;
+            currentGazeDeviationDeg = -1f;
+            currentGazeDeviationRawDeg = -1f;
+            currentGazeBiasDeg = 0f;
+            currentGazeOffTarget = false;
+            currentSampleQuality = SampleQuality.Ok;
+            if (gazeMonitor != null) gazeMonitor.Reset();
+            baselineTracker = new GazeBaselineTracker
+            {
+                windowSeconds = reBaselineWindowSeconds,
+                inlierDeg = reBaselineInlierDeg,
+                maxRateDegPerSec = reBaselineMaxRateDegPerSec
+            };
+        }
+
         /// <summary>Operator pressed Start. Ignored once the session is already running.</summary>
         public void RequestOperatorStart()
         {
@@ -1709,6 +1867,7 @@ namespace VRS.PupilRecording
 
                 awaitingOperatorStart = awaitingOperatorStart,
                 configLocked = ConfigLocked,
+                sessionActive = SessionActive,
                 eyeMode = eyeUnderTest.ToString(),
                 eyeCode = EyeCode(),
                 shortRedLuminance = shortRedLuminance,
